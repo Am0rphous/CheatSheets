@@ -8,3 +8,8 @@ Linux general
 - https://gto76.github.io/linux-cheatsheet/
 - https://github.com/jeroendoggen/Linux-cheat-sheet
 
+## File compression
+7z x archive.7z    (apt install p7zip-full)
+tar -xvfz          Extracts .tar or .tgz files.
+
+
