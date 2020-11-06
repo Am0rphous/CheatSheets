@@ -1,1 +1,4 @@
-# Cheat-Sheets
+# Cheat-Sheets resources
+
+Linux general 
+CentOS
