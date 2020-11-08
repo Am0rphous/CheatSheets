@@ -1,17 +1,31 @@
 ## MacOS
 
 #### Package manager
-brew
-brew install tor
-brew info tor
-brew services list
-brew services start tor
-brew services restart tor
+| Key/Command | Description |
+| ----------- | ----------- |
+| brew install tor | Install tor |
+| brew info tor |  Displays info about software |
+| brew services list | lists services |
+| brew services start tor | starts tor service |
+| brew services restart tor| restarts tor service |
 
-Process management
-ps axu | grep "/bin/tor"
+#### Process management
+| Key/Command | Description |
+| ----------- | ----------- |
+| ps axu | grep "/bin/tor" | Lists processes with "bin/tor" |
+
 
 #### Service Management
-sudo launchctl list
-sudo launchctl list | grep service
-sudo launchctl list | grep tor
+| Key/Command | Description |
+| ----------- | ----------- |
+| sudo launchctl list | Lists services |
+| sudo launchctl list | grep service | Lists services named 'service' |
+| sudo launchctl list | grep tor | Lists services named 'tor' |
+
+
+
+
+#### 
+
+
+
