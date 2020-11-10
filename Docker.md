@@ -2,6 +2,9 @@
 
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
 
+## Cheat Sheet list
+- [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
+
 ## Images
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -33,6 +36,7 @@
 | docker start mycontainer | Start a stopped container |
 | docker stop mycontainer | Stop a container |
 | docker run -d label=traefik.backend=jenkins jenkins | Adds metadata to a container |
+| docker container kill web | Stop a running container through SIGKILL |
 
 ## Manage Containers
 | Key/Command | Description |
@@ -48,6 +52,7 @@
 ## Network
 | Key/Command | Description |
 | ----------- | ----------- |
+| docker network ls | List networks |
 | docker network create mynet | Create a local network |
 | docker run -d --net mynet redis | Attach container 'redis' to a network on start |
 | docker network connect mynet myContainer | Connect a running container from a network |
