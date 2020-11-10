@@ -14,6 +14,7 @@
 | sudo ufw allow proto tcp from any to any port 80,443 | Allow all incoming HTTP and HTTPS |
 | sudo ufw enable | Enables firewall |
 | sudo ufw reset | Resets firewall |
+| sudo ufw show added |
 | sudo ufw status | See the current state of UFW |
 | sudo ufw status numbered | Numbers output. Helpful when you have to delete a few rules here and there |
 | sudo ufw status verbose | Shows us some extra information |
