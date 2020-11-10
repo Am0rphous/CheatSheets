@@ -2,6 +2,22 @@
 
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
 
+## Images
+| Key/Command | Description |
+| ----------- | ----------- |
+| docker build --tak mytag | Build an image from Dockerfile in current directory |
+| docker build --no-cache | Force rebuild of Docker image |
+| docker commit mycontainer myimage | Convert a container to image |
+| docker commit gitlab gitlabimage | Convert a container 'gitlab' to 'gitlab' image |
+| docker rmi $(docker images -q -f "dangling=true") | Remove all unused images|
+| docker image prune -a | Remove all images without at least one container associated to them |
+## Debug
+| Key/Command | Description |
+| ----------- | ----------- |
+| | |
+| | |
+| | |
+| | |
 ## General Usage
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -22,11 +38,10 @@
 | docker ps | List running containers |
 | docker ps -a | List all containers (running and stopped) |
 | docker inspect 38r3riht | Return information on container |
-| | |
-
-| | |
-| | |
-| | |
+| docker images | List local available images |
+| docker rm $(docker ps --filter status=exited -q) | Delete all stopped containers |
+| docker ps --filter label=traefik.backend | List all containers with specific label 'traefik.backend' |
+| docker inspect -f '{{.NetworkSettings.IPAddress}}' container | Query a specific metadata of a running container |
 | | |
 | | |
 | | |
