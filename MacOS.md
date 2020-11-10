@@ -1,5 +1,11 @@
 ## MacOS
 
+#### Disk
+| Key/Command | Description |
+| ----------- | ----------- |
+| diskutil list | List disks connected to computer |
+| diskutil eraseDisk exFAT MyUSBName /dev/disk4 | Formats disk /dev/disk4 with and names it 'MyUSBName' |
+| diskutil unmount /dev/disk4 | Unmounts disk /dev/disk4 |
 
 #### Network
 | Key/Command | Description |
