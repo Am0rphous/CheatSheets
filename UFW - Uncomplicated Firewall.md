@@ -3,14 +3,19 @@
 ## Images
 | Key/Command | Description |
 | ----------- | ----------- |
-| sudo ufw enable |
-ufw reset
-sudo ufw status verbose
+| sudo ufw allow ssh | Allows SSH traffic |
+| sudo ufw allow 22/tcp comment 'Open port ssh tcp port 22' | Allows port 22 and leaves a comment |
+| sudo ufw allow 22/tcp | Opens port 22/tcp |
+| sudo ufw allow 53/udp | Accepts UDP traffic on port 53
+| sudo ufw allow 80 | Accepts both UDP and TCP traffic to port 80 |
+| sudo ufw enable | Enables firewall |
+| sudo ufw reset | Resets firewall |
+| sudo ufw status | See the current state of UFW |
+| ufw status numbered | Numbers output. Helpful when you have to delete a few rules here and there |
+| sudo ufw status verbose | Shows us some extra information |
 
-#SSH
-ufw allow ssh
-sudo ufw allow 22/tcp
-sudo ufw allow 22/tcp comment 'Open port ssh tcp port 22'
+
+
 
 sudo ufw limit ssh
 sudo ufw limit 22/tcp
