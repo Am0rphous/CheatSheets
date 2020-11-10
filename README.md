@@ -1,7 +1,6 @@
 # Cheat-Sheets resources
 
 
-CentOS
 
 Linux general 
 - https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
