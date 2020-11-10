@@ -9,7 +9,7 @@ Linux general
 
 ## File compression
 | Key/Command | Description | Installation |
-| ----------- | ----------- | |
+| ----------- | ----------- |------------  |
 | 7z x archive.7z | | sudo apt install p7zip-full|
 | tar -xvfz |Extracts .tar or .tgz files.||
 
