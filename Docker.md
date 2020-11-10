@@ -3,7 +3,7 @@
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
 
 #### Cheat Sheet list
-- [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
+- [Another Docker Cheat Sheet in pdf](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 
 ## Images
 | Key/Command | Description |
@@ -57,9 +57,4 @@
 | docker run -d --net mynet redis | Attach container 'redis' to a network on start |
 | docker network connect mynet myContainer | Connect a running container from a network |
 | docker network disconnect mynet myContainer | Disconnect container 'myContainer' from 'mynet' |
-| | |
-| | |
-| | |
-| | |
-
 
