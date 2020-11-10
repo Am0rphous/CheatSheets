@@ -11,13 +11,14 @@
 | docker commit gitlab gitlabimage | Convert a container 'gitlab' to 'gitlab' image |
 | docker rmi $(docker images -q -f "dangling=true") | Remove all unused images|
 | docker image prune -a | Remove all images without at least one container associated to them |
+
 ## Debug
 | Key/Command | Description |
 | ----------- | ----------- |
-| | |
-| | |
-| | |
-| | |
+| docker exec -it myContainer bash | Run another process in running container |
+| dicjer logs -f myContainer | Show live logs of running daemon container |
+| docker port myContainer | Show exposed ports of a container |
+
 ## General Usage
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -42,10 +43,14 @@
 | docker rm $(docker ps --filter status=exited -q) | Delete all stopped containers |
 | docker ps --filter label=traefik.backend | List all containers with specific label 'traefik.backend' |
 | docker inspect -f '{{.NetworkSettings.IPAddress}}' container | Query a specific metadata of a running container |
-| | |
-| | |
-| | |
-| | |
+
+## Network
+| Key/Command | Description |
+| ----------- | ----------- |
+| docker network create mynet | Create a local network |
+| docker run -d --net mynet redis | Attach container 'redis' to a network on start |
+| docker network connect mynet myContainer | Connect a running container from a network |
+| docker network disconnect mynet myContainer | Disconnect container 'myContainer' from 'mynet' |
 | | |
 | | |
 | | |
