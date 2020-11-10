@@ -1,5 +1,7 @@
 # Docker Commands
 
+- [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
+
 ## General Usage
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -14,12 +16,12 @@
 | docker stop mycontainer | Stop a container |
 | docker run -d label=traefik.backend=jenkins jenkins | Adds metadata to a container |
 
-## General Usage
+## Manage Containers
 | Key/Command | Description |
 | ----------- | ----------- |
-| | |
-| | |
-| | |
+| docker ps | List running containers |
+| docker ps -a | List all containers (running and stopped) |
+| docker inspect 38r3riht | Return information on container |
 | | |
 
 | | |
