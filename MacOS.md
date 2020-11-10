@@ -7,18 +7,6 @@
 | diskutil eraseDisk exFAT MyUSBName /dev/disk4 | Formats disk /dev/disk4 with and names it 'MyUSBName' |
 | diskutil unmount /dev/disk4 | Unmounts disk /dev/disk4 |
 
-#### Network
-| Key/Command | Description |
-| ----------- | ----------- |
-| | |
-| netstat | |
-| | |
-| ss| |
-| nmap| network mapper|
-| nmap -v 192.168.1.1/24 | scans network |
-| | |
-
-
 #### Package manager
 | Key/Command | Description |
 | ----------- | ----------- |
