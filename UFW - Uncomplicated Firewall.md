@@ -1,4 +1,4 @@
-# UFW - Uncomplicated Firewall.
+# UFW - Uncomplicated Firewall
 
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -19,8 +19,8 @@
 | sudo ufw status verbose | Shows us some extra information |
 | sudo ufw allow in on eth1 to any port 3306 | Allow MySQL to Specific Network Interface |
 | sudo ufw deny in on eth0 from 15.15.15.51 | Block Connections to a Network Interface |
-|sudo ufw allow proto tcp from 10.0.0.0/8 to 10.1.1.2 port 443 | Allow subnet 10.0.0.0/8 to port 443 on IP 10.1.1.2 |
-| ufw allow from 10.0.0.0/8 to 10.1.2.1.0/24 | Allows subnet 10.0.0.0/8 to communicate to subnet 10.1.2.1.0/24 |
+| sudo ufw allow proto tcp from 10.0.0.0/8 to 10.1.1.2 port 443 | Allow subnet 10.0.0.0/8 to port 443 on IP 10.1.1.2 |
+| sudo ufw allow from 10.0.0.0/8 to 10.1.2.1.0/24 | Allows subnet 10.0.0.0/8 to communicate to subnet 10.1.2.1.0/24 |
 | sudo ufw deny from 15.15.15.51 | Block an IP |
 | sudo ufw deny out 25 | Block outgoing smtp |
 
