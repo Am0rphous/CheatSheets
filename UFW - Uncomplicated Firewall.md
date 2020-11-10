@@ -2,9 +2,9 @@
 
 | Key/Command | Description |
 | ----------- | ----------- |
-| sudo ufw allow ssh | Allows SSH traffic |
-| sudo ufw allow 22/tcp comment 'Open port ssh tcp port 22' | Allows port 22 and leaves a comment |
-| sudo ufw allow 22/tcp | Opens port 22/tcp |
+|sudo ufw allow ssh | Allows SSH traffic |
+|sudo ufw allow 22/tcp comment 'Open port ssh tcp port 22' | Allows port 22 and leaves a comment |
+|sudo ufw allow 22/tcp | Opens port 22/tcp |
 | sudo ufw limit ssh | |
 | sudo ufw limit 22/tcp |
 | sudo ufw allow 53/udp | Accepts UDP traffic on port 53
