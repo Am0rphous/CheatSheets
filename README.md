@@ -8,8 +8,9 @@ Linux general
 - https://github.com/jeroendoggen/Linux-cheat-sheet
 
 ## File compression
-7z x archive.7z    (apt install p7zip-full)
-
-tar -xvfz          Extracts .tar or .tgz files.
+| Key/Command | Description | Installation |
+| ----------- | ----------- | |
+| 7z x archive.7z | | sudo apt install p7zip-full|
+| tar -xvfz |Extracts .tar or .tgz files.||
 
 
