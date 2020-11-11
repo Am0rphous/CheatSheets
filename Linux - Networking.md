@@ -5,6 +5,8 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 ### SS - investigate sockets
 | Key/Command | Description |
 | ----------- | ----------- |
+| ss --help | Displays help information |
+| man ss | Displays SS's help manual |
 | sudo ss -lntup | List TCP/UDP  with Pid's |
 | sudo ss -u -a | Display all UDP sockets |
 | sudo ss -w -a | Display all raw sockets |
@@ -38,6 +40,19 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 | bucket | Show states, which are maintained as minisockets, i.e. time-wait and syn-recv |
 | big | Opposite to bucket state |
 
+#### SS - filters
+| Key/Command | Description |
+| ----------- | ----------- |
+| sudo ss  sport = :http |
+| sudo ss  dport = :http |
+| sudo ss  dport \> :1024 |
+| sudo ss  sport \> :1024 |
+| sudo ss sport \< :32000 |
+| sudo ss  sport eq :22 |
+| sudo ss  dport != :22 |
+| sudo ss  state connected sport = :http |
+| sudo ss \( sport = :http or sport = :https \) |
+| sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
 #### NetStat
 | Key/Command | Description |
