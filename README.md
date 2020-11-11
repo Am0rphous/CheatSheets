@@ -49,3 +49,8 @@ apt
 | ncal 2001 | Displays calender for year 2001 |
 | time command | times a command
 | time lsof | times the lsof command |
+
+User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
+ https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
+ 
+ 
