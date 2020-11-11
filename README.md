@@ -9,6 +9,8 @@ Linux general
 
 ## File Management
 
+cat
+
 ### Compressions
 | Key/Command | Description | Installation |
 | ----------- | ----------- |------------  |
@@ -18,6 +20,9 @@ Linux general
 ## Searching after stuff
 
 ### Find
+### Grep
+- [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
+
 ### Locate
 ### whereis - locate the binary, source, and manual page files for a command
 | Key/Command | Description | Installation |
@@ -27,6 +32,12 @@ Linux general
 | whereis -b date | Search for only binary files |
 | whereis -s date | Search only for source code files |
 
+### Which
+- [which](https://www.cyberciti.biz/faq/unix-linux-which-command-examples-syntax-to-locate-programs/%20)
+
+### Package Manager
+apk
+apt
 
 ## Time and date
 | Key/Command | Description |
