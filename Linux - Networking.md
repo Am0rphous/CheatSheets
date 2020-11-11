@@ -2,7 +2,7 @@
 
 https://www.tecmint.com/ss-command-examples-in-linux/
 
-#### SS - investigate sockets
+### SS - investigate sockets
 | Key/Command | Description |
 | ----------- | ----------- |
 | sudo ss -lntup | List TCP/UDP  with Pid's |
