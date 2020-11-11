@@ -14,6 +14,7 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 | ss -x src /tmp/.X11-unix/* | Find all local processor connected to X Server |
 
 #### SS - filters
+| Key/Command | Description |
 | ----------- | ----------- |
 | sudo ss -4 state FILTER-NAME-HERE | Filters TCP IPv4 |
 | sudo ss -6 state FILTER-NAME-HERE | Filters TCP IPv6 |
