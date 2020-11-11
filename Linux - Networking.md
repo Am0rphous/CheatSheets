@@ -9,9 +9,12 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 | sudo ss -u -a | Display all UDP sockets |
 | sudo ss -w -a | Display all raw sockets |
 | sudo ss -x -a | Display all Unix sockets |
+| sudo ss -4 state closing | See closing sockets on IPv4 |
 | sudo ss -o state established '( dport = :smtp or sport = :smtp )' | Display all established SMTP connections |
-| ss -o state established '( dport = :http or sport = :http )' | Display all established HTTP connections |
-| ss -x src /tmp/.X11-unix/* | Find all local processor connected to X Server |
+| sudo ss -o state established '( dport = :http or sport = :http )' | Display all established HTTP connections |
+| sudo ss dst 192.168.1.2 | Show all ports connected from remote IP 192.168.1.2 |
+| sudo ss dst 192.168.1.10:http | Find connections made by remote IP 192.168.1.10:http to our server | 
+| sudo ss -x src /tmp/.X11-unix/* | Find all local processor connected to X Server |
 
 #### SS - filters
 | Key/Command | Description |
@@ -33,7 +36,7 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 | connected | All the states except for listen and closed |
 | synchronized | All the connected states except for syn-sent |
 | bucket | Show states, which are maintained as minisockets, i.e. time-wait and syn-recv |
-| big | Opposite to bucket state|
+| big | Opposite to bucket state |
 
 
 #### NetStat
