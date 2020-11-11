@@ -1,6 +1,6 @@
 # LXC Cheat Sheet
 
-- [lxc-webpanel](https://lxc-webpanel.github.io)
+- [lxc-webpanel (archived !!) ](https://lxc-webpanel.github.io)
 
 #### General
 | Key/Command | Description |
