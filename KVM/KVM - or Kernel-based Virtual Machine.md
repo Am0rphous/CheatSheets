@@ -19,9 +19,11 @@ https://www.cyberciti.biz/faq/how-to-rename-kvm-virtual-machine-vm-domain-with-v
 sudo virsh list --all
 
 virsh shutdown vmName
+
 virsh shutdown vm-dev01
 
 virsh domrename vm01-clone1 vm02
+
 expected outut `Domain successfully renamed`
 
 
