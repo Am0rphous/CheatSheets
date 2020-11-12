@@ -17,7 +17,7 @@ https://www.cyberciti.biz/faq/how-to-rename-kvm-virtual-machine-vm-domain-with-v
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
 #### Setup
-Installation: `sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager`
+Installation: `sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvm_tools`
 
 Enable the service `sudo service libvirtd start`
 
@@ -33,15 +33,21 @@ The Quick Emulator or `qemu` allows hardware virtualization.
 
 `virt-manager` is a graphical user interface to manage VMs
 
-sudo virsh list --all
+`kvm_tools` contains some diagnostics and debugging tools for KVM.
 
-virsh shutdown vmName
+| Key/Command | Description |
+| ----------- | ----------- |
+| sudo virsh list --all |
+| virsh shutdown vmName | poweroff vm |
+| virsh shutdown vm-dev01 | poweroff vm-dev01 |
+| virsh domrename vm01-clone1 vm01 | rename vm01-clone to vm01
+| kvm_stat | Displays KVM statistics |
 
-virsh shutdown vm-dev01
 
-virsh domrename vm01-clone1 vm02
+sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --graphics spice --location=/home/Downloads/deepin-20Beta-desktop-amd64.iso --network bridge:vibr0 
 
-expected outut `Domain successfully renamed`
+To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
+
 
 
 
