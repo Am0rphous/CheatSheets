@@ -7,7 +7,18 @@ Linux general
 - https://gto76.github.io/linux-cheatsheet/
 - https://github.com/jeroendoggen/Linux-cheat-sheet
 
-## File Management
+
+## Disk
+
+### fschk - file system consistency check
+Remember to unmount disk before checking. e.g. `umount /dev/sdb`
+| Key/Command | Description |
+| ----------- | ----------- |
+| man fzchk | checks manual |
+| fschk /dev/sdb | checks disk /dev/sdb |
+| fschk -y /dev/sdb | corrects errors automatically. y=yes |
+| fschk -A | checking all filesystems. The list is taken from /etc/fstab |
+| touch /forcefschk | forces computer to check disk at next reboot |
 
 cat
 
@@ -16,6 +27,8 @@ cat
 | ----------- | ----------- |------------  |
 | 7z x archive.7z | | sudo apt install p7zip-full|
 | tar -xvfz |Extracts .tar or .tgz files.||
+
+## File Management
 
 ## Searching after stuff
 
