@@ -22,11 +22,17 @@ Installation: `sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bri
 Enable the service `sudo service libvirtd start`
 
 #### Package description
+
 The Quick Emulator or `qemu` allows hardware virtualization.
+
 `qemu-kvm` is the main KVM package.
+
 `libvritd-daemon` is a virtualization daemon.
+
 `bridge-utils` is used to create network-bridges.
+
 `virt-manager` is a graphical user interface to manage VMs
+
 sudo virsh list --all
 
 virsh shutdown vmName
