@@ -15,10 +15,10 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
 | ----------- | ----------- |
 | man fschk | checks manual |
-| fschk /dev/sdb | checks disk /dev/sdb |
-| fschk -y /dev/sdb | corrects errors automatically. y=yes |
-| fschk -A | checking all filesystems. The list is taken from /etc/fstab |
-| touch /forcefschk | forces computer to check disk at next reboot |
+| fchk /dev/sdb | checks disk /dev/sdb |
+| fchk -y /dev/sdb | corrects errors automatically. y=yes |
+| fchk -A | checking all filesystems. The list is taken from /etc/fstab |
+| touch /forcefchk | forces computer to check disk at next reboot |
 
 cat
 
