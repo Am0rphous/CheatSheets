@@ -7,7 +7,6 @@
 | ----------- | ----------- |
 | sudo apt install lxc | Install lxc via apt |
 | sudo snap install lxc | Install lxc via snap |
-
 | sudo ifconfig lxcbr0 | List network bridge |
 | sudo systemctl restart lxc-net | Restart LXC-net service |
 | sudo systemctl status lxc-net | Show status of LXC-net service |
