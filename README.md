@@ -52,6 +52,13 @@ cat
 apk
 apt
 
+## Text
+| Key/Command | Description |
+| ----------- | ----------- |
+| string="A String With Text" | Creates a string with text |
+| echo "${string,,}" | Converts to lower case |
+| echo "${string^^}" | Converts to upper case |
+
 ## Time and date
 | Key/Command | Description |
 | ----------- | ----------- |
