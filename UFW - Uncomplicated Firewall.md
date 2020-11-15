@@ -1,5 +1,9 @@
 # UFW - Uncomplicated Firewall
 
+for later:
+
+https://www.configserverfirewall.com/ufw-ubuntu-firewall/ufw-allow-ip-address-ubuntu-firewall/
+
 | Key/Command | Description |
 | ----------- | ----------- |
 |sudo ufw allow ssh | Allows SSH traffic |
