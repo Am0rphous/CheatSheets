@@ -34,7 +34,7 @@
 | Key/Command | Description |
 | ----------- | ----------- |
 | sudo launchctl list | Lists services |
-| sudo launchctl list | grep service | Lists services named 'service' |
+| sudo launchctl list '|' grep service | Lists services named 'service' |
 | sudo launchctl list | grep tor | Lists services named 'tor' |
 | | |
 | | |
