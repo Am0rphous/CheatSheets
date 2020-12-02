@@ -2,9 +2,9 @@
 
 ## Install and setup
 
-`sudo apt install git`
+Linux:    `sudo apt install git`
 
-`brew install git`
+Mac:      `brew install git`
 
 `git init`
 
