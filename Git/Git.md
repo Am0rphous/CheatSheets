@@ -2,11 +2,9 @@
 
 ## Install and setup
 
-`sudo apt install git
-
-brew install git
-
-git init`
+`sudo apt install git`
+`brew install git`
+`git init`
 
 # Various commands
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
