@@ -3,7 +3,9 @@
 ## Install and setup
 
 `sudo apt install git
+
 brew install git
+
 git init`
 
 # Various commands
