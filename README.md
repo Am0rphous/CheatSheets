@@ -31,14 +31,16 @@ cat
 ## Crontab
 Enter crontab: `crontab -e`
 
-Might be nice to know about:
-
-Install cron-apt with `sudo apt install ccron-apt
-
 ````
 tar -cJpf /media/NAS/backups/backup.tar.xz /home
 0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
 ````
+ ### cron-apt
+ Install cron-apt with `sudo apt install ccron-apt`
+ Configuration is at `/etc/cron-apt/config`
+ Default crontab entry is located at `/etc/cron.d/cron-apt`
+ Testing cron-apt `/usr/sbin/cron-apt`
+ Alternative command `sudo apt update && sudo apt list --upgradable`
 
 ## File Management
 
