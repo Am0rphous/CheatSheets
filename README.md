@@ -5,10 +5,19 @@
 | 1   | [**User information**](#user-information)                               |
 | 2   | [**File and directory commands**](#file-and-directory-commands)         |
 
-| No. | Topic                                                                   |
-| --- | ----------------------------------------------------------------------- |
-| 1   | [**User information**](#user-information)                               |
-| 2   | [**File and directory commands**](#file-and-directory-commands)         |
+### User Information
+
+1. **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
+
+    1. Login name of the user
+    2. User terminal
+    3. Date & Time of login
+    4. Remote host name of the user
+
+   ```bash
+   $ who
+   sudheer :0 2019-08-04 01:21 (:0)
+   ```
 
 Notes for later 
 - https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
