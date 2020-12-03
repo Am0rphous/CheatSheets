@@ -23,7 +23,7 @@ Notes for later
 - https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
 - https://gto76.github.io/linux-cheatsheet/
 - https://github.com/jeroendoggen/Linux-cheat-sheet
-
+- https://www.computerhope.com/unix/test.htm
 
 ## Disk
 
