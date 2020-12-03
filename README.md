@@ -1,8 +1,16 @@
 # Cheat-Sheets resources
 
+| No. | Topic                                                                   |
+| --- | ----------------------------------------------------------------------- |
+| 1   | [**User information**](#user-information)                               |
+| 2   | [**File and directory commands**](#file-and-directory-commands)         |
 
+| No. | Topic                                                                   |
+| --- | ----------------------------------------------------------------------- |
+| 1   | [**User information**](#user-information)                               |
+| 2   | [**File and directory commands**](#file-and-directory-commands)         |
 
-Linux general 
+Notes for later 
 - https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
 - https://gto76.github.io/linux-cheatsheet/
 - https://github.com/jeroendoggen/Linux-cheat-sheet
