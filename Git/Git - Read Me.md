@@ -1,5 +1,7 @@
 # Git
 
+- [Gthub - Basic Writing and Formatting Syntax](https://docs.github.com/en/enterprise-server@2.20/github/writing-on-github/basic-writing-and-formatting-syntax)
+
 ## Install and setup
 
 Linux:    `sudo apt install git`
