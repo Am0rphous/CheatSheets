@@ -54,10 +54,18 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 ````
  ### cron-apt
  Install cron-apt with `sudo apt install ccron-apt`
+ 
  Configuration is at `/etc/cron-apt/config`
+ 
  Default crontab entry is located at `/etc/cron.d/cron-apt`
+ 
  Testing cron-apt `/usr/sbin/cron-apt`
+ 
  Alternative command `sudo apt update && sudo apt list --upgradable`
+
+ #### Alternatives
+ Command `sudo apt update && sudo apt list --upgradable`
+ Unattended Upgrades
 
 ## File Management
 
