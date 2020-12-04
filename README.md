@@ -61,6 +61,17 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 
 ## File Management
 
+## Password generation tip
+````
+head -c 10 /dev/random | sha256sum          reads from /dev/Random and calculates a hash from the first 10 bytes
+head -c 10 /dev/urandom | sha256sum         read the first 10 bytes from /dev/Urandom and hash it with sha256
+head -c 1024 /dev/urandom | sha256sum       read the first 1024 bytes from /dev/Urandom and hash it with sha256
+openssl rand -base64 32                     generates a 32 character long password
+openssl rand -base64 40                     generates a 40 character long password
+sudo passwd root                            change the password of root
+sudo passwd                                 change the password of current user
+````
+
 ## Searching after stuff
 
 ### Find
