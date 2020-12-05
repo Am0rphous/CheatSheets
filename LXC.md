@@ -2,7 +2,7 @@
 
 Note for later
 
-- [lxc-webpanel (archived !!) ](https://lxc-webpanel.github.io)
+- [lxc-webpanel (archived)](https://lxc-webpanel.github.io)
 
 #### General
 | Key/Command | Description |
@@ -22,3 +22,17 @@ Note for later
 | Key/Command | Description |
 | ----------- | ----------- |
 | sudo lxc-checkconfig | Configuration check command |
+
+
+https://linuxcontainers.org/lxd/getting-started-cli/
+
+lxc exec   ruling-moose -- /bin/bash
+lxc console  ruling-moose 
+lxc config set ruling-moose limits.cpu 10
+lxc config set ruling-moose limits.cpu 20
+lxc config set ruling-moose limits.memory 32GB
+
+xc config set ruling-moose limits.cpu 20
+lxc config set ruling-moose limits.memory 32GB
+
+
