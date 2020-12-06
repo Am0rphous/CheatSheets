@@ -2,17 +2,15 @@
 # CentOS
 
 
-## Updating
-| Key/Command | Description |
-| ----------- | ----------- |
-| dnf check-update | |
-| dnf update | Updates |
-| dnf update httpd | Updates specific package |
-| dnf search package | Searching after 'package' |
-| dnf search openssh-server | Searching after 'openssh-server' |
-| dnf install openssh-server | Installs 'openss-server' |
-| | |
-| | |
+#### Change system keyboard keymap layout on CentOS 7 Linux 
+````
+yum install kbd
+loadkeys no                         #change to Norwegian
+localectl                           #list keymap settings in use
+localectl list-keymaps              #list available keymaps
+localectl list-keymaps | grep us    #list keymaps with 'no'
+localectl set-keymap us             #change permanently
+````
 
 ## Firewall
 | Key/Command | Description |
@@ -32,3 +30,18 @@
 | sudo firewall-cmd --reload | If you have made any changes to the rules, you need to run the command | |
 | sudo firewall-cmd --permanent --add-source=192.168.2.50 | Whitelisting an IP address | |
 | sudo firewall-cmd --permanent --add-source=192.168.2.0/24 | allow a range of IPs or an entire subnet using a CIDR (Classless Inter-Domain Routing) notation | |
+
+
+
+## Updating, installatiion of packages
+| Key/Command | Description |
+| ----------- | ----------- |
+| dnf check-update | |
+| dnf update | Updates |
+| dnf update httpd | Updates specific package |
+| dnf search package | Searching after 'package' |
+| dnf search openssh-server | Searching after 'openssh-server' |
+| dnf install openssh-server | Installs 'openss-server' |
+| | |
+| | |
+
