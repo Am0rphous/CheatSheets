@@ -1,5 +1,7 @@
 # Linux Networking
 
+https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7
+
 https://www.tecmint.com/ss-command-examples-in-linux/
 Other: dig, host, ip
 
