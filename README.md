@@ -37,7 +37,22 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | fchk -A | checking all filesystems. The list is taken from /etc/fstab |
 | touch /forcefchk | forces computer to check disk at next reboot |
 
-cat
+LVM
+````
+pvcreate /dev/sdb1
+pvdisplay
+vgextend NameVolumeGroup /dev/sdb1
+lvextend -l 100%FREE /dev/ubuntu-vg/root
+resize2fs /dev/mapper/ubuntu-root
+vgchange -a y                             #shrink volume
+umount /dev/centos/var
+e2fsck -fy /dev/sda1/var
+resize2fs /dev/ubuntu/var 4G
+lvreduce -L 5G /dev/vg/disk-name
+lvreduce -L -5G /dev/vg/disk-name
+mount /dev/centos/var /mnt
+
+````
 
 ### Compressions
 | Key/Command | Description | Installation |
