@@ -7,6 +7,12 @@
 | diskutil eraseDisk exFAT MyUSBName /dev/disk4 | Formats disk /dev/disk4 with and names it 'MyUSBName' |
 | diskutil unmount /dev/disk4 | Unmounts disk /dev/disk4 |
 
+#### Network
+| Key/Command | Description |
+| ----------- | ----------- |
+| sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/' | Shows sweet list of listening ports |
+| sudo lsof -PiTCP -sTCP:LISTEN |
+
 #### Package manager
 | Key/Command | Description |
 | ----------- | ----------- |
