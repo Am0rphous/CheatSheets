@@ -64,9 +64,9 @@ Other: dig, host, ip
 | | |
 
 #### Nmap - Network Mapper
-| Key/Command | Description |
-| ----------- | ----------- |
-| nmap -v IP | Scans 'IP' |
-| nmap -v 192.168.1.1/24 | scans the whole network |
-| nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}' | |
-| nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }' | |
+````
+nmap -v IP                                          # Scans 'IP'
+nmap -v 192.168.1.1/24                              #scans the whole network |
+nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
+nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
+nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
