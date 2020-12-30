@@ -127,16 +127,16 @@ apt
 | echo "${string^^}" | Converts to upper case |
 
 ## Time and date
-| Key/Command | Description |
-| ----------- | ----------- |
-| cal | Displays a calender in terminal |
-| ncal | Another calender commmand
-| ncal -w | Print the number of the week below each week column |
-| ncal year | Displays calender for year 'year' |
-| ncal 2001 | Displays calender for year 2001 |
-| time command | times a command
-| time lsof | times the lsof command |
-
+````
+cal             #Displays a calender in terminal |
+date
+ncal            #Another calender commmand
+ncal -w         #Print the number of the week below each week column |
+ncal year       #Displays calender for year 'year' |
+ncal 2001       #Displays calender for year 2001 |
+time command    #times a command
+time lsof       #times the lsof command
+````
 User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
  https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
  
