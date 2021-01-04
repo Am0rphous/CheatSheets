@@ -6,6 +6,13 @@
 Find-Module -Name "Module Name"
 Install-Module 
 ````
+#### PowerCLI MacOS
+````
+brew cask install powershell
+pwsh
+Install-Module -Name VMware.PowerCLI -Scope CurrentUser
+Connect-VIServer -Server 192.168.1.10
+````
 
 #### Repo
 ````
@@ -15,3 +22,4 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted         #Add a tr
 Unregister-PSRepository -Name "Repository Name"
 Unregister-PSRepository -Name "PSGallery"                              #Remove Trusted Repository
 ````
+
