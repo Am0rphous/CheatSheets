@@ -17,15 +17,24 @@ lsof -Pn -i4 | grep LISTEN
 ````
 
 #### Package manager
-| Key/Command | Description |
-| ----------- | ----------- |
-| brew install tor | Install tor |
-| brew info tor |  Displays info about software |
-| brew services list | lists services |
-| brew services start tor | starts tor service |
-| brew services restart tor| restarts tor service |
-| | |
-| | |
+
+Brew
+
+````
+brew install cask               # deals with Graphical User Interface (GUI) 
+brew update
+brew outdated
+brew upgrade
+brew upgrade [package name]
+brew search [package name]
+brew install tor
+brew cask uninstall tor
+brew cleanup
+brew info tor
+brew services list
+brew services start tor
+brew services restart tor|
+````
 
 #### Process management
 | Key/Command | Description |
