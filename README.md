@@ -1,4 +1,4 @@
-# Cheat-Sheets resources
+# *nix Cheat Sheet resources
 
 | No. | Topic                                                                   |
 | --- | ----------------------------------------------------------------------- |
@@ -87,7 +87,27 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 
 ## File Management
 
-## Password generation tip
+## Loops
+The purpose of loops is to take a series of commands and re-run them with minimal code. Often used in automation and repetitive tasks. Syntax:
+````
+while [ <something> ]
+do
+  <command>
+done
+````
+Example
+````
+#!/bin/bash
+counter=1
+while [ $counter -le 10 ]      #lt=less than. -le=less than or equal (will print up until nine)
+do
+  echo $counter
+  ((counter++))
+done
+echo "done!"
+````
+
+## Password generation
 ````
 dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
 head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
