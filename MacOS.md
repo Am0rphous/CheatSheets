@@ -2,7 +2,9 @@
 
 #### Disk
 ````
+sudo dd if=~/Downloads/Ubuntu20.04.iso of=/dev/disk5 bs=1m
 diskutil list
+diskutil eject /dev/disk5
 diskutil eraseDisk exFAT MyUSBName /dev/disk4
 diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 diskutil unmount /dev/disk4
