@@ -135,6 +135,7 @@ write
 ````
 ## X
 ````
+xrandr         #primitive command line interface ro RandR extension
 ````
 ## Y
 ````
