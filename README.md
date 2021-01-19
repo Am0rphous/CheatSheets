@@ -88,6 +88,8 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 ## File Management
 
 ## Loops
+- [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
+- [Source 2 - Loops! ](https://ryanstutorials.net/bash-scripting-tutorial/bash-loops.php)
 The purpose of loops is to take a series of commands and re-run them with minimal code. Often used in automation and repetitive tasks. Syntax:
 ````
 while [ <something> ]
@@ -105,6 +107,16 @@ do
   ((counter++))
 done
 echo "done!"
+````
+
+A For loop in bash:
+````
+#!/bin/bash
+for ((i=1;i<=10;i++)); 
+do 
+   #Doing lots of stuff here
+   echo $i
+done
 ````
 
 ## Password generation
