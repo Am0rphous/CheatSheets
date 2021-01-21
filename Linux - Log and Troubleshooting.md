@@ -6,6 +6,9 @@ Path for logs `/var/log/ `
 ````
 systemctl status ssh
 dmesg
+dmesg | grep error
+dmesg | grep failed
+dmesg | grep Linux
 journalctl
 journalctl -xe
 journalctl -u ssh
