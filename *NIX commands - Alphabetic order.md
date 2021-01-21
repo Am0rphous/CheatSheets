@@ -23,6 +23,8 @@ curl
 date
 df
 dig
+dmesg
+dpkg
 du
 ````
 ## E
