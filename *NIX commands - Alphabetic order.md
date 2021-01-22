@@ -119,6 +119,7 @@ top
 ## U
 ````
 uname
+upower
 uptime
 users
 ````
