@@ -4,6 +4,8 @@
 | --- | ----------------------------------------------------------------------- |
 | 1 | [**User information**](#user-information)                               |
 | 2 | [**File and directory commands**](#file-and-directory-commands)         |
+<br >
+<br >
 
 ### User Information
 
@@ -19,14 +21,15 @@
    sudheer :0 2019-08-04 01:21 (:0)
    ```
 
-Notes for later 
+Notes for later
+````
 - https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
 - https://gto76.github.io/linux-cheatsheet/
 - https://github.com/jeroendoggen/Linux-cheat-sheet
 - https://www.computerhope.com/unix/test.htm
+````
 
 ## Disk
-
 ### fschk - file system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
@@ -51,10 +54,29 @@ resize2fs /dev/ubuntu/var 4G
 lvreduce -L 5G /dev/vg/disk-name
 lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
-
 ````
 
-### Compressions
+## Crontab
+Enter crontab: `crontab -e`
+````
+tar -cJpf /media/NAS/backups/backup.tar.xz /home
+0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
+````
+ ### cron-apt
+ ````
+ sudo apt install ccron-apt
+ /etc/cron-apt/config            #configuration path
+ /etc/cron.d/cron-apt            #default crontab entry 
+ /usr/sbin/cron-apt              #testing cron-apt
+ ````
+
+ #### Alternatives
+
+ Unattended Upgrades
+
+## File Management
+
+  ### Compressions
 File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````
 7z x archive.7z                             # sudo apt install p7zip-full|
@@ -63,29 +85,14 @@ tar -xf file.tar.xz                         #x = extract. f=filename
 tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files.     
 ````
 
-## Crontab
-Enter crontab: `crontab -e`
-
+## Kernel
+Commands
 ````
-tar -cJpf /media/NAS/backups/backup.tar.xz /home
-0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
+cat /proc/version
+uname -a
+uname -r      #kernel version
+uname -sr     #kernel name and version
 ````
- ### cron-apt
- Install cron-apt with `sudo apt install ccron-apt`
- 
- Configuration is at `/etc/cron-apt/config`
- 
- Default crontab entry is located at `/etc/cron.d/cron-apt`
- 
- Testing cron-apt `/usr/sbin/cron-apt`
- 
- Alternative command `sudo apt update && sudo apt list --upgradable`
-
- #### Alternatives
- Command `sudo apt update && sudo apt list --upgradable`
- Unattended Upgrades
-
-## File Management
 
 ## Loops
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
@@ -152,7 +159,12 @@ sudo passwd                                      change the password of current 
 
 ### Package Manager
 apk
-apt
+ - apt
+````
+sudo apt update
+sudo apt dist-upgrade -y
+sudo apt update && sudo apt list --upgradable
+````
 
 ## Text
 | Key/Command | Description |
