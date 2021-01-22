@@ -166,6 +166,10 @@ sudo apt dist-upgrade -y
 sudo apt update && sudo apt list --upgradable
 ````
 
+### Power Management
+acpi
+ - [UPower](https://upower.freedesktop.org) - _UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics._
+
 ## Text
 | Key/Command | Description |
 | ----------- | ----------- |
