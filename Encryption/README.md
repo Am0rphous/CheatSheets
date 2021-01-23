@@ -8,7 +8,7 @@ gpg --decrypt <tempfile
 
 ### OpenSSL
 
- #### 1
+ #### Method one
 ````
 # generate a 2048-bit RSA key and store it in key.txt
 openssl genrsa -out key.txt 2048
@@ -19,7 +19,7 @@ echo "Hello world!" | openssl rsautl -inkey key.txt -encrypt >output.bin
 # decrypt the message and output to stdout
 openssl rsautl -inkey key.txt -decrypt <output.bin
 ````
- #### 2
+ #### Method two
 ````
 #Generate a private/public key pair
 openssl genrsa -out rsa_key.pri 2048; openssl rsa -in rsa_key.pri -out rsa_key.pub -outform PEM -pubout
