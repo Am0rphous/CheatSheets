@@ -1,4 +1,4 @@
-# *nix Cheat Sheet resources
+# Linux Cheat Sheet Resources
 
 | No. | Topic                                                                   |
 | --- | ----------------------------------------------------------------------- |
@@ -64,6 +64,10 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 ````
 
 ## Keeping your system up-to-date
+If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
+`````
+apt update
+````
  ### cron-apt
  ````
  sudo apt install ccron-apt
