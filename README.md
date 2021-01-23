@@ -62,6 +62,8 @@ Enter crontab: `crontab -e`
 tar -cJpf /media/NAS/backups/backup.tar.xz /home
 0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
 ````
+
+## Keeping your system up-to-date
  ### cron-apt
  ````
  sudo apt install ccron-apt
@@ -69,14 +71,19 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
  /etc/cron.d/cron-apt            #default crontab entry 
  /usr/sbin/cron-apt              #testing cron-apt
  ````
+ #### Unattended Upgrades
 
- #### Alternatives
+ ##### Logs
+ ````
+  sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
+  sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
+  sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
+ ````
 
- Unattended Upgrades
+ 
+## Files
 
-## File Management
-
-  ### Compressions
+ #### File Compression
 File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````
 7z x archive.7z                             # sudo apt install p7zip-full|
@@ -90,8 +97,8 @@ Commands
 ````
 cat /proc/version
 uname -a
-uname -r      #kernel version
-uname -sr     #kernel name and version
+uname -r            #kernel version
+uname -sr           #kernel name and version
 ````
 
 ## Loops
