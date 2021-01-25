@@ -65,7 +65,7 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 
 ## Keeping your system up-to-date
 If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
-`````
+````
 apt update
 ````
  ### cron-apt
@@ -85,9 +85,14 @@ apt update
  ````
 
  
-## Files
+## Files and Folders
+````
+touch myfile
+mkdir myfolder
+mkdir folder1/folder2/folder3/folder4/folder5
+````
 
- #### File Compression
+## File Compression
 File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````
 7z x archive.7z                             # sudo apt install p7zip-full|
