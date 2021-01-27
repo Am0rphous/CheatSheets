@@ -87,18 +87,21 @@ apt update
  
 ## Files and Folders
 ````
-touch myfile
+head file list.txt                              #displays 10 first line of file
+head -n 5 list.txt                              #displays 5 first line of file
 mkdir myfolder
 mkdir folder1/folder2/folder3/folder4/folder5
+touch myfile
 ````
 
 ## File Compression
 File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````
-7z x archive.7z                             # sudo apt install p7zip-full|
+7z x archive.7z                             # sudo apt install p7zip-full
+gzip -k core.c                              #compress core.c file and removes the original file
 sudo apt install xz-utils                   #usually installed as default
 tar -xf file.tar.xz                         #x = extract. f=filename
-tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files.     
+tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files
 ````
 
 ## Kernel
