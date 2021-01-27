@@ -41,9 +41,11 @@ free
 ## G
 ````
 grep
+gzip
 ````
 ## H
 ````
+head
 htop
 ````
 ## I
@@ -90,6 +92,8 @@ open
 ## P
 ````
 paste
+passwd
+ping
 print            #like echo
 ps
 ````
