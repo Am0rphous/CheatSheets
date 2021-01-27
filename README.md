@@ -90,6 +90,7 @@ apt update
 head file list.txt                              #displays 10 first line of file
 head -n 5 list.txt                              #displays 5 first line of file
 mkdir myfolder
+mkdir -v test                                   #v=verbose
 mkdir folder1/folder2/folder3/folder4/folder5
 touch myfile
 ````
