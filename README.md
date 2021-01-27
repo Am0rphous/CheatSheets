@@ -169,6 +169,7 @@ find . filename             #searches through current and nested folders
 find / filename             #searches from root directory
 find / -executable          #searches for executable files
 find / -name *.mp3          #searches for files with .mp3 extension
+find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
 ````
 ### Grep
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
