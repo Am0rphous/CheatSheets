@@ -176,6 +176,12 @@ find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' na
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
 
 ### Locate
+````
+locate file                             #locates file on harddrive
+updatedb                                #updates the database
+ sudo /usr/libexec/locate.updatedb      #updates database on MacOS
+````
+
 ### whereis - locate the binary, source, and manual page files for a command
 | Key/Command | Description | Installation |
 | ----------- | ----------- |------------  |
