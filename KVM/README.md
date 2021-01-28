@@ -28,7 +28,7 @@ systemctl start serial-getty@ttyS0.service
 #### Setup
 Installation:
 ````
-sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvm_tools
+sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
 sudo service libvirtd start
 ````
 
@@ -39,7 +39,7 @@ qemu-kvm            #main KVM package.
 libvritd-daemon     #virtualization daemon.
 bridge-utils        #used to create network-bridges.
 virt-manager        #graphical user interface to manage VMs
-kvm_tools           #contains some diagnostics and debugging tools for KVM.
+kvmtool            #contains some diagnostics and debugging tools for KVM.
 ````
 
 | Key/Command | Description |
