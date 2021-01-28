@@ -6,6 +6,8 @@ https://www.tecmint.com/ss-command-examples-in-linux/
 Other: dig, host, ip
 
 ### SS - investigate sockets
+- [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
+
 | Key/Command | Description |
 | ----------- | ----------- |
 | ss --help | Displays help information |
