@@ -187,18 +187,29 @@ find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' na
 ### Which
 - [which](https://www.cyberciti.biz/faq/unix-linux-which-command-examples-syntax-to-locate-programs/%20)
 
-### Package Manager
-apk
- - apt
+## Package Manager
+### Apt
 ````
 sudo apt update
 sudo apt dist-upgrade -y
 sudo apt update && sudo apt list --upgradable
 ````
 
-### Power Management
-acpi
- - [UPower](https://upower.freedesktop.org) - _UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics._
+## Power Management
+ - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
+ ````
+ acpi                               #shows battery status and other ACPI information
+ sudo dmidecode --type 39           #DMI table decoder
+ ````
+
+## Remoting
+````
+ssh username@domain-name.com
+ssh username@ip
+ssh -p 1234 user@domain
+ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
+ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
+````
 
 ## Text
 | Key/Command | Description |
