@@ -201,11 +201,13 @@ sudo apt dist-upgrade -y
 sudo apt update && sudo apt list --upgradable
 ````
 
-## Power Management
- - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
+## Power
+- [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
+- [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
  ````
- acpi                               #shows battery status and other ACPI information
- sudo dmidecode --type 39           #DMI table decoder
+acpi                               #shows battery status and other ACPI information
+sudo lshw -c power
+sudo dmidecode --type 39           #DMI table decoder
  ````
 
 ## Remoting
@@ -216,6 +218,15 @@ ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 ````
+  ### Monitoring SSH
+  ````
+  last -a | grep -i still
+  netstat -tnpa | grep 'ESTABLISHED.*sshd'
+  ps auxwww | grep sshd: | grep -v grep
+  ss | grep -i ssh
+  w
+  who
+  ````
 
 ## Text
 | Key/Command | Description |
