@@ -41,7 +41,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | touch /forcefchk | forces computer to check disk at next reboot |
 
 LVM
-````
+````bash
 pvcreate /dev/sdb1
 pvdisplay
 vgextend NameVolumeGroup /dev/sdb1
