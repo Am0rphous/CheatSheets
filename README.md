@@ -83,7 +83,8 @@ apt update
   sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
   sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
  ````
-
+## File Permissions and Ownership
+- [Linux File Permissions and Ownership Explained with Examples](https://linuxhandbook.com/linux-file-permissions/)
  
 ## Files and Folders
 ````
