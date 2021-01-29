@@ -90,14 +90,14 @@ apt update
 ````
 head file list.txt                              #displays 10 first line of file
 head -n 5 list.txt                              #displays 5 first line of file
-mkdir myfolder
+mkdir myfolder                                  #creates folder
 mkdir -v test                                   #v=verbose
-mkdir folder1/folder2/folder3/folder4/folder5
-touch myfile
+mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
+touch myfile                                    #creates empty file
 ````
 
-## File Compression
-File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
+ ### File Compression
+ File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````
 7z x archive.7z                             # sudo apt install p7zip-full
 gzip -k core.c                              #compress core.c file and removes the original file
@@ -162,7 +162,7 @@ sudo passwd                                      change the password of current 
 
 ## Searching after stuff
 
-### Find
+ ### Find
 ````
 find filename
 find / -empty               #searches for empty files and folders in your system
@@ -183,7 +183,7 @@ updatedb                                #updates the database
  sudo /usr/libexec/locate.updatedb      #updates database on MacOS
 ````
 
-### whereis - locate the binary, source, and manual page files for a command
+### Whereis - locate the binary, source, and manual page files for a command
 | Key/Command | Description | Installation |
 | ----------- | ----------- |------------  |
 | whereis command | Finds command |
