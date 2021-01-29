@@ -223,6 +223,7 @@ ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
   last -a | grep -i still
   netstat -tnpa | grep 'ESTABLISHED.*sshd'
   ps auxwww | grep sshd: | grep -v grep
+  ps -fC sshd
   ss | grep -i ssh
   w
   who
