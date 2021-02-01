@@ -12,6 +12,7 @@ diskutil unmount /dev/disk4
 
 #### Networking commands
 ````
+sudo airportd en0 info
 sudo airportd en0 sniff 1
 sudo netstat -ap tcp
 sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #Shows sweet list of listening ports
