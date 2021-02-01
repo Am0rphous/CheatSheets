@@ -12,11 +12,13 @@ diskutil unmount /dev/disk4
 
 #### Networking commands
 ````
-netstat -ap tcp
+sudo airportd en0 sniff 1
+sudo netstat -ap tcp
 sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #Shows sweet list of listening ports
 sudo lsof -PiTCP -sTCP:LISTEN
-lsof -Pn -i4
-lsof -Pn -i4 | grep LISTEN
+sudo lsof -Pn -i4
+sudo lsof -Pn -i4 | grep LISTEN
+sudo tcpdump -Ii en0
 ````
 
 #### Package manager
