@@ -14,8 +14,9 @@ diskutil unmount /dev/disk4
 ````
 sudo airportd en0 info
 sudo airportd en0 sniff 1
+sudo airportd en0 scan                               #scans for WiFi networks and prints results. Requires sudo.
 sudo netstat -ap tcp
-sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #Shows sweet list of listening ports
+sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #shows sweet list of listening ports
 sudo lsof -PiTCP -sTCP:LISTEN
 sudo lsof -Pn -i4
 sudo lsof -Pn -i4 | grep LISTEN
@@ -27,7 +28,7 @@ sudo tcpdump -Ii en0
 Brew
 
 ````
-brew install cask               # deals with Graphical User Interface (GUI) 
+brew install cask               #deals with Graphical User Interface (GUI) 
 brew update
 brew outdated
 brew upgrade
