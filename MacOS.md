@@ -62,6 +62,13 @@ sudo tcpdump -Ii en0
 | | |
 | | |
 
+#### Tips and Tricks
+````
+shift+command+3           #take screenshot of entire screen
+shift+command+4           #select area with the mouse to take a screenshot
+shift+command+5           #select area with the mouse, press enter to start recording
+shift+command+6           #screenshot the touchbar
 
+````
 
 
