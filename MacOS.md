@@ -14,7 +14,7 @@ diskutil unmount /dev/disk4
 ````
 sudo airportd en0 info
 sudo airportd en0 sniff 1
-sudo airportd en0 scan                               #scans for WiFi networks and prints results. Requires sudo.
+sudo airportd scan                                   #scans for WiFi networks and prints results. Requires sudo.
 sudo netstat -ap tcp
 sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #shows sweet list of listening ports
 sudo lsof -PiTCP -sTCP:LISTEN
