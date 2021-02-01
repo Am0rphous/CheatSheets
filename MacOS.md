@@ -1,5 +1,22 @@
 ## MacOS
 
+#### Brew Package manager
+````
+brew install cask               #deals with Graphical User Interface (GUI) 
+brew update
+brew outdated
+brew upgrade
+brew upgrade [package name]
+brew search [package name]
+brew install tor
+brew cask uninstall tor
+brew cleanup
+brew info tor
+brew services list
+brew services start tor
+brew services restart tor|
+````
+
 #### Disk
 ````
 sudo dd if=~/Downloads/Ubuntu20.04.iso of=/dev/disk5 bs=1m
@@ -21,26 +38,6 @@ sudo lsof -PiTCP -sTCP:LISTEN
 sudo lsof -Pn -i4
 sudo lsof -Pn -i4 | grep LISTEN
 sudo tcpdump -Ii en0
-````
-
-#### Package manager
-
-Brew
-
-````
-brew install cask               #deals with Graphical User Interface (GUI) 
-brew update
-brew outdated
-brew upgrade
-brew upgrade [package name]
-brew search [package name]
-brew install tor
-brew cask uninstall tor
-brew cleanup
-brew info tor
-brew services list
-brew services start tor
-brew services restart tor|
 ````
 
 #### Process management
