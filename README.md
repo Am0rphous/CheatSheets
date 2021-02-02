@@ -88,8 +88,12 @@ tar -cJpf /media/NAS/backups/backup.tar.xz /home
 ## Keeping your system up-to-date
 If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
 ````
-apt update
+sudo apt update
+sudo apt dist-upgrade -y                          #Install all updates available
+sudo apt update && sudo apt list --upgradable     #list upgradable packets
+sudo apt-get install --only-upgrade NAME          #only upgrade packet NAME
 ````
+
  ### cron-apt
  ````
  sudo apt install ccron-apt
@@ -215,14 +219,6 @@ updatedb                                #updates the database
 
 ### Which
 - [which](https://www.cyberciti.biz/faq/unix-linux-which-command-examples-syntax-to-locate-programs/%20)
-
-## Package Manager
-### Apt
-````
-sudo apt update
-sudo apt dist-upgrade -y
-sudo apt update && sudo apt list --upgradable
-````
 
 ## Power
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
