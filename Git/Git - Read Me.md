@@ -3,14 +3,24 @@
 - [Gthub - Basic Writing and Formatting Syntax](https://docs.github.com/en/enterprise-server@2.20/github/writing-on-github/basic-writing-and-formatting-syntax)
 
 ## Install and setup
+````
+sudo apt install git       #Linux
+brew install git           #MacOS
+git init
+````
+## Git Large File Storage (LFS)
+- [An open source Git extension for versioning large files](https://git-lfs.github.com/)
+````
+brew install git-lfs       #MacOS
+git lfs install
+git lfs track "*.iso"
+git add .gitattributes
+git add file.iso
+git commit -m "added file.iso"
+git push origin main
+````
 
-Linux:    `sudo apt install git`
-
-Mac:      `brew install git`
-
-`git init`
-
-# Various commands
+## Various commands
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -22,3 +32,4 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | git push | Pushes everything up to Github |
 | git push origin master |
 | git log |
+
