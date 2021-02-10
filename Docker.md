@@ -20,7 +20,7 @@
 | ----------- | ----------- |
 | docker exec -it myContainer bash | Run another process in running container |
 | dicjer logs -f myContainer | Show live logs of running daemon container |
-| docker container logs --tauk 100 web | Print 100 last lines of a containers log |
+|docker container logs --tauk 100 web | Print 100 last lines of a containers log |
 | docker port myContainer | Show exposed ports of a container |
 
 ## General Usage
