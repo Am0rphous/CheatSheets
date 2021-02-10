@@ -19,8 +19,9 @@
 | Key/Command | Description |
 | ----------- | ----------- |
 | docker exec -it myContainer bash | Run another process in running container |
+| docker exec -it --user root 2c1292953762 /bin/bash | Enter the container as root user with bash shell |
 | dicjer logs -f myContainer | Show live logs of running daemon container |
-|docker container logs --tauk 100 web | Print 100 last lines of a containers log |
+| docker container logs --tauk 100 web | Print 100 last lines of a containers log |
 | docker port myContainer | Show exposed ports of a container |
 
 ## General Usage
