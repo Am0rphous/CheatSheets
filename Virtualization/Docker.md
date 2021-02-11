@@ -1,6 +1,7 @@
 # Docker
 <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
 [[https://cdn.iconscout.com/icon/free/png-256/social-275-116309.png]]
+![Docker Icon](https://cdn.iconscout.com/icon/free/png-256/social-275-116309.png)
 
 
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
@@ -64,4 +65,4 @@
 
 
 ##### Credit
-- Docker Icon <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+- <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
