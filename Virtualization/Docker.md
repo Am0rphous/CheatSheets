@@ -1,5 +1,7 @@
 # Docker
 <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
+[[https://cdn.iconscout.com/icon/free/png-256/social-275-116309.png]]
+
 
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
 
@@ -60,3 +62,6 @@
 | docker network connect mynet myContainer | Connect a running container from a network |
 | docker network disconnect mynet myContainer | Disconnect container 'myContainer' from 'mynet' |
 
+
+##### Credit
+- Docker Icon <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
