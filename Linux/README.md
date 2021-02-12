@@ -104,13 +104,40 @@ sudo apt-get install --only-upgrade NAME          #only upgrade packet NAME
  /usr/sbin/cron-apt              #testing cron-apt
  ````
  #### Unattended Upgrades
-
- ##### Logs
+ Installation
  ````
+ sudo apt update && sudo apt dist-upgrade -y
+ sudo apt install unattended-upgrades
+ ````
+ Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
+ ````bash
+ Unattended-Upgrade::Origins-Pattern {
+        "origin=Debian,codename=${distro_codename},label=Debian";
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        "origin=TorProject";
+};
+Unattended-Upgrade::Package-Blacklist {
+};
+ ````
+ Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`
+ ````bash
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Unattended-Upgrade "1";
+APT::Periodic::Download-Upgradeable-Packages "2";
+APT::Periodic::AutocleanInterval "30";
+ ````
+ Test config
+ ````
+ sudo unattended-upgrade -d
+ ````
+
+ ##### Log file commands
+ ````bash
   sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
   sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
   sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
  ````
+ 
 ## File Permissions and Ownership
 - [Linux File Permissions and Ownership Explained with Examples](https://linuxhandbook.com/linux-file-permissions/)
  
