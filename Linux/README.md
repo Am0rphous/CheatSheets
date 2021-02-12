@@ -98,7 +98,7 @@ sudo apt-get install --only-upgrade NAME          #only upgrade packet NAME
 
  ### cron-apt
  ````
- sudo apt install ccron-apt
+ sudo apt install cron-apt
  /etc/cron-apt/config            #configuration path
  /etc/cron.d/cron-apt            #default crontab entry 
  /usr/sbin/cron-apt              #testing cron-apt
