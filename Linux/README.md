@@ -228,9 +228,18 @@ find / -executable          #searches for executable files
 find / -name *.mp3          #searches for files with .mp3 extension
 find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
 ````
-### Grep
+### Grep - string and pattern matching utility
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
-
+````
+grep -r testing                             # grep recursivly
+grep -v success *                           # list everything except "success"
+grep -i test                                # i= ignore case
+grep -R -i memfree .                        # R = recursive dereference
+grep -q error syslog.log                    # silence the output
+echo $?                                     # results in 0 or 1 depending on true or false
+grep -E -w -i "failed|error" syslog.log     # E=search for multiple words
+grep -Evi "success|warning" syslog.log      # Removes success or warning
+````
 ### Locate
 ````
 locate file                             #locates file on harddrive
