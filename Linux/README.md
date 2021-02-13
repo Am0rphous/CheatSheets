@@ -230,7 +230,7 @@ find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' na
 ````
 ### Grep - string and pattern matching utility
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
-````
+````zsh
 grep -r testing                             # grep recursivly
 grep -v success *                           # list everything except "success"
 grep -i test                                # i= ignore case
@@ -240,6 +240,13 @@ echo $?                                     # results in 0 or 1 depending on tru
 grep -E -w -i "failed|error" syslog.log     # E=search for multiple words
 grep -Evi "success|warning" syslog.log      # Removes success or warning
 ````
+#### zgrep search compressed files
+Same syntax
+````zsh
+zgrep -c "error" errorlog.txt.gz            # prints matching lines
+zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not file names
+````
+
 ### Locate
 ````
 locate file                             #locates file on harddrive
