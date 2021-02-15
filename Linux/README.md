@@ -303,6 +303,18 @@ ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 | echo "${string,,}" | Converts to lower case |
 | echo "${string^^}" | Converts to upper case |
 
+Sorting (sources [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file),
+````zsh
+sort ips.txt | uniq -c
+sort ips.txt | uniq -c | sort -bgr
+````
+Counting number of uniqe lines
+````zsh
+sort ips.txt | uniq | wc -l
+awk '!seen[$0]++' ips.txt | wc -l
+````
+
+
 ## Time and date
 ````
 cal             #Displays a calender in terminal |
