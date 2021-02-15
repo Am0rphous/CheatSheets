@@ -240,6 +240,9 @@ echo $?                                     # results in 0 or 1 depending on tru
 grep -E -w -i "failed|error" syslog.log     # E=search for multiple words
 grep -Evi "success|warning" syslog.log      # Removes success or warning
 ````
+Extract IP-addresses from a file [source](https://github.com/dwisiswant0/awesome-oneliner-bugbounty)
+`grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' MYFILE.txt`
+
 #### zgrep search compressed files
 Same syntax
 ````zsh
