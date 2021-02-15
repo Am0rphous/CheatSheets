@@ -46,6 +46,7 @@ Notes for later
 ````
 
 ## Disk
+
 ### fschk - file system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
@@ -70,6 +71,28 @@ resize2fs /dev/ubuntu/var 4G
 lvreduce -L 5G /dev/vg/disk-name
 lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
+````
+
+Format
+````
+mkfs.ext4 /dev/sdb1
+````
+
+Mounting / Unmounting
+````
+sudo mount /dev/sda /media/storage
+sudo umount /dev/sda /media/ubuntu
+````
+
+Scanning for new disks
+````
+ioscan -fnC disk
+ls /sys/class/scsi_host
+echo "- - -" > /sys/class/scsi_host/host[n]/scan
+echo "- - -" > /sys/class/scsi_host/host0/scan
+echo "- - -" > /sys/class/scsi_host/host1/scan
+echo "- - -" > /sys/class/scsi_host/host2/scan
+echo "- - -" > /sys/class/scsi_host/host3/scan
 ````
 
 ## DVD Ripping
