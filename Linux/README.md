@@ -13,12 +13,13 @@
 | 8 | [**Files and Folders**](#Files-and-Folders) |
 | 9 | [**Kernel**](#Kernel) |
 | 10 | [**Loops**](#Loops) |
-| 10 | [**Password generation**](#Password-generation) |
-| 10 | [**Searching after stuff**](#earching-after-stuff) |
-| 10 | [**Power**](#Power) |
-| 10 | [**Remoting**](#remoting) |
-| 10 | [**Text**](#text) |
-| 10 | [**Time and date**](#time-and-date) |
+| 11 | [**Password generation**](#Password-generation) |
+| 12 | [**Power**](#Power) |
+| 13 | [**Remoting**](#remoting) |
+| 14 | [**Searching after stuff**](#earching-after-stuff) |
+| 15 | [**Services**](#Services) |
+| 16 | [**Text**](#text) |
+| 17 | [**Time and date**](#time-and-date) |
 
 <br >
 <br >
@@ -309,6 +310,14 @@ ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
   w
   who
   ````
+
+## Services
+````
+service ssh status                                      #option 1: shows service status
+systemctl status ssh                                    #option 2: shows service status
+systemctl enable ssh                                    #enables service ssh
+sudo systemctl list-unit-files | grep enabled           #lists enabled services
+````
 
 ## Text
 | Key/Command | Description |
