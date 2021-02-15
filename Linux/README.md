@@ -9,12 +9,12 @@
 | 4 | [**DVD Ripping**](#dvd-ripping) |
 | 5 | [**Crontab**](#crontab) |
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
-| 7 | [**File Permissions and Ownership**](#File Permissions and Ownership) |
-| 8 | [**Files and Folders**](#Files and Folders) |
+| 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
+| 8 | [**Files and Folders**](#Files-and-Folders) |
 | 9 | [**Kernel**](#Kernel) |
 | 10 | [**Loops**](#Loops) |
-| 10 | [**Password generation**](#Password generation) |
-| 10 | [**Searching after stuff**](#earching after stuff) |
+| 10 | [**Password generation**](#Password-generation) |
+| 10 | [**Searching after stuff**](#earching-after-stuff) |
 | 10 | [**Power**](#Power) |
 | 10 | [**Remoting**](#remoting) |
 | 10 | [**Text**](#text) |
