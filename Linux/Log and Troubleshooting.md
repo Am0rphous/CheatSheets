@@ -1,5 +1,7 @@
 # General Linux Logs
 
+- [Syslog : The Complete System Administrator Guide](https://devconnected.com/syslog-the-complete-system-administrator-guide/)
+
 Path for logs `/var/log/ `
 
 ## Commands used for troubleshooting
