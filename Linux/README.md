@@ -5,11 +5,19 @@
 | --- | ----------------------------------------------------------------------- |
 | 1 | [**User information**](#user-information)                               |
 | 2 | [**File and directory commands**](#file-and-directory-commands)         |
+| 3 | [**Disk**](#disk)         |
+| 4 | [**DVD Ripping**](#dvd-ripping)         |
+| 5 | [**Crontab**](#crontab)         |
+| 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
+| 7 | [**File Permissions and Ownership**](#) |
+| 8 | [**Files and Folders**](#) |
+| 9 | [**Kernel**](#) |
+| 10 | [**Loops**](#) |
+
 <br >
 <br >
 
 ### User Information
-
 1. **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
 
     1. Login name of the user
