@@ -25,7 +25,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | fchk -A | checking all filesystems. The list is taken from /etc/fstab |
 | touch /forcefchk | forces computer to check disk at next reboot |
 
-LVM
+###LVM
 ````bash
 pvcreate /dev/sdb1
 pvdisplay
@@ -41,18 +41,18 @@ lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
 ````
 
-Format
+###Format
 ````
 mkfs.ext4 /dev/sdb1
 ````
 
-Mounting / Unmounting
+###Mounting / Unmounting
 ````
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
 sudo mount -a                              #mount all partitions from /ect/fstab
 ````
-Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
+###Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
 ````zsh
 sudo apt-get install nfs-common
@@ -64,9 +64,17 @@ mount -a
 df -h | grep 10.0.0.10
 ````
 - [Common NFS Mount Options](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-client-config-options.html)
-On NAS server
+On the NAS server do:
+- Open Control Panel and click Create. Give it a name, description and unmark "Enable Recycle Bin". Mark "Hide this shared folder in "my Network Places" and "Hide sub-folders and files from users without permissions. Click "Ok".
+- Go to "NFS persmission" tab and click "Create". Fill inn:
+  - Hostname or IP      10.0.0.10
+  - Privilege           Read/Write
+  - Squash              No mapping
+  - Security            sys
+  - Enable asynchronous MARKED
+  - Click "Ok".
 
-Scanning for new disks
+###Scanning for new disks
 ````
 ioscan -fnC disk
 ls /sys/class/scsi_host
