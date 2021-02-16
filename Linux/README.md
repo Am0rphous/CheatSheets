@@ -45,56 +45,6 @@ Notes for later
 - https://www.computerhope.com/unix/test.htm
 ````
 
-## Disk
-
-### fschk - file system consistency check
-Remember to unmount disk before checking. e.g. `umount /dev/sdb`
-| Key/Command | Description |
-| ----------- | ----------- |
-| man fschk | checks manual |
-| fchk /dev/sdb | checks disk /dev/sdb |
-| fchk -y /dev/sdb | corrects errors automatically. y=yes |
-| fchk -A | checking all filesystems. The list is taken from /etc/fstab |
-| touch /forcefchk | forces computer to check disk at next reboot |
-
-LVM
-````bash
-pvcreate /dev/sdb1
-pvdisplay
-vgextend NameVolumeGroup /dev/sdb1
-lvextend -l 100%FREE /dev/ubuntu-vg/root
-resize2fs /dev/mapper/ubuntu-root
-vgchange -a y                             #shrink volume
-umount /dev/centos/var
-e2fsck -fy /dev/sda1/var
-resize2fs /dev/ubuntu/var 4G
-lvreduce -L 5G /dev/vg/disk-name
-lvreduce -L -5G /dev/vg/disk-name
-mount /dev/centos/var /mnt
-````
-
-Format
-````
-mkfs.ext4 /dev/sdb1
-````
-
-Mounting / Unmounting
-````
-sudo mount /dev/sda /media/storage
-sudo umount /dev/sda /media/ubuntu
-````
-
-Scanning for new disks
-````
-ioscan -fnC disk
-ls /sys/class/scsi_host
-echo "- - -" > /sys/class/scsi_host/host[n]/scan
-echo "- - -" > /sys/class/scsi_host/host0/scan
-echo "- - -" > /sys/class/scsi_host/host1/scan
-echo "- - -" > /sys/class/scsi_host/host2/scan
-echo "- - -" > /sys/class/scsi_host/host3/scan
-````
-
 ## DVD Ripping
 1. 
 ````
