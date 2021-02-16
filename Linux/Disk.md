@@ -50,6 +50,7 @@ Mounting / Unmounting
 ````
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
+sudo mount -a                              #mount all partitions from `/ect/fstab`
 ````
 
 Scanning for new disks
