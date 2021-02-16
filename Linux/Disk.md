@@ -56,9 +56,12 @@ Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
 ````zsh
 sudo apt-get install nfs-common
-mount 10.0.0.10:/volume1/storage/ /mnt/storage
+sudo mkdir /mnt/storage
+mount 10.0.0.10:/volume1/storage /mnt/storage
 # /etc/fstab can look like this
 10.0.0.10:/volume1/storage /mnt/storage nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800,rsize=8192, wsize=8192, timeo=14, 0 0
+mount -a
+df -h | grep 10.0.0.10
 ````
 - [Common NFS Mount Options](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-client-config-options.html)
 On NAS server
