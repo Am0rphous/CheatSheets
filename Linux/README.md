@@ -11,6 +11,7 @@
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
 | 8 | [**Files and Folders**](#Files-and-Folders) |
+|  | [**Help**](#Help) |
 | 9 | [**Kernel**](#Kernel) |
 | 10 | [**Loops**](#Loops) |
 | 11 | [**Password generation**](#Password-generation) |
@@ -149,6 +150,14 @@ tar -xf file.tar.xz                         #x = extract. f=filename
 tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files
 ````
 
+## Help
+- [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
+````
+command --help
+ipconfig --help
+man command
+man ipconfig
+````
 ## Kernel
 Commands
 ````
