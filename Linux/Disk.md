@@ -65,7 +65,11 @@ df -h | grep 10.0.0.10
 ````
 - [Common NFS Mount Options](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/s1-nfs-client-config-options.html)
 On the NAS server do:
-- Open Control Panel and click Create. Give it a name, description and unmark "Enable Recycle Bin". Mark "Hide this shared folder in "my Network Places" and "Hide sub-folders and files from users without permissions. Click "Ok".
+- Open Control Panel and click Create.
+  - Give it a name, description
+  - Unmark "Enable Recycle Bin"
+  - Mark "Hide this shared folder in "my Network Places" and "Hide sub-folders and files from users without permissions.
+  - Click "Ok".
 - Go to "NFS persmission" tab and click "Create". Fill inn:
   - Hostname or IP      10.0.0.10
   - Privilege           Read/Write
