@@ -59,7 +59,7 @@ sudo apt-get install nfs-common
 sudo mkdir /mnt/storage
 mount 10.0.0.10:/volume1/storage /mnt/storage
 # /etc/fstab can look like this
-10.0.0.10:/volume1/storage /mnt/storage nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800,rsize=8192, wsize=8192, timeo=14, 0 0
+10.0.0.10:/volume1/storage /mnt/storage nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800,rsize=8192,wsize=8192,timeo=14, 0 0
 mount -a
 df -h | grep 10.0.0.10
 ````
