@@ -74,6 +74,13 @@ Enter crontab: `crontab -e`
 tar -cJpf /media/NAS/backups/backup.tar.xz /home
 0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
 ````
+Cron routines can be found in these files and folders
+- /ect/crontab
+  - /etc/cron.daily
+  - /etc/cron.hourly
+  - /etc/cron.weekly
+  - /etc/cron.monthly
+ - /etc/cron.d
 
 ## Keeping your system up-to-date
 If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
