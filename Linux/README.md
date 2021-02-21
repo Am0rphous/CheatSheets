@@ -6,7 +6,7 @@
 | 1 | [**User information**](#user-information) |
 | 2 | [**File and directory commands**](#file-and-directory-commands) |
 | 3 | [**Disk**](#disk) |
-| 4 | [**DVD Ripping**](#dvd-ripping) |
+| 4 | [**CDROM**](#dcdrom) |
 | 5 | [**Crontab**](#crontab) |
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
@@ -46,7 +46,24 @@ Notes for later
 - https://www.computerhope.com/unix/test.htm
 ````
 
-## DVD Ripping
+## CDROM
+### Add virtual CDROM
+
+- [CDEmu](https://cdemu.sourceforge.io)
+````
+sudo add-apt-repository ppa:cdemu/ppa           #install repo
+sudo apt install cdemu-client                   #install client
+cdemu load 0 ubuntu.iso                         #mounts iso file in device 0
+cdemu load 0 ubuntu.iso centos.iso mint.iso     #mounts multiple iso files
+cdemu add-device                                #adds extra device
+cdemu load 1 ubuntu.iso                         #loads iso to the second device
+cdemu status                                    #display status
+cdemu unload                                    #unloads iso files
+cdemu remove-device
+````
+To use GUI open `gcdemu` (graphical-cdemu).
+
+### DVD Ripping
 1. 
 ````
 [root@pc ~]# isoinfo -d -i /dev/sr1 | grep -i -E 'block size|volume size'
