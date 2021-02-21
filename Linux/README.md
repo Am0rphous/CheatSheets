@@ -6,7 +6,7 @@
 | 1 | [**User information**](#user-information) |
 | 2 | [**File and directory commands**](#file-and-directory-commands) |
 | 3 | [**Disk**](#disk) |
-| 4 | [**CDROM**](#dcdrom) |
+| 4 | [**CDROM**](#cdrom) |
 | 5 | [**Crontab**](#crontab) |
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
