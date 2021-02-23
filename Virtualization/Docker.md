@@ -3,9 +3,7 @@
 
 
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
-
-#### Cheat Sheet list
-- [Another Docker Cheat Sheet in pdf](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
+- [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 
 
 
