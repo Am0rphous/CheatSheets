@@ -361,3 +361,21 @@ time lsof       #times the lsof command
 User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
  https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
  
+## USB- and PCI-devices
+Listing
+````
+lsusb
+ls /proc/bus/usb
+lspci
+````
+Webcam
+````
+sudo apt-get install v4l-utils
+v4l2-ctl --list-devices
+v4l2-ctl --list-formats-ext
+````
+Play from webcam
+````
+sudo apt install ffmpeg
+ffplay /dev/video0
+````
