@@ -12,6 +12,8 @@ ehm
 #### Cheat Sheet list
 - [Another Docker Cheat Sheet in pdf](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 
+<a href="url"><img src="https://cdn.iconscout.com/icon/free/png-256/social-275-116309.png" align="left" height="48" width="48" ></a>
+
 ## Images
 | Key/Command | Description |
 | ----------- | ----------- |
