@@ -1,9 +1,8 @@
 # Linux Networking
 
-https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7
-
-https://www.tecmint.com/ss-command-examples-in-linux/
-Other: dig, host, ip
+- https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7
+- https://www.tecmint.com/ss-command-examples-in-linux/
+- Other: dig, host, ip
 
 ### SS - investigate sockets
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
@@ -66,9 +65,38 @@ Other: dig, host, ip
 | | |
 
 #### Nmap - Network Mapper
-````
+````powershell
 nmap -v IP
 nmap -v 192.168.1.1/24
 nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
 nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
 nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
+````
+
+#### TCPDump
+- [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
+- [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
+````powershell
+tcpdump -r capture_file
+sudo tcpdump -i eth0 -nn -s0 -v port 80
+sudo tcpdump -A -s0 port 80
+sudo tcpdump -i eth0 udp
+sudo tcpdump -i eth0 proto 17
+udo tcpdump -i eth0 dst 10.10.1.20
+sudo tcpdump -i eth0 host 10.10.1.1
+sudo tcpdump -i eth0 -s0 -w test.pcap
+sudo tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
+````
+Remember
+````
+and or &&
+or or ||
+not or !
+````
+Size
+````powershell
+tcpdump less 32
+tcpdump greater 64
+tcpdump <= 128
+````
+
