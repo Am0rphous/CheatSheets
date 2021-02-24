@@ -156,7 +156,11 @@ APT::Periodic::AutocleanInterval "30";
  
 ## File Permissions and Ownership
 - [Linux File Permissions and Ownership Explained with Examples](https://linuxhandbook.com/linux-file-permissions/)
- 
+````powershell
+chattr -R folder                #chattr=manipulate attributes. R=recursively.
+lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all files
+````
+
 ## Files and Folders
 ````
 head file list.txt                              #displays 10 first line of file
