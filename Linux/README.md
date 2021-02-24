@@ -50,7 +50,7 @@ Notes for later
 ### Add virtual CDROM
 
 - [CDEmu](https://cdemu.sourceforge.io)
-````
+````powershell
 sudo add-apt-repository ppa:cdemu/ppa           #install repo
 sudo apt install cdemu-client                   #install client
 cdemu load 0 ubuntu.iso                         #mounts iso file in device 0
@@ -65,14 +65,14 @@ To use GUI open `gcdemu` (graphical-cdemu).
 
 ### DVD Ripping
 1. 
-````
+````powershell
 [root@pc ~]# isoinfo -d -i /dev/sr1 | grep -i -E 'block size|volume size'
 Logical block size is: 2048
 Volume size is: 350320
 [root@pc ~]#
 ````
 2. 
-````
+````powershell
 [root@pc ~]# dd if=/dev/sr1 of=/mnt/folder/test.iso bs=2048 count=350320
 350320+0 records in
 350320+0 records out
@@ -80,14 +80,14 @@ Volume size is: 350320
 [root@pc ~]#
 ````
 3.
-````
+````powershell
 sha256sum /mnt/folder/test.iso      #E.g. c58ea020874bae8712d5715a...
 sha256sum /dev/sr0                  #E.g. c58ea020874bae8712d5715a...
 ````
 
 ## Crontab
 Enter crontab: `crontab -e`
-````
+````powershell
 tar -cJpf /media/NAS/backups/backup.tar.xz /home
 0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
 ````
@@ -101,7 +101,7 @@ Cron routines can be found in these files and folders
 
 ## Keeping your system up-to-date
 If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
-````
+````powershell
 sudo apt update
 sudo apt dist-upgrade -y                            #Install all updates available
 sudo apt update && sudo apt list --upgradable       #list upgradable packets
@@ -112,7 +112,7 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
 ````
 
  ### cron-apt
- ````
+ ````powershell
  sudo apt install cron-apt
  /etc/cron-apt/config            #configuration path
  /etc/cron.d/cron-apt            #default crontab entry 
@@ -120,13 +120,13 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  ````
  #### Unattended Upgrades
  Installation
- ````
+ ````powershell
  sudo apt update && sudo apt dist-upgrade -y
  sudo apt install unattended-upgrades
  sudo dpkg-reconfigure -plow unattended-upgrades
  ````
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
- ````bash
+ ````powershell
  Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,codename=${distro_codename},label=Debian";
         "origin=Debian,codename=${distro_codename},label=Debian-Security";
@@ -136,7 +136,7 @@ Unattended-Upgrade::Package-Blacklist {
 };
  ````
  Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`
- ````bash
+ ````powershell
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 APT::Periodic::Download-Upgradeable-Packages "2";
@@ -148,7 +148,7 @@ APT::Periodic::AutocleanInterval "30";
  ````
 
  ##### Log file commands
- ````bash
+ ````powershell
   sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
   sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
   sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
@@ -162,7 +162,7 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
 ````
 
 ## Files and Folders
-````
+````powershell
 head file list.txt                              #displays 10 first line of file
 head -n 5 list.txt                              #displays 5 first line of file
 mkdir myfolder                                  #creates folder
@@ -173,7 +173,7 @@ touch myfile                                    #creates empty file
 
  ### File Compression
  File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
-````
+````powershell
 7z x archive.7z                             # sudo apt install p7zip-full
 gzip -k core.c                              #compress core.c file and removes the original file
 sudo apt install xz-utils                   #usually installed as default
@@ -183,7 +183,7 @@ tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files
 
 ## Help
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
-````
+````powershell
 command --help
 ipconfig --help
 man command
@@ -202,14 +202,14 @@ uname -sr           #kernel name and version
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
 - [Source 2 - Loops! ](https://ryanstutorials.net/bash-scripting-tutorial/bash-loops.php)
 The purpose of loops is to take a series of commands and re-run them with minimal code. Often used in automation and repetitive tasks. Syntax:
-````
+````powershell
 while [ <something> ]
 do
   <command>
 done
 ````
 Example
-````
+````powershell
 #!/bin/bash
 counter=1
 while [ $counter -le 10 ]      #lt=less than. -le=less than or equal (will print up until nine)
@@ -221,7 +221,7 @@ echo "done!"
 ````
 
 A For loop in bash:
-````
+````powershell
 #!/bin/bash
 for ((i=1;i<=10;i++)); 
 do 
@@ -231,7 +231,7 @@ done
 ````
 
 ## Password generation
-````
+````powershell
 dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
 head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
 head -c 10 /dev/urandom | sha256sum              read the first 10 bytes from /dev/Urandom and hash it with sha256
@@ -246,7 +246,7 @@ sudo passwd                                      change the password of current 
 ## Searching after stuff
 
  ### Find
-````
+````powershell
 find filename
 find / -empty               #searches for empty files and folders in your system
 find ~ filename             #searches through the active user's home folder
@@ -273,13 +273,13 @@ Extract IP-addresses from a file [source](https://github.com/dwisiswant0/awesome
 
 #### zgrep search compressed files
 Same syntax
-````zsh
+````powershell
 zgrep -c "error" errorlog.txt.gz            # prints matching lines
 zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not file names
 ````
 
 ### Locate
-````
+````powershell
 locate file                             #locates file on harddrive
 updatedb                                #updates the database
  sudo /usr/libexec/locate.updatedb      #updates database on MacOS
@@ -299,14 +299,14 @@ updatedb                                #updates the database
 ## Power
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
 - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
- ````
-acpi                               #shows battery status and other ACPI information
-sudo lshw -c power
-sudo dmidecode --type 39           #DMI table decoder
+ ````powershell
+ acpi                               #shows battery status and other ACPI information
+ sudo lshw -c power
+ sudo dmidecode --type 39           #DMI table decoder
  ````
 
 ## Remoting
-````
+````powershell
 ssh username@domain-name.com
 ssh username@ip
 ssh -p 1234 user@domain
@@ -314,7 +314,7 @@ ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 ````
   ### Monitoring SSH
-  ````
+  ````powershell
   last -a | grep -i still
   netstat -tnpa | grep 'ESTABLISHED.*sshd'
   ps auxwww | grep sshd: | grep -v grep
@@ -325,7 +325,7 @@ ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
   ````
 
 ## Services
-````
+````powershell
 service ssh status                                      #option 1: shows service status
 systemctl status ssh                                    #option 2: shows service status
 systemctl enable ssh                                    #enables service ssh
@@ -340,19 +340,19 @@ sudo systemctl list-unit-files | grep enabled           #lists enabled services
 | echo "${string^^}" | Converts to upper case |
 
 Sorting (sources [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file),
-````zsh
+````powershell
 sort ips.txt | uniq -c
 sort ips.txt | uniq -c | sort -bgr
 ````
 Counting number of uniqe lines
-````zsh
+````powershell
 sort ips.txt | uniq | wc -l
 awk '!seen[$0]++' ips.txt | wc -l
 ````
 
 
 ## Time and date
-````
+````powershell
 cal             #Displays a calender in terminal |
 date
 ncal            #Another calender commmand
@@ -367,19 +367,19 @@ User Information	groups • id • lastcomm • last • lid/libuser-lid • log
  
 ## USB- and PCI-devices
 Listing
-````
+````powershell
 lsusb
 ls /proc/bus/usb
 lspci
 ````
 Webcam
-````
+````powershell
 sudo apt-get install v4l-utils
 v4l2-ctl --list-devices
 v4l2-ctl --list-formats-ext
 ````
 Play from webcam
-````
+````powershell
 sudo apt install ffmpeg
 ffplay /dev/video0
 ````
