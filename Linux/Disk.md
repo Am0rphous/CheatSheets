@@ -2,7 +2,7 @@
 
 ## Creating Bootable USB
 - dd
-````
+````powershell
 sudo umount /dev/sdb*
 sudo mkfs.vfat /dev/sdb –I
 sudo dd if=~/Downloads/iso/Ubuntu.iso of=/dev/sdb
@@ -10,7 +10,7 @@ sudo dd if=~/Downloads/iso/Ubuntu.iso of=/dev/sdb
 sudo dd if=ubuntu.iso of=/dev/sdb status=progress oflag=sync bs=4M
 ````
 Monitor the progress
-````
+````powershell
 pgrep –l ‘^dd$’
 kill –USR1 3443         #3443 is the dd process id. Iit will print copying process statics.
 ````
@@ -26,7 +26,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | touch /forcefchk | forces computer to check disk at next reboot |
 
 ###LVM
-````bash
+````zsh
 pvcreate /dev/sdb1
 pvdisplay
 vgextend NameVolumeGroup /dev/sdb1
@@ -42,19 +42,19 @@ mount /dev/centos/var /mnt
 ````
 
 ###Format
-````
+````powershell
 mkfs.ext4 /dev/sdb1
 ````
 
 ###Mounting / Unmounting
-````
+````powershell
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
 sudo mount -a                              #mount all partitions from /ect/fstab
 ````
 ###Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
-````zsh
+````powershell
 sudo apt-get install nfs-common
 sudo mkdir /mnt/storage
 mount 10.0.0.10:/volume1/storage /mnt/storage
@@ -79,7 +79,7 @@ On the NAS server do:
   - Click "Ok".
 
 ###Scanning for new disks
-````
+````powershell
 ioscan -fnC disk
 ls /sys/class/scsi_host
 echo "- - -" > /sys/class/scsi_host/host[n]/scan
