@@ -25,8 +25,8 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | fchk -A | checking all filesystems. The list is taken from /etc/fstab |
 | touch /forcefchk | forces computer to check disk at next reboot |
 
-###LVM
-````zsh
+### LVM
+````powershell
 pvcreate /dev/sdb1
 pvdisplay
 vgextend NameVolumeGroup /dev/sdb1
@@ -41,18 +41,18 @@ lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
 ````
 
-###Format
+### Format
 ````powershell
 mkfs.ext4 /dev/sdb1
 ````
 
-###Mounting / Unmounting
+### Mounting / Unmounting
 ````powershell
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
 sudo mount -a                              #mount all partitions from /ect/fstab
 ````
-###Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
+### Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
 ````powershell
 sudo apt-get install nfs-common
@@ -78,7 +78,7 @@ On the NAS server do:
   - Enable asynchronous MARKED
   - Click "Ok".
 
-###Scanning for new disks
+### Scanning for new disks
 ````powershell
 ioscan -fnC disk
 ls /sys/class/scsi_host
@@ -87,4 +87,21 @@ echo "- - -" > /sys/class/scsi_host/host0/scan
 echo "- - -" > /sys/class/scsi_host/host1/scan
 echo "- - -" > /sys/class/scsi_host/host2/scan
 echo "- - -" > /sys/class/scsi_host/host3/scan
+````
+## Secure Deletion
+hdparm
+````powershell
+sudo hdparm --user-master u --security-set-pass foo /dev/sdX
+sudo hdparm -I /dev/sdX                                         # frozen should be "not frozen"
+#IF FROZEN DO THIS
+echo -n mem > /sys/power/state
+hdparm --user-master u --security-set-pass p /dev/sda
+hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive DOES support Enhanced Security Erase:
+hdparm --user-master u --security-erase p /dev/sda              # if NOT
+dd if=/dev/sda bs=1M count=5                                    # should output nothing og just jibberish
+````
+shred
+````powershell
+sudo shred -v /dev/sdX            # default is overwrite 3 times
+sudo shred -v -n1 -z /dev/sdX     # overwrite 1 time + z=zero out after
 ````
