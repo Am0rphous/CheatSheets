@@ -1,5 +1,12 @@
 ## MacOS
 
+#### Analytics
+- [Opt out of sharing iCloud analytics](https://www.imore.com/how-opt-out-sharing-icloud-analytics-mac)
+- To see and open CrashReporter config file
+````powershell
+nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config     #Open CrashReporter config file
+````
+
 #### Brew Package manager
 ````
 brew install cask               #deals with Graphical User Interface (GUI) 
