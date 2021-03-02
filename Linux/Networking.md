@@ -4,23 +4,25 @@
 - https://www.tecmint.com/ss-command-examples-in-linux/
 - Other: dig, host, ip
 
+## Check open ports
+````powershell
+
 ### SS - investigate sockets
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
-
-| Key/Command | Description |
-| ----------- | ----------- |
-| ss --help | Displays help information |
-| man ss | Displays SS's help manual |
-| sudo ss -lntup | List TCP/UDP  with Pid's |
-| sudo ss -u -a | Display all UDP sockets |
-| sudo ss -w -a | Display all raw sockets |
-| sudo ss -x -a | Display all Unix sockets |
-| sudo ss -4 state closing | See closing sockets on IPv4 |
-| sudo ss -o state established '( dport = :smtp or sport = :smtp )' | Display all established SMTP connections |
-| sudo ss -o state established '( dport = :http or sport = :http )' | Display all established HTTP connections |
-| sudo ss dst 192.168.1.2 | Show all ports connected from remote IP 192.168.1.2 |
-| sudo ss dst 192.168.1.10:http | Find connections made by remote IP 192.168.1.10:http to our server | 
-| sudo ss -x src /tmp/.X11-unix/* | Find all local processor connected to X Server |
+````powershell
+ss --help
+man ss                      # Displays SS's help manual
+sudo ss -lntup              # List TCP/UDP  with Pid's
+sudo ss -u -a               # Display all UDP sockets
+sudo ss -w -a               # Display all raw sockets
+sudo ss -x -a               # Display all Unix sockets
+sudo ss -4 state closing    # See closing sockets on IPv4
+sudo ss -o state established '( dport = :smtp or sport = :smtp )'       # Display all established SMTP connections
+sudo ss -o state established '( dport = :http or sport = :http )'       # Display all established HTTP connections
+sudo ss dst 192.168.1.2                                                 # Show all ports connected from remote IP 192.168.1.2
+sudo ss dst 192.168.1.10:http                                           # Find connections made by remote IP 192.168.1.10:http to our server
+sudo ss -x src /tmp/.X11-unix/*                                         # Find all local processor connected to X Server
+````
 
 #### SS - filters
 | Key/Command | Description |
