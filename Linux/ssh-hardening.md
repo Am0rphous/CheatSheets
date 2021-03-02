@@ -5,13 +5,12 @@
 
 ## Setup and install
 ````
-sudo apt-get install openssh-server         # installs ssh server
-sudo apt install fail2ban                   # software to limit brute force authentication attempts
-sudo systemctl enable sshd                  # enable the service
-sudo systemctl restart sshd                 # restarts the service
-sudo ufw allow ssh                          # open port 22 in firewall
-ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' \
-           -b 4096 -t rsa
+sudo apt-get install openssh-server                               # installs ssh server
+sudo apt install fail2ban                                         # software to limit brute force authentication attempts
+sudo systemctl enable sshd                                        # enable the service
+sudo systemctl restart sshd                                       # restarts the service
+sudo ufw allow ssh                                                # open port 22 in firewall
+ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa   #created 4k bits key
 ````
 
 ## options you should change
