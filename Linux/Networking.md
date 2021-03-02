@@ -6,6 +6,10 @@
 
 ## Check open ports
 ````powershell
+sudo lsof -nP -iTCP -sTCP:LISTEN
+sudo netstat -tulpn
+sudo ss -tulpn
+````
 
 ### SS - investigate sockets
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
