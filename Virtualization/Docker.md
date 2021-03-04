@@ -8,8 +8,11 @@
 ### Cleanup
 ````powershell
 docker system df
-docker system prune -a
 docker image prune --all
+docker volume prune
+docker system prune -a
+docker container prune
+docker system prune --volumes       #does the trick
 
 ````
 
