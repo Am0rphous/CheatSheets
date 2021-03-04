@@ -5,7 +5,13 @@
 - [Docker docs](https://docs.docker.com/engine/reference/commandline/dockerd/)
 - [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 
+### Cleanup
+````powershell
+docker system df
+docker system prune -a
+docker image prune --all
 
+````
 
 ## Images
 | Key/Command | Description |
