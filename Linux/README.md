@@ -174,6 +174,7 @@ touch myfile                                    #creates empty file
 ````powershell
 
 du -a /var | sort -n -r | head -n 10
+du -hs * | sort -rh | head -n 10
 du -hsx * | sort -rh | head -10
 cd /path/to/directory && du -hsx * | sort -rh | head -10
 sudo du -a /home | sort -n -r | head -n 10
