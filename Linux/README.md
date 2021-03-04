@@ -170,6 +170,23 @@ mkdir -v test                                   #v=verbose
 mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
 touch myfile                                    #creates empty file
 ````
+### Find large files
+````powershell
+
+du -a /var | sort -n -r | head -n 10
+du -hsx * | sort -rh | head -10
+cd /path/to/directory && du -hsx * | sort -rh | head -10
+sudo du -a /home | sort -n -r | head -n 10
+find / -size +100M -ls
+find / -size +100M -size -200M -ls
+sudo find / -type f -printf “%s\t%p\n” | sort -n | tail -1
+find $HOME -type f -printf ‘%s %p\n’ | sort -nr | head -10
+````
+Find top 10 files and directories consuming maximum disk space [source](https://sourcedigit.com/24840-how-to-find-large-files-in-linux-ubuntu/)
+````powershell
+alias ducks='du -cks * | sort -rn | head'
+ducks
+````
 
  ### File Compression
  File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
