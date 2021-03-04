@@ -36,8 +36,7 @@ cd chkrootkit-0.54/
 make sense
 ./chkrootkit
 ````
-
-Rkhunter
+### Rkhunter
 Download latest version from [rkhunter.sourceforge.net](http://rkhunter.sourceforge.net)
 ````powershell
 tar -xvf rkhunter-1.4.6.tar.gz 
