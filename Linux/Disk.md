@@ -1,6 +1,6 @@
 # Disk
 
-## Creating Bootable USB
+### Creating Bootable USB
 - dd
 ````powershell
 sudo umount /dev/sdb*
@@ -12,7 +12,7 @@ sudo dd if=ubuntu.iso of=/dev/sdb status=progress oflag=sync bs=4M
 Monitor the progress
 ````powershell
 pgrep –l ‘^dd$’
-kill –USR1 3443         #3443 is the dd process id. Iit will print copying process statics.
+kill –USR1 3443         #3443 is the dd process id. It will print copying process statics.
 ````
 
 ### fschk - file system consistency check
