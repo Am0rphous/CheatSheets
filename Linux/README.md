@@ -193,10 +193,15 @@ ducks
  File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````powershell
 7z x archive.7z                             # sudo apt install p7zip-full
-gzip -k core.c                              #compress core.c file and removes the original file
-sudo apt install xz-utils                   #usually installed as default
-tar -xf file.tar.xz                         #x = extract. f=filename
-tar -xvfz   fil.tar / fil.tgz               #extracts .tar or .tgz files
+gzip -k core.c                              # compress core.c file and removes the original file
+sudo apt install xz-utils                   # usually installed as default
+tar -xf file.tar.xz                         # x = extract. f=filename
+tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
+tar -xf file_name.tar -C /target/folder     # extracts to new folder
+````
+Extract each file to new folder with same name
+````powershell
+for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
 ````
 
 ## Help
