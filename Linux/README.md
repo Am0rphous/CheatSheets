@@ -361,6 +361,7 @@ sudo systemctl list-unit-files | grep enabled           #lists enabled services
 | string="A String With Text" | Creates a string with text |
 | echo "${string,,}" | Converts to lower case |
 | echo "${string^^}" | Converts to upper case |
+| column -s, -t <tmp.csv | Pretty print a simple csv |
 
 Sorting (sources [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file),
 ````powershell
