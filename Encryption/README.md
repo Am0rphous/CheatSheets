@@ -43,3 +43,6 @@ echo "stockexchange.com" | openssl rsautl -encrypt -inkey rsa_key.pub -pubin -ou
 string=`openssl rsautl -decrypt -inkey rsa_key.pri -in secret.dat `; echo $string
 stockexchange.com
 ````
+
+## TLS
+- [TLS Cipher String Cheat Sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/TLS_Cipher_String_Cheat_Sheet.md)
