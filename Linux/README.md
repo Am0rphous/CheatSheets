@@ -407,3 +407,17 @@ Play from webcam
 sudo apt install ffmpeg
 ffplay /dev/video0
 ````
+
+## Users and groups
+````powershell
+groups peter
+su - peter                          #switch to user peter
+sudo adduser mike
+sudo usermod -aG sudo mike
+````
+sudoers: `/etc/sudoers`
+````
+sudo touch /etc/sudoers.d/peter
+echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
+
+````
