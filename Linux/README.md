@@ -395,7 +395,9 @@ Listing
 lsusb
 ls /proc/bus/usb
 lspci
+usb-devices 
 ````
+
 Webcam
 ````powershell
 sudo apt-get install v4l-utils
