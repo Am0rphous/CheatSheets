@@ -352,6 +352,8 @@ ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 service ssh status                                      #option 1: shows service status
 systemctl status ssh                                    #option 2: shows service status
 systemctl enable ssh                                    #enables service ssh
+systemctl enable tor1                                   #enable new service tor1
+systemctl --type=service                                #list loaded services
 sudo systemctl list-unit-files | grep enabled           #lists enabled services
 ````
 
