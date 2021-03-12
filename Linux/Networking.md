@@ -65,10 +65,12 @@ sudo ss -x src /tmp/.X11-unix/*                                         # Find a
 | sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
 #### NetStat
-| Key/Command | Description |
-| ----------- | ----------- |
-| netstat | |
-| | |
+Commands
+````powershell
+sudo netstat -tulpn
+sudo netstat -peanut
+sudo netstat -peanut | grep ":8000 "
+````
 
 #### Nmap - Network Mapper
 ````powershell
