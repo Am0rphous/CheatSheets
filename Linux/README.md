@@ -21,6 +21,7 @@
 | 15 | [**Services**](#Services) |
 | 16 | [**Text**](#text) |
 | 17 | [**Time and date**](#time-and-date) |
+| 18 | [**Variables**](#Variables) |
 
 <br >
 <br >
@@ -427,4 +428,9 @@ sudoers: `/etc/sudoers`
 sudo touch /etc/sudoers.d/peter
 echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
 
+````
+
+## Variables
+````powershell
+read -p "Write the path: " variableName
 ````
