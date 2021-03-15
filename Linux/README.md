@@ -379,15 +379,18 @@ awk '!seen[$0]++' ips.txt | wc -l
 
 ## Time and date
 ````powershell
-cal             #Displays a calender in terminal |
+cal                                 #Displays a calender in terminal
 date
-ncal            #Another calender commmand
-ncal -w         #Print the number of the week below each week column |
-ncal year       #Displays calender for year 'year' |
-ncal 2001       #Displays calender for year 2001 |
-time command    #times a command
-time lsof       #times the lsof command
+ncal                                #Another calender commmand
+ncal -w                             #Print the number of the week below each week column
+ncal year                           #Displays calender for year 'year'
+ncal 2001                           #Displays calender for year 2001
+now=$(date +%Y%m%d-%H%M%S)          #creates variable in format YearMonthDay-HourMinutesSeconds
+time command                        #times a command
+time lsof                           #times the lsof command
 ````
+
+
 User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
  https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
  
