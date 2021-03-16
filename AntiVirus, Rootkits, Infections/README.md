@@ -47,3 +47,11 @@ cd rkhunter-1.4.6
 rkhunter --check                              #manual check
 /var/log/rkhunter.log                         #log file
 ````
+You might want to change these in `/etc/rkhunter.conf`
+
+````powershell
+MIRRORS_MODE=1          to this -->   MIRRORS_MODE=0
+UPDATE_MIRRORS=0        to this -->   PDATE_MIRRORS=1
+WEB_CMD="/bin/false"    to this -->   WEB_CMD=""
+rkhunter --update
+````
