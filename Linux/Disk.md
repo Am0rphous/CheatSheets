@@ -1,6 +1,11 @@
 # Disk
 
-### Creating Bootable USB
+To list size of each folder and sort the result, run this command:
+````powershell
+du -smh * | sort -nr
+````
+
+## Creating Bootable USB
 - dd
 ````powershell
 sudo umount /dev/sdb*
@@ -15,7 +20,7 @@ pgrep –l ‘^dd$’
 kill –USR1 3443         #3443 is the dd process id. It will print copying process statics.
 ````
 
-### fschk - file system consistency check
+## fschk - file system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -25,7 +30,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | fchk -A | checking all filesystems. The list is taken from /etc/fstab |
 | touch /forcefchk | forces computer to check disk at next reboot |
 
-### LVM
+## LVM
 ````powershell
 pvcreate /dev/sdb1
 pvdisplay
@@ -41,18 +46,18 @@ lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
 ````
 
-### Format
+## Format
 ````powershell
 mkfs.ext4 /dev/sdb1
 ````
 
-### Mounting / Unmounting
+## Mounting / Unmounting
 ````powershell
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
 sudo mount -a                              #mount all partitions from /ect/fstab
 ````
-### Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
+## Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
 ````powershell
 sudo apt-get install nfs-common
@@ -78,7 +83,7 @@ On the NAS server do:
   - Enable asynchronous MARKED
   - Click "Ok".
 
-### Scanning for new disks
+## Scanning for new disks
 ````powershell
 ioscan -fnC disk
 ls /sys/class/scsi_host
