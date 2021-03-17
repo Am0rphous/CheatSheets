@@ -17,7 +17,7 @@
 | 11 | [**Password generation**](#Password-generation) |
 | 12 | [**Power**](#Power) |
 | 13 | [**Remoting**](#remoting) |
-| 14 | [**Searching after stuff**](#earching-after-stuff) |
+| 14 | [**Searching after stuff**](#searching-after-stuff) |
 | 15 | [**Services**](#Services) |
 | 16 | [**Text**](#text) |
 | 17 | [**Time and date**](#time-and-date) |
