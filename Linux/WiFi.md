@@ -1,5 +1,6 @@
 # W i F i
 
+- [Installing Broadcom Wireless Drivers (old article from 2011)](https://askubuntu.com/questions/55868/installing-broadcom-wireless-drivers/60395#60395)
 - [linuxwireless.sipsolutions.net](http://linuxwireless.sipsolutions.net)
 
 ## Commands
