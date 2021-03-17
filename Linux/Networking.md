@@ -4,11 +4,13 @@
 - https://www.tecmint.com/ss-command-examples-in-linux/
 - Other: dig, host, ip
 
-## Check open ports
+## Check open ports quick
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
-sudo netstat -tulpn
 sudo ss -tulpn
+sudo netstat -tulpn
+sudo netstat -peanut
+sudo netstat -peanut | grep ":80 "
 ````
 
 ### SS - investigate sockets
