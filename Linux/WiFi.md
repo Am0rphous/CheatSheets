@@ -3,6 +3,12 @@
 - [Installing Broadcom Wireless Drivers (old article from 2011)](https://askubuntu.com/questions/55868/installing-broadcom-wireless-drivers/60395#60395)
 - [linuxwireless.sipsolutions.net](http://linuxwireless.sipsolutions.net)
 
+Get interface info
+````powershell
+sudo iw dev
+````
+
+
 ## Commands
 ````powershell
 nmcli                           # command-line tool for controlling NetworkManager
@@ -17,7 +23,47 @@ nmcli d connect wlp9s0
 nmcli radio wifi on/off
 ````
 
+## List interfaces
+````powershell
+iwconfig
+````
+
+## monitor mode
+With iwconfig
+````powershell
+sudo ifconfig wlan0 down
+sudo iwconfig wlan0 mode monitor
+sudo ifconfig wlan0 up
+sudo systemctl stop NetworkManager    #might need to be stopped because is might prevent monitor mode
+````
+
+With iw
+````powershel
+sudo ip link set wlan0 down
+sudo iw wlan0 set monitor control
+sudo ip link set wlan0 up
+````
+
+With Aircrack/airmon-ng
+````powershell
+sudo airmon-ng check
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0
+sudo airmon-ng stop wlan0mon
+sudo systemctl start NetworkManager
+````
+
 ## nmtui
 ````powershell
 nmtui
+````
+## wifi-qr
+````powershell
+wifi-qr
+Please use	g for GUI Main Menu 
+			      c for WiFi QR Create GUI
+			      t for WiFi QR Create Terminal
+			      s for QR Scan and Auto Connect WiFi
+			      q for QR Scan and Connect WiFi GUI
+			      v for WiFi-QR Version is 0.2
 ````
