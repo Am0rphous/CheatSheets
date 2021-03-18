@@ -214,6 +214,7 @@ man command
 man ipconfig
 ````
 ## Kernel
+- [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
 Commands
 ````
 cat /proc/version
