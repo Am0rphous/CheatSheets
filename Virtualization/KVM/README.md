@@ -26,6 +26,9 @@ Installation:
 ````
 sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
 sudo service libvirtd start
+usermod -aG libvirt $USER
+usermod -aG kvm $USER
+
 ````
 ## Usage
 ````powershell
