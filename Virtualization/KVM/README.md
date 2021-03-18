@@ -59,7 +59,8 @@ To get information about different OSes, run `osinfo-query os` which can be inst
 ## Converting OVA format
 ````powershell
 tar xvf MyAppliance.ova
-qemu-img convert -O qcow2 MyAppliance-disk1.vmdk myNewDiskName.qcow2
+qemu-img convert -f vmdk sift-2020.2.0-disk1.vmdk -O qcow2 sift.qcow2
+
 ````
 
 ## Tools
