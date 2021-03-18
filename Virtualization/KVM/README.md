@@ -14,26 +14,26 @@ https://blog.programster.org/kvm-cheatsheet
 - [KVM](https://www.kernel.org/doc/html/latest/virt/kvm/index.html)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
-### Enable Virsh Console Access For KVM Guests
+## Enable Virsh Console Access For KVM Guests
 ````
 systemctl enable serial-getty@ttyS0.service
 systemctl start serial-getty@ttyS0.service
 ````
 
-### Setup
+## Setup
 Installation:
 ````
 sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
 sudo service libvirtd start
 ````
-| Key/Command | Description |
-| ----------- | ----------- |
-| sudo virsh list --all |
-| virsh shutdown vmName | poweroff vm |
-| virsh shutdown vm-dev01 | poweroff vm-dev01 |
-| virsh domrename vm01-clone1 vm01 | rename vm01-clone to vm01
-| kvm_stat | Displays KVM statistics |
-
+## Usage
+````powershell
+sudo virsh list --all
+virsh shutdown vmName                 poweroff vm |
+virsh shutdown vm-dev01               poweroff vm-dev01
+virsh domrename vm01-clone1 vm01      rename vm01-clone to vm01
+kvm_stat                              Displays KVM statistics
+````
 
 ### Package description
 ````
