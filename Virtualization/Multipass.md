@@ -7,3 +7,15 @@
 ````powershell
 sudo snap install multipass
 ````
+## Find available images
+````powershell
+multipass find
+````
+##Launch a fresh instance of the current Ubuntu LTS
+````powershell
+multipass launch ubuntu
+````
+## Check out the running instances
+````powershell
+multipass list
+````
