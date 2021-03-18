@@ -37,7 +37,7 @@ kvm_stat                              Displays KVM statistics
 ````
 
 ### Package description
-````
+````powershell
 qemu                #The Quick Emulator allows hardware virtualization.
 qemu-kvm            #main KVM package.
 libvritd-daemon     #virtualization daemon.
@@ -47,13 +47,19 @@ kvmtool            #contains some diagnostics and debugging tools for KVM.
 ````
 
 ### Usefull commands
-````
+````powershell
 sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --graphics spice --location=/home/Downloads/deepin-20Beta-desktop-amd64.iso --network bridge:vibr0 
 service qemu-kvm status
 ````
 To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
 
-### Tools
+## Converting OVA format
+````powershell
+tar xvf MyAppliance.ova
+qemu-img convert -O qcow2 MyAppliance-disk1.vmdk myNewDiskName.qcow2
+````
+
+## Tools
 - [MemFlow](https://github.com/memflow/memflow) - physical memory introspection framework [memflow.github.io](https://memflow.github.io).
   - [Memflow-cli](https://github.com/memflow/memflow-cli) - Memflow command line interface.
   - [Memflow-kvm](https://github.com/memflow/memflow-kvm) - Linux kernel module for memflow's KVM connector.
