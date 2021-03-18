@@ -8,6 +8,7 @@ https://fazlerabbi37.github.io/blogs/kvm_cheat_sheet.html
 https://adhioutlined.github.io/virtual/KVM-or-virsh-Cheat-Sheet/
 https://www.cyberciti.biz/faq/how-to-rename-kvm-virtual-machine-vm-domain-with-virsh-command/
 https://blog.programster.org/kvm-cheatsheet
+https://bobcares.com/blog/manage-kvm-guest-virtual-machines-using-virsh-commands/
 ````
 - [kvm/kvm.git](https://git.kernel.org/pub/scm/virt/kvm/kvm.git) - Development repo.
 - [linux-kvm.org](https://www.linux-kvm.org/page/Main_Page)
