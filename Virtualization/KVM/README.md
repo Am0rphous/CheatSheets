@@ -57,6 +57,7 @@ service qemu-kvm status
 To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
 
 ## Converting OVA format
+- [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 ````powershell
 tar xvf MyAppliance.ova
 qemu-img convert -f vmdk sift-2020.2.0-disk1.vmdk -O qcow2 sift.qcow2
