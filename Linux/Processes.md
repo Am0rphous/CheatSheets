@@ -1,12 +1,30 @@
 # Processess
 
+### List and count processes
 ````powershell
-ps
-ps auxw | grep nginx
-pidof nginx
+ps                              # display currently active processes
+ps auxw | grep nginx            # display processes from 'nginx'
+pidof nginx 
 pgrep nginx
 pgrep nginx | wc -l               # count number of processes
 pidof nginx | wc -w               # count number of processes
+````
+### Kill processes
+````powershell
+kill 1243               # kill process with pid id 1243
+killall proc            # kill all processes named proc
+````
+
+### Monitor processes
+````powershell
+top
+````
+
+### Jobs
+````powershell
+bg                  # lists stopped background jobs; resume a stopped job in the background
+fg                  # brings the most recent job to the foreground
+fg n                # brings job 'n' to the foreground
 ````
 
 ### Zombie processes
