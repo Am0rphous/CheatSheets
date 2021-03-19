@@ -120,6 +120,7 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  /usr/sbin/cron-apt              #testing cron-apt
  ````
  #### Unattended Upgrades
+ - [Unattended-upgrades](https://github.com/mvo5/unattended-upgrades) - Automatic installation of security upgrades on apt based systems.
  Installation
  ````powershell
  sudo apt update && sudo apt dist-upgrade -y
