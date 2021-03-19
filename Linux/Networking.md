@@ -4,6 +4,13 @@
 - https://www.tecmint.com/ss-command-examples-in-linux/
 - Other: dig, host, ip
 
+Commands
+````powershell
+ip a l                      # show ip config
+ip addr OR ip addr show     # show ip config
+ifconfig                    # show ip config
+````
+
 ## Check open ports quick
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
@@ -11,6 +18,16 @@ sudo ss -tulpn
 sudo netstat -tulpn
 sudo netstat -peanut
 sudo netstat -peanut | grep ":80 "
+````
+## Change IP/MAC address
+````powershell
+ip link set dev eth0 down
+macchanger -m 11:22:33:44:55:66 eth0
+ip link set dev eth0 up
+````
+## Set Static IP
+````powershell
+ip addr add 10.10.0.2/24 dev eth0
 ````
 
 ### SS - investigate sockets
