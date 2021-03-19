@@ -13,7 +13,13 @@ nslookup google.com
 resolvectl status
 ````
 
-## resolvconf
+## DNS lookup
+````powershell
+dig compass-security.com
+dig -x 8.8.8.8
+````
+
+## Resolvconf
 ````powershell
 sudo apt install resolvconf
 sudo systemctl enable resolvconf.service
