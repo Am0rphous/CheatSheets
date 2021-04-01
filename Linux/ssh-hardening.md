@@ -2,6 +2,7 @@
 ## SSH Hardening
 
 - [OpenSSH](https://www.openssh.com)
+- [SSH-Weak-DH](https://github.com/AonCyberLabs/SSH-Weak-DH)
 
 ## Setup and install
 ````
