@@ -9,7 +9,7 @@ sudo cp  /etc/fail2ban/jail.conf /etc/fail2ban/jail.local      #make a copy of t
 ## Make following changes to `/etc/fail2ban/jail.local `
 ````powershell
 bantime  = -1             #ban a user in numberof seconds. Minus one means the user is banned forever.
-findtime  = 10080m        #10 080 minutes equals a week. This will catch slow and stealthy login attempts.
+findtime = 10080m        #10 080 minutes equals a week. This will catch slow and stealthy login attempts.
 maxretry = 5              #a user don't need more than 5 attempts. If so, a user should have a lecture in password management.
 ````
 
