@@ -18,7 +18,7 @@ By default Fail2ban is set to `REJECT --reject-with icmp-port-unreachable` when 
 ````powershell
 sudo nano /etc/fail2ban/action.d/iptables-common.conf              #open the file
 
-#blocktype = REJECT --reject-with icmp-port-unreachable            #Comment out the two lines containing 'blocktype'
+#blocktype = REJECT --reject-with icmp-port-unreachable            #Comment out the two lines containing 'blocktype' which is under 'protocol = tcp' and '[Init?family=inet6]'
 
 blocktype = DROP                                                   #Make a new line with the following:
 ````
