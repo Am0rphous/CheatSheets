@@ -16,13 +16,11 @@ maxretry = 5              #a user don't need more than 5 attempts. If so, a user
 ## Make sure Fail2Ban drops packets
 By default Fail2ban is set to `REJECT --reject-with icmp-port-unreachable` when a user is blocked. This is unnecessary because we will use some of our uplink bandwith. An attacker won't know is the packet reached the destination, and will try to establish a TCP connection until timeout. This will waste time and resources for an attacker.
 ````powershell
-sudo nano /etc/fail2ban/action.d/iptables-common.conf                    #open the file
+sudo nano /etc/fail2ban/action.d/iptables-common.conf              #open the file
 
-#Comment out the two lines containing 'blocktype'
-#blocktype = REJECT --reject-with icmp-port-unreachable
+#blocktype = REJECT --reject-with icmp-port-unreachable            #Comment out the two lines containing 'blocktype'
 
-#Make a new line with the following:
-blocktype = DROP
+blocktype = DROP                                                   #Make a new line with the following:
 ````
 
 ## Restart service and make sure it starts after reboot
