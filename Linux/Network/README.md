@@ -36,6 +36,23 @@ ip link set dev eth0 up
 ip addr add 10.10.0.2/24 dev eth0
 ````
 
+## NetStat - _Network Statistics_
+_command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
+````powershell
+sudo netstat -tulpn
+sudo netstat -peanut
+sudo netstat -peanut | grep ":8000 "
+````
+
+## Nmap - Network Mapper
+````powershell
+nmap -v IP
+nmap -v 192.168.1.1/24
+nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
+nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
+nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
+````
+
 ## SS - investigate sockets
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
 ````powershell
@@ -92,22 +109,6 @@ big               # Opposite to bucket state
 | sudo ss \( sport = :http or sport = :https \) |
 | sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
-## NetStat - _Network Statistics_
-_command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
-````powershell
-sudo netstat -tulpn
-sudo netstat -peanut
-sudo netstat -peanut | grep ":8000 "
-````
-
-## Nmap - Network Mapper
-````powershell
-nmap -v IP
-nmap -v 192.168.1.1/24
-nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
-nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
-nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
-````
 
 ## TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
