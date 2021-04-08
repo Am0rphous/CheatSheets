@@ -5,7 +5,7 @@
 
 ### Base64
 Encoding
-````
+````powershell
 echo <string to encode> | base64
 echo testuser:testpass | base64             # results in: dGVzdHVzZXI6dGVzdHBhc3MK
 echo "ls -l |grep a" | base64               # results in: bHMgLWwgfGdyZXAgYQo=
@@ -13,7 +13,7 @@ base64 textfile.txt                         # encodes a file
 base64 textfile.txt > newfile.txt           # encodes a file and saves output to a new file
 ````
 Decoding
-````
+````powershell
 echo <string to encode> | base64 -d
 echo <string to encode> | base64 --decode
 echo cGFzc3dvcmQ= | base64 -d                         # results in ''password
