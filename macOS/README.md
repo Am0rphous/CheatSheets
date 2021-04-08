@@ -58,12 +58,13 @@ sudo tcpdump -Ii en0
 |sudo fuser -k 8080/tcp |Kill that process |
 | | |
 
-#### Service Management
-| Key/Command | Description |
-| ----------- | ----------- |
-| sudo launchctl list | Lists all macOS services |
-| sudo launchctl list '|' grep service | Lists services named 'service' |
-| sudo launchctl list | grep tor | Lists services named 'tor' |
+#### Launchctl - Service Management
+````powershell
+sudo launchctl list                         # lists all macOS services
+sudo launchctl list | grep service          # lists services named 'service'
+sudo launchctl list | grep tor              # lists services named 'tor'
+````
+
 
 #### Tips and Tricks
 ````
