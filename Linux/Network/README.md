@@ -58,22 +58,25 @@ sudo ss -x src /tmp/.X11-unix/*                                         # Find a
 | ----------- | ----------- |
 | sudo ss -4 state FILTER-NAME-HERE | Filters TCP IPv4 |
 | sudo ss -6 state FILTER-NAME-HERE | Filters TCP IPv6 |
-| established | |
-| syn-sent | |
-| syn-recv | |
-| fin-wait-1 | |
-| fin-wait-2 | |
-| time-wait | |
-| closed | |
-| close-wait | |
-| last-ack | |
-| listen | |
-| closing | |
-| all | All of the above states |
-| connected | All the states except for listen and closed |
-| synchronized | All the connected states except for syn-sent |
-| bucket | Show states, which are maintained as minisockets, i.e. time-wait and syn-recv |
-| big | Opposite to bucket state |
+#### Filter Names
+````powershell
+established
+syn-sent
+syn-recv
+fin-wait-1
+fin-wait-2
+time-wait
+closed
+close-wait
+last-ack
+listen
+closing
+all               # All of the above states
+connected         # All the states except for listen and closed
+synchronized      # All the connected states except for syn-sent
+bucket            # Show states, which are maintained as minisockets, i.e. time-wait and syn-recv
+big               # Opposite to bucket state
+````
 
 #### SS - filters
 | Key/Command | Description |
