@@ -93,7 +93,7 @@ big               # Opposite to bucket state
 | sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
 ## NetStat - `Network Statistics`
-`command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8.` [netstat.net](http://netstat.net/)
+_command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
 ````powershell
 sudo netstat -tulpn
 sudo netstat -peanut
