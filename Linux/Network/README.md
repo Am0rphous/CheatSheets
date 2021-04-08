@@ -3,7 +3,6 @@
 
 - https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7
 - https://www.tecmint.com/ss-command-examples-in-linux/
-- Other: dig, host, ip
 
 ## Commands worth knowing
 ````powershell
@@ -18,7 +17,7 @@ ping
 route
 ````
 
-## Check open ports quick
+#### Check open ports quick
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
 sudo ss -tulpn
@@ -26,18 +25,18 @@ sudo netstat -tulpn
 sudo netstat -peanut
 sudo netstat -peanut | grep ":80 "
 ````
-## Change IP/MAC address
+#### Change IP/MAC address
 ````powershell
 ip link set dev eth0 down
 macchanger -m 11:22:33:44:55:66 eth0
 ip link set dev eth0 up
 ````
-## Set Static IP
+#### Set Static IP
 ````powershell
 ip addr add 10.10.0.2/24 dev eth0
 ````
 
-### SS - investigate sockets
+## SS - investigate sockets
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
 ````powershell
 ss --help
@@ -90,7 +89,7 @@ sudo ss -x src /tmp/.X11-unix/*                                         # Find a
 | sudo ss \( sport = :http or sport = :https \) |
 | sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
-#### NetStat
+## NetStat
 Commands
 ````powershell
 sudo netstat -tulpn
@@ -98,7 +97,7 @@ sudo netstat -peanut
 sudo netstat -peanut | grep ":8000 "
 ````
 
-#### Nmap - Network Mapper
+## Nmap - Network Mapper
 ````powershell
 nmap -v IP
 nmap -v 192.168.1.1/24
@@ -107,7 +106,7 @@ nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
 nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
 ````
 
-#### TCPDump
+## TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
 ````powershell
@@ -121,13 +120,13 @@ sudo tcpdump -i eth0 host 10.10.1.1
 sudo tcpdump -i eth0 -s0 -w test.pcap
 sudo tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
 ````
-Remember
+#### Remember
 ````
-and or &&
-or or ||
-not or !
+and = &&
+or = ||
+not = !
 ````
-Size
+#### Size
 ````powershell
 tcpdump less 32
 tcpdump greater 64
