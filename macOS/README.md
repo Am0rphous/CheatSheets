@@ -35,6 +35,8 @@ diskutil unmount /dev/disk4
 ````
 
 #### Networking commands
+- [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
+
 ````
 sudo airportd en0 info
 sudo airportd en0 sniff 1
