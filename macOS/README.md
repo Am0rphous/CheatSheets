@@ -9,19 +9,19 @@ nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config
 
 #### Brew Package manager
 ````
-brew install cask               #deals with Graphical User Interface (GUI) 
-brew update
-brew outdated
-brew upgrade
-brew upgrade [package name]
-brew search [package name]
-brew install tor
-brew cask uninstall tor
+brew install cask                # deals with Graphical User Interface (GUI) 
+brew update                      # fetch the newest version of Homebrew and all formulae from GitHub using git(1) and perform any necessary migrations.
+brew outdated                    # list installed casks and formulae that have an updated version available.
+brew upgrade                     # upgrade outdated casks and outdated, unpinned formulae using the same options they were originally installed with, plus any appended brew formula options.
+brew upgrade [package name]      # upgrade specific package
+brew search [package name]       # searches for package
+brew install tor                 # installs package tor
+brew cask uninstall tor          # uninstalls tor
 brew cleanup
-brew info tor
+brew info tor                    #lists info about the tor package
 brew services list
-brew services start tor
-brew services restart tor|
+brew services start tor          # start tor service
+brew services restart tor        # restart tor service
 ````
 
 #### Disk
@@ -57,19 +57,13 @@ sudo tcpdump -Ii en0
 | sudo fuser 8080/tcp | Show all process on port 8080 |
 |sudo fuser -k 8080/tcp |Kill that process |
 | | |
-| | |
-| | |
-| | |
 
 #### Service Management
 | Key/Command | Description |
 | ----------- | ----------- |
-| sudo launchctl list | Lists services |
+| sudo launchctl list | Lists all macOS services |
 | sudo launchctl list '|' grep service | Lists services named 'service' |
 | sudo launchctl list | grep tor | Lists services named 'tor' |
-| | |
-| | |
-| | |
 
 #### Tips and Tricks
 ````
