@@ -9,6 +9,7 @@ Important paths
 
 Commands
 ````powershell
+host 172.217.21.174
 nslookup google.com
 resolvectl status
 ````
