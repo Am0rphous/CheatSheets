@@ -1,8 +1,8 @@
 
 # Linux Networking
-
-- https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7
-- https://www.tecmint.com/ss-command-examples-in-linux/
+- [12 ss Command Examples to Monitor Network Connections](https://www.tecmint.com/ss-command-examples-in-linux/)
+- [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
+- [tcp_flags.txt](https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7)
 
 ## Commands worth knowing
 ````powershell
@@ -17,7 +17,9 @@ ping
 route
 ````
 
-#### Check open ports quick
+#### Check open ports
+- [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
+
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
 sudo ss -tulpn
