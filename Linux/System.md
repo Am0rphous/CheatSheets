@@ -11,7 +11,7 @@ top                      # display Linux processes
 - [SysMon](https://github.com/MatthiasSchinzel/sysmon) - Graphical system monitor for linux, including information about CPU, GPU, Memory, HDD/SDD and your network connections. Similar to windows task manager.
 
 ## System Info
+- [Hardware.Info](https://github.com/jinjinov/hardware.info) - Battery, BIOS, CPU - processor, storage drive, keyboard, RAM - memory, monitor, motherboard, mouse, NIC - network adapter, printer, sound card - audio card, graphics card - video card. Hardware.Info is a .NET Standard 2.0 library and uses WMI on Windows, /dev, /proc, /sys on Linux and sysctl, system_profiler on macOS.
 - [Linux-system-info-tool](https://github.com/lucidtrip/linux-system-info-tool) - Might need a refreshment.
-- [Hardware.Info](https://github.com/jinjinov/hardware.info) - Battery, BIOS, CPU - processor, storage drive, keyboard, RAM - memory, monitor, motherboard, mouse, NIC - network adapter, printer, sound card - audio card, graphics card - video card. Hardware.Info is a .NET Standard 2.0 library and uses WMI on Windows, /dev, /proc, /sys on Linux and sysctl, system_profiler on macOS. 
 - [Sys-info by mskian](https://github.com/mskian/sys-info) - Get your Linux or Windows System Info 🗃.
 - [System-info by Peter-Moller](https://github.com/Peter-Moller/system-info) - Script to give overview of an Operating System.
