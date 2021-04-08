@@ -3,15 +3,6 @@
 - [CryptDecrypt](https://github.com/Va5c0/CryptDecrypt) - Encrypt your password or decrypt your hash. Multiple algorithms supported.
 - [CyberChef](https://gchq.github.io/CyberChef/)
 
-### Base62
-- [Base62](https://github.com/SiroDiaz/Base62) - PHP Base62 encoder and decoder for integers and big integers with Laravel 5 support.
-### Base64
-Encryption
-````
-echo < string to interpret > | base64
-echo testuser:testpass | base64
-````
-
 ### GPG
 ````
 gpg --encrypt -r recipient@example.com >tempfile
