@@ -1,6 +1,7 @@
 
 # Linux Networking
 - [12 ss Command Examples to Monitor Network Connections](https://www.tecmint.com/ss-command-examples-in-linux/)
+- [Host-info.sh by Peter-Moller](https://github.com/Peter-Moller/host-info) - Shell script to get various info about a server.
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [tcp_flags.txt](https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7)
 
