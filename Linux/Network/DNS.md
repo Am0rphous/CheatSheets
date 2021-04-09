@@ -33,7 +33,7 @@ NS Record            # Name server records delegate a domain (or subdomain) to a
 TXT Record           # Text records store text-based information regarding the domain. Typically, they might be used to suppress spoofed or forged email.
 SOA Record           #Start of authority records can hold a lot of information about the domain. Here, you can find the primary name server, the responsible party, a timestamp for changes, the frequency of zone refreshes, and a series of time limits for retries and abandons.
 TTL                  # Time to live is a setting for each DNS record that specifies how long a DNS precursor server is allowed to cache each DNS query. When that time expires, the data must be refreshed for subsequent requests.
-ANY                 # This tells dig to return every type of DNS record it can.
+ANY                  # This tells dig to return every type of DNS record it can.
 ````
 
 ## Resolvconf
