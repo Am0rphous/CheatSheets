@@ -223,6 +223,11 @@ uname -a
 uname -r            #kernel version
 uname -sr           #kernel name and version
 ````
+  ### Kernel Security
+  - [AppArmor](https://www.apparmor.net)
+  ````powershell
+  aa-status                       # display various information about the current AppArmor policy.
+  ````
 
 ## Loops
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
