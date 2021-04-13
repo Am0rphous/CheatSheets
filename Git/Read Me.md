@@ -2,7 +2,7 @@
 
 - [Gthub - Basic Writing and Formatting Syntax](https://docs.github.com/en/enterprise-server@2.20/github/writing-on-github/basic-writing-and-formatting-syntax)
 - [GitLive.net](https://gitlive.net)
-- 
+
 ## Install and setup
 ````
 sudo apt install git       #Linux
@@ -11,8 +11,8 @@ git init
 ````
 ## Git Large File Storage (LFS)
 - [An open source Git extension for versioning large files](https://git-lfs.github.com/)
-- [Source 2](https://ayunascode.medium.com/how-to-push-large-files-to-github-253d05cc6a09)
-- [Source 3](https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage)
+- [How to push large files to GitHub](https://ayunascode.medium.com/how-to-push-large-files-to-github-253d05cc6a09)
+- [Configuring Git Large File Storage](https://docs.github.com/en/github/managing-large-files/configuring-git-large-file-storage)
 ````
 brew install git-lfs       #MacOS
 git lfs install
