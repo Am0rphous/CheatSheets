@@ -19,6 +19,7 @@ killall proc            # kill all processes named proc
 ````powershell
 top
 ````
+- [pSpy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions
 
 ### Jobs
 ````powershell
