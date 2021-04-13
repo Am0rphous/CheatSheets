@@ -11,17 +11,17 @@
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
 | 8 | [**Files and Folders**](#Files-and-Folders) |
-|  | [**Help**](#Help) |
-| 9 | [**Kernel**](#Kernel) |
-| 10 | [**Loops**](#Loops) |
-| 11 | [**Password generation**](#Password-generation) |
-| 12 | [**Power**](#Power) |
-| 13 | [**Remoting**](#remoting) |
-| 14 | [**Searching after stuff**](#searching-after-stuff) |
-| 15 | [**Services**](#Services) |
-| 16 | [**Text**](#text) |
-| 17 | [**Time and date**](#time-and-date) |
-| 18 | [**Variables**](#Variables) |
+| 9 | [**Help**](#Help) |
+| 10 | [**Kernel**](#Kernel) |
+| 11 | [**Loops**](#Loops) |
+| 12 | [**Password generation**](#Password-generation) |
+| 13 | [**Power**](#Power) |
+| 14 | [**Remoting**](#remoting) |
+| 15 | [**Searching after stuff**](#searching-after-stuff) |
+| 16 | [**Services**](#Services) |
+| 17 | [**Text**](#text) |
+| 18 | [**Time and date**](#time-and-date) |
+| 19 | [**Variables**](#Variables) |
 
 <br >
 <br >
@@ -228,6 +228,14 @@ uname -sr           #kernel name and version
   ````powershell
   aa-status                       # display various information about the current AppArmor policy.
   ````
+  Check for unsigned kernel modules
+  ````powershell
+  for mod in $(lsmod | tail -n +2 | cut -d' ' -f1); do modinfo ${mod} | grep -q "signature" || echo "no signature for module: ${mod}" ; done
+  ````
+   Checks if Secure Boot is enabled:
+   ````powershell
+   sudo mokutil --sb-state
+   ````
 
 ## Loops
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
