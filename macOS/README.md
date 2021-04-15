@@ -34,6 +34,11 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 diskutil unmount /dev/disk4
 ````
 
+## DNS
+````powershell
+sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
+````
+
 ### Networking commands
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
