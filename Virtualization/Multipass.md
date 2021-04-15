@@ -5,8 +5,8 @@
 
 ## Install
 ````powershell
-brew install --cask multipass             # macOS
-sudo snap install multipass               # Linux
+brew install --cask multipass    # macOS
+sudo snap install multipass      # Linux
 
 ````
 ## Find available images
@@ -33,8 +33,8 @@ multipass list
 
 ## Log files
 ````powershell
-journalctl --unit snap.multipass*             # Linux
-/Library/Logs/Multipass/multipassd.log        # macOS
+journalctl --unit snap.multipass*          # Linux
+/Library/Logs/Multipass/multipassd.log     # macOS
 ````
 
 ## Enter VMs
