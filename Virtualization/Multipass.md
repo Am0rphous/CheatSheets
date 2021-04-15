@@ -15,14 +15,16 @@ multipass find        # display available images to create instances from
 ````
 ## Launch VMs
 ````powershell
-multipass launch                  # download and creates a fresh instance of the current Ubuntu named 'primary'
-multipass launch --name test      # create a VM with name test
-multipass launch ubuntu           # creates an Ubuntu vm with latest version
-multipass launch xenial           # 16.04
-multipass launch bionic           # 18.04
-multipass launch focal            # 20.04
-multipass launch groovy           # 20.10
-multipass info sharp-horntail     # VMs gets created with different names
+multipass launch                                                 # download and creates a fresh instance of the current Ubuntu named 'primary'
+multipass launch --name test                                     # create a VM with name test
+multipass launch ubuntu                                          # creates an Ubuntu vm with latest version
+multipass launch xenial                                          # 16.04
+multipass launch bionic                                          # 18.04
+multipass launch focal                                           # 20.04
+multipass launch groovy                                          # 20.10
+multipass info sharp-horntail                                    # VMs gets created with different names
+multipass launch xenial -n test -c 4 -m 2G -d 10G                # creates 'test' with latest Ubuntu, 4 cores, 2 GB RAM and 10 GB disk
+multipass launch bionic --name dev --cpus 2 --mem 2G --disk 20G
 ````
 ## List VMs
 ````powershell
