@@ -87,10 +87,13 @@ sha256sum /dev/sr0                  #E.g. c58ea020874bae8712d5715a...
 ````
 
 ## Crontab
+- [Crontab Calculator](https://crontab.guru)
+- [Crontab.cronhub.io](https://crontab.cronhub.io/)
 Enter crontab: `crontab -e`
 ````powershell
 tar -cJpf /media/NAS/backups/backup.tar.xz /home
 0 0 * * 0 root (apt-get update && apt-get -y -d upgrade) > /dev/null
+minute - hour - day of month - month - day of week
 ````
 Cron routines can be found in these files and folders
 - /ect/crontab
