@@ -29,6 +29,12 @@ multipass info sharp-horntail     # VMs gets created with different names
 multipass list
 ````
 
+## Log files
+````powershell
+journalctl --unit snap.multipass*             # Linux
+/Library/Logs/Multipass/multipassd.log        # macOS
+````
+
 ## Enter VMs
 ````powershell
 multipass shell primary
