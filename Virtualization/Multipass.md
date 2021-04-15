@@ -46,7 +46,7 @@ multipass shell sharp-horntail
 
 ## Start, stop, suspend, delete VMs
 ````powershell
-multipass start --all                 # start all VMs
+multipass start --all                # start all VMs
 multipass start sharp-horntail
 multipass suspend sharp-horntail
 multipass stop sharp-horntail        # stop the instance first
