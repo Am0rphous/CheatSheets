@@ -2,12 +2,14 @@
 
 
 ````
-netstat -nap | grep "@/proc/udevd"
+netstat -nap | grep "@/proc/udevd"      # result should return nothing
 ````
 
-
+#### Linux/Ebury - OpenSSH backdoor trojan and credential stealer
+- [OPERATION WINDIGO](https://www.welivesecurity.com/wp-content/uploads/2014/03/operation_windigo.pdf)
 - [Source](https://ubuntuforums.org/showthread.php?t=2291968)
 ````
+find /lib* -type f -name libns2.so      # should return nothing
 ssh -G 2>&1 | grep -e illegal -e unknown -e Gg > /dev/null && echo "System clean" || echo "System infected"
 ````
 
