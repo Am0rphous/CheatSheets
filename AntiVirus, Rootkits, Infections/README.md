@@ -47,7 +47,7 @@ cd rkhunter-1.4.6
 rkhunter --check                              #manual check
 /var/log/rkhunter.log                         #log file
 ````
-You might want to change these in `/etc/rkhunter.conf`
+#### You might want to change these in `/etc/rkhunter.conf`
 
 ````powershell
 MIRRORS_MODE=1          to this -->   MIRRORS_MODE=0
@@ -55,3 +55,11 @@ UPDATE_MIRRORS=0        to this -->   PDATE_MIRRORS=1
 WEB_CMD="/bin/false"    to this -->   WEB_CMD=""
 rkhunter --update
 ````
+#### Usage
+````powershell
+sudo rkhunter --check --enable all --disable none
+sudo rkhunter --update
+sudo rkhunter --check
+sudo rkhunter --check --bindir /mnt/safe           # tells rkhunter which directories to look in to find the various commands it requires:
+````
+
