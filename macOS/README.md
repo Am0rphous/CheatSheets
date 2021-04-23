@@ -63,6 +63,26 @@ sudo tcpdump -Ii en0
 |sudo fuser -k 8080/tcp |Kill that process |
 | | |
 
+## Proxychains
+Install proxychains-ng with
+````powershell
+brew install proxychains-ng
+proxychains4 curl ifconfig.me
+````
+Be aware: Sometimes you may encounter no IP change, e.g.
+````powershell
+proxychains4 curl ifconfig.me
+[proxychains] config file found: /usr/local/etc/proxychains.conf
+[proxychains] preloading /usr/local/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
+(PUBLIC-IP-HERE)  
+````
+By copying the executable to another location, we resolve this. E.g. `cp /usr/local/bin/wget /tmp/`
+Then run:
+### Launchctl - Service Management
+````powershell
+proxychains4 /tmp/wget https://google.com
+````
+
 ### Launchctl - Service Management
 ````powershell
 sudo launchctl list                         # lists all macOS services
