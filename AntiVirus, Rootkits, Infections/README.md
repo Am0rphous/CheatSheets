@@ -37,6 +37,10 @@ tar -xvf chkrootkit.tar.gz
 cd chkrootkit-0.54/
 make sense
 ./chkrootkit
+./chkrootkit -r /mnt/                         # check this folder and it's sub folders
+./chkrootkit -p /cdrom/bin:/floppy/mybin      # adds binary paths
+./chkrootkit -x | more
+./chkrootkit -x | egrep '^/'                  # pathnames inside system commands
 ````
 ### Rkhunter
 Download latest version from [rkhunter.sourceforge.net](http://rkhunter.sourceforge.net)
