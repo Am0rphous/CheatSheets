@@ -133,8 +133,10 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
  ````powershell
  Unattended-Upgrade::Origins-Pattern {
-        "origin=Debian,codename=${distro_codename},label=Debian";
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        "${distro_id}:${distro_codename}";
+        "${distro_id}:${distro_codename}-security";
+        "${distro_id}ESMApps:${distro_codename}-apps-security";
+        "${distro_id}ESM:${distro_codename}-infra-security";
         "origin=TorProject";
 };
 Unattended-Upgrade::Package-Blacklist {
