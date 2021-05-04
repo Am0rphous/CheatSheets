@@ -145,8 +145,8 @@ Unattended-Upgrade::MinimalSteps "true";
 Unattended-Upgrade::InstallOnShutdown "false";
 Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
 Unattended-Upgrade::Automatic-Reboot "false";
-//if automatic-reboot is true, then this applies
-//Unattended-Upgrade::Automatic-Reboot-Time "06:00";
+// if automatic-reboot is true, then this applies
+// Unattended-Upgrade::Automatic-Reboot-Time "06:00";
 Unattended-Upgrade::Verbose "true";
  ````
  Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`
