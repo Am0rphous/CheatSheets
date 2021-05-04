@@ -141,6 +141,13 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
 };
 Unattended-Upgrade::Package-Blacklist {
 };
+Unattended-Upgrade::MinimalSteps "true";
+Unattended-Upgrade::InstallOnShutdown "false";
+Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+Unattended-Upgrade::Automatic-Reboot "false";
+//if automatic-reboot is true, then this applies
+//Unattended-Upgrade::Automatic-Reboot-Time "06:00";
+Unattended-Upgrade::Verbose "true";
  ````
  Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`
  ````powershell
