@@ -32,6 +32,7 @@ fg n                # brings job 'n' to the foreground
 ### Zombie processes
 ````powershell
 ps aux | grep 'Z'
+ps afuwwx | less +u -p'^(\S+\s+){7}Z.*'
 ps axo pid=,stat= | awk '$2~/^Z/ { print }'
 ````
 check [this later](https://askubuntu.com/questions/111422/how-to-find-zombie-process)
