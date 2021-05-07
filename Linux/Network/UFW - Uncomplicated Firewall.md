@@ -4,6 +4,8 @@ for later:
 
 https://www.configserverfirewall.com/ufw-ubuntu-firewall/ufw-allow-ip-address-ubuntu-firewall/
 
+sudo ufw logging low/medium
+
 | Key/Command | Description |
 | ----------- | ----------- |
 |sudo ufw allow ssh | Allows SSH traffic |
