@@ -10,7 +10,7 @@
 docker system df
 docker image prune --all
 docker volume prune
-docker system prune -a
+docker system prune -a              # removes all stopped containers, networks not used by at least one container, all build cache and all images without at least one container associated to them.
 docker container prune
 docker system prune --volumes       #does the trick
 
