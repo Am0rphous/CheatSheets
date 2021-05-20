@@ -19,6 +19,9 @@ killall proc            # kill all processes named proc
 ### Monitor processes
 ````powershell
 top
+htop             # sudo apt install htop
+glances          # sudo apt install glances
+lsof -p $PID     # list open files and network streams
 ````
 - [pSpy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions
 
