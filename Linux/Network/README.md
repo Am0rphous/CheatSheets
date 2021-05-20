@@ -156,3 +156,5 @@ tshark -r -V capture.pcap                           # reads the capture file wit
 tshark -T x                                         # list available output formats. This can be: pdml, ps, psml, json, jsonraw, ek, text, tabs
 tshark -r capture.pcap -T text > output.txt         # reads file and converts it to text.
 ````
+## WiresHark
+- [Wireshark Cheat Sheet – Commands, Captures, Filters & Shortcuts](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
