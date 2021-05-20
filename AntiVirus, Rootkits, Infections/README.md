@@ -68,4 +68,21 @@ sudo rkhunter --update
 sudo rkhunter --check
 sudo rkhunter --check --bindir /mnt/safe           # tells rkhunter which directories to look in to find the various commands it requires:
 ````
-
+## Process Hunting
+Install
+````powershell
+sudo apt install unhide unhide.rb
+````
+Usage unhide.rb
+````powershell
+sudo unhide.rb       # no need for options
+````
+Usage unhide
+````powershell
+sudo unhide test-name
+sudo unhide brute              # test can be: brute, proc, procall, procfs, quick, reverse, sys
+````
+Unhide also comes with `unhide-tcp` which naturally is used to find hidden TCP/UDP ports.
+````powershell
+sudo  unhide-tcp
+````
