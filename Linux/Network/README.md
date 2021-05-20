@@ -27,6 +27,9 @@ sudo ss -tulpn
 sudo netstat -tulpn
 sudo netstat -peanut
 sudo netstat -peanut | grep ":80 "
+sudo netstat -ltp | egrep -- '-[[:space:]]*$'
+sudo netstat --program --numeric-hosts --numeric-ports --extend       # find -inum 152555007
+sudo lsof -i TCP:443
 ````
 #### Change IP/MAC address
 ````powershell
