@@ -69,6 +69,7 @@ sudo rkhunter --check
 sudo rkhunter --check --bindir /mnt/safe           # tells rkhunter which directories to look in to find the various commands it requires:
 ````
 ## Process Hunting
+- [launchpad.net/unhide.rb](https://launchpad.net/unhide.rb) - Unhide.rb is a tool that attempts to find processes hidden by rootkits. It does that by scanning for processes in many different ways, and then lists processes found through some means but not through others.
 Install
 ````powershell
 sudo apt install unhide unhide.rb
