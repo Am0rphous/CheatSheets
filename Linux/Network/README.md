@@ -126,6 +126,7 @@ udo tcpdump -i eth0 dst 10.10.1.20
 sudo tcpdump -i eth0 host 10.10.1.1
 sudo tcpdump -i eth0 -s0 -w test.pcap
 sudo tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
+sudo tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
 ````
 #### Remember
 ````
