@@ -15,6 +15,11 @@ pidof nginx | wc -w               # count number of processes
 kill 1243               # kill process with pid id 1243
 killall proc            # kill all processes named proc
 ````
+Process stalling
+````powershell
+kill -SIGSTOP $PID      # stop a process without destroying its resources
+kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
+````
 
 ### Monitor processes
 ````powershell
