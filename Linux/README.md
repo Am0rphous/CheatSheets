@@ -137,22 +137,31 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  Unattended-Upgrade::Origins-Pattern {
         "${distro_id}:${distro_codename}";
         "${distro_id}:${distro_codename}-security";
-        "${distro_id}ESMApps:${distro_codename}-apps-security";
+        "${distro_id}ESM:${distro_codename}";
         "${distro_id}ESM:${distro_codename}-infra-security";
-        "origin=TorProject";
+        "${distro_id}:${distro_codename}-updates";
+        "${distro_id}:${distro_codename}-proposed";
+        "${distro_id}:${distro_codename}-backports";
+        // The Onion Router
+        // "origin=TorProject";
 };
 Unattended-Upgrade::Package-Blacklist {
 };
+Unattended-Upgrade::DevRelease "auto";
+Unattended-Upgrade::AutoFixInterruptedDpkg "true";
 Unattended-Upgrade::MinimalSteps "true";
 Unattended-Upgrade::InstallOnShutdown "false";
 Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
-Unattended-Upgrade::Automatic-Reboot "false";
-// if automatic-reboot is true, then this applies
-// Unattended-Upgrade::Automatic-Reboot-Time "06:00";
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-WithUsers "false";
+Unattended-Upgrade::Automatic-Reboot-Time "06:00";
 Unattended-Upgrade::Verbose "true";
+Unattended-Upgrade::Debug "true";
  ````
  Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`
  ````powershell
+APT::Periodic::Enable "1";
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 APT::Periodic::Download-Upgradeable-Packages "2";
@@ -160,7 +169,7 @@ APT::Periodic::AutocleanInterval "30";
  ````
  Test config
  ````
- sudo unattended-upgrade -d
+ sudo unattended-upgrade -d -v
  ````
 
  ##### Log file commands
