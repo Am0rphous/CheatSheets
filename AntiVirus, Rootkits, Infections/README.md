@@ -10,6 +10,7 @@ find /var/www -name "*.php" -exec grep -l "eval(" {} \;                      # S
 
 #### Linux/Ebury - OpenSSH backdoor trojan and credential stealer
 - [OPERATION WINDIGO](https://www.welivesecurity.com/wp-content/uploads/2014/03/operation_windigo.pdf)
+- [Operation Windigo: Linux malware campaign that infected 500,000 Computers Worldwide](https://thehackernews.com/2014/03/operation-windigo-linux-malware.html)
 - [Source](https://ubuntuforums.org/showthread.php?t=2291968)
 ````
 find /lib* -type f -name libns2.so      # should return nothing
