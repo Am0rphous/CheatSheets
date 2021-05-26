@@ -19,6 +19,9 @@ chmod
 chown
 cp
 curl
+      curl ifconfig.me
+      curl -s --socks5-hostname 127.0.0.1:9050 ifconfig.me
+      
 ````
 ## D
 ````
