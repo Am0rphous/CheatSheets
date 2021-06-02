@@ -31,6 +31,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | touch /forcefchk | forces computer to check disk at next reboot |
 
 ## LVM
+- [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
 ````powershell
 pvcreate /dev/sdb1
 pvdisplay
