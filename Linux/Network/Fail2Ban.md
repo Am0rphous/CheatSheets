@@ -28,3 +28,9 @@ blocktype = DROP                                                   #Make a new l
 sudo service fail2ban restart
 sudo systemctl enable fail2ban
 ````
+## Useful commands
+````powershell
+fail2ban-client status sshd
+fail2ban-client set yourjailname unbanip youripaddress
+fail2ban-client set sshd unbanip 10.32.52.3
+````
