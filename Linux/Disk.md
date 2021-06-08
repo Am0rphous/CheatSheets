@@ -111,3 +111,9 @@ shred
 sudo shred -v /dev/sdX            # default is overwrite 3 times
 sudo shred -v -n1 -z /dev/sdX     # overwrite 1 time + z=zero out after
 ````
+
+## ZFS
+````powershell
+zpool import NAME
+
+````
