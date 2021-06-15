@@ -1,5 +1,6 @@
 # Encoding & Decoding
 
+- [Powerglot](https://github.com/mindcrypt/powerglot) - Powerglot encodes offensive powershell scripts using polyglots . Offensive security tool useful for stego-malware, privilege escalation, lateral movement, reverse shell, etc.
 - [Shellcode-In-Memory-Decoder](https://github.com/mhaskar/Shellcode-In-Memory-Decoder) - A simple C implementation to decoded your shellcode and writes it directly to memory.
 
 ### Base62
