@@ -3,7 +3,10 @@
 
 | Topic                                                                   |
 | ----------------------------------------------------------------------- |
-|  [**User information**](#user-information) |
+|  [**User information**](#user-information)
+- [**Kernel**](#Kernel)
+   - [Kernel Security](#kernel-security)
+     - Kernel Install/Removal |
 |   [**File and directory commands**](#file-and-directory-commands) |
 |   [**Disk**](#disk) |
 |   [**CDROM**](#cdrom) |
