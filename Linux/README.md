@@ -12,7 +12,7 @@
 - [**Help**](#Help)
 - [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
-   - Kernel Install/Removal
+   - [Kernel Install/Removal](#kernel-installremoval)
 - [**Loops**](#Loops)
 - [**Password generation**](#Password-generation)
 - [**Power**](#Power)
