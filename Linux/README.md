@@ -5,6 +5,8 @@
 - [**File and directory commands**](#file-and-directory-commands)
 - [**Disk**](#disk)
 - [**CDROM**](#cdrom)
+  - [Add virtual CDROM](#add-virtual-cdrom)
+  - [DVD Ripping](#dvd-ripping)
 - [**Crontab**](#crontab)
 - [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
 - [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
@@ -30,8 +32,21 @@
 <br >
 <br >
 
-### User Information
-1. **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
+## Users and groups
+````powershell
+groups peter
+su - peter                          #switch to user peter
+sudo adduser mike
+sudo usermod -aG sudo mike
+````
+sudoers: `/etc/sudoers`
+````
+sudo touch /etc/sudoers.d/peter
+echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
+````
+
+### User info
+- **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
 
     1. Login name of the user
     2. User terminal
@@ -90,7 +105,7 @@ sha256sum /mnt/folder/test.iso      #E.g. c58ea020874bae8712d5715a...
 sha256sum /dev/sr0                  #E.g. c58ea020874bae8712d5715a...
 ````
 
-## Crontab
+## Jobs/schedule a task with Crontab
 - [Crontab Calculator](https://crontab.guru)
 - [Crontab.cronhub.io](https://crontab.cronhub.io/)
 Enter crontab: `crontab -e`
@@ -126,7 +141,7 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  /etc/cron.d/cron-apt            #default crontab entry 
  /usr/sbin/cron-apt              #testing cron-apt
  ````
- #### Unattended Upgrades
+ ### Unattended Upgrades
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
  - [Enable-Automatic-Updates.sh](https://github.com/Am0rphous/Bash/blob/master/Security/Enable-Automatic-Updates.sh) - Script that automatic install and enable automatic updates with smart settings.
  - [Unattended-upgrades](https://github.com/mvo5/unattended-upgrades) - Automatic installation of security upgrades on apt based systems.
@@ -177,7 +192,7 @@ APT::Periodic::AutocleanInterval "30";
  sudo unattended-upgrade -d -v
  ````
 
- ##### Log file commands
+ ##### Log files
  ````powershell
   sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
   sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
@@ -202,7 +217,6 @@ touch myfile                                    #creates empty file
 ````
 ### Find large files
 ````powershell
-
 du -a /var | sort -n -r | head -n 10
 du -hs * | sort -rh | head -n 10
 du -hsx * | sort -rh | head -10
@@ -219,7 +233,7 @@ alias ducks='du -cks * | sort -rn | head'
 ducks
 ````
 
- ### File Compression
+ ### File compression
  File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````powershell
 7z x archive.7z                             # sudo apt install p7zip-full
@@ -252,7 +266,6 @@ uname -r                            #kernel version
 uname -sr                           #kernel name and version
 dpkg --list | grep linux-image      # list installed kernels
 ````
-
   ### Kernel Security
   - [AppArmor](https://www.apparmor.net)
   ````powershell
@@ -314,7 +327,7 @@ do
 done
 ````
 
-## Password generation
+## Random password generation
 ````powershell
 cat /dev/urandom | tr -dc 'a-z A-Z'              generates lots of gibberish forever. Press ctrl+c to stop it
 dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
@@ -328,7 +341,7 @@ sudo passwd root                                 change the password of root
 sudo passwd                                      change the password of current user
 ````
 
-## Searching after stuff
+## Searching for stuff
 
  ### Find
 ````powershell
@@ -341,7 +354,7 @@ find / -executable          #searches for executable files
 find / -name *.mp3          #searches for files with .mp3 extension
 find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
 ````
-### Grep - string and pattern matching utility
+### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
 ````zsh
 grep -r testing                             # grep recursivly
@@ -356,14 +369,14 @@ grep -Evi "success|warning" syslog.log      # Removes success or warning
 Extract IP-addresses from a file [source](https://github.com/dwisiswant0/awesome-oneliner-bugbounty)
 `grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' MYFILE.txt`
 
-#### zgrep search compressed files
+#### zgrep - search within compressed files
 Same syntax
 ````powershell
 zgrep -c "error" errorlog.txt.gz            # prints matching lines
 zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not file names
 ````
 
-### Locate
+### Locate a file
 ````powershell
 locate file                             #locates file on harddrive
 updatedb                                #updates the database
@@ -475,20 +488,6 @@ Play from webcam
 ````powershell
 sudo apt install ffmpeg
 ffplay /dev/video0
-````
-
-## Users and groups
-````powershell
-groups peter
-su - peter                          #switch to user peter
-sudo adduser mike
-sudo usermod -aG sudo mike
-````
-sudoers: `/etc/sudoers`
-````
-sudo touch /etc/sudoers.d/peter
-echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
-
 ````
 
 ## Variables
