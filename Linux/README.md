@@ -12,7 +12,7 @@
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
 | 8 | [**Files and Folders**](#Files-and-Folders) |
 | 9 | [**Help**](#Help) |
-| 10 | [**Kernel**](#Kernel) |
+| 10 |  |
 | 11 | [**Loops**](#Loops) |
 | 12 | [**Password generation**](#Password-generation) |
 | 13 | [**Power**](#Power) |
@@ -24,9 +24,10 @@
 | 19 | [**Variables**](#Variables) |
 
 test
-1. First list item
-   - First nested list item
-     - Second nested list item
+1. [**User information**](#user-information)
+2. [**Kernel**](#Kernel)
+   - [Kernel Security](#kernel-security)
+     - Kernel Install/Removal
 
 <br >
 <br >
