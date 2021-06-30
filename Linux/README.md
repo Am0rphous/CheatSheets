@@ -24,8 +24,8 @@
 | 19 | [**Variables**](#Variables) |
 
 test
-1. [**User information**](#user-information)
-2. [**Kernel**](#Kernel)
+- [**User information**](#user-information)
+- [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
      - Kernel Install/Removal
 
