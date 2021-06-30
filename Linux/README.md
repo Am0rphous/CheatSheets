@@ -10,6 +10,9 @@
 - [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
 - [**Files and Folders**](#Files-and-Folders)
 - [**Help**](#Help)
+- [**Kernel**](#Kernel)
+   - [Kernel Security](#kernel-security)
+   - Kernel Install/Removal
 - [**Loops**](#Loops)
 - [**Password generation**](#Password-generation)
 - [**Power**](#Power)
@@ -22,9 +25,7 @@
 
 
 
-- [**Kernel**](#Kernel)
-   - [Kernel Security](#kernel-security)
-     - Kernel Install/Removal
+
 
 <br >
 <br >
