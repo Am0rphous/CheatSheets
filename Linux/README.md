@@ -248,6 +248,7 @@ uname -r                            #kernel version
 uname -sr                           #kernel name and version
 dpkg --list | grep linux-image      # list installed kernels
 ````
+
   ### Kernel Security
   - [AppArmor](https://www.apparmor.net)
   ````powershell
@@ -261,6 +262,21 @@ dpkg --list | grep linux-image      # list installed kernels
    ````powershell
    sudo mokutil --sb-state
    ````
+
+  ### Kernel Install/Removal
+  - [Source for commands: askubuntu.com(...)](https://askubuntu.com/questions/1207958/error-24-write-error-cannot-write-compressed-block)
+  - Don't touch these packages
+  ````powershell
+  dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep $(uname -r)
+  ````
+  - List old kernels we don't need with
+  ````powershell
+  dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cut -d - -f 1)
+  ````
+  - Purge them with this command
+  ````powershell
+  dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cut -d - -f 1) | awk {'print $2'} | xargs sudo apt purge -y
+  ````
 
 ## Loops
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
