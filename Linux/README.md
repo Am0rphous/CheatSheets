@@ -1,33 +1,27 @@
 # L i n u x
 
 
-| Topic                                                                   |
-| ----------------------------------------------------------------------- |
-|  [**User information**](#user-information)
-- [**Kernel**](#Kernel)
-   - [Kernel Security](#kernel-security)
-     - Kernel Install/Removal |
-|   [**File and directory commands**](#file-and-directory-commands) |
-|   [**Disk**](#disk) |
-|   [**CDROM**](#cdrom) |
-|  [**Crontab**](#crontab) |
-| 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
-| 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
-| 8 | [**Files and Folders**](#Files-and-Folders) |
-| 9 | [**Help**](#Help) |
-| 10 |  |
-| 11 | [**Loops**](#Loops) |
-| 12 | [**Password generation**](#Password-generation) |
-| 13 | [**Power**](#Power) |
-| 14 | [**Remoting**](#remoting) |
-| 15 | [**Searching after stuff**](#searching-after-stuff) |
-| 16 | [**Services**](#Services) |
-| 17 | [**Text**](#text) |
-| 18 | [**Time and date**](#time-and-date) |
-| 19 | [**Variables**](#Variables) |
-
-test
 - [**User information**](#user-information)
+- [**File and directory commands**](#file-and-directory-commands)
+- [**Disk**](#disk)
+- [**CDROM**](#cdrom)
+- [**Crontab**](#crontab)
+- [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
+- [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
+- [**Files and Folders**](#Files-and-Folders)
+- [**Help**](#Help)
+- [**Loops**](#Loops)
+- [**Password generation**](#Password-generation)
+- [**Power**](#Power)
+- [**Remoting**](#remoting)
+- [**Searching after stuff**](#searching-after-stuff)
+- [**Services**](#Services)
+- [**Text**](#text)
+- [**Time and date**](#time-and-date)
+- [**Variables**](#Variables)
+
+
+
 - [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
      - Kernel Install/Removal
