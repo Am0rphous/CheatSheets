@@ -244,8 +244,9 @@ Commands
 ````
 cat /proc/version
 uname -a
-uname -r            #kernel version
-uname -sr           #kernel name and version
+uname -r                            #kernel version
+uname -sr                           #kernel name and version
+dpkg --list | grep linux-image      # list installed kernels
 ````
   ### Kernel Security
   - [AppArmor](https://www.apparmor.net)
