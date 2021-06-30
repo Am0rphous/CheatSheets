@@ -43,40 +43,6 @@
 <br >
 <br >
 
-## Users and groups
-````powershell
-groups peter
-su - peter                          #switch to user peter
-sudo adduser mike
-sudo usermod -aG sudo mike
-````
-sudoers: `/etc/sudoers`
-````
-sudo touch /etc/sudoers.d/peter
-echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
-````
-
-### User info
-- **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
-
-    1. Login name of the user
-    2. User terminal
-    3. Date & Time of login
-    4. Remote host name of the user
-
-   ```bash
-   $ who
-   sudheer :0 2019-08-04 01:21 (:0)
-   ```
-
-Notes for later
-````
-- https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
-- https://gto76.github.io/linux-cheatsheet/
-- https://github.com/jeroendoggen/Linux-cheat-sheet
-- https://www.computerhope.com/unix/test.htm
-````
-
 ## CDROM
 ### Add virtual CDROM
 
@@ -500,6 +466,42 @@ Play from webcam
 sudo apt install ffmpeg
 ffplay /dev/video0
 ````
+
+
+## Users and groups
+````powershell
+groups peter
+su - peter                          #switch to user peter
+sudo adduser mike
+sudo usermod -aG sudo mike
+````
+sudoers: `/etc/sudoers`
+````
+sudo touch /etc/sudoers.d/peter
+echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
+````
+
+### User info
+- **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
+
+    1. Login name of the user
+    2. User terminal
+    3. Date & Time of login
+    4. Remote host name of the user
+
+   ```bash
+   $ who
+   sudheer :0 2019-08-04 01:21 (:0)
+   ```
+
+Notes for later
+````
+- https://github.com/ghsecurity/LinuxCheatSheet/blob/master/LinuxCheatSheet
+- https://gto76.github.io/linux-cheatsheet/
+- https://github.com/jeroendoggen/Linux-cheat-sheet
+- https://www.computerhope.com/unix/test.htm
+````
+
 
 ## Variables
 ````powershell
