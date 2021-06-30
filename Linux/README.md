@@ -1,13 +1,13 @@
 # L i n u x
 
 
-| No. | Topic                                                                   |
-| --- | ----------------------------------------------------------------------- |
-|  | [**User information**](#user-information) |
-|  | [**File and directory commands**](#file-and-directory-commands) |
-|  | [**Disk**](#disk) |
-|  | [**CDROM**](#cdrom) |
-| 5 | [**Crontab**](#crontab) |
+| Topic                                                                   |
+| ----------------------------------------------------------------------- |
+|  [**User information**](#user-information) |
+|   [**File and directory commands**](#file-and-directory-commands) |
+|   [**Disk**](#disk) |
+|   [**CDROM**](#cdrom) |
+|  [**Crontab**](#crontab) |
 | 6 | [**Keeping your system up-to-date**](#keeping-your-system-up-to-date) |
 | 7 | [**File Permissions and Ownership**](#File-Permissions-and-Ownership) |
 | 8 | [**Files and Folders**](#Files-and-Folders) |
