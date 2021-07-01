@@ -26,13 +26,13 @@ Installation:
 ````
 sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
 sudo service libvirtd start
-usermod -aG libvirt $USER
-usermod -aG kvm $USER
+sudo usermod -aG libvirt $USER
+sudo usermod -aG kvm $USER
 
 ````
 ## Usage
 ````powershell
-sudo virsh list --all
+virsh list --all
 virsh shutdown vmName                 poweroff vm |
 virsh shutdown vm-dev01               poweroff vm-dev01
 virsh domrename vm01-clone1 vm01      rename vm01-clone to vm01
