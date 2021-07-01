@@ -481,6 +481,12 @@ sudo touch /etc/sudoers.d/peter
 echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
 ````
 
+### Run script with another users privileges
+- [source](https://blog.mypapit.net/)
+````powershell
+su -c "/usr/bin/executable" -s /bin/sh username
+````
+
 ### User info
 - **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
 
