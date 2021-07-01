@@ -33,12 +33,9 @@
 - [**Time and date**](#time-and-date)
 - [**Users and groups**](#users-and-groups)
   - [Random password generation]()(#random-password-generation)
+  - [Run script with another users privileges](#run-script-with-another-users-privileges)
   - [User info](#user-info)
 - [**Variables**](#Variables)
-
-
-
-
 
 <br >
 <br >
