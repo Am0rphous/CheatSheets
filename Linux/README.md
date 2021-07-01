@@ -18,9 +18,12 @@
    - [Kernel Security](#kernel-security)
    - [Kernel Install/Removal](#kernel-installremoval)
 - [**Loops**](#Loops)
+- [**Peripherals**](#peripherals)
+  - [USB- and PCI-devices]()
 - [**Power**](#Power)
 - [**Random password generationn**](#Password-generation)
 - [**Remoting**](#remoting)
+  - [Monitoring SSH](#monitoring-ssh)
 - [**Searching for stuff**](#searching-for-stuff)
   - [Find](#find)
   - [Grep - utility for string and pattern matching](#grep---utility-for-string-and-pattern-matching)
@@ -42,7 +45,6 @@
 
 ## CDROM
 ### Add virtual CDROM
-
 - [CDEmu](https://cdemu.sourceforge.io)
 ````powershell
 sudo add-apt-repository ppa:cdemu/ppa           #install repo
@@ -166,12 +168,12 @@ APT::Periodic::AutocleanInterval "30";
  sudo unattended-upgrade -d -v
  ````
 
- ##### Log files
- ````powershell
-  sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
-  sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
-  sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
- ````
+- Log files
+````powershell
+sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
+sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
+sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
+````
  
 ## File Permissions and Ownership
 - [Linux File Permissions and Ownership Explained with Examples](https://linuxhandbook.com/linux-file-permissions/)
@@ -180,47 +182,47 @@ chattr -R folder                #chattr=manipulate attributes. R=recursively.
 lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all files
 ````
 
-## Files and Folders
-````powershell
-head file list.txt                              #displays 10 first line of file
-head -n 5 list.txt                              #displays 5 first line of file
-mkdir myfolder                                  #creates folder
-mkdir -v test                                   #v=verbose
-mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
-touch myfile                                    #creates empty file
-````
-### Find large files
-````powershell
-du -a /var | sort -n -r | head -n 10
-du -hs * | sort -rh | head -n 10
-du -hsx * | sort -rh | head -10
-cd /path/to/directory && du -hsx * | sort -rh | head -10
-sudo du -a /home | sort -n -r | head -n 10
-find / -size +100M -ls
-find / -size +100M -size -200M -ls
-sudo find / -type f -printf “%s\t%p\n” | sort -n | tail -1
-find $HOME -type f -printf ‘%s %p\n’ | sort -nr | head -10
-````
-Find top 10 files and directories consuming maximum disk space [source](https://sourcedigit.com/24840-how-to-find-large-files-in-linux-ubuntu/)
-````powershell
-alias ducks='du -cks * | sort -rn | head'
-ducks
-````
+  ### Files and Folders
+  ````powershell
+  head file list.txt                              #displays 10 first line of file
+  head -n 5 list.txt                              #displays 5 first line of file
+  mkdir myfolder                                  #creates folder
+  mkdir -v test                                   #v=verbose
+  mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
+  touch myfile                                    #creates empty file
+  ````
+    #### Find large files
+    ````powershell
+    du -a /var | sort -n -r | head -n 10
+    du -hs * | sort -rh | head -n 10
+    du -hsx * | sort -rh | head -10
+    cd /path/to/directory && du -hsx * | sort -rh | head -10
+    sudo du -a /home | sort -n -r | head -n 10
+    find / -size +100M -ls
+    find / -size +100M -size -200M -ls
+    sudo find / -type f -printf “%s\t%p\n” | sort -n | tail -1
+    find $HOME -type f -printf ‘%s %p\n’ | sort -nr | head -10
+    ````
+    Find top 10 files and directories consuming maximum disk space [source](https://sourcedigit.com/24840-how-to-find-large-files-in-linux-ubuntu/)
+    ````powershell
+    alias ducks='du -cks * | sort -rn | head'
+    ducks
+    ````
 
- ### File compression
- File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
-````powershell
-7z x archive.7z                             # sudo apt install p7zip-full
-gzip -k core.c                              # compress core.c file and removes the original file
-sudo apt install xz-utils                   # usually installed as default
-tar -xf file.tar.xz                         # x = extract. f=filename
-tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
-tar -xf file_name.tar -C /target/folder     # extracts to new folder
-````
-Extract each file to new folder with same name
-````powershell
-for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
-````
+    #### File compression
+    File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
+    ````powershell
+    7z x archive.7z                             # sudo apt install p7zip-full
+    gzip -k core.c                              # compress core.c file and removes the original file
+    sudo apt install xz-utils                   # usually installed as default
+    tar -xf file.tar.xz                         # x = extract. f=filename
+    tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
+    tar -xf file_name.tar -C /target/folder     # extracts to new folder
+    ````
+    Extract each file to new folder with same name
+    ````powershell
+    for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
+    ````
 
 ## Help
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
@@ -301,33 +303,55 @@ do
 done
 ````
 
-## Random password generation
+  ### Random password generation
+  ````powershell
+  cat /dev/urandom | tr -dc 'a-z A-Z'              generates lots of gibberish forever. Press ctrl+c to stop it
+  dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
+  head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
+  head -c 10 /dev/urandom | sha256sum              read the first 10 bytes from /dev/Urandom and hash it with sha256
+  head -c 1024 /dev/urandom | sha256sum            read the first 1024 bytes from /dev/Urandom and hash it with sha256
+  head -c 100 /dev/urandom | od | sha256sum        dumps it to octal and hashes the output
+  openssl rand -base64 32                          generates a 32 character long password
+  openssl rand -base64 40                          generates a 40 character long password
+  sudo passwd root                                 change the password of root
+  sudo passwd                                      change the password of current user
+  ````
+
+## Peripherals
+### USB- and PCI-devices
+Listing
 ````powershell
-cat /dev/urandom | tr -dc 'a-z A-Z'              generates lots of gibberish forever. Press ctrl+c to stop it
-dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
-head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
-head -c 10 /dev/urandom | sha256sum              read the first 10 bytes from /dev/Urandom and hash it with sha256
-head -c 1024 /dev/urandom | sha256sum            read the first 1024 bytes from /dev/Urandom and hash it with sha256
-head -c 100 /dev/urandom | od | sha256sum        dumps it to octal and hashes the output
-openssl rand -base64 32                          generates a 32 character long password
-openssl rand -base64 40                          generates a 40 character long password
-sudo passwd root                                 change the password of root
-sudo passwd                                      change the password of current user
+lsusb
+ls /proc/bus/usb
+lspci
+usb-devices 
+````
+
+Webcam
+````powershell
+sudo apt-get install v4l-utils
+v4l2-ctl --list-devices
+v4l2-ctl --list-formats-ext
+````
+Play from webcam
+````powershell
+sudo apt install ffmpeg
+ffplay /dev/video0
 ````
 
 ## Searching for stuff
 
- ### Find
+  ### Find
 ````powershell
-find filename
-find / -empty               #searches for empty files and folders in your system
-find ~ filename             #searches through the active user's home folder
-find . filename             #searches through current and nested folders
-find / filename             #searches from root directory
-find / -executable          #searches for executable files
-find / -name *.mp3          #searches for files with .mp3 extension
-find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
-````
+  find filename
+  find / -empty               #searches for empty files and folders in your system
+  find ~ filename             #searches through the active user's home folder
+  find . filename             #searches through current and nested folders
+  find / filename             #searches from root directory
+  find / -executable          #searches for executable files
+  find / -name *.mp3          #searches for files with .mp3 extension
+  find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
+  ````
 ### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
 ````zsh
@@ -343,21 +367,13 @@ grep -Evi "success|warning" syslog.log      # Removes success or warning
 Extract IP-addresses from a file [source](https://github.com/dwisiswant0/awesome-oneliner-bugbounty)
 `grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' MYFILE.txt`
 
-#### zgrep - search within compressed files
-Same syntax
-````powershell
-zgrep -c "error" errorlog.txt.gz            # prints matching lines
-zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not file names
-````
-
-### Locate a file
+#### Locate a file
 ````powershell
 locate file                             #locates file on harddrive
 updatedb                                #updates the database
  sudo /usr/libexec/locate.updatedb      #updates database on MacOS
 ````
-
-### Whereis - locate the binary, source, and manual page files for a command
+#### Whereis - locate the binary, source, and manual page files for a command
 | Key/Command | Description | Installation |
 | ----------- | ----------- |------------  |
 | whereis command | Finds command |
@@ -365,8 +381,15 @@ updatedb                                #updates the database
 | whereis -b date | Search for only binary files |
 | whereis -s date | Search only for source code files |
 
-### Which
+#### Which
 - [which](https://www.cyberciti.biz/faq/unix-linux-which-command-examples-syntax-to-locate-programs/%20)
+
+#### zgrep - search within compressed files
+Same syntax
+````powershell
+zgrep -c "error" errorlog.txt.gz            # prints matching lines
+zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not file names
+````
 
 ## Power
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
@@ -385,16 +408,16 @@ ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 ````
-  ### Monitoring SSH
-  ````powershell
-  last -a | grep -i still
-  netstat -tnpa | grep 'ESTABLISHED.*sshd'
-  ps auxwww | grep sshd: | grep -v grep
-  ps -fC sshd
-  ss | grep -i ssh
-  w
-  who
-  ````
+### Monitoring SSH
+````powershell
+last -a | grep -i still
+netstat -tnpa | grep 'ESTABLISHED.*sshd'
+ps auxwww | grep sshd: | grep -v grep
+ps -fC sshd
+ss | grep -i ssh
+w
+who
+````
 
 ## Services
 ````powershell
@@ -442,28 +465,6 @@ time lsof                           #times the lsof command
 
 User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
  https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
- 
-## USB- and PCI-devices
-Listing
-````powershell
-lsusb
-ls /proc/bus/usb
-lspci
-usb-devices 
-````
-
-Webcam
-````powershell
-sudo apt-get install v4l-utils
-v4l2-ctl --list-devices
-v4l2-ctl --list-formats-ext
-````
-Play from webcam
-````powershell
-sudo apt install ffmpeg
-ffplay /dev/video0
-````
-
 
 ## Users and groups
 ````powershell
