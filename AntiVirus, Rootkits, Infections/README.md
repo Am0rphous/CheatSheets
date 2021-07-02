@@ -21,16 +21,17 @@ ssh -G 2>&1 | grep -e illegal -e unknown -e Gg > /dev/null && echo "System clean
 ## ClamAV
 ````powershell
 sudo apt install clamav clamav-daemon mailutils -y
-service clamav-freshclam stop                       #service needs to be stopped before updating
-sudo freshclam                                      #updates signatures
-sudo wget https://database.clamav.net/daily.cvd     #download latest signature
+sudo service clamav-freshclam stop                  # service needs to be stopped before updating
+sudo freshclam                                      # updates signatures
+sudo wget https://database.clamav.net/daily.cvd     # download latest signature
 sudo cp daily.cvd /var/lib/clamav/
-service clamav-freshclam restart                    #restart the service after
-clamscan --version                                  #shows the version and date of signatures
-/var/log/clamav/freshclam.log                       #logfile
+sudo service clamav-freshclam restart               # restart the service after
+clamscan --version                                  # shows the version and date of signatures
+/var/log/clamav/freshclam.log                       # logfile
 sigtool --info /var/lib/clamav/daily.cld
-clamscan -r --bell -i /                             # display infected files and ring a bell when found
-clamscan -r -i / &                                  #run it as background. Run `jobs` to list it
+sudo clamscan -r --bell -i /                        # display infected files and ring a bell when found
+sudo clamscan -r -i /                               # foreround
+sudo clamscan -r -i / &                             # run it as background. Run `jobs` to list it
 ````
 
 ## Rootkit hunting
