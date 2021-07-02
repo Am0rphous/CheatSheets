@@ -19,6 +19,8 @@ ssh -G 2>&1 | grep -e illegal -e unknown -e Gg > /dev/null && echo "System clean
 
 
 ## ClamAV
+- [Download](https://www.clamav.net/downloads)
+- [Installation on Debian and Ubuntu Linux Distributions](https://docs.clamav.net/manual/Installing/Steps/Steps-Debian-Ubuntu.html)
 ````powershell
 sudo apt install clamav clamav-daemon mailutils -y
 sudo service clamav-freshclam stop                  # service needs to be stopped before updating
