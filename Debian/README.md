@@ -13,5 +13,6 @@ reboot
 usermod -a -G ${group} ${user}
 usermod -a -G staff ben
 usermod -a -G sudo ben
+adduser $username $groupname
 ````
 
