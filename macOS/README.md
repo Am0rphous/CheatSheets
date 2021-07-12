@@ -92,6 +92,10 @@ sudo launchctl list | grep tor              # lists services named 'tor'
 
 ### System
 - [System-info by Peter-Moller](https://github.com/Peter-Moller/system-info) - Script to give overview of an Operating System.
+- Update system
+  ````powershell
+  softwareupdate -i -a
+  ````
 
 ### Tips and Tricks
 ````
