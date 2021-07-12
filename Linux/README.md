@@ -123,9 +123,9 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  Installation
  ````powershell
  sudo apt update && sudo apt dist-upgrade -y
- sudo apt install unattended-upgrades
- sudo dpkg-reconfigure -plow unattended-upgrades             #OR
- sudo dpkg-reconfigure --priority=low unattended-upgrades    #enables it automatically :)
+ sudo apt install unattended-upgrades update-notifier-common
+ sudo dpkg-reconfigure -plow unattended-upgrades                 #OR
+ sudo dpkg-reconfigure --priority=low unattended-upgrades        #enables it automatically :)
  ````
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
  ````powershell
@@ -160,7 +160,7 @@ Unattended-Upgrade::Debug "true";
 APT::Periodic::Enable "1";
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
-APT::Periodic::Download-Upgradeable-Packages "2";
+APT::Periodic::Download-Upgradeable-Packages "1";
 APT::Periodic::AutocleanInterval "30";
  ````
  Test config
