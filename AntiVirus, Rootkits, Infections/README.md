@@ -8,7 +8,7 @@ find /path-of-www -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort -r           # E
 find /var/www -name "*.php" -exec grep -l "eval(" {} \;                      # Search for common malware strings 
 ````
 
-#### Linux/Ebury - OpenSSH backdoor trojan and credential stealer
+### Linux/Ebury - OpenSSH backdoor trojan and credential stealer
 - [OPERATION WINDIGO](https://www.welivesecurity.com/wp-content/uploads/2014/03/operation_windigo.pdf)
 - [Operation Windigo: Linux malware campaign that infected 500,000 Computers Worldwide](https://thehackernews.com/2014/03/operation-windigo-linux-malware.html)
 - [Source](https://ubuntuforums.org/showthread.php?t=2291968)
@@ -18,7 +18,7 @@ ssh -G 2>&1 | grep -e illegal -e unknown -e Gg > /dev/null && echo "System clean
 ````
 
 
-## ClamAV
+### ClamAV
 - [Download](https://www.clamav.net/downloads)
 - [Installation on Debian and Ubuntu Linux Distributions](https://docs.clamav.net/manual/Installing/Steps/Steps-Debian-Ubuntu.html)
 ````powershell
@@ -36,8 +36,18 @@ sudo clamscan -r -i /                               # foreround
 sudo clamscan -r -i / &                             # run it as background. Run `jobs` to list it
 ````
 
-## Rootkit hunting
-### Chkrootkit
+### Maldet - Linux Malware Detect
+- [linux-malware-detect](https://github.com/rfxn/linux-malware-detect) -  Linux Malware Detection (LMD)
+````powershell
+wget https://github.com/rfxn/linux-malware-detect/archive/refs/tags/1.6.4.zip
+unzip 1.6.4.zip
+cd linux-malware-detect-1.6.4
+bash install.sh
+maldet -a
+````
+
+### Rootkit hunting
+#### Chkrootkit
 ````powershell
 wget ftp://ftp.pangeia.com.br/pub/seg/pac/chkrootkit.tar.gz
 tar -xvf chkrootkit.tar.gz
@@ -75,7 +85,7 @@ sudo rkhunter --update
 sudo rkhunter --check
 sudo rkhunter --check --bindir /mnt/safe           # tells rkhunter which directories to look in to find the various commands it requires:
 ````
-## Process Hunting
+### Process Hunting
 - [launchpad.net/unhide.rb](https://launchpad.net/unhide.rb) - Unhide.rb is a tool that attempts to find processes hidden by rootkits. It does that by scanning for processes in many different ways, and then lists processes found through some means but not through others.
 Install
 ````powershell
