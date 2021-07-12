@@ -54,6 +54,11 @@ sudo lsof -Pn -i4 | grep LISTEN
 sudo tcpdump -Ii en0
 ````
 
+### Productivity
+````powershell
+cat myfile | pbcopy        # copies content to clipboard :D
+````
+
 ### Process management
 | Key/Command | Description |
 | ----------- | ----------- |
