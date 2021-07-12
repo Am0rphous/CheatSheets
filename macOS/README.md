@@ -56,7 +56,14 @@ sudo tcpdump -Ii en0
 
 ### Productivity
 ````powershell
+caffeinate                 # stop computer from going to sleep infintine
+caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
 cat myfile | pbcopy        # copies content to clipboard :D
+qlmanage -p myfile         # quick preview of 'myfile'
+````
+#### Clear the DNS cache
+````powershell
+sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ````
 
 ### Process management
