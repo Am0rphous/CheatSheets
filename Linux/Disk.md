@@ -6,7 +6,6 @@ du -smh * | sort -nr
 ````
 
 ## Creating Bootable USB
-- dd
 ````powershell
 sudo umount /dev/sdb*
 sudo mkfs.vfat /dev/sdb –I
@@ -20,7 +19,15 @@ pgrep –l ‘^dd$’
 kill –USR1 3443         #3443 is the dd process id. It will print copying process statics.
 ````
 
-## fschk - file system consistency check
+## Disc Backup and Recovery
+````powershell
+sudo dd if=/dev/sdb status=progress | gzip -c > /mnt/backup.img.gz
+sudo dd if=/dev/sda of=/media/disk.img bs=1M conv=noerror,sync status=progress
+sudo dd if=/dev/sda3 conv=sync,noerror bs=2M | split -a 3 -d -b 1G - /maindisk.img
+sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
+````
+
+## Fschk - file system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
 | ----------- | ----------- |
