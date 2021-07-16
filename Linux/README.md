@@ -124,8 +124,7 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  ````powershell
  sudo apt update && sudo apt dist-upgrade -y
  sudo apt install unattended-upgrades update-notifier-common
- sudo dpkg-reconfigure -plow unattended-upgrades                 #OR
- sudo dpkg-reconfigure --priority=low unattended-upgrades        #enables it automatically :)
+ sudo dpkg-reconfigure unattended-upgrades
  ````
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
  ````powershell
