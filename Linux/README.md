@@ -128,7 +128,7 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  ````
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
  ````powershell
- Unattended-Upgrade::Origins-Pattern {
+ Unattended-Upgrade::Allowed-Origins {
         "${distro_id}:${distro_codename}";
         "${distro_id}:${distro_codename}-security";
      // "${distro_id}ESMApps:${distro_codename}-apps-security";
