@@ -213,8 +213,13 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
   ````powershell
   7z x archive.7z                             # sudo apt install p7zip-full
+  7za a -t7z data.txt.7z data.txt
+  bzip2 -zk data.txt
   gzip -k core.c                              # compress core.c file and removes the original file
+  gzip -c data.txt > data.txt.gz
   sudo apt install xz-utils                   # usually installed as default
+  xz -zk data.txt
+  tar -cf data.txt.tar data.txt
   tar -xf file.tar.xz                         # x = extract. f=filename
   tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
   tar -xf file_name.tar -C /target/folder     # extracts to new folder
