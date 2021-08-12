@@ -60,13 +60,14 @@ make sense
 ./chkrootkit -x | egrep '^/'                  # pathnames inside system commands
 ````
 ### Rkhunter
+- [Checking for rootkits with rkhunter](https://www.beginlinux.com/blog/2009/12/checking-for-rootkits-with-rkhunter/)
 Download latest version from [rkhunter.sourceforge.net](http://rkhunter.sourceforge.net)
 ````powershell
 tar -xvf rkhunter-1.4.6.tar.gz 
 cd rkhunter-1.4.6
 /installer.sh --layout default --install
 /usr/local/bin/rkhunter --update              #update
-/usr/local/bin/rkhunter --propupd             #update
+/usr/local/bin/rkhunter --propupd             #update changes made to the system
 rkhunter --check                              #manual check
 /var/log/rkhunter.log                         #log file
 ````
