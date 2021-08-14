@@ -7,6 +7,7 @@
 - [Base62](https://github.com/SiroDiaz/Base62) - PHP Base62 encoder and decoder for integers and big integers with Laravel 5 support.
 
 ### Base64
+- [B64](https://github.com/NightsPaladin/b64) - Consistent command-line Base64 Encoder/Decoder.
 Encoding
 ````powershell
 echo <string to encode> | base64
