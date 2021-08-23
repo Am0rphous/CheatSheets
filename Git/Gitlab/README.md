@@ -19,3 +19,8 @@ ProjectStatistics.order(build_artifacts_size: :desc).limit(20).each do |s|
   puts "#{number_to_human_size(s.build_artifacts_size)} \t #{s.project.full_path}"
 end
 ````
+
+### Version
+````powershell
+grep gitlab /opt/gitlab/version-manifest.txt
+````
