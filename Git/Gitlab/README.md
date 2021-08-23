@@ -11,6 +11,14 @@ sudo gitlab-rake gitlab:check > gitlab-rake.log
 sudo gitlab-rake gitlab:cleanup:orphan_job_artifact_files DRY_RUN=false              # deletes orphan job artefacts
 ````
 
+### Important commands
+````powershell
+wget -qO - https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt install -y gitlab-ce
+sudo gitlab-ctl reconfigure
+sudo gitlab-ctl status
+````
+
 ### List biggest repos
 First run `sudo gitlab-rails console` and then:
 ````powershell
