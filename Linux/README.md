@@ -104,6 +104,7 @@ sudo apt update
 sudo apt dist-upgrade -y                            #Install all updates available
 sudo apt update && sudo apt list --upgradable       #list upgradable packets
 sudo apt show package_name                          #displays info about package_name
+sudo apt list -a package_name                       #displays various versions about package_name
 sudo apt-get install --only-upgrade NAME            #only upgrade packet NAME
 sudo add-apt-repository ppa:what/whatever           #add repo in /etc/apt/sources.list or .d
 sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
