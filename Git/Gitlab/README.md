@@ -18,6 +18,15 @@ sudo apt install -y gitlab-ce
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl status
 ````
+#### Logs
+````powershell
+docker logs <container ID>
+docker logs --follow <container ID>
+docker logs --tail 100 <container ID>
+docker logs --follow --until=3s
+docker logs --follow --until=30m
+docker logs --since 2019-03-02 <container ID>
+````
 
 ### List biggest repos
 First run `sudo gitlab-rails console` and then:
