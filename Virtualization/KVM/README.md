@@ -31,9 +31,9 @@ sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-
 sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
-
 ````
 ## Usage
+- To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
 ````powershell
 virsh list --all
 virsh shutdown vmName                 poweroff vm |
@@ -64,7 +64,6 @@ To get information about different OSes, run `osinfo-query os` which can be inst
 ````powershell
 tar xvf MyAppliance.ova
 qemu-img convert -f vmdk sift-2020.2.0-disk1.vmdk -O qcow2 sift.qcow2
-
 ````
 
 ## Tools
