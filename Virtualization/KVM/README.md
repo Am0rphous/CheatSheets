@@ -34,6 +34,7 @@ sudo usermod -aG kvm $USER
 ````
 ## Usage
 - To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
+- Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
 ````powershell
 virsh list --all
 virsh shutdown vmName                 poweroff vm |
