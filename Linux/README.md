@@ -31,6 +31,7 @@
     - [Which](#which)
     - [Zgrep - search within compressed files](#zgrep---search-within-compressed-files)
 - [**Services**](#Services)
+- [**Shortcuts**](#Shortcuts)
 - [**Text**](#text)
 - [**Time and date**](#time-and-date)
 - [**Users and groups**](#users-and-groups)
@@ -440,6 +441,19 @@ systemctl enable tor1                                   #enable new service tor1
 systemctl --type=service                                #list loaded services
 sudo systemctl list-unit-files | grep enabled           #lists enabled services
 ````
+
+## Shortcuts
+| Keyboard shortcut | Description |
+| ------------------------- | ------------------------- |
+| Ctrl + D |	Close terminal window |
+| Ctrl + C |	Cancel currently running command |
+| Ctrl + L |	Clear terminal |
+| Ctrl + + |	Zoom in |
+| Ctrl + – |	Zoom out |
+| Ctrl + A |	Move cursor to beginning of line |
+| Ctrl + B |	Move cursor backward one character |
+| Ctrl + E |	Move cursor to end of line |
+| Ctrl + F |	Move cursor forward one character |
 
 ## Text
 | Key/Command | Description |
