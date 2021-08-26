@@ -17,10 +17,8 @@ netstat
 ping
 route
 ````
-
 #### Check open ports
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
-
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
 sudo ss -tulpn
@@ -40,6 +38,12 @@ ip link set dev eth0 up
 #### Set Static IP
 ````powershell
 ip addr add 10.10.0.2/24 dev eth0
+````
+
+## Certificates
+````powershell
+openssl x509 -text -noout -in certificate.crt                 #decrypt cert to a more readable form
+openssl s_client -showcerts -connect example.com:443          #read the SSL Certificate information from a remote server
 ````
 
 ## NetStat - _Network Statistics_
