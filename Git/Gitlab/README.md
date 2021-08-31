@@ -18,6 +18,18 @@ sudo apt install -y gitlab-ce
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl status
 ````
+#### Add user as admin
+- Start rails console with `sudo gitlab-rails console`
+````powershell
+ user = User.find_by(username: 'my_username')
+ user.admin = true
+ user.save!
+````
+Then
+````powershell
+exit
+sudo gitlab-ctl reconfigure
+````
 #### Logs
 ````powershell
 docker logs <container ID>
