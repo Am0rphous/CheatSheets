@@ -25,11 +25,6 @@ sudo gitlab-ctl status
  user.admin = true
  user.save!
 ````
-Then
-````powershell
-exit
-sudo gitlab-ctl reconfigure
-````
 #### Logs
 ````powershell
 docker logs <container ID>
