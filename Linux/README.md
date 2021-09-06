@@ -405,6 +405,7 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
 ````
 
 ## Power
+- [IoTaWatt](https://github.com/boblemaire/IoTaWatt) - IoTaWatt Open WiFi Electric Energy Monitor.
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
 - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
  ````powershell
