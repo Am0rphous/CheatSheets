@@ -14,5 +14,6 @@ sudo systemctl status lightdm
 
 ## List display and monitor info
 ````powershell
+ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 xrandr --listactivemonitors
 ````
