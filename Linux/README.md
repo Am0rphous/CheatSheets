@@ -35,7 +35,7 @@
 - [**Text**](#text)
 - [**Time and date**](#time-and-date)
 - [**Users and groups**](#users-and-groups)
-  - [Random password generation](#Password-generation)
+  - [Passwords](#passwords)
   - [Run script with another users privileges](#run-script-with-another-users-privileges)
   - [User info](#user-info)
 - [**Variables**](#Variables)
@@ -316,20 +316,6 @@ do
 done
 ````
 
-  ### Random password generation
-  ````powershell
-  cat /dev/urandom | tr -dc 'a-z A-Z'              generates lots of gibberish forever. Press ctrl+c to stop it
-  dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
-  head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
-  head -c 10 /dev/urandom | sha256sum              read the first 10 bytes from /dev/Urandom and hash it with sha256
-  head -c 1024 /dev/urandom | sha256sum            read the first 1024 bytes from /dev/Urandom and hash it with sha256
-  head -c 100 /dev/urandom | od | sha256sum        dumps it to octal and hashes the output
-  openssl rand -base64 32                          generates a 32 character long password
-  openssl rand -base64 40                          generates a 40 character long password
-  sudo passwd root                                 change the password of root
-  sudo passwd                                      change the password of current user
-  ````
-
 ## Peripherals
 ### USB- and PCI-devices
 Listing
@@ -505,6 +491,20 @@ sudoers: `/etc/sudoers`
 sudo touch /etc/sudoers.d/peter
 echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
 ````
+  ### Passwords
+  - [XKCD Password Generator](https://github.com/redacted/XKCD-password-generator) - Generate secure multiword passwords/passphrases, inspired by XKCD.
+  ````powershell
+  cat /dev/urandom | tr -dc 'a-z A-Z'              generates lots of gibberish forever. Press ctrl+c to stop it
+  dd if=/dev/urandom count=1 bs=128 | sha512sum    creates a block and hashes it with sha512
+  head -c 10 /dev/random | sha256sum               reads from /dev/Random and calculates a hash from the first 10 bytes
+  head -c 10 /dev/urandom | sha256sum              read the first 10 bytes from /dev/Urandom and hash it with sha256
+  head -c 1024 /dev/urandom | sha256sum            read the first 1024 bytes from /dev/Urandom and hash it with sha256
+  head -c 100 /dev/urandom | od | sha256sum        dumps it to octal and hashes the output
+  openssl rand -base64 32                          generates a 32 character long password
+  openssl rand -base64 40                          generates a 40 character long password
+  sudo passwd root                                 change the password of root
+  sudo passwd                                      change the password of current user
+  ````
 
 ### Run script with another users privileges
 - [source](https://blog.mypapit.net/)
