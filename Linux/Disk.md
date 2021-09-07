@@ -1,16 +1,16 @@
 # Disk
 
-- [Create Bootable USB]()
-- [Dd - Backup and Recovery]()
-- [Fschk - file system consistency check]()
-- [LVM]()
-- [Format]()
-- [Mounting / Unmounting]()
-- [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu]()
-- [Scanning for new disks]()
-- [SDInfo]()
-- [Secure Deletion]()
-- [ZFS]()
+- [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
+- [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
+- [Fschk - file system consistency check](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fschk---file-system-consistency-check)
+- [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
+- [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
+- [Mounting / Unmounting](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting--unmounting)
+- [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-a-nas-synology-server-with-ip-100010-to-ubuntu)
+- [Scanning for new disks](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#scanning-for-new-disks)
+- [SDInfo](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#sdinfo)
+- [Secure Deletion](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#secure-deletion)
+- [ZFS](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#zfs)
 - 
 To list size of each folder and sort the result, run this command:
 ````powershell
