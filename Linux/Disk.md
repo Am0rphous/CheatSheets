@@ -11,7 +11,7 @@
 - [SDInfo](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#sdinfo)
 - [Secure Deletion](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#secure-deletion)
 - [ZFS](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#zfs)
-- 
+
 To list size of each folder and sort the result, run this command:
 ````powershell
 du -smh * | sort -nr
