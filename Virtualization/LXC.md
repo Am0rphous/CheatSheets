@@ -4,6 +4,15 @@ Note for later
 
 - [lxc-webpanel (archived)](https://lxc-webpanel.github.io)
 
+## Setup
+````
+sudo snap install lxd
+sudo lxd init
+sudo lxc launch ubuntu:18.04 my-vm-name
+sudo lxc list
+sudo lxc exec my-vm-name bash
+````
+
 #### General
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -26,7 +35,10 @@ Note for later
 
 https://linuxcontainers.org/lxd/getting-started-cli/
 
+````bash
+lxc exec myVM bash
 lxc exec   ruling-moose -- /bin/bash
+
 lxc console  ruling-moose 
 lxc config set ruling-moose limits.cpu 10
 lxc config set ruling-moose limits.cpu 20
@@ -34,5 +46,5 @@ lxc config set ruling-moose limits.memory 32GB
 
 xc config set ruling-moose limits.cpu 20
 lxc config set ruling-moose limits.memory 32GB
-
+````
 
