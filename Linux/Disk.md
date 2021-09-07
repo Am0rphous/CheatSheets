@@ -1,5 +1,17 @@
 # Disk
 
+- [Create Bootable USB]()
+- [Dd - Backup and Recovery]()
+- [Fschk - file system consistency check]()
+- [LVM]()
+- [Format]()
+- [Mounting / Unmounting]()
+- [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu]()
+- [Scanning for new disks]()
+- [SDInfo]()
+- [Secure Deletion]()
+- [ZFS]()
+- 
 To list size of each folder and sort the result, run this command:
 ````powershell
 du -smh * | sort -nr
@@ -19,7 +31,7 @@ pgrep –l ‘^dd$’
 kill –USR1 3443         #3443 is the dd process id. It will print copying process statics.
 ````
 
-## Disc Backup and Recovery
+## Dd - Backup and Recovery
 ````powershell
 sudo dd if=/dev/sdb status=progress | gzip -c > /mnt/backup.img.gz
 sudo dd if=/dev/sda of=/media/disk.img bs=1M conv=noerror,sync status=progress
@@ -101,6 +113,10 @@ echo "- - -" > /sys/class/scsi_host/host1/scan
 echo "- - -" > /sys/class/scsi_host/host2/scan
 echo "- - -" > /sys/class/scsi_host/host3/scan
 ````
+## SDInfo
+- [SDInfo](https://github.com/johnlane/sdinfo) - Display details about an SD Card.
+
+
 ## Secure Deletion
 hdparm
 ````powershell
