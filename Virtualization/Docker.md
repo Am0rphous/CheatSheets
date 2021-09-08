@@ -47,6 +47,7 @@ docker system prune --volumes       #does the trick
 | docker run --name mydb redis |Start a named container |
 | docker start mycontainer | Start a stopped container |
 | docker stop mycontainer | Stop a container |
+| docker stop $(docker ps -q) | Stop all containers |
 | docker run -d label=traefik.backend=jenkins jenkins | Adds metadata to a container |
 | docker container kill web | Stop a running container through SIGKILL |
 
