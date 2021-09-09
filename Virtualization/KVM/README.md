@@ -40,6 +40,7 @@ virsh list --all
 virsh shutdown vmName                 poweroff vm |
 virsh shutdown vm-dev01               poweroff vm-dev01
 virsh domrename vm01-clone1 vm01      rename vm01-clone to vm01
+virsh blockresize rhel8 /var/lib/libvirt/images/rhel8.qcow2 40G      #extend disk with 40 GB
 kvm_stat                              Displays KVM statistics
 ````
 
@@ -60,11 +61,19 @@ service qemu-kvm status
 ````
 To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
 
-## Converting OVA format
+## Disk Convertion
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 ````powershell
 tar xvf MyAppliance.ova
 qemu-img convert -f vmdk sift-2020.2.0-disk1.vmdk -O qcow2 sift.qcow2
+qemu-img convert -f raw -O qcow2 image.img image.qcow2
+````
+
+## Extending/Shrinking Disk Size
+````
+sudo qemu-img resize vmdisk.qcow2 +40G
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G
 ````
 
 ## Tools
