@@ -135,8 +135,8 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  Unattended-Upgrade::Allowed-Origins {
         "${distro_id}:${distro_codename}";
         "${distro_id}:${distro_codename}-security";
-     // "${distro_id}ESMApps:${distro_codename}-apps-security";
-        "${distro_id}ESM:${distro_codename}";
+        "${distro_id}ESMApps:${distro_codename}-apps-security";
+       // "${distro_id}ESM:${distro_codename}";
         "${distro_id}ESM:${distro_codename}-infra-security";
         "${distro_id}:${distro_codename}-updates";
         "${distro_id}:${distro_codename}-proposed";
