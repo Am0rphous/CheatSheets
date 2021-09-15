@@ -112,6 +112,7 @@ echo "- - -" > /sys/class/scsi_host/host0/scan
 echo "- - -" > /sys/class/scsi_host/host1/scan
 echo "- - -" > /sys/class/scsi_host/host2/scan
 echo "- - -" > /sys/class/scsi_host/host3/scan
+for i in {1..30}; do echo "- - -" > /sys/class/scsi_host/host$i/scan; done
 ````
 ## SDInfo
 - [SDInfo](https://github.com/johnlane/sdinfo) - Display details about an SD Card.
