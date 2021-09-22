@@ -8,7 +8,7 @@
   - [Files and Folders](#Files-and-Folders)
     - [File and directory commands](#file-and-directory-commands)
     - [File compression](#file-compression)
-    - [File hashing](#find-hashing)
+    - [File hashing](#file-hashing)
     - [Find large files](#find-large-files)
 - [**Help**](#Help)
 - [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
