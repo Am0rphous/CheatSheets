@@ -29,9 +29,10 @@ sudo ufw logging low/medium
 | sudo ufw allow from 192.168.1.0/24 to any port 22 proto tcp | Allow from subnet 192.168.1.0/24 to tcp port 22 |
 | sudo ufw allow proto tcp from 10.0.0.0/8 to 10.1.1.2 port 443 | Allow subnet 10.0.0.0/8 to port 443 on IP 10.1.1.2 |
 | sudo ufw allow from 10.0.0.0/8 to 10.1.2.1.0/24 | Allows subnet 10.0.0.0/8 to communicate to subnet 10.1.2.1.0/24 |
-| sudo ufw deny from 15.15.15.51 | Block an IP |
-| sudo ufw deny out 25 | Block outgoing smtp |
+
 
 ### Block an IP
 Open file `/etc/ufw/before.rules` and add the IP under `# End required lines`, e.g. `-A ufw-before-input -s 10.0.0.10 -j DROP`
 Then run `sudo ufw reload`
+| ufw deny from 15.15.15.51 | Block an IP |
+| ufw deny out 25 | Block outgoing smtp |
