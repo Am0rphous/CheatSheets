@@ -4,9 +4,9 @@
 
 ### Commands
 
-- netplan generate
+- `netplan generate`
 - `netplan apply`
-- `netplan try
+- `netplan try`
 
 
 ### Syntax
