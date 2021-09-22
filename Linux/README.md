@@ -8,6 +8,7 @@
   - [Files and Folders](#Files-and-Folders)
     - [File and directory commands](#file-and-directory-commands)
     - [File compression](#file-compression)
+    - [File hashing](#find-hashing)
     - [Find large files](#find-large-files)
 - [**Help**](#Help)
 - [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
@@ -199,24 +200,6 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   xdg-open myfolder &
   ````
 
-  #### Find large files
-  ````powershell
-  du -a /var | sort -n -r | head -n 10
-  du -hs * | sort -rh | head -n 10
-  du -hsx * | sort -rh | head -10
-  cd /path/to/directory && du -hsx * | sort -rh | head -10
-  sudo du -a /home | sort -n -r | head -n 10
-  find / -size +100M -ls
-  find / -size +100M -size -200M -ls
-  sudo find / -type f -printf “%s\t%p\n” | sort -n | tail -1
-  find $HOME -type f -printf ‘%s %p\n’ | sort -nr | head -10
-  ````
-  Find top 10 files and directories consuming maximum disk space [source](https://sourcedigit.com/24840-how-to-find-large-files-in-linux-ubuntu/)
-  ````powershell
-  alias ducks='du -cks * | sort -rn | head'
-  ducks
-  ````
-
   #### File compression
   File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
   ````powershell
@@ -235,6 +218,31 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   Extract each file to new folder with same name
   ````powershell
   for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
+  ````
+
+  #### File hashing
+  ````powershell
+for i in *; do shasum -a 256 $i; done;
+sha256sum *
+shasum -a 256 *
+  ````
+
+  #### Find large files
+  ````powershell
+  du -a /var | sort -n -r | head -n 10
+  du -hs * | sort -rh | head -n 10
+  du -hsx * | sort -rh | head -10
+  cd /path/to/directory && du -hsx * | sort -rh | head -10
+  sudo du -a /home | sort -n -r | head -n 10
+  find / -size +100M -ls
+  find / -size +100M -size -200M -ls
+  sudo find / -type f -printf “%s\t%p\n” | sort -n | tail -1
+  find $HOME -type f -printf ‘%s %p\n’ | sort -nr | head -10
+  ````
+  Find top 10 files and directories consuming maximum disk space [source](https://sourcedigit.com/24840-how-to-find-large-files-in-linux-ubuntu/)
+  ````powershell
+  alias ducks='du -cks * | sort -rn | head'
+  ducks
   ````
 
 ## Help
