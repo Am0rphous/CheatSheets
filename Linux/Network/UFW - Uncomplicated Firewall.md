@@ -34,6 +34,7 @@ sudo ufw logging low/medium
 ### Block an IP
 Open file `/etc/ufw/before.rules` and add the IP under `# End required lines`, e.g. `-A ufw-before-input -s 10.0.0.10 -j DROP`
 Then run `sudo ufw reload`
+
 | ----------- | ----------- |
 | ufw deny from 15.15.15.51 | Block an IP |
 | ufw deny out 25 | Block outgoing smtp |
