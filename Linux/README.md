@@ -22,7 +22,7 @@
 - [**Peripherals**](#peripherals)
   - [USB- and PCI-devices](#usb--and-pci-devices)
 - [**Power**](#Power)
-- [**Remoting**](#remoting)
+- [**Remote Connections**](#remote-connections)
   - [Monitoring SSH](#monitoring-ssh)
 - [**Searching for stuff**](#searching-for-stuff)
   - [Find](#find)
@@ -408,13 +408,14 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
  sudo dmidecode --type 39           #DMI table decoder
  ````
 
-## Remoting
+## Remote Connections
 ````powershell
-ssh username@domain-name.com
+ssh username@domain.com
 ssh username@ip
 ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
+xfreerdp /u:Admin +clipboard /w:1366 /h:768 /v:SERVER_IP
 ````
 ### Monitoring SSH
 ````powershell
