@@ -1,6 +1,6 @@
 # L i n u x
 
-- [CDROM](#cdrom)
+- [**CDROM](#cdrom)
   - [Add virtual CDROM](#add-virtual-cdrom)
   - [DVD Ripping](#dvd-ripping)
 - [**Disk**](#disk)
