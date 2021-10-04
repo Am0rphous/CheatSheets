@@ -188,16 +188,18 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
 
   ### Files and Folders
   ````powershell 
-  head file list.txt                              #displays 10 first line of file
-  head -n 5 list.txt                              #displays 5 first line of file
+  head file list.txt                              #displays the 10 first line of file
+  head -n 5 list.txt                              #displays the 5 first line of file
   mkdir myfolder                                  #creates folder
   mkdir -v test                                   #v=verbose
   mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
   nautils &                                       #opens default home folder
   nautils Documents &                             #opens Documents folder
+  tail myfile.txt                                 #displays the 10 last lines of file
+  tail -n 16 myfile.txt                           #displays the 16 last lines of file
   touch myfile                                    #creates empty file
   xdg-open                                        #opens a file or URL in the user's preferred application
-  xdg-open myfolder &
+  xdg-open myfolder                               #opens myfolder and sends i
   ````
 
   #### File compression
