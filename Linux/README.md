@@ -97,7 +97,7 @@ Cron routines can be found in these files and folders
   - /etc/cron.hourly
   - /etc/cron.weekly
   - /etc/cron.monthly
- - /etc/cron.d
+ - /etc/cron.d           _cron treats the files in /etc/cron.d as in the same way as the /etc/crontab file (they follow the special format of that file, i.e. they include the user field)._
 
 ## Keeping your system up-to-date
 If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
