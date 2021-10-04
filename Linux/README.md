@@ -61,14 +61,14 @@ cdemu remove-device
 To use GUI open `gcdemu` (graphical-cdemu).
 
 ### DVD Ripping
-1. 
+1. Find Logical and Volume size:
 ````powershell
 [root@pc ~]# isoinfo -d -i /dev/sr1 | grep -i -E 'block size|volume size'
 Logical block size is: 2048
 Volume size is: 350320
 [root@pc ~]#
 ````
-2. 
+2. Write the CD/DVD to a location and specify the volume size:
 ````powershell
 [root@pc ~]# dd if=/dev/sr1 of=/mnt/folder/test.iso bs=2048 count=350320
 350320+0 records in
@@ -76,7 +76,7 @@ Volume size is: 350320
 700640 bytes (700 MB) copied, 72.405 s, 10.4 MB/s
 [root@pc ~]#
 ````
-3.
+3. Verify that the written iso file has the same checksum as the CD/DVD
 ````powershell
 sha256sum /mnt/folder/test.iso      #E.g. c58ea020874bae8712d5715a...
 sha256sum /dev/sr0                  #E.g. c58ea020874bae8712d5715a...
