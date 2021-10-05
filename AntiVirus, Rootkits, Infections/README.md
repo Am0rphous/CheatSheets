@@ -21,6 +21,9 @@ ssh -G 2>&1 | grep -e illegal -e unknown -e Gg > /dev/null && echo "System clean
 ### ClamAV
 - [Download](https://www.clamav.net/downloads)
 - [Installation on Debian and Ubuntu Linux Distributions](https://docs.clamav.net/manual/Installing/Steps/Steps-Debian-Ubuntu.html)
+- Check out for later: `clamav-daemon clamav-docs clamdscan clamfs libclamunrar
+- libclamunrar - anti-virus utility for Unix - unrar support
+- libclamunrar9 - anti-virus utility for Unix - unrar support
 ````powershell
 sudo apt install clamav clamav-daemon mailutils -y
 sudo service clamav-freshclam stop                  # service needs to be stopped before updating
