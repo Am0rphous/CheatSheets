@@ -61,7 +61,10 @@ service qemu-kvm status
 ````
 To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
 
-## Disk Convertion
+## CPU - Virtual Core and vCPU in KVM
+- [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
+
+## Converting Disk types
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 ````powershell
 tar xvf MyAppliance.ova
