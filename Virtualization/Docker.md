@@ -3,11 +3,7 @@
 - [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 - [Docker Security Cheat Sheet by OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Docker_Security_Cheat_Sheet.md)
 - [Run.tpl - script to inspect and generate the `docker run`command that created the container](https://gist.github.com/efrecon/8ce9c75d518b6eb863f667442d7bc679)
-  - Syntax:
-````
-docker inspect --format "$(<run.tpl)" name_or_id_of_running_container
-docker inspect --format "$(<run.tpl)" 5b3395b4896e
-````
+  - Syntax `docker inspect --format "$(<run.tpl)" name_or_id_of_running_container`
 
 
 ### Cleanup
