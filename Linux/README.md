@@ -124,6 +124,8 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
  - [Enable-Automatic-Updates.sh](https://github.com/Am0rphous/Bash/blob/master/Security/Enable-Automatic-Updates.sh) - Script that automatic install and enable automatic updates with smart settings.
  - [Unattended-upgrades](https://github.com/mvo5/unattended-upgrades) - Automatic installation of security upgrades on apt based systems.
+   - [Debian - configured 50unattended-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/50unattended-upgrades)
+   - [Debian - configured 20auto-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/20auto-upgrades)
  - [What's the difference: Security, Updates, Proposed & Backports in '50unattended-upgrades'](https://askubuntu.com/questions/401941/what-is-the-difference-between-security-updates-proposed-and-backports-in-etc)
  - Installation
  ````powershell
