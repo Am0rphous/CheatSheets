@@ -1,5 +1,7 @@
 # Debian
 
+- Check if server needs reboot: `ls -l /var/run/reboot-required`
+
 ## Language
 ````
 env | grep LANG
