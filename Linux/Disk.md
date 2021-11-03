@@ -119,7 +119,12 @@ for i in {1..30}; do echo "- - -" > /sys/class/scsi_host/host$i/scan; done
 
 
 ## Secure Deletion
-hdparm
+- dd
+````powershell
+dd if=/dev/zero of=/dev/sda2 bs=512 count=1
+dd if=/dev/urandom of=/dev/sda2 bs=4096
+````
+- hdparm
 ````powershell
 sudo hdparm --user-master u --security-set-pass foo /dev/sdX
 sudo hdparm -I /dev/sdX                                         # frozen should be "not frozen"
@@ -130,10 +135,20 @@ hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive D
 hdparm --user-master u --security-erase p /dev/sda              # if NOT
 dd if=/dev/sda bs=1M count=5                                    # should output nothing og just jibberish
 ````
-shred
+- scrub
 ````powershell
-sudo shred -v /dev/sdX            # default is overwrite 3 times
-sudo shred -v -n1 -z /dev/sdX     # overwrite 1 time + z=zero out after
+scrub /dev/sda5
+scrub -p dod /dev/sda5 -f
+````
+- shred
+````powershell
+sudo shred -v /dev/sdX                                  # default is overwrite 3 times
+sudo shred -v -n1 -z /dev/sdX                           # overwrite 1 time + z=zero out after
+shred -v --random-source=/dev/urandom -n10 /dev/sda2    # write random data 10 times on disk sda2
+````
+- wipe
+````powershell
+wipe /dev/sda2
 ````
 
 ## ZFS
