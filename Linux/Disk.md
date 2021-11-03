@@ -7,6 +7,7 @@
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
 - [Mounting / Unmounting](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting--unmounting)
   - [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-a-nas-synology-server-with-ip-100010-to-ubuntu)
+  - [Mounting Encrypted Drives](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-encrypted-drives)
 - [Scanning for new disks](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#scanning-for-new-disks)
 - [SDInfo](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#sdinfo)
 - [Secure Deletion](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#secure-deletion)
