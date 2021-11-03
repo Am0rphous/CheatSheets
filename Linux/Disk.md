@@ -6,7 +6,7 @@
 - [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
 - [Mounting / Unmounting](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting--unmounting)
-- [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-a-nas-synology-server-with-ip-100010-to-ubuntu)
+  - [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-a-nas-synology-server-with-ip-100010-to-ubuntu)
 - [Scanning for new disks](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#scanning-for-new-disks)
 - [SDInfo](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#sdinfo)
 - [Secure Deletion](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#secure-deletion)
@@ -77,7 +77,7 @@ sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
 sudo mount -a                              #mount all partitions from /ect/fstab
 ````
-## Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
+### Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
 ````powershell
 sudo apt-get install nfs-common
@@ -102,6 +102,12 @@ On the NAS server do:
   - Security            sys
   - Enable asynchronous MARKED
   - Click "Ok".
+
+### Mounting Encrypted Drives
+````powershell
+cryptsetup luksOpen /dev/sda2 secure
+mount /dev/mapper/krypto-root /mnt/secure
+````
 
 ## Scanning for new disks
 ````powershell
