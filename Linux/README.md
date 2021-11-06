@@ -463,6 +463,10 @@ sudo systemctl list-unit-files | grep enabled           #lists enabled services
 | echo "${string^^}" | Converts to upper case |
 | column -s, -t <tmp.csv | Pretty print a simple csv |
 
+````powershell
+cat file.log | sed -r 's/^.{3}//'       #removes three first characters of each line
+````
+
 Sorting (sources [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file),
 ````powershell
 sort ips.txt | uniq -c
