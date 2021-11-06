@@ -362,6 +362,7 @@ ffplay /dev/video0
   find / -executable          #searches for executable files
   find / -name *.mp3          #searches for files with .mp3 extension
   find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
+  find . -name sample.txt -exec rm -i {} \;   # finds sample.txt and asks if you want to remove it
   ````
 ### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
