@@ -7,21 +7,21 @@
 nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config
 ````
 
-### Brew Package manager
+### Brew Package Manager
 ````
 brew install cask                # deals with Graphical User Interface (GUI) 
 brew update                      # fetch the newest version of Homebrew and all formulae from GitHub using git(1) and perform any necessary migrations.
-brew outdated                    # list installed casks and formulae that have an updated version available.
-brew upgrade                     # upgrade outdated casks and outdated, unpinned formulae using the same options they were originally installed with, plus any appended brew formula options.
-brew upgrade [package name]      # upgrade specific package
-brew search [package name]       # searches for package
-brew install tor                 # installs package tor
-brew cask uninstall tor          # uninstalls tor
+brew outdated                     # list installed casks and formulae that have an updated version available.
+brew upgrade                      # upgrade outdated casks and outdated, unpinned formulae using the same options they were originally installed with, plus any appended brew formula options.
+brew upgrade [package name]       # upgrade specific package
+brew search [package name]        # searches for package
+brew install tor                  # installs package tor
+brew cask uninstall tor           # uninstalls tor
 brew cleanup
-brew info tor                    #lists info about the tor package
-brew services list
-brew services start tor          # start tor service
-brew services restart tor        # restart tor service
+brew info tor                     # lists info about the tor package
+brew services list                # list services
+brew services start tor           # start tor service
+brew services restart tor         # restart tor service
 ````
 
 ### Disk
@@ -34,10 +34,7 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 diskutil unmount /dev/disk4
 ````
 
-## DNS
-````powershell
-sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
-````
+
 
 ### Networking commands
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
@@ -53,6 +50,15 @@ sudo lsof -Pn -i4
 sudo lsof -Pn -i4 | grep LISTEN
 sudo tcpdump -Ii en0
 ````
+#### DNS
+````powershell
+sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
+````
+##### Clear the DNS cache
+````powershell
+dscacheutil -flushcache
+sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
+````
 
 ### Productivity
 ````powershell
@@ -61,10 +67,7 @@ caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
 cat myfile | pbcopy        # copies content to clipboard :D
 qlmanage -p myfile         # quick preview of 'myfile'
 ````
-#### Clear the DNS cache
-````powershell
-sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
-````
+
 
 ### Process management
 | Key/Command | Description |
@@ -90,17 +93,11 @@ proxychains4 curl ifconfig.me
 ````
 By copying the executable to another location, we resolve this. E.g. `cp /usr/local/bin/wget /tmp/`
 Then run:
-### Launchctl - Service Management
 ````powershell
 proxychains4 /tmp/wget https://google.com
 ````
 
-### Launchctl - Service Management
-````powershell
-sudo launchctl list                         # lists all macOS services
-sudo launchctl list | grep service          # lists services named 'service'
-sudo launchctl list | grep tor              # lists services named 'tor'
-````
+
 
 ### System
 - [System-info by Peter-Moller](https://github.com/Peter-Moller/system-info) - Script to give overview of an Operating System.
@@ -108,6 +105,20 @@ sudo launchctl list | grep tor              # lists services named 'tor'
   ````powershell
   softwareupdate -i -a
   ````
+#### Change Hostname
+````powershell
+sudo scutil --set HostName <new host name>
+sudo scutil --set LocalHostName <new host name>
+sudo scutil --set ComputerName <new name>
+dscacheutil -flushcache
+reboot
+````
+#### Launchctl - Service Management
+````powershell
+sudo launchctl list                         # lists all macOS services
+sudo launchctl list | grep service          # lists services named 'service'
+sudo launchctl list | grep tor              # lists services named 'tor'
+````
 
 ### Tips and Tricks
 ````
