@@ -125,15 +125,16 @@ big               # Opposite to bucket state
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
 ````powershell
 tcpdump -r capture_file
-sudo tcpdump -i eth0 -nn -s0 -v port 80
-sudo tcpdump -A -s0 port 80
-sudo tcpdump -i eth0 udp
-sudo tcpdump -i eth0 proto 17
-udo tcpdump -i eth0 dst 10.10.1.20
-sudo tcpdump -i eth0 host 10.10.1.1
-sudo tcpdump -i eth0 -s0 -w test.pcap
-sudo tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
-sudo tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
+tcpdump -i eth0 -nn -s0 -v port 80
+tcpdump -A -s0 port 80
+tcpdump -i eth0 udp
+tcpdump -i eth0 proto 17
+tcpdump -i eth0 dst 10.10.1.20
+tcpdump -i eth0 host 10.10.1.1
+tcpdump -qns 0 -A -r blah.pcap           #tcpick -C -yP -r tcp_dump.pcap
+tcpdump -i eth0 -s0 -w test.pcap
+tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
+tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
 ````
 #### Remember
 ````
