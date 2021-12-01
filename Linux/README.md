@@ -203,7 +203,13 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   xdg-open                                        #opens a file or URL in the user's preferred application
   xdg-open myfolder                               #opens myfolder and sends i
   ````
-
+  #### Tracking file auditing
+  ````powershell 
+  touch /tmp/myfile                                     #choose a file to monitor
+  sudo auditctl -w /tmp/myfile -p wa -k my-file-changed #add audit for write and attribute change (-p wa)
+  touch /tmp/myfile                                     #file is touched by user
+  sudo ausearch -k my-file-changed -i | tail -1            #check audit logs:
+  ````
   #### File compression
   File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
   ````powershell
