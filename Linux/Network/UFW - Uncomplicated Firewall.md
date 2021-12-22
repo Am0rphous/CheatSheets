@@ -1,10 +1,14 @@
 # UFW - Uncomplicated Firewall
 
 for later:
-
-https://www.configserverfirewall.com/ufw-ubuntu-firewall/ufw-allow-ip-address-ubuntu-firewall/
+- [Link 1](https://www.configserverfirewall.com/ufw-ubuntu-firewall/ufw-allow-ip-address-ubuntu-firewall/)
+- [Link 2](https://linoxide.com/guide-ufw-firewall-ubuntu-16-10/)
 
 sudo ufw logging low/medium
+
+These might be already default:
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
 
 | Key/Command | Description |
 | ----------- | ----------- |
