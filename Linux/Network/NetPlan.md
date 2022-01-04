@@ -12,27 +12,27 @@
 ### Syntax
 ````
 network:
-    Version: 2
-    Renderer: NetworkManager/ networkd
+    version: 2
+    renderer: NetworkManager/ networkd
     ethernets:
        DEVICE_NAME:
-          Dhcp4: yes/no
-          Addresses: [IP_ADDRESS/NETMASK]
-          Gateway4: GATEWAY
-          Nameservers:
-             Addresses: [NAMESERVER_1, NAMESERVER_2]
+          dhcp4: yes/no
+          addresses: [IP_ADDRESS/NETMASK]
+          gateway4: GATEWAY
+          nameservers:
+             addresses: [NAMESERVER_1, NAMESERVER_2]
 ````
 
 ### Example
 ````
 network:
-    Version: 2
-    Renderer: NetworkManager
-    ethernets:
-       eth0:
-          Dhcp4: no
-          Addresses: [10.1.1.1/24]
-          Gateway4: 10.1.1.1
-          Nameservers:
-             Addresses: [1.1.1.1, 1.0.0.1]
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses: [10.1.1.1/24]
+      gateway4: 10.1.1.1
+      Nameservers:
+        addresses: [1.1.1.1, 1.0.0.1]
 ````
