@@ -3,6 +3,7 @@
 - [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
 - [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
 - [Fschk - file system consistency check](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fschk---file-system-consistency-check)
+- [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
 - [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
 - [Mounting / Unmounting](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting--unmounting)
@@ -49,6 +50,18 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | fchk -y /dev/sdb | corrects errors automatically. y=yes |
 | fchk -A | checking all filesystems. The list is taken from /etc/fstab |
 | touch /forcefchk | forces computer to check disk at next reboot |
+
+## Listing
+- Commands
+````powershell
+cat /etc/fstab 
+sudo blkid                #locate/print block device attributes
+sudo blkid -p /dev/sda1
+findmnt                   #find a filesystem
+lsblk               
+ls -l /dev/disk/by-       #inspect the directories
+mount
+````
 
 ## LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
