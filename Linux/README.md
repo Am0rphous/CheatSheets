@@ -338,6 +338,7 @@ done
 ### USB- and PCI-devices
 Listing
 ````powershell
+sudo blkid
 lsusb
 ls /proc/bus/usb
 lspci
