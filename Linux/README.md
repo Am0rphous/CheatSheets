@@ -338,6 +338,7 @@ done
 ## Peripherals
 ### USB-devices
 - [Usbrip](https://github.com/snovvcrash/usbrip) - Tracking history of USB events on GNU/Linux.
+- [Usbtop](https://github.com/aguinet/usbtop) - usbtop is a top-like utility that shows an estimated instantaneous bandwidth on USB buses and devices. 
 ````powershell
 sudo blkid
 lsusb
