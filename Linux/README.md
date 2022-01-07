@@ -20,7 +20,8 @@
    - [Kernel Install/Removal](#kernel-installremoval)
 - [**Loops**](#Loops)
 - [**Peripherals**](#peripherals)
-  - [USB- and PCI-devices](#usb--and-pci-devices)
+  - [USB-devices](#usb-devices)
+  - [PCI-devices](#pci-devices)
 - [**Power**](#Power)
 - [**Remote Connections**](#remote-connections)
   - [Monitoring SSH](#monitoring-ssh)
@@ -335,8 +336,8 @@ done
 ````
 
 ## Peripherals
-### USB- and PCI-devices
-Listing
+### USB-devices
+- [Usbrip](https://github.com/snovvcrash/usbrip) - Tracking history of USB events on GNU/Linux.
 ````powershell
 sudo blkid
 lsusb
@@ -344,8 +345,7 @@ ls /proc/bus/usb
 lspci
 usb-devices 
 ````
-
-Webcam
+#### Webcam
 ````powershell
 sudo apt-get install v4l-utils
 v4l2-ctl --list-devices
@@ -356,6 +356,14 @@ Play from webcam
 sudo apt install ffmpeg
 ffplay /dev/video0
 ````
+### PCI-devices
+Listing PCI devices
+
+````powershell
+sudo lspci
+````
+
+
 
 ## Searching for stuff
 
