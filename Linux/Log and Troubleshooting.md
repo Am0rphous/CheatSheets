@@ -43,7 +43,7 @@ lightdm/lightdm.log                   display manager log
        x-0.log
 lighttpd/access.log
         /error.log
-messages
+messages                             variety of events: system error messages, system startups/shutdowns, network config change
 syslog                               closelog, openlog, syslog, vsyslog - send messages to the system logger
 ufw.log                              ufw, uncomplicated firewall log
 unattended-upgrades
