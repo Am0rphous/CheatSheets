@@ -9,6 +9,7 @@ Note for later
 sudo snap install lxd                   #sudo apt install lxc
 sudo lxd init
 sudo lxc launch ubuntu:18.04 my-vm-name
+sudo lxc launch ubuntu:16.04 vm1
 sudo lxc list
 sudo lxc exec my-vm-name bash
 ````
