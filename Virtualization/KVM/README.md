@@ -13,7 +13,8 @@ https://bobcares.com/blog/manage-kvm-guest-virtual-machines-using-virsh-commands
 - [kvm/kvm.git](https://git.kernel.org/pub/scm/virt/kvm/kvm.git) - Development repo.
 - [linux-kvm.org](https://www.linux-kvm.org/page/Main_Page)
 - [KVM](https://www.kernel.org/doc/html/latest/virt/kvm/index.html)
-- [KVM Networking Docs](https://wiki.libvirt.org/page/Networking#NAT_forwarding_.28aka_.22virtual_networks.22.29)
+  - [KVM Networking Docs](https://wiki.libvirt.org/page/Networking#NAT_forwarding_.28aka_.22virtual_networks.22.29)
+  - [KVM/QEMU Windows guest drivers (virtio-win)](https://github.com/virtio-win/kvm-guest-drivers-windows) - Windows paravirtualized.
   - [Libvirt - Hooks for specific system management](https://www.libvirt.org/hooks.html)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
