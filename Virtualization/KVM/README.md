@@ -28,11 +28,22 @@ sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ````
-### Enable Virsh Console Access For KVM Guests
+  ### Enable Virsh Console Access For KVM Guests
 ````
 systemctl enable serial-getty@ttyS0.service
 systemctl start serial-getty@ttyS0.service
 ````
+
+  ### Description of Packages
+````powershell
+qemu                #The Quick Emulator allows hardware virtualization.
+qemu-kvm            #main KVM package.
+libvritd-daemon     #virtualization daemon.
+bridge-utils        #used to create network-bridges.
+virt-manager        #graphical user interface to manage VMs
+kvmtool            #contains some diagnostics and debugging tools for KVM.
+````
+
 ## Usage
 - To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
 - Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
@@ -43,16 +54,6 @@ virsh shutdown vm-dev01               poweroff vm-dev01
 virsh domrename vm01-clone1 vm01      rename vm01-clone to vm01
 virsh blockresize rhel8 /var/lib/libvirt/images/rhel8.qcow2 40G      #extend disk with 40 GB
 kvm_stat                              Displays KVM statistics
-````
-
-### Package description
-````powershell
-qemu                #The Quick Emulator allows hardware virtualization.
-qemu-kvm            #main KVM package.
-libvritd-daemon     #virtualization daemon.
-bridge-utils        #used to create network-bridges.
-virt-manager        #graphical user interface to manage VMs
-kvmtool            #contains some diagnostics and debugging tools for KVM.
 ````
 
 ### Usefull commands
