@@ -21,6 +21,7 @@ route
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````powershell
 sudo lsof -nP -iTCP -sTCP:LISTEN
+sudo ss -lptn
 sudo ss -tulpn
 sudo netstat -tulpn
 sudo netstat -peanut
