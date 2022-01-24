@@ -65,6 +65,7 @@ mount
 
 ## LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
+- [Lvextend command examples in Linux](https://www.thegeekdiary.com/lvextend-command-examples-in-linux/)
 ````powershell
 pvcreate /dev/sdb1
 pvdisplay
