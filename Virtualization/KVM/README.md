@@ -18,11 +18,6 @@ https://bobcares.com/blog/manage-kvm-guest-virtual-machines-using-virsh-commands
   - [Libvirt - Hooks for specific system management](https://www.libvirt.org/hooks.html)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
-## Enable Virsh Console Access For KVM Guests
-````
-systemctl enable serial-getty@ttyS0.service
-systemctl start serial-getty@ttyS0.service
-````
 
 ## Setup
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
@@ -32,6 +27,11 @@ sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-
 sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
+````
+### Enable Virsh Console Access For KVM Guests
+````
+systemctl enable serial-getty@ttyS0.service
+systemctl start serial-getty@ttyS0.service
 ````
 ## Usage
 - To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
