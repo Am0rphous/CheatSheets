@@ -23,7 +23,7 @@ https://bobcares.com/blog/manage-kvm-guest-virtual-machines-using-virsh-commands
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
 Installation:
 ````
-sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
+sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool spice-vdagent
 sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
@@ -36,12 +36,13 @@ systemctl start serial-getty@ttyS0.service
 
   ### Description of Packages
 ````powershell
+bridge-utils        #used to create network-bridges.
+kvmtool             #contains some diagnostics and debugging tools for KVM.
+libvritd-daemon     #virtualization daemon.
 qemu                #The Quick Emulator allows hardware virtualization.
 qemu-kvm            #main KVM package.
-libvritd-daemon     #virtualization daemon.
-bridge-utils        #used to create network-bridges.
+spice-vdagent       #enable copy/paste between vm and host
 virt-manager        #graphical user interface to manage VMs
-kvmtool            #contains some diagnostics and debugging tools for KVM.
 ````
 
 ## Usage
