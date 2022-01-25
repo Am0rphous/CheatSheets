@@ -65,6 +65,7 @@ docker system prune --volumes       #does the trick
 
 ## Network
 - [How to fix the Docker and UFW security flaw](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/)
+- [What is the best practice of docker + ufw under Ubuntu](https://stackoverflow.com/questions/30383845/what-is-the-best-practice-of-docker-ufw-under-ubuntu)
 - _Docker actually bypasses UFW and directly alters iptables, such that a container can bind to a port. This means all those UFW rules you have set won't apply to Docker containers_
 - Edit the file `/etc/default/docker` and add `DOCKER_OPTS="--iptables=false"`. Restart service: `sudo systemctl restart docker`
 
