@@ -39,6 +39,7 @@
 - [**Users and groups**](#users-and-groups)
   - [Passwords](#passwords)
   - [Run script with another users privileges](#run-script-with-another-users-privileges)
+  - [Shell](#shell)
   - [User info](#user-info)
 - [**Variables**](#Variables)
 
@@ -544,6 +545,14 @@ echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
 - [source](https://blog.mypapit.net/)
 ````powershell
 su -c "/usr/bin/executable" -s /bin/sh username
+````
+## Shell
+- List all available shells on your system: `cat /etc/shells`
+- Change a users Shell:
+````powershell
+usermod --shell /bin/bash mike
+chsh --shell /bin/sh mike
+#manual change the user in /etc/passwd
 ````
 
 ### User info
