@@ -146,8 +146,9 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
         "${distro_id}:${distro_codename}-updates";
         "${distro_id}:${distro_codename}-proposed";
         "${distro_id}:${distro_codename}-backports";
-        // The Onion Router
-        // "origin=TorProject";
+        //Tor project
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        "origin=TorProject";
 };
 Unattended-Upgrade::Package-Blacklist {
 };
