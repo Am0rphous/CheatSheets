@@ -137,22 +137,29 @@ sudo add-apt-repository -r ppa:na/name              #removes ppa "na/name"
  ````
  Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
  ````powershell
- Unattended-Upgrade::Allowed-Origins {
+// Automatically upgrade packages from these (origin:archive) pairs
+//
+// Note that in Ubuntu security updates may pull in new dependencies
+// from non-security sources (e.g. chromium). By allowing the release
+// pocket these get automatically pulled in.
+Unattended-Upgrade::Allowed-Origins {
         "${distro_id}:${distro_codename}";
         "${distro_id}:${distro_codename}-security";
+        // Extended Security Maintenance; doesn't necessarily exist for
+        // every release and this system may not have it installed, but if
+        // available, the policy for updates is such that unattended-upgrades
+        // should also install from here by default.
         "${distro_id}ESMApps:${distro_codename}-apps-security";
-       // "${distro_id}ESM:${distro_codename}";
         "${distro_id}ESM:${distro_codename}-infra-security";
         "${distro_id}:${distro_codename}-updates";
         "${distro_id}:${distro_codename}-proposed";
         "${distro_id}:${distro_codename}-backports";
-        //Tor project
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
-        "origin=TorProject";
 };
+
+// List of packages to not update (regexp are supported)
 Unattended-Upgrade::Package-Blacklist {
 };
-Unattended-Upgrade::DevRelease "auto";
+Unattended-Upgrade::DevRelease "false";
 Unattended-Upgrade::AutoFixInterruptedDpkg "true";
 Unattended-Upgrade::MinimalSteps "true";
 Unattended-Upgrade::InstallOnShutdown "false";
