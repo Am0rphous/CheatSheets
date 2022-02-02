@@ -346,6 +346,7 @@ done
 
 ## Peripherals
 ### USB-devices
+- [USBGuard](https://github.com/USBGuard/usbguard) - USBGuard is a software framework for implementing USB device authorization policies (what kind of USB devices are authorized) as well as method of use policies (how a USB device may interact with the system).
 - [Usbrip](https://github.com/snovvcrash/usbrip) - Tracking history of USB events on GNU/Linux.
 - [Usbtop](https://github.com/aguinet/usbtop) - usbtop is a top-like utility that shows an estimated instantaneous bandwidth on USB buses and devices. 
 ````powershell
