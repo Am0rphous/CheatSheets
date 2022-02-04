@@ -284,9 +284,17 @@ uname -sr                           #kernel name and version
 dpkg --list | grep linux-image      # list installed kernels
 ````
   ### Kernel Security
-  - [AppArmor](https://www.apparmor.net)
+  - [AppArmor](https://www.apparmor.net) - MAC style security extension for the Linux kernel.
+    - [AppArmor GitLab](https://gitlab.com/apparmor)
+    - [Documentation](https://www.kernel.org/doc/html/latest/admin-guide/LSM/apparmor.html)
   ````powershell
   aa-status                       # display various information about the current AppArmor policy.
+  sudo ln -s /etc/apparmor.d/usr.sbin.cupsd /etc/apparmor.d/disable/   #disable cupsd
+  sudo apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.cupsd
+  ls -l /etc/apparmor.d/disable/                                       #list disabled profiles
+  sudo rm /etc/apparmor.d/disable/usr.sbin.cupsd                       #re-enable it
+  sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.cupsd
+  reboot                                                               #to see profile back in the 'apparmor_status command'
   ````
   Check for unsigned kernel modules
   ````powershell
