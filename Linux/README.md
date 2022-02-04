@@ -296,6 +296,7 @@ dpkg --list | grep linux-image      # list installed kernels
   sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.cupsd
   reboot                                                               #to see profile back in the 'apparmor_status command'
   ````
+
   Check for unsigned kernel modules
   ````powershell
   for mod in $(lsmod | tail -n +2 | cut -d' ' -f1); do modinfo ${mod} | grep -q "signature" || echo "no signature for module: ${mod}" ; done
