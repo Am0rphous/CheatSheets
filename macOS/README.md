@@ -27,6 +27,7 @@ brew services restart tor         # restart tor service
 ### Disk
 ````
 sudo dd if=~/Downloads/Ubuntu20.04.iso of=/dev/disk5 bs=1m
+sudo dd if=/dev/disk2s7 bs=4096 | pv -s 28G | sudo dd of=raspbery.img bs=4096    #brew install pv
 diskutil list
 diskutil eject /dev/disk5
 diskutil eraseDisk exFAT MyUSBName /dev/disk4
