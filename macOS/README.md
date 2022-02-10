@@ -1,6 +1,9 @@
 ## MacOS
 
-#### Analytics
+<br>
+<br>
+
+### Analytics
 - [Opt out of sharing iCloud analytics](https://www.imore.com/how-opt-out-sharing-icloud-analytics-mac)
 - To see and open CrashReporter config file
 ````powershell
@@ -37,7 +40,7 @@ diskutil unmount /dev/disk4
 
 
 
-### Networking commands
+### Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````
@@ -60,26 +63,7 @@ sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
 dscacheutil -flushcache
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ````
-
-### Productivity
-````powershell
-caffeinate                 # stop computer from going to sleep infintine
-caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
-cat myfile | pbcopy        # copies content to clipboard :D
-qlmanage -p myfile         # quick preview of 'myfile'
-````
-
-
-### Process management
-| Key/Command | Description |
-| ----------- | ----------- |
-| killall java | Kill all java |
-| ps axu | grep "/bin/tor" | Lists processes with "bin/tor" |
-| sudo fuser 8080/tcp | Show all process on port 8080 |
-|sudo fuser -k 8080/tcp |Kill that process |
-| | |
-
-## Proxychains
+#### Proxychains
 Install proxychains-ng with
 ````powershell
 brew install proxychains-ng
@@ -99,13 +83,32 @@ proxychains4 /tmp/wget https://google.com
 ````
 
 
+### Productivity
+````powershell
+caffeinate                 # stop computer from going to sleep infintine
+caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
+cat myfile | pbcopy        # copies content to clipboard :D
+qlmanage -p myfile         # quick preview of 'myfile'
+````
 
-### System
+
+### Process management
+| Key/Command | Description |
+| ----------- | ----------- |
+| killall java | Kill all java |
+| ps axu | grep "/bin/tor" | Lists processes with "bin/tor" |
+| sudo fuser 8080/tcp | Show all process on port 8080 |
+|sudo fuser -k 8080/tcp |Kill that process |
+| | |
+
+
+
+### System Maintenance
 - [System-info by Peter-Moller](https://github.com/Peter-Moller/system-info) - Script to give overview of an Operating System.
-- Update system
-  ````powershell
-  softwareupdate -i -a
-  ````
+- Update MacOS from terminal
+````powershell
+softwareupdate --all --install --force
+````
 #### Change Hostname
 ````powershell
 sudo scutil --set HostName <new host name>
@@ -114,7 +117,7 @@ sudo scutil --set ComputerName <new name>
 dscacheutil -flushcache
 reboot
 ````
-#### Launchctl - Service Management
+#### Service Management - Launchctl
 ````powershell
 sudo launchctl list                         # lists all macOS services
 sudo launchctl list | grep service          # lists services named 'service'
