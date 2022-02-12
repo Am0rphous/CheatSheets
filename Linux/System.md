@@ -3,6 +3,9 @@
 ### Commands
 ````powershell
 top                      # display Linux processes
+last reboot
+who -b
+uptime
 ````
 
 ## Monitoring
