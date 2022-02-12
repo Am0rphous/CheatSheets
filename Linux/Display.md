@@ -18,3 +18,14 @@ ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 ps e -u $USR | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u       #listing for user $USR
 xrandr --listactivemonitors
 ````
+
+# Video RAM
+- Commands
+````powershell
+dmesg | grep VRAM
+echo $(dmesg | grep -o -P -i "(?<=vram:).*(?=M 0x)")$" Mb"
+echo $"VRAM: "$(($(grep -P -o -i "(?<=memory:).*(?=kbytes)" /var/log/Xorg.0.log) / 1024))$" Mb"
+grep -i memory /var/log/Xorg.0.log
+glxinfo | egrep -i 'device|memory'
+LC_ALL=C lspci -v | grep -EA10 "3D|VGA" | grep 'prefetchable' 
+````
