@@ -30,3 +30,5 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 ````
 - Add to /etc/fstab `/swapfile swap swap defaults 0 0`
+#### Disable swap
+- Command: `sudo swapoff -a  `
