@@ -287,6 +287,7 @@ dpkg --list | grep linux-image      # list installed kernels
   ### Kernel Security
   - [AppArmor](https://www.apparmor.net) - MAC style security extension for the Linux kernel.
     - [AppArmor GitLab](https://gitlab.com/apparmor)
+    - [Apparmor Ubuntu Docs](https://ubuntu.com/server/docs/security-apparmor)
     - [Documentation](https://www.kernel.org/doc/html/latest/admin-guide/LSM/apparmor.html)
   ````powershell
   sudo apt install apparmor-utils   # let's us use aa-disable command
