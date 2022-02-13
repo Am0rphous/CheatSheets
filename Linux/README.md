@@ -289,7 +289,8 @@ dpkg --list | grep linux-image      # list installed kernels
     - [AppArmor GitLab](https://gitlab.com/apparmor)
     - [Documentation](https://www.kernel.org/doc/html/latest/admin-guide/LSM/apparmor.html)
   ````powershell
-  aa-status                       # display various information about the current AppArmor policy.
+  sudo apt install apparmor-utils   # let's us use aa-disable command
+  aa-status                         # display various information about the current AppArmor policy.
   
   sudo ln -s /etc/apparmor.d/usr.sbin.cupsd /etc/apparmor.d/disable/   #disable cupsd
   sudo apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.cupsd
