@@ -5,6 +5,7 @@
 - [IDRAC8](https://www.dell.com/community/PowerEdge-Hardware-General/RAC0613-The-uploaded-file-is-invalid-iDRAC-update-issue/td-p/7788739)
 
 ### Manual updating VIBs from an ESXi host
+- for later:  https://tinkertry.com/easy-update-to-latest-esxi
 ````powersell
 esxcli software vib install -d “/vmfs/volumes/Datastore/DirectoryName/PatchName.zip“
 esxcli software vib update -d “/vmfs/volumes/Datastore/DirectoryName/PatchName.zip”
