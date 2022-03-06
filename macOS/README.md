@@ -63,6 +63,19 @@ sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
 dscacheutil -flushcache
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ````
+
+### Password Generation
+- Command to created 50 random small passwords:
+````powershell
+i=1
+while [ $i -le 50 ]
+do
+  head -c 10 /dev/random | shasum -a 256 | head -c 8
+  echo ""
+  ((i++))
+done
+````
+
 #### Proxychains
 Install proxychains-ng with
 ````powershell
