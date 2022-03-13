@@ -62,6 +62,7 @@ docker system prune --volumes       #does the trick
 | docker rm $(docker ps --filter status=exited -q) | Delete all stopped containers |
 | docker ps --filter label=traefik.backend | List all containers with specific label 'traefik.backend' |
 | docker inspect -f '{{.NetworkSettings.IPAddress}}' container | Query a specific metadata of a running container |
+| docker inspect -f "{{ .HostConfig.RestartPolicy }}" <container_id> | Check restart policy |
 
 ## Network
 - [How to fix the Docker and UFW security flaw](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/)
