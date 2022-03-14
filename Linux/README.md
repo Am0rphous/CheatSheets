@@ -204,6 +204,7 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   head file list.txt                              #displays the 10 first line of file
   head -n 5 list.txt                              #displays the 5 first line of file
   mkdir myfolder                                  #creates folder
+  mkdir myfolder{1..50}                           #creates 50 folders
   mkdir -v test                                   #v=verbose
   mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
   nautils &                                       #opens default home folder
@@ -211,15 +212,16 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   tail myfile.txt                                 #displays the 10 last lines of file
   tail -n 16 myfile.txt                           #displays the 16 last lines of file
   touch myfile                                    #creates empty file
+  touch myfile{1..50}                             #creates 50 empty files
   xdg-open                                        #opens a file or URL in the user's preferred application
   xdg-open myfolder                               #opens myfolder and sends i
   ````
   #### Tracking file auditing
   ````powershell 
-  touch /tmp/myfile                                     #choose a file to monitor
-  sudo auditctl -w /tmp/myfile -p wa -k my-file-changed #add audit for write and attribute change (-p wa)
-  touch /tmp/myfile                                     #file is touched by user
-  sudo ausearch -k my-file-changed -i | tail -1            #check audit logs:
+  touch /tmp/myfile                                       #choose a file to monitor
+  sudo auditctl -w /tmp/myfile -p wa -k my-file-changed   #add audit for write and attribute change (-p wa)
+  touch /tmp/myfile                                       #file is touched by user
+  sudo ausearch -k my-file-changed -i | tail -1           #check audit logs:
   ````
   #### File compression
   File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
