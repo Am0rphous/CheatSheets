@@ -403,8 +403,9 @@ sudo lspci
   find / filename             #searches from root directory
   find / -executable          #searches for executable files
   find / -name *.mp3          #searches for files with .mp3 extension
-  find / -name myfile -exec nano '{}' \;      #searches for files with 'myfile' names and opens nano
-  find . -name sample.txt -exec rm -i {} \;   # finds sample.txt and asks if you want to remove it
+  find / -name myfile -exec nano '{}' \;            #searches for files with 'myfile' names and opens nano
+  find . -name sample.txt -exec rm -i {} \;         #finds sample.txt and asks if you want to remove it
+  find . -name '*(1).*' -exec mv "{}" ../folder \;  #moves files containing (1) to the folder 'folder' 
   ````
 ### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
