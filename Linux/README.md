@@ -462,6 +462,7 @@ ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
 xfreerdp /u:Admin +clipboard /w:1366 /h:768 /v:SERVER_IP
+ssh user@IP 'echo "rootPassword" | sudo -Sv && bash -s' < local-computer-script.sh
 ````
 ### Monitoring SSH
 ````powershell
