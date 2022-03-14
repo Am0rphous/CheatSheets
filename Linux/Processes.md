@@ -24,10 +24,11 @@ kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
 ### Monitor processes
 ````powershell
 top
-htop                                   # sudo apt install htop
-glances                                # sudo apt install glances
-lsof -p $PID                           # list open files and network streams
-tr '\0' '\n' < /proc/1179/environ      # list environment variables of a process separated by null bytes
+htop                                    # sudo apt install htop
+glances                                 # sudo apt install glances
+lsof -p $PID                            # list open files and network streams
+tr '\0' '\n' < /proc/1179/environ       # list environment variables of a process separated by null bytes
+ps aux | sort -nk +4 | tail             # display top 10 running processes - sorted by memory usage
 ````
 - [pSpy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions
 
