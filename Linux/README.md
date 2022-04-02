@@ -14,6 +14,7 @@
 - [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
 - [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
   - [Cron-apt](#cron-apt)
+  - [Downgrade to Ubuntu 18.04]()
   - [Unattended Upgrades](#unattended-upgrades)
 - [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
@@ -125,6 +126,16 @@ sudo apt-key del 11112222                           # characters from 8 last let
  /etc/cron.d/cron-apt            #default crontab entry 
  /usr/sbin/cron-apt              #testing cron-apt
  ````
+### Downgrade to Ubuntu 18.04
+1. Run `sed -i 's/cosmic/bionic/g' /etc/apt/sources.list`
+2. Create the file `/etc/apt/preference` with the content
+````powershell
+Package: *
+Pin: release a=bionic
+Pin-Priority: 1001
+````
+3. Run `sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y`
+ 
  ### Unattended Upgrades
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
  - [Enable-Automatic-Updates.sh](https://github.com/Am0rphous/Bash/blob/master/Security/Enable-Automatic-Updates.sh) - Script that automatic install and enable automatic updates with smart settings.
