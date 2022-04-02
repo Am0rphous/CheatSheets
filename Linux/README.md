@@ -14,7 +14,7 @@
 - [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
 - [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
   - [Cron-apt](#cron-apt)
-  - [Downgrade to Ubuntu 18.04]()
+  - [Downgrade to Ubuntu 18.04](#downgrade-to-ubuntu-1804)
   - [Unattended Upgrades](#unattended-upgrades)
 - [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
