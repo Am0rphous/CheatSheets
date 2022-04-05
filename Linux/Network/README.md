@@ -128,6 +128,7 @@ big               # Opposite to bucket state
 tcpdump -r capture_file
 tcpdump -i eth0 -nn -s0 -v port 80
 tcpdump -A -s0 port 80
+tcpdump -i eth0 port 636 -X              # show whole package
 tcpdump -i eth0 udp
 tcpdump -i eth0 proto 17
 tcpdump -i eth0 dst 10.10.1.20
