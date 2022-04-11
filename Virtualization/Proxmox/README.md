@@ -7,6 +7,9 @@ Tip
 - [How to update Proxmox without buying a subscription](https://www.caretech.io/2018/06/08/how-to-update-proxmox-without-buying-a-subscription/)
 - [Importing VMWare and VirtualBox VMs to Proxmox](https://rmoff.net/2016/06/07/importing-vmware-and-virtualbox-vms-to-proxmox/)
 
+## Live Migration
+- [AutoMIgrate Bash script](https://pastebin.com/y5YLPCc3)
+
  ## Templates
  - [Downloading Proxmox CT Templates](https://serverok.in/downloading-proxmox-ct-templates)
 ````powershell
