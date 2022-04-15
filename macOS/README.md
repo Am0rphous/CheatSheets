@@ -10,6 +10,18 @@
 nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config
 ````
 
+### Antivirus
+- Clamav
+````
+brew install clamav
+brew ls clamav |grep clamd                                                        #locate clamd daemon
+sudo cp /usr/local/etc/clamav/freshclam.conf.sample /etc/clamav/freshclam.conf
+sudo cp /usr/local/etc/clamav/clamd.conf.sample /etc/clamav/clamd.conf
+sudo nano /etc/clamav/freshclam.conf                                              #edit config file
+sudo freshclam -v
+clamscan /tmp --infected                                                          #scan and only list infected files
+````
+
 ### Brew Package Manager
 ````
 brew install cask                # deals with Graphical User Interface (GUI) 
