@@ -4,3 +4,8 @@
   -  To create a test environment.
   -  To recover the system or password.
   -  To reinstall the bootloader.
+
+- execl
+````
+execl, execlp, execle, execv, execvp, execvpe       execute a file
+````
