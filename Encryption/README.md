@@ -1,6 +1,7 @@
 # Encryption
 
 - [CryptDecrypt](https://github.com/Va5c0/CryptDecrypt) - Encrypt your password or decrypt your hash. Multiple algorithms supported.
+- [CryptHook](https://github.com/chokepoint/CryptHook) - TCP/UDP symmetric encryption tunnel wrapper.
 - [CyberChef](https://gchq.github.io/CyberChef/)
 
 ### GPG
