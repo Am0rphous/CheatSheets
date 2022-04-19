@@ -222,6 +222,9 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
   nautils &                                       #opens default home folder
   nautils Documents &                             #opens Documents folder
+  rm myfile                                       #removes myfile
+  rm !(backup.gz)                                 #removes every file in the folder except backup.gz
+  rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
   tail myfile.txt                                 #displays the 10 last lines of file
   tail -n 16 myfile.txt                           #displays the 16 last lines of file
   touch myfile                                    #creates empty file
