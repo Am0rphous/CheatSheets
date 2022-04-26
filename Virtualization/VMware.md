@@ -18,7 +18,11 @@ esxcli network ip connection list | grep -i listen
 esxcli network ip connection list | grep 3260
 esxcli network ip neighbor list
 esxcli network vm list
+vmkping -S vmotion IP
+vmkping -I vmk1 S vmotion IP
 ````
+
+
 
 ### Video Memory
 - [Note:](https://kb.vmware.com/s/article/1031002) Video Memory (VRAM) does not affect RDP sessions and the above steps are only applicable for connections through PCOIP.
