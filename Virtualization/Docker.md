@@ -3,7 +3,7 @@
 - [Docker Basics Presentation](https://folk.ntnu.no/torewilh/docker-basics/)
 - [Docker Cheat Sheet](https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf)
 - [Docker Security Cheat Sheet by OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Docker_Security_Cheat_Sheet.md)
-- [Run.tpl - script to inspect and generate the `docker run`command that created the container](https://gist.github.com/efrecon/8ce9c75d518b6eb863f667442d7bc679)
+- [Run.tpl](https://gist.github.com/efrecon/8ce9c75d518b6eb863f667442d7bc679) - script to inspect and generate the `docker run`command that created the container
   - Syntax `docker inspect --format "$(<run.tpl)" name_or_id_of_running_container`
 
 
@@ -79,6 +79,20 @@ docker system prune --volumes       #does the trick
 | docker network connect mynet myContainer | Connect a running container from a network |
 | docker network disconnect mynet myContainer | Disconnect container 'myContainer' from 'mynet' |
 
+## Updating
+Commands
+````
+docker pull mysql
+docker stop my-mysql-container
+docker rm my-mysql-container
+docker run --name=my-mysql-container --restart=always \
+  -e MYSQL_ROOT_PASSWORD=mypwd -v /my/data/dir:/var/lib/mysql -d mysql
+````
+- docker-compose:
+````
+docker-compose pull 
+docker-compose up -d
+````
 
 
 ##### Credit
