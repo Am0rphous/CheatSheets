@@ -21,6 +21,12 @@ esxcli network vm list
 vmkping -S vmotion IP
 vmkping -I vmk1 S vmotion IP
 ````
+#### Networking
+- Disable IPV6
+````
+esxcli network ip set --ipv6-enabled=false
+reboot
+````
 
 
 
