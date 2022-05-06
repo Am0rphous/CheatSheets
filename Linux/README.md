@@ -460,6 +460,7 @@ sudo lspci
 grep -r testing                             # grep recursivly
 grep -v success *                           # list everything except "success"
 grep -i test                                # i= ignore case
+grep -rn "eth0" /etc                        # recursive + displays line
 grep -R -i memfree .                        # R = recursive dereference
 grep -q error syslog.log                    # silence the output
 echo $?                                     # results in 0 or 1 depending on true or false
