@@ -5,6 +5,7 @@
 ps                              # display currently active processes
 ps auxw | grep nginx            # display processes from 'nginx'
 ps -fauxxx                      # check your system for associated orphaned processes
+ps -p 317738 -o comm=           # get name of process
 pidof nginx 
 pgrep nginx
 pgrep nginx | wc -l               # count number of processes
