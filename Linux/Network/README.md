@@ -5,7 +5,7 @@
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [tcp_flags.txt](https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7)
 
-## Commands worth knowing
+## Commands you need to know
 ````powershell
 arp
 ip a l                      # show ip config
@@ -16,6 +16,7 @@ iwconfig
 netstat
 ping
 route
+ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
 #### Check open ports
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
