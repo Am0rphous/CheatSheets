@@ -142,6 +142,7 @@ Pin-Priority: 1001
  - [Unattended-upgrades](https://github.com/mvo5/unattended-upgrades) - Automatic installation of security upgrades on apt based systems.
    - [Debian - configured 50unattended-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/50unattended-upgrades)
    - [Debian - configured 20auto-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/20auto-upgrades)
+   - [How to run unattended-upgrades not daily but every few hours](https://unix.stackexchange.com/questions/178626/how-to-run-unattended-upgrades-not-daily-but-every-few-hours)
  - [What's the difference: Security, Updates, Proposed & Backports in '50unattended-upgrades'](https://askubuntu.com/questions/401941/what-is-the-difference-between-security-updates-proposed-and-backports-in-etc)
 1. Installation
  ````powershell
@@ -188,8 +189,8 @@ Unattended-Upgrade::Debug "true";
 3. Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`. 
  ````bash
 APT::Periodic::Enable "1";
-APT::Periodic::Update-Package-Lists "1";
-APT::Periodic::Unattended-Upgrade "1";
+APT::Periodic::Update-Package-Lists "12h";
+APT::Periodic::Unattended-Upgrade "12h";
 APT::Periodic::Download-Upgradeable-Packages "1";
 APT::Periodic::AutocleanInterval "30";
  ````
