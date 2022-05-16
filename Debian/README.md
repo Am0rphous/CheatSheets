@@ -1,5 +1,7 @@
 # Debian
 
+- [ Debian-Privacy-Server-Guide](https://github.com/drduh/Debian-Privacy-Server-Guide) - Guide to using a remote Debian server for security and privacy services 
+
 - Check if server needs reboot: `ls -l /var/run/reboot-required`
 
 ## Language
