@@ -15,6 +15,7 @@
 - [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
   - [Cron-apt](#cron-apt)
   - [Downgrade to Ubuntu 18.04](#downgrade-to-ubuntu-1804)
+  - [PPA](#ppa)
   - [Unattended Upgrades](#unattended-upgrades)
 - [**Kernel**](#Kernel)
    - [Kernel Security](#kernel-security)
@@ -135,6 +136,9 @@ Pin: release a=bionic
 Pin-Priority: 1001
 ````
 3. Run `sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y`
+
+  ### PPA
+  - [Using PPA in Ubuntu Linux [Complete Guide]](https://itsfoss.com/ppa-guide/)
  
  ### Unattended Upgrades
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
