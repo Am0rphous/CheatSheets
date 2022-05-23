@@ -50,7 +50,12 @@ diskutil eraseDisk JHFS+ CleanDrive /dev/disk1
 diskutil unmount /dev/disk4
 ````
 
-
+### Files and Folders
+- Hiding files and folders
+````
+hflags hidden my-folder       #hides my-folder
+chflags nohidden my-folder    #unhides my-folder
+````
 
 ### Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
