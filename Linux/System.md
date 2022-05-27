@@ -15,6 +15,7 @@ uptime
 
 ## Performance
 - [TuneD](https://github.com/redhat-performance/tuned)
+  - [How To Optimize Linux System Performance with tuned-adm](https://computingforgeeks.com/optimize-linux-system-performance-with-tuned-adm/)
 ````
 sudo apt install tuned tuned-utils tuned-utils-systemtap
 tuned-adm active                                            #check active profile
