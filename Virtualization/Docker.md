@@ -54,6 +54,7 @@ docker system prune --volumes       #does the trick
 | docker container kill web | Stop a running container through SIGKILL |
 
 ## Manage Containers
+- [Copy Files from Docker Container to Local Machine](https://www.tutorialspoint.com/copy-files-from-docker-container-to-local-machine)
 | Key/Command | Description |
 | ----------- | ----------- |
 | docker ps | List running containers |
