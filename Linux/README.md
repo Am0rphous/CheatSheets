@@ -509,6 +509,19 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
  sudo lshw -c power
  sudo dmidecode --type 39           #DMI table decoder
  ````
+ - Enable powersaving for disks:
+  ````powershell
+pm-powersave true
+hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sda
+hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sdb
+hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sdc
+hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sdd
+
+hdparm -S 50 /dev/sda
+hdparm -S 50 /dev/sdb
+hdparm -S 50 /dev/sdc
+hdparm -S 50 /dev/sdd
+ ````
 
 ## Remote Connections
 ````powershell
