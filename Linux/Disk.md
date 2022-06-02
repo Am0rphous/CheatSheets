@@ -42,6 +42,9 @@ sudo dd if=/dev/sda3 conv=sync,noerror bs=2M | split -a 3 -d -b 1G - /maindisk.i
 sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
 ````
 
+## Encrypting Disk
+- [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
+
 ## Fschk - file system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
