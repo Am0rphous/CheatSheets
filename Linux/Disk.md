@@ -92,6 +92,12 @@ mkfs.ext4 /dev/sdb1
 
 ## Monitoring
 - [IoTop](https://github.com/Tomas-M/iotop) - A top utility for IO.
+- sysstat - `sudo apt install sysstat`
+````
+iotat
+iostat -y 1       # get continuous output of all disk activity, which updates every 1 second
+iostat -y 1 -m    # same as above, but listing in Megabytes in stead og Kilobytes
+````
 
 ## Mounting / Unmounting
 ````powershell
