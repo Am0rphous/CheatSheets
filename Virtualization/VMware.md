@@ -1,5 +1,11 @@
 # VMware
 
+## Fusion
+- Disable Promiscous Mode Authentication:
+````
+sudo touch "/Library/Preferences/VMware Fusion/promiscAuthorized"
+````
+
 ## ESXI
 ### Update BIOS
 - [IDRAC8](https://www.dell.com/community/PowerEdge-Hardware-General/RAC0613-The-uploaded-file-is-invalid-iDRAC-update-issue/td-p/7788739)
