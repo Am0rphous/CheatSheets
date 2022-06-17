@@ -7,4 +7,4 @@
 `chgrp malware-analysis /dev/vmnet0`
 3. Fix appropriate permissions  <br>
 `chmod g+rw /dev/vmnet0`  <br>
-Fix for all users: `chmod a+rw /dev/vmnet0`
+`chmod a+rw /dev/vmnet0` Fixing for all users
