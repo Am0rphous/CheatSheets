@@ -6,5 +6,5 @@
 2. Change group ownership on the vmnet0 device <br>
 `chgrp malware-analysis /dev/vmnet0`
 3. Fix appropriate permissions  <br>
-`chmod g+rw /dev/vmnet0` 
+`chmod g+rw /dev/vmnet0`  <br>
 Fix for all users: `chmod a+rw /dev/vmnet0`
