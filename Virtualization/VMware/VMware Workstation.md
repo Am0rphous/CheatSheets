@@ -5,5 +5,6 @@
 `sudo groupadd malware-analysis`
 2. Change group ownership on the vmnet0 device <br>
 `chgrp malware-analysis /dev/vmnet0`
-3. Fix appropriate permissions `chmod g+rw /dev/vmnet0` 
-  - Fix for all users: `chmod a+rw /dev/vmnet0`
+3. Fix appropriate permissions  <br>
+`chmod g+rw /dev/vmnet0` 
+Fix for all users: `chmod a+rw /dev/vmnet0`
