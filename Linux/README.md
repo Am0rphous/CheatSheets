@@ -555,6 +555,7 @@ systemctl enable ssh                                    #enables service ssh
 systemctl enable tor1                                   #enable new service tor1
 systemctl --type=service                                #list loaded services
 sudo systemctl list-unit-files | grep enabled           #lists enabled services
+sudo systemctl list-unit-files --state=enabled          #list enabled services run at boot time
 ````
 ### Network Share
 1. Install
