@@ -1,10 +1,10 @@
 # VMware Workstation
 
 ### Enable [promiscuous mode on Linux](https://kb.vmware.com/s/article/287) VMs
-1. Lets add a group for e.g. malware analysis <br>
+1. Lets add a group for e.g. malware analysis <br> <br>
 `sudo groupadd malware-analysis`
-2. Change group ownership on the vmnet0 device <br>
+2. Change group ownership on the vmnet0 device <br> <br>
 `chgrp malware-analysis /dev/vmnet0`
-3. Fix appropriate permissions  <br>
+3. Fix appropriate permissions  <br> <br>
 `chmod g+rw /dev/vmnet0`  <br>
 `chmod a+rw /dev/vmnet0` Fixing for all users
