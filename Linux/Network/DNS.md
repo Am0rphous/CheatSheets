@@ -13,6 +13,7 @@ host 172.217.21.174
 host myserver ns1.dns.com
 nslookup google.com
 resolvectl status
+sudo systemd-resolve --flush-caches
 ````
 
 ## DNS lookup
