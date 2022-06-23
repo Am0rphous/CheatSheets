@@ -342,15 +342,51 @@ help alias
 help cd
 help while
 ````
-  ### Man
-  - Searching for Man pages
+### Man - Searching for Man pages
 ````
 man -k KEYWORD ...
 man -k password
 man -k reboot
 man -k ssh
 ````
-  
+### Man - Page Navigation
+- Type "h" for additional information while inside man and type "q" to quit.
+````
+j     Forward one line
+k     Backward one line
+^F    Forward one window
+^B    Backward one window
+g     Go to first line in file (or line N).
+G     Go to last line in file (or line N).
+````
+### Man - Searching Within a Man Page
+````
+/pattern    Search forward for matching line.
+?pattern    Search backward for matching line.
+n           Repeat previous search
+N           Repeat previous search in reverse direction.
+ESC-u       Undo (toggle) search highlighting.
+````
+### Man Page Sections
+````
+man [SECTION] PAGE ...
+man unlink
+man 2 unlink
+man 7 arp
+````
+- Sections:
+````
+1   Executable programs or shell commands
+2   System calls (functions provided by the kernel)
+3   Library calls (functions within program libraries)
+4   Special files (usually found in /dev)
+5   File formats and conventions eg /etc/passwd
+6   Games
+7   Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)
+8   System administration commands (usually only for root)
+9   Kernel routines [Non standard]
+````
+
 
 ## Kernel
 - [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
