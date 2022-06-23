@@ -14,6 +14,7 @@
     - [File hashing](#file-hashing)
     - [Find large files](#find-large-files)
 - [**Help**](#Help)
+  - [Man](#man)
 - [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
 - [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
   - [Cron-apt](#cron-apt)
@@ -326,11 +327,31 @@ shasum -a 256 *
 ## Help
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 ````powershell
-command --help
+command -h
 ipconfig --help
-man command
-man ipconfig
+man command             #opens manual for 'command'
+man ipconfig            #opens manual for the 'ipconfig' command
+type alias              #determining Type of command 'alias'
+type man
+type ls
 ````
+- Shell Builtins
+````
+help [pattern ...]
+help alias
+help cd
+help while
+````
+  ### Man
+  - Searching for Man pages
+````
+man -k KEYWORD ...
+man -k password
+man -k reboot
+man -k ssh
+````
+  
+
 ## Kernel
 - [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
 Commands
