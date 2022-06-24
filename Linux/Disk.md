@@ -133,7 +133,7 @@ On the NAS server do:
 
 ### Mounting Encrypted Drives
 ````powershell
-cryptsetup luksOpen /dev/sda2 secure
+cryptsetup luksOpen /dev/sda3 mydisk--vg-root
 mount /dev/mapper/krypto-root /mnt/secure
 ````
 
