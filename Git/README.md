@@ -32,7 +32,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | ----------- | ----------- |
 | git clone https://github.com/Am0rphous/Cheat-Sheets | Clones the repo to your current folder |
 | git add . | Stages all the modified files at once.|
-| git add -A . |
+| | git add -A . |
 | git add fil1 fil2 fil3 | add files to Change |
 | git commit -m "Describing the suff i did" | Commits a comment to all the files |
 | git status |
