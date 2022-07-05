@@ -41,6 +41,7 @@ fg n                # brings job 'n' to the foreground
 ````
 
 ### Zombie processes
+- [How to Find and Kill Zombie Process in Linux](https://itsfoss.com/kill-zombie-process-linux/) - "This is a quick tip on finding zombie processes in Linux and then killing them. You also learn a thing or two about processes and zombie processes."
 ````powershell
 ps aux | grep 'Z'
 ps afuwwx | less +u -p'^(\S+\s+){7}Z.*'
