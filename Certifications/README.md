@@ -7,5 +7,5 @@
 - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
   - [CySA+](https://github.com/ReefMeeter/CySA)
 - [OSCE³ Study Guide](https://github.com/CyberSecurityUP/OSCE-Complete-Guide) - OSWE, OSEP, OSED 
-- [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization?pfe-ocyu0cdip=training)
+- [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
 - [VMware Certification](https://www.vmware.com/learning/certification.html)
