@@ -17,6 +17,7 @@ https://bobcares.com/blog/manage-kvm-guest-virtual-machines-using-virsh-commands
   - [KVM/QEMU Windows guest drivers (virtio-win)](https://github.com/virtio-win/kvm-guest-drivers-windows) - Windows paravirtualized.
   - [KVM Virtualization in RHEL 7 Made Easy.pdf](https://linux.dell.com/files/whitepapers/KVM_Virtualization_in_RHEL_7_Made_Easy.pdf)
   - [Libvirt - Hooks for specific system management](https://www.libvirt.org/hooks.html)
+- [Oracle's KVM Usage](https://docs.oracle.com/en/operating-systems/oracle-linux/kvm-user/kvm-KVMUsage.html#basic-usage)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
 
