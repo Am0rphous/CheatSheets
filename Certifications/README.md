@@ -10,6 +10,8 @@
 
 ## Linux
 - [LinuC (Linux Professional Certification)](https://linuc.org/en/) - Certification series designed to evaluate the knowledge and skills of IT professionals. Planning and development of these exams is managed by LPI-Japan, an NPO, with support from major Japanese IT companies, professional development enterprises and industry publishers.
+- [Certified Linux professional](https://www.lpi.org/) - [Mind the Gap - Industry report on open source technology skills in the UK](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)
+  - [Linux Professional Institute – Learning](https://learning.lpi.org/en/)
 
 ## Virtualization
 - [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
