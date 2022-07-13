@@ -587,6 +587,7 @@ hdparm -S 50 /dev/sdd
 ````powershell
 ssh username@domain.com
 ssh username@ip
+ssh -D 127.0.0.1:9050 target.com      #ssh through local tor proxy
 ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
