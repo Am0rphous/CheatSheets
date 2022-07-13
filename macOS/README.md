@@ -53,8 +53,11 @@ diskutil unmount /dev/disk4
 ### Files and Folders
 - Hiding files and folders
 ````
-hflags hidden my-folder       #hides my-folder
-chflags nohidden my-folder    #unhides my-folder
+hflags hidden my-folder       #hides "my-folder"
+chflags nohidden my-folder    #unhides "my-folder"
+brew install locate                                                           #installs locate for locating files
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist   #creating a db for locate
+locate TorBrowser                                                             #locates anything that matches "TorBrowser"
 ````
 
 ### Networking
