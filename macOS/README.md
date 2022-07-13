@@ -96,11 +96,13 @@ do
 done
 ````
 
-#### Proxychains
-Install proxychains-ng with
+#### Proxychains-ng
+Installation
 ````powershell
-brew install proxychains-ng
+brew install proxychains-ng       #config: /usr/local/etc/proxychains.conf
 proxychains4 curl ifconfig.me
+proxychains4 ssh@server.com
+proxychains4 nmap ip
 ````
 Be aware: Sometimes you may encounter no IP change, e.g.
 ````powershell
