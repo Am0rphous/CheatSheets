@@ -1,6 +1,7 @@
 # VMware ESXi
 
-- [ VMware ESXi ](https://www.vmware.com/products/esxi-and-esx.html)
+- [General ESXi Security Recommendations](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-B39474AF-6778-499A-B8AB-E973BE6D4899.html)
+- [VMware ESXi](https://www.vmware.com/products/esxi-and-esx.html)
 
 
 ### Manual updating VIBs from an ESXi host
