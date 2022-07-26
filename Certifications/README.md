@@ -2,6 +2,7 @@
 
 ## Cybersecurity
 - [Infosec Certification list](https://resources.infosecinstitute.com/certifications/)
+- [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
 - [CEH (Certified Ethical Hacker)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
   - [CEH C-11 Exam Free Practice Questions](https://certdemy.com/certified-ethical-hacker-exam-free-practice-questions/)
 - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
