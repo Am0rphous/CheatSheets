@@ -10,13 +10,18 @@ VBoxManage list runningvms      #list only running vms
 VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
 ````
 
-### Extention Pack installation
-- [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+## Setup for VMs
+  ### Extention Pack installation
+  - [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 ````powershell
 wget https://download.virtualbox.org/virtualbox/6.1.32/Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 VBoxManage list extpacks
 ````
+  - 2:
+  ````
+  sudo apt install virtualbox-ext-pack virtualbox-guest-utils
+  ````
 
 ### Creation of VMs
 ````powershell
