@@ -1,6 +1,7 @@
 # VirtualBox
 
 Useful links
+- [differences between VBoxVGA, VMSVGA and VBoxSVGA in VirtualBox?](https://superuser.com/questions/1403123/what-are-differences-between-vboxvga-vmsvga-and-vboxsvga-in-virtualbox)
 - [How to create and start VirtualBox VM without GUI](https://www.xmodulo.com/how-to-create-and-start-virtualbox-vm-without-gui.html)
 
 ### Useful Commands
@@ -10,18 +11,19 @@ VBoxManage list runningvms      #list only running vms
 VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
 ````
 
-## Setup for VMs
-  ### Extention Pack installation
-  - [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+### Extention Pack setup
+- 1:
+- [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 ````powershell
 wget https://download.virtualbox.org/virtualbox/6.1.32/Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 VBoxManage list extpacks
 ````
-  - 2:
-  ````
-  sudo apt install virtualbox-ext-pack virtualbox-guest-utils
-  ````
+- 2:
+````
+sudo apt install virtualbox-ext-pack virtualbox-guest-utils
+````
 
 ### Creation of VMs
 ````powershell
