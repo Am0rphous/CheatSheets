@@ -96,6 +96,12 @@ do
 done
 ````
 
+#### Peripherals
+- Listing
+````
+ioreg -p IOUSB -l -w 0      #listing devices
+````
+
 #### Proxychains-ng
 Installation
 ````powershell
