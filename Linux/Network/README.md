@@ -49,6 +49,11 @@ openssl x509 -text -noout -in certificate.crt                 #decrypt cert to a
 openssl s_client -showcerts -connect example.com:443          #read the SSL Certificate information from a remote server
 ````
 
+## Curl
+````
+curl -v -H "user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0" 'https://url.com'
+````
+
 ## NetStat - _Network Statistics_
 _command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
 ````powershell
