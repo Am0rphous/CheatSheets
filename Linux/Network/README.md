@@ -8,6 +8,7 @@
 ## Commands you need to know
 ````powershell
 arp
+curl ifconfig.me            # check your public ip
 ip a l                      # show ip config
 ip addr OR ip addr show     # show ip config
 ifconfig                    # show ip config
