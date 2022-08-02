@@ -28,7 +28,7 @@ git push origin main
 ````
 
 ## Various commands
-Remember to unmount disk before checking. e.g. `umount /dev/sdb`
+
 | Key/Command | Description |
 | ----------- | ----------- |
 | git clone https://github.com/Am0rphous/Cheat-Sheets | Clones the repo to your current folder |
@@ -37,6 +37,7 @@ Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | git add fil1 fil2 fil3 | add files to Change |
 | git commit -m "Describing the suff i did" | Commits a comment to all the files |
 | git status |
+| git mv cybersec temp && git mv tmp CyberSec | Renames folder. Don't use only the `mv` command. [source](https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory)
 | git push | Pushes everything up to Github |
 | git push origin master |
 | git log | Show commit logs
