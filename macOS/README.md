@@ -83,6 +83,12 @@ sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
 dscacheutil -flushcache
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ````
+#### Fail2ban
+- Config file: `/usr/local/etc/fail2ban`
+````
+brew install fail2ban
+brew services restart fail2ban
+````
 
 ### Password Generation
 - Command to created 50 random small passwords:
