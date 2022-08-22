@@ -6,7 +6,10 @@
   -  To reinstall the bootloader.
 - Fail2ban
 ````
+#List banned users
 awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log | sort | uniq -c | sort -n
+#Unban IP addresses
+fail2ban-client set sshd unbanip 1.2.3.4
 ````
 - execl
 ````
