@@ -4,7 +4,10 @@
   -  To create a test environment.
   -  To recover the system or password.
   -  To reinstall the bootloader.
-
+- Fail2ban
+````
+awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log | sort | uniq -c | sort -n
+````
 - execl
 ````
 execl, execlp, execle, execv, execvp, execvpe       execute a file
