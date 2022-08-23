@@ -32,6 +32,9 @@ git push origin main
 | Key/Command | Description |
 | ----------- | ----------- |
 | git clone https://github.com/Am0rphous/Cheat-Sheets | Clones the repo to your current folder |
+| git config --global credential.helper manager-core | |
+| git config --global user.name "Am0rphous" | |
+| git config user.email " ... @users.noreply.github.com" | |
 | git add . | Stages all the modified files at once.|
 | | git add -A . |
 | git add fil1 fil2 fil3 | add files to Change |
