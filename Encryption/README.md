@@ -12,6 +12,7 @@ gpg --decrypt <tempfile
 ````
 
 ### OpenSSL
+- [Useful openssl commands to view certificate content](https://www.golinuxcloud.com/openssl-view-certificate/)
 - verifying
 ````
 openssl x509 -noout -text -in nameCertificate.crt
