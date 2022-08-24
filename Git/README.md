@@ -35,7 +35,7 @@ git push origin main
 | git config --global credential.helper manager-core | |
 | git config --global user.name "Am0rphous" | |
 | git config user.email " ... @users.noreply.github.com" | |
-| | git config --global credential.helper store [source](https://stackoverflow.com/questions/46645843/where-to-store-my-git-personal-access-token) |
+| | git config --global credential.helper store - [source](https://stackoverflow.com/questions/46645843/where-to-store-my-git-personal-access-token) |
 | git add . | Stages all the modified files at once.|
 | | git add -A . |
 | git add fil1 fil2 fil3 | add files to Change |
