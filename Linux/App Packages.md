@@ -18,11 +18,19 @@ To install cargo on Linux run: `sudo apt install cargo`
 
 ## Snaps
 - [https://snapcraft.io/](https://snapcraft.io/)
-
-Commands
+- Commands
 ````powershell
 snap install rocketchat-server
 snap refresh rocketchat-server
 service snap.rocketchat-server.rocketchat-server status
 service snap.rocketchat-server.rocketchat-server stop
 ````
+- snap-update-ns failed with code 1 - [Source](https://github.com/wekan/wekan-snap/issues/121)
+````
+snap remove --purge <snap_name>
+sudo systemctl enable --now snapd.socket
+sudo snap install <snap_name>
+sudo snap connect <snap_name>:process-control
+snap run <snap_name>
+````
+
