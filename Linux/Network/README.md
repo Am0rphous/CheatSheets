@@ -60,6 +60,8 @@ _command-line tool that displays network connections (both incoming and outgoing
 sudo netstat -tulpn
 sudo netstat -peanut
 sudo netstat -peanut | grep ":8000 "
+#This will give you the number of active connections for each connected IP
+sudo netstat -ntu -4 -6 |  awk '/^tcp/{ print $5 }' | sed -r 's/:[0-9]+$//' |  sort | uniq -c | sort -n
 ````
 
 ## Nmap - Network Mapper
