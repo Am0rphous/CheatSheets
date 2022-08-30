@@ -32,7 +32,9 @@ network:
     eth0:
       dhcp4: no
       addresses: [10.1.1.1/24]
-      gateway4: 10.1.1.1
+      routes:
+        - to: default
+          via: 10.1.1.1
       Nameservers:
         addresses: [1.1.1.1, 1.0.0.1]
 ````
