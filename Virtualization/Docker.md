@@ -55,6 +55,7 @@ docker system prune --volumes       #does the trick
 
 ## Manage Containers
 - [Copy Files from Docker Container to Local Machine](https://www.tutorialspoint.com/copy-files-from-docker-container-to-local-machine)
+
 | Key/Command | Description |
 | ----------- | ----------- |
 | docker ps | List running containers |
