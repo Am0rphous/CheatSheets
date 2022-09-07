@@ -17,6 +17,7 @@ wget -qO - https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scr
 sudo apt install -y gitlab-ce
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl status
+sudo gitlab-rake gitlab:check
 ````
 #### Add user as admin
 - Start rails console with `sudo gitlab-rails console`
