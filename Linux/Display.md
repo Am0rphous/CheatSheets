@@ -1,6 +1,6 @@
 # D i s p l a y
 
-# Change Display Manager (LighttDM or GDm3
+### Change Display Manager (LighttDM or GDm3
 ````powershell
 sudo dpkg-reconfigure gdm3
 sudo dpkg-reconfigure lightdm
@@ -12,14 +12,15 @@ sudo systemctl status lightdm
 - [LightDM Github](https://github.com/canonical/lightdm)
 - [LightDM Ubuntu wiki](https://wiki.ubuntu.com/LightDM)
 
-## List display and monitor info
+### List display and monitor info
 ````powershell
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 ps e -u $USR | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u       #listing for user $USR
 xrandr --listactivemonitors
+echo $XDG_CURRENT_DESKTOP      #list desktop environment
 ````
 
-# Video RAM
+### Video RAM
 - Commands
 ````powershell
 dmesg | grep VRAM
