@@ -17,6 +17,10 @@ sudo systemctl status lightdm
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 ps e -u $USR | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u       #listing for user $USR
 xrandr --listactivemonitors
+````
+### List desktop environment
+````
+ls /usr/bin/*-session
 echo $XDG_CURRENT_DESKTOP      #list desktop environment
 ````
 
