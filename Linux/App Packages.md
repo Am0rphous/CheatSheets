@@ -15,6 +15,9 @@ To install cargo on Linux run: `sudo apt install cargo`
 
 ## FlatPak
 - [https://flatpak.org/](https://flatpak.org/)
+````
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+````
 
 ## Snaps
 - [https://snapcraft.io/](https://snapcraft.io/)
