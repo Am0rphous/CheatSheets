@@ -122,6 +122,7 @@ sudo add-apt-repository ppa:what/whatever           # add repo in /etc/apt/sourc
 sudo add-apt-repository -r ppa:na/name              # removes ppa "na/name"
 sudo apt-key list                                   # list keys
 sudo apt-key del 11112222                           # characters from 8 last letter from the key block (apt-key list)
+sudo apt-key del "6F6B 1550 9CF8 E59E 6E46  9F32 7F43 8280 EF8D 349F"    #also works
 ````
 
  ### cron-apt
