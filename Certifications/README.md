@@ -9,7 +9,8 @@
 - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
   - [CySA+](https://github.com/ReefMeeter/CySA)
 - [eLearnSecurity eJPT]()
-  - [eJPT-Notes](https://github.com/grumpzsux/eJPT-Notes)
+  - [eJPT-Notes - grumpzsux](https://github.com/grumpzsux/eJPT-Notes)
+  - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
 - [OSCE³ Study Guide](https://github.com/CyberSecurityUP/OSCE-Complete-Guide) - OSWE, OSEP, OSED
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
