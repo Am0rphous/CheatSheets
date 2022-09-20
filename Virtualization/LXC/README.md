@@ -1,13 +1,15 @@
 # LXC Cheat Sheet
 
-Note for later
-
-- [lxc-webpanel (archived)](https://lxc-webpanel.github.io)
+## GUI
+- [LXD Dashboard](https://lxdware.com/) - This LXD dashboard is a web-based user interface (GUI) for managing containers and virtual machines through LXD. [Github](https://github.com/lxdware/lxd-dashboard)
+- [LXC Web Panel (archived)](https://lxc-webpanel.github.io)
 
 ## Setup
 ````
-sudo snap install lxd                   #sudo apt install lxc
+sudo snap install lxd                   #sudo apt install lxc lxd-client
 sudo lxd init
+sudo lxc launch ubuntu:22.04
+sudo lxc launch ubuntu:22.04 --vm
 sudo lxc launch ubuntu:18.04 my-vm-name
 sudo lxc launch ubuntu:16.04 vm1
 sudo lxc list
