@@ -684,7 +684,11 @@ Counting number of uniqe lines
 sort ips.txt | uniq | wc -l
 awk '!seen[$0]++' ips.txt | wc -l
 ````
-
+- Sorting list of names
+````
+sort names.txt
+sort -u names.txt     #removes duplicate lines
+````
 
 ## Time and date
 ````powershell
