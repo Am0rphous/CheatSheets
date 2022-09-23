@@ -38,8 +38,6 @@
     - [Whereis - locate the binary, source, and manual page files for a command](#whereis---locate-the-binary-source-and-manual-page-files-for-a-command)
     - [Which](#which)
     - [Zgrep - search within compressed files](#zgrep---search-within-compressed-files)
-- [**Services**](#Services)
-  - [Network Share](#network-share)
 - [**Shortcuts**](#Shortcuts)
 - [**Text**](#text)
 - [**Time and date**](#time-and-date)
