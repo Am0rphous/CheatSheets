@@ -607,45 +607,6 @@ w
 who
 ````
 
-## Services
-````powershell
-service ssh status                                      #option 1: shows service status
-systemctl status ssh                                    #option 2: shows service status
-systemctl enable ssh                                    #enables service ssh
-systemctl enable tor1                                   #enable new service tor1
-systemctl --type=service                                #list loaded services
-sudo systemctl list-unit-files | grep enabled           #lists enabled services
-sudo systemctl list-unit-files --state=enabled          #list enabled services run at boot time
-````
-### Network Share
-1. Install
-````powershell
-sudo apt-get install samba samba-common-bin
-````
-3. Open file: `sudo nano /etc/samba/smb.conf` and add at e.g. the end
-````powershell
-[share]
-Comment = Shared Folder
-Path = /srv/Share
-available = yes
-valid users = alice
-read only = no
-browsable = yes
-public = yes
-writable = yes
-````
-4. Create Samba users with their own passwords
-````powershell
-sudo smbpasswd -a alice
-````
-5. Restart service: `sudo service smbd restart`
-6. Firewall:
-````powershell
-sudo ufw allow 137  #NetBIOS Name service
-sudo ufw allow 138 #NetBIOS Datagram Service
-sudo ufw allow 139  #netbios-ssn
-sudo ufw allow 445  #used in Widows
-````
 
 ## Shortcuts
 | Keyboard shortcut | Description |
