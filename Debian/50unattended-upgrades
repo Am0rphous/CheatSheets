@@ -26,19 +26,22 @@ Unattended-Upgrade::Origins-Pattern {
         // archives (e.g. from testing to stable and later oldstable).
         // Software will be the latest available for the named release,
         // but the Debian release itself will not be automatically upgraded.
-        "origin=Debian,codename=${distro_codename}-updates";
-        "origin=Debian,codename=${distro_codename}-proposed-updates";
-        "origin=Debian,codename=${distro_codename},label=Debian";
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        // "origin=Debian,codename=${distro_codename}-updates";
+        // "origin=Debian,codename=${distro_codename}-proposed-updates";
+        // "origin=Debian,codename=${distro_codename},label=Debian";
+        // "origin=Debian,codename=${distro_codename},label=Debian-Security";
 
         // Archive or Suite based matching:
         // Note that this will silently match a different release after
         // migration to the specified archive (e.g. testing becomes the
         // new stable).
-        "o=Debian,a=stable";
-        "o=Debian,a=stable-updates";
-        "o=Debian,a=proposed-updates";
-        "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
+        // "o=Debian,a=stable";
+        // "o=Debian,a=stable-updates";
+        // "o=Debian,a=proposed-updates";
+        // "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
+        
+        // Anything
+        "origin=*";
 };
 
 // Python regular expressions, matching packages to exclude from upgrading
