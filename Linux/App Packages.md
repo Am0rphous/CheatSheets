@@ -40,3 +40,6 @@ snap run <snap_name>
 ````
 service snapd.apparmor start 
 ````
+## Synaptic
+- Homepage - https://www.nongnu.org/synaptic/
+- Synaptic is a graphical package management program for apt.
