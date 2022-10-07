@@ -11,4 +11,5 @@
 - [Navi](https://github.com/denisidoro/navi)  An interactive cheatsheet tool for the command-line 
 - [Oneliner Hub](https://github.com/nonunicorn/onelinerhub) - Lib with nearly 800 (and counting) minimalistic code pieces with clear explanation @ onelinerhub.com.
 - [Parsing data in bash](https://github.com/r00t-3xp10it/hacking-material-books/blob/master/bash/parsing_data_in_bash.md)
- 
+- [Tldr](https://github.com/tldr-pages/tldr) - 📚 Collaborative cheatsheets for console commands
+
