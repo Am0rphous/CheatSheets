@@ -15,6 +15,8 @@
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
   - [The Ultimate OSCP Preparation Guide, 2021](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
+  - [OSCP](https://github.com/0xsyr0/OSCP) - OSCP Guide
+
 
 ## Linux
 - [LinuC (Linux Professional Certification)](https://linuc.org/en/) - Certification series designed to evaluate the knowledge and skills of IT professionals. Planning and development of these exams is managed by LPI-Japan, an NPO, with support from major Japanese IT companies, professional development enterprises and industry publishers.
