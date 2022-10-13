@@ -123,8 +123,11 @@ sudo apt-key list 2>/dev/null | grep expired -B 1   # check expired GPG keys
 sudo apt-key del 11112222                           # characters from 8 last letter from the key block (apt-key list)
 sudo apt-key del "6F6B 1550 9CF8 E59E 6E46  9F32 7F43 8280 EF8D 349F"    #also works
 ````
+- [NeedRestart](https://github.com/liske/needrestart) - needrestart checks which daemons need to be restarted after library upgrades.
+
 
  ### cron-apt
+ - This package checks at certain intervals new packages to update
  ````powershell
  sudo apt install cron-apt
  /etc/cron-apt/config            #configuration path
