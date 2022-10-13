@@ -1,5 +1,7 @@
 # A p p P a c k a g e s
 
+- [Anatomy of Linux dynamic libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
+
 ## 0Install
 _Similar to AppImages, but with extra security features._
 
