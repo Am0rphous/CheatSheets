@@ -4,8 +4,8 @@
 - [cheatsheets by cheat](https://github.com/cheat/cheatsheets) - Community-sourced cheatsheets 
 
 - [**CDROM**](#cdrom)
- - [Add virtual CDROM](#add-virtual-cdrom)
-  - [DVD Ripping](#dvd-ripping)
+    - [Add virtual CDROM](#add-virtual-cdrom)
+    - [DVD Ripping](#dvd-ripping)
 - [**Disk**](#disk)
 - [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
   - [Files and Folders](#Files-and-Folders)
