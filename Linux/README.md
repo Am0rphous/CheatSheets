@@ -259,6 +259,7 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
 ````
 
   ### Files and Folders
+  - Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
   ````powershell 
   head file list.txt                              #displays the 10 first line of file
   head -n 5 list.txt                              #displays the 5 first line of file
