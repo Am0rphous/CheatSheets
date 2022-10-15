@@ -23,6 +23,8 @@ tuned-adm active                                            #check active profil
 tuned-adm profile throughput-performance                    #activate performance profile
 sudo tuned-adm active                                       #Confirm current profile.
 ````
+- Check current performance mode: `cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+- Switch to performance mode: `echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
 
 
 ## System Info
