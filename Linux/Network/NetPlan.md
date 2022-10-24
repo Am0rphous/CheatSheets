@@ -1,6 +1,7 @@
 # Netplan 
 
 - [Netplan configuration examples](https://netplan.io/examples/)
+- [NetPlan reference](https://netplan.io/reference/#introduction)
 
 ### Commands
 
@@ -18,7 +19,10 @@ network:
        DEVICE_NAME:
           dhcp4: yes/no
           addresses: [IP_ADDRESS/NETMASK]
-          gateway4: GATEWAY
+          routes:
+            - to: default
+              via: DEFAULTGATEWAY
+              metric: INTEGEAR
           nameservers:
              addresses: [NAMESERVER_1, NAMESERVER_2]
 ````
@@ -35,6 +39,7 @@ network:
       routes:
         - to: default
           via: 10.1.1.1
+          metric: 100
       Nameservers:
         addresses: [1.1.1.1, 1.0.0.1]
 ````
