@@ -27,6 +27,7 @@ sudo mkfs.vfat /dev/sdb –I
 sudo dd if=~/Downloads/iso/Ubuntu.iso of=/dev/sdb
 #OR
 sudo dd if=ubuntu.iso of=/dev/sdb status=progress oflag=sync bs=4M
+sudo dd bs=4M if=kali.iso of=/dev/sdd conv=fdatasync status=progress
 ````
 Monitor the progress
 ````powershell
