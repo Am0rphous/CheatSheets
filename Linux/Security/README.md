@@ -10,6 +10,7 @@
 awk '($(NF-1) = /Ban/){print $NF}' /var/log/fail2ban.log | sort | uniq -c | sort -n
 #Unban IP addresses
 fail2ban-client set sshd unbanip 1.2.3.4
+fail2ban-client unban 1.2.3.4.
 ````
 - execl
 ````
