@@ -16,3 +16,6 @@ By today (2. December 2020) AWUS1900 supports:
 
 - [Official Drivers](https://files.alfa.com.tw/?dir=%5B1%5D%20WiFi%20USB%20adapter%2FAWUS1900)
   - [ALFA Network Docs - Linux support for RTL8814AU based products](https://docs.alfa.com.tw/Support/Linux/RTL8814AU/)
+
+### Other
+- [8814au](https://github.com/morrownr/8814au) - Linux Driver for USB WiFi Adapters that are based on the RTL8814AU Chipset
