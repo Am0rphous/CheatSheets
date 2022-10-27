@@ -34,3 +34,13 @@ grep -i memory /var/log/Xorg.0.log
 glxinfo | egrep -i 'device|memory'
 LC_ALL=C lspci -v | grep -EA10 "3D|VGA" | grep 'prefetchable' 
 ````
+
+### XFCE
+- Lightweight but in Kali this might give you a Headache
+````
+xfce4-panel -q               #quits the running panel
+PANEL_DEBUG=1 xfce4-panel    #starts in debugging
+````
+- Might be something wrong with [electron](https://github.com/electron/electron/issues/14362) because lots of errors: `libnotify-WARNING **: Failed to connect to proxy`
+- LIBDBUSMENU-GLIB-WARNING **: 15:55:04.966: Unable to replace properties on 0: Error getting properties for ID`
+- 
