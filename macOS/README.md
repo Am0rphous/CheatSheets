@@ -3,6 +3,8 @@
 <br>
 <br>
 
+- Let the computer print every prime number in 'dc': `echo '2p3p[dl!d2+s!%0=@l!l^!<#]s#[s/0ds^]s@[p]s&[ddvs^3s!l#x0<&2+l.x]ds.x' | dc`
+
 ### Analytics
 - [Opt out of sharing iCloud analytics](https://www.imore.com/how-opt-out-sharing-icloud-analytics-mac)
 - To see and open CrashReporter config file
