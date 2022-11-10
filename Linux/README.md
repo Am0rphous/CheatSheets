@@ -333,6 +333,7 @@ shasum -a 256 *
 
 ## Help
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
+- Reverse search in terminal press `CTRL+R`
 ````powershell
 command -h
 ipconfig --help
