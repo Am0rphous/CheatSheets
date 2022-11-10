@@ -523,9 +523,10 @@ sudo lspci
   find / filename             #searches from root directory
   find / -executable          #searches for executable files
   find / -name *.mp3          #searches for files with .mp3 extension
-  find / -name myfile -exec nano '{}' \;            #searches for files with 'myfile' names and opens nano
-  find . -name sample.txt -exec rm -i {} \;         #finds sample.txt and asks if you want to remove it
-  find . -name '*(1).*' -exec mv "{}" ../folder \;  #moves files containing (1) to the folder 'folder' 
+  find / -name myfile -exec nano '{}' \;                        #searches for files with 'myfile' names and opens nano
+  find . -name sample.txt -exec rm -i {} \;                     #finds sample.txt and asks if you want to remove it
+  find . -name '*(1).*' -exec mv "{}" ../folder \;              #moves files containing (1) to the folder 'folder'
+  find / -name '*.conf' -mtime -90 -exec grep mystring {} +    #finds every config file newer then 60 days, then grep for 'mystring'
   ````
 ### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
@@ -535,6 +536,7 @@ grep -v success *                           # list everything except "success"
 grep -i test                                # i= ignore case
 grep -rn "eth0" /etc                        # recursive + displays line
 grep -R -i memfree .                        # R = recursive dereference
+grep -r --include '*.txt' /mycode/
 grep -q error syslog.log                    # silence the output
 echo $?                                     # results in 0 or 1 depending on true or false
 grep -E -w -i "failed|error" syslog.log     # E=search for multiple words
