@@ -3,7 +3,8 @@
 <br>
 <br>
 
-- Let the computer print every prime number in 'dc':
+- Path to startup items: `/Library/LaunchDaemons/`
+- Let the computer print every prime number with 'dc'😂
 ````
 echo '2p3p[dl!d2+s!%0=@l!l^!<#]s#[s/0ds^]s@[p]s&[ddvs^3s!l#x0<&2+l.x]ds.x' | dc
 ````
