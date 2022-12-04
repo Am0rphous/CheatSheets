@@ -574,6 +574,10 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
 - [Am0rphous' Awesome -> Power and Battery](https://github.com/Am0rphous/Awesome/blob/master/SysAdmin.md#power-and-battery)
 - [IoTaWatt](https://github.com/boblemaire/IoTaWatt) - IoTaWatt Open WiFi Electric Energy Monitor.
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
+- [Powerstat](https://github.com/ColinIanKing/powerstat) - Powerstat measures the power consumption of a machine using the battery stats or the Intel RAPL interface. The output is like vmstat but also shows power consumption statistics. At the end of a run, powerstat will calculate the average, standard deviation and min/max of the gathered data. 
+````
+sudo powerstat -R
+````
 - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
  ````powershell
  acpi                               #shows battery status and other ACPI information
