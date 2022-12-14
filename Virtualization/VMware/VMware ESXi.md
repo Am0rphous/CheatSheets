@@ -13,6 +13,7 @@ esxcli software vib update -d “/vmfs/volumes/Datastore/DirectoryName/PatchName
 
 ### Practical commands
 ````powersell
+./sbin/services.sh restart                  #restart all services
 esxcli network ip connection list
 esxcli network ip connection list | grep -i listen
 esxcli network ip connection list | grep 3260
