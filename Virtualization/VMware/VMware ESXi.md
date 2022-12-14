@@ -2,7 +2,7 @@
 
 - [General ESXi Security Recommendations](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-B39474AF-6778-499A-B8AB-E973BE6D4899.html)
 - [VMware ESXi](https://www.vmware.com/products/esxi-and-esx.html)
-
+- [VMware ESXi vim-cmd Command: A Quick Tutorial](https://communities.vmware.com/wbsdv95928/attachments/wbsdv95928/502/138/1/Quick%20Tutorial%20for%20vim-cmd%20commands.pdf)
 
 ### Manual updating VIBs from an ESXi host
 - for later:  https://tinkertry.com/easy-update-to-latest-esxi
