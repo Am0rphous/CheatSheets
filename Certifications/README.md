@@ -19,6 +19,7 @@
 - [SOCP (Security Onion Certified Professional)](https://securityonionsolutions.com/certification)
 
 ## Linux
+- [Introduction to Linux (LFS101x)](https://training.linuxfoundation.org/training/introduction-to-linux/) - Develop a good working knowledge of Linux using both the graphical interface and command line across the major Linux distribution families with this free training course. Optional Paid Certificate Completion.
 - [LinuC (Linux Professional Certification)](https://linuc.org/en/) - Certification series designed to evaluate the knowledge and skills of IT professionals. Planning and development of these exams is managed by LPI-Japan, an NPO, with support from major Japanese IT companies, professional development enterprises and industry publishers.
 - [Certified Linux professional](https://www.lpi.org/) - [Mind the Gap - Industry report on open source technology skills in the UK](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)
   - [Linux Professional Institute – Learning](https://learning.lpi.org/en/)
