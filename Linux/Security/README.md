@@ -16,3 +16,12 @@ fail2ban-client unban 1.2.3.4.
 ````
 execl, execlp, execle, execv, execvp, execvpe       execute a file
 ````
+
+- ksplice (uptrack)
+  - Description: Ksplice Uptrack updates your running kernel in memory
+  - [Uptrack User's Guide](https://ksplice.oracle.com/uptrack/guide)
+  - Remember to change `/etc/uptrack/uptrack.conf` to contain `autoinstall = yes`
+````
+sudo uptrack-upgrade
+sudo uptrack-show
+````
