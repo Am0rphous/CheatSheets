@@ -1,5 +1,9 @@
 # Gitlab
 
+### API
+- Extract user info to json: `curl  -s -X GET -H "PRIVATE-TOKEN: blabla" "https://gitlab.com/api/v4/users?username=USERNAMEHERE" | jq
+`
+
 ### Commands
 ````powershell
 sudo gitlab-rake gitlab:check > gitlab-rake.log
