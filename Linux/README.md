@@ -573,7 +573,7 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
 ````
 
 ## Power
-- [Am0rphous' Awesome -> Power and Battery](https://github.com/Am0rphous/Awesome/blob/master/SysAdmin.md#power-and-battery)
+- [Am0rphous' Awesome -> Power, Battery and Performance](https://github.com/Am0rphous/Awesome/tree/master/SysAdmin#power-battery-and-performance)
 - [IoTaWatt](https://github.com/boblemaire/IoTaWatt) - IoTaWatt Open WiFi Electric Energy Monitor.
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
 - [Powerstat](https://github.com/ColinIanKing/powerstat) - Powerstat measures the power consumption of a machine using the battery stats or the Intel RAPL interface. The output is like vmstat but also shows power consumption statistics. At the end of a run, powerstat will calculate the average, standard deviation and min/max of the gathered data. 
@@ -582,12 +582,17 @@ sudo powerstat -R
 ````
 - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
  ````powershell
- acpi                               #shows battery status and other ACPI information
- sudo lshw -c power
- sudo dmidecode --type 39           #DMI table decoder
+upower -i /org/freedesktop/UPower/devices/battery_BAT0
+
+#other commands
+acpi                               #shows battery status and other ACPI information
+acpi -i -b                         # -ib also works
+sudo lshw -c power
+sudo dmidecode --type 39           #DMI table decoder
  ````
  - Enable powersaving for disks:
-  ````powershell
+````powershell
+sudo apt install pm-utils
 pm-powersave true
 hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sda
 hdparm --yes-i-know-what-i-am-doing -s 1 /dev/sdb
@@ -598,7 +603,7 @@ hdparm -S 50 /dev/sda
 hdparm -S 50 /dev/sdb
 hdparm -S 50 /dev/sdc
 hdparm -S 50 /dev/sdd
- ````
+````
 
 ## Remote Connections
 ````powershell
