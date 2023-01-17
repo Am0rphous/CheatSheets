@@ -574,6 +574,10 @@ zgrep -h "linux" GFG.txt.gz                 # Display the matched lines but not 
 
 ## Power
 - [Am0rphous' Awesome -> Power, Battery and Performance](https://github.com/Am0rphous/Awesome/tree/master/SysAdmin#power-battery-and-performance)
+- [indicator-cpufreq ](https://launchpad.net/indicator-cpufreq)
+````
+sudo apt-get install indicator-cpufreq
+````
 - [IoTaWatt](https://github.com/boblemaire/IoTaWatt) - IoTaWatt Open WiFi Electric Energy Monitor.
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
 - [Powerstat](https://github.com/ColinIanKing/powerstat) - Powerstat measures the power consumption of a machine using the battery stats or the Intel RAPL interface. The output is like vmstat but also shows power consumption statistics. At the end of a run, powerstat will calculate the average, standard deviation and min/max of the gathered data. 
