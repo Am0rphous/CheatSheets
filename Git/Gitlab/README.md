@@ -17,7 +17,7 @@ sudo gitlab-rake gitlab:cleanup:orphan_job_artifact_files DRY_RUN=false         
 
 ### Important commands
 ````powershell
-ssh git@gitlab.com 2fa_recovery_codes
+ssh git@gitlab.com 2fa_recovery_codes   #create new recovery codes
 wget -qO - https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 sudo apt install -y gitlab-ce
 sudo gitlab-ctl reconfigure
