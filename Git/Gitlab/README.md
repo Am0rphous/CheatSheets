@@ -9,15 +9,6 @@
 sudo gitlab-rake gitlab:check > gitlab-rake.log
 ````
 
-### Clean up / Housekeeping
-- [Clean up](https://docs.gitlab.com/ee/raketasks/cleanup.html#remove-orphan-artifact-files)
-- Commands
-````powershell
-sudo gitlab-rake gitlab:cleanup:orphan_lfs_files                 # executes
-sudo gitlab-rake gitlab:cleanup:orphan_job_artifact_files        # deletes orphan job artefacts
-sudo gitlab-rake gitlab:cleanup:project_uploads                  # DRY_RUN=false
-````
-
 ### Important commands
 ````powershell
 ssh git@gitlab.com 2fa_recovery_codes   #create new recovery codes
