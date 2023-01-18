@@ -127,16 +127,20 @@ sudo apt-key del 11112222                           # characters from 8 last let
 sudo apt-key del "6F6B 1550 9CF8 E59E 6E46  9F32 7F43 8280 EF8D 349F"    #also works
 ````
 - [NeedRestart](https://github.com/liske/needrestart) - needrestart checks which daemons need to be restarted after library upgrades.
+- To only download deb files for your cpu architecture then add the specified architecture in `/ect/apt/sources.list.d/`. To check what architecture you use and support click [here](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/CPU.md#architecture).
+````
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared jammy main
+````
 
-
- ### cron-apt
- - This package checks at certain intervals new packages to update
- ````powershell
- sudo apt install cron-apt
- /etc/cron-apt/config            #configuration path
- /etc/cron.d/cron-apt            #default crontab entry 
- /usr/sbin/cron-apt              #testing cron-apt
- ````
+    ### cron-apt
+    - This package checks at certain intervals new packages to update
+    ````powershell
+    sudo apt install cron-apt
+    /etc/cron-apt/config            #configuration path
+    /etc/cron.d/cron-apt            #default crontab entry 
+    /usr/sbin/cron-apt              #testing cron-apt
+    ````
 ### Downgrade to Ubuntu 18.04
 1. Run `sed -i 's/cosmic/bionic/g' /etc/apt/sources.list`
 2. Create the file `/etc/apt/preference` with the content
