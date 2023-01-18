@@ -3,6 +3,12 @@
 - [CPUFetch](https://github.com/Dr-Noob/cpufetch) - Simple yet fancy CPU architecture fetching tool. Supports x86, x86_64 (Intel and AMD) and ARM.
 - [i7z]()
 
+## Architecture
+````powershell
+dpkg --print-architecture             # prints your currently CPU architecture
+dpkg --print-foreign-architectures    # prints foreign architecture support
+````
+
 ## Commands
 ````powershell
 cpuid                               # Dump CPUID information for each CPU. sudo apt install inxi
