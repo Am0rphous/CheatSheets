@@ -9,6 +9,7 @@ Useful links
 VBoxManage list vms             #list all vms
 VBoxManage list runningvms      #list only running vms
 VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
+sudo adduser $USER vboxusers    #to make USB working.
 ````
 
 
