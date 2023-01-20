@@ -8,7 +8,8 @@
 
 ````
 sudo apt install virtualbox virtualbox-guest-utils virtualbox-guest-x11 virtualbox-ext-pack
-sudo adduser $USER vboxusers    #to make USB working.
+sudo adduser $USER vboxusers        #to make USB working.
+sudo usermod -aG vboxusers $USER    #alternative if you do not have 'adduser'
 ````
 
 
