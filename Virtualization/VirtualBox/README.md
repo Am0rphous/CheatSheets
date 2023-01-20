@@ -1,33 +1,29 @@
 # VirtualBox
 
-Useful links
-- [differences between VBoxVGA, VMSVGA and VBoxSVGA in VirtualBox?](https://superuser.com/questions/1403123/what-are-differences-between-vboxvga-vmsvga-and-vboxsvga-in-virtualbox)
-- [How to create and start VirtualBox VM without GUI](https://www.xmodulo.com/how-to-create-and-start-virtualbox-vm-without-gui.html)
+- [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+  - [differences between VBoxVGA, VMSVGA and VBoxSVGA in VirtualBox?](https://superuser.com/questions/1403123/what-are-differences-between-vboxvga-vmsvga-and-vboxsvga-in-virtualbox)
+  - [How to create and start VirtualBox VM without GUI](https://www.xmodulo.com/how-to-create-and-start-virtualbox-vm-without-gui.html)
 
-### Useful Commands
-````powershell
-VBoxManage list vms             #list all vms
-VBoxManage list runningvms      #list only running vms
-VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
+### Setup Linux
+
+````
+sudo apt install virtualbox virtualbox-guest-utils virtualbox-guest-x11 virtualbox-ext-pack
 sudo adduser $USER vboxusers    #to make USB working.
 ````
 
 
 ### Extention Pack setup
-- 1:
-- [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 ````powershell
 wget https://download.virtualbox.org/virtualbox/6.1.32/Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 sudo VBoxManage extpack install ./Oracle_VM_VirtualBox_Extension_Pack-6.1.32.vbox-extpack
 VBoxManage list extpacks
 ````
-- 2:
-````
-sudo apt install virtualbox-ext-pack virtualbox-guest-utils
-````
 
-### Creation of VMs
+### Managing VMs
 ````powershell
+VBoxManage list vms             #list all vms
+VBoxManage list runningvms      #list only running vms
+VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
 VBoxManage createvm --name "u20" --register
 VBoxManage modifyvm "testvm" --memory 1024 --acpi on --boot1 dvd --nic1 bridged --bridgeadapter1 eth0 --ostype Ubuntu
 VBoxManage createvdi --filename ~/VirtualBox VMs/testvm/testvm-disk01.vdi --size 10000
