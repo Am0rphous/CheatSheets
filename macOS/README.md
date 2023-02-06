@@ -1,5 +1,11 @@
 ## MacOS
 
+Table of content
+- [Analytics](#analytics)
+- [Antivirus](#antivirus)
+
+
+
 <br>
 <br>
 
@@ -7,6 +13,13 @@
 - Let the computer print every prime number with 'dc'😂
 ````
 echo '2p3p[dl!d2+s!%0=@l!l^!<#]s#[s/0ds^]s@[p]s&[ddvs^3s!l#x0<&2+l.x]ds.x' | dc
+````
+- Tips and Tricks
+````
+shift+command+3           #take screenshot of entire screen
+shift+command+4           #select area with the mouse to take a screenshot
+shift+command+5           #select area with the mouse, press enter to start recording
+shift+command+6           #screenshot the touchbar
 ````
 
 ### Analytics
@@ -175,14 +188,6 @@ reboot
 sudo launchctl list                         # lists all macOS services
 sudo launchctl list | grep service          # lists services named 'service'
 sudo launchctl list | grep tor              # lists services named 'tor'
-````
-
-### Tips and Tricks
-````
-shift+command+3           #take screenshot of entire screen
-shift+command+4           #select area with the mouse to take a screenshot
-shift+command+5           #select area with the mouse, press enter to start recording
-shift+command+6           #screenshot the touchbar
 ````
 
 
