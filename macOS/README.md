@@ -74,6 +74,12 @@ qlmanage -p myfile         # quick preview of 'myfile'
 ````
 - [Barrier](https://github.com/debauchee/barrier) - Open-source KVM software - [Troubleshooting](https://github.com/debauchee/barrier/wiki/Troubleshooting#linuxunixmacos-command-line)
   - Problem with SSL such as: `invalid ssl routines pem lib`. Try clicking at the menu bar "Change Settings" and disable/enable SSL -> Reload and start [source](https://github.com/debauchee/barrier/issues/1421).
+  - To create certificates yourself
+  ````
+   cd  /Users/henrik/Library/Application\ Support/barrier/SSL && \
+   openssl req -x509 -nodes -days 365 -subj /CN=Barrier -newkey rsa:4096 -keyout Barrier.pem -out Barrier.pem
+   #restart the app and click start
+  ````
   - On the client: Mark "Client (use another computer's...)" and enter the server IP and click "Start". If it's not working, ping between the IPs and check with "tcpdump port 24800" on botch machines.
 
 
