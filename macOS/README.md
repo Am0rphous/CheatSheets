@@ -72,6 +72,10 @@ caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
 cat myfile | pbcopy        # copies content to clipboard :D
 qlmanage -p myfile         # quick preview of 'myfile'
 ````
+- [Barrier](https://github.com/debauchee/barrier) - Open-source KVM software - [Troubleshooting](https://github.com/debauchee/barrier/wiki/Troubleshooting#linuxunixmacos-command-line)
+  - Problem with SSL such as: `invalid ssl routines pem lib`. Try clicking at the menu bar "Change Settings" and disable/enable SSL -> Reload and start [source](https://github.com/debauchee/barrier/issues/1421).
+  - On the client: Mark "Client (use another computer's...)" and enter the server IP and click "Start". If it's not working, ping between the IPs and check with "tcpdump port 24800" on botch machines.
+
 
 ## Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
