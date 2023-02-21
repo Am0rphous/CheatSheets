@@ -91,6 +91,7 @@ lvreduce -L 5G /dev/vg/disk-name
 lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
 ````
+- Try this first `sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv`
 
 ## Format
 ````powershell
