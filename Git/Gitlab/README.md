@@ -11,7 +11,7 @@ sudo gitlab-rake gitlab:check > gitlab-rake.log
 
 ### Important commands
 ````powershell
-ssh git@gitlab.com 2fa_recovery_codes   #create new recovery codes
+ssh git@gitlab.com 2fa_recovery_codes   #create new recovery codes. This implies you've configured your account with a ssh key
 wget -qO - https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 sudo apt install -y gitlab-ce
 sudo gitlab-ctl reconfigure
