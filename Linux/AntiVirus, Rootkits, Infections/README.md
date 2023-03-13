@@ -6,6 +6,7 @@ debsums                                 #check the MD5 sums of installed Debian 
 netstat -nap | grep "@/proc/udevd"      # result should return nothing
 find /var/www -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort -r           # Examine recently modified files on the server
 find /var/www -name "*.php" -exec grep -l "eval(" {} \;                      # Search for common malware strings 
+grep -rE 'wget.*200' /var/log/*
 ````
 
 ### Linux/Ebury - OpenSSH backdoor trojan and credential stealer
