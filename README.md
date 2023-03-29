@@ -13,3 +13,6 @@
 - [Parsing data in bash](https://github.com/r00t-3xp10it/hacking-material-books/blob/master/bash/parsing_data_in_bash.md)
 - [Tldr](https://github.com/tldr-pages/tldr) - 📚 Collaborative cheatsheets for console commands - [https://tldr.sh/](https://tldr.sh/)
 
+### Firefox uses high amount of resources
+- To identify what sites and how much RAM and CPU specific sites use, open this site in Firefox `about:processes`
+
