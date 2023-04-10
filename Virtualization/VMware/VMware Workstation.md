@@ -1,7 +1,7 @@
 # VMware Workstation
 
 - [Download Workstation for Linux](https://www.vmware.com/go/getworkstation-linux)
-- [Patches needed to build VMware (Player and Workstation) host modules against recent kernels ](https://github.com/mkubecek/vmware-host-modules)
+  - [Patches needed to build VMware (Player and Workstation) host modules against recent kernels ](https://github.com/mkubecek/vmware-host-modules)
   - [linux-vmware-host-modules-builder-cli](https://github.com/LinuxEuphony/vmware-host-modules-builder-cli)  This shell script downloads, builds and installs Vmware host modules for your Linux Vmware. 
 
 ### Enable [promiscuous mode on Linux](https://kb.vmware.com/s/article/287) VMs
