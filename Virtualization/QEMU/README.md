@@ -16,10 +16,9 @@ qemu-img info source.qcow2            #get info about disk
 ````
 
 ### Run Raspberri PI ARM on Linux
-- Run:
 ````
 sudo apt-get install qemu-system-arm
-#then
+
 qemu-system-arm -kernel kernel-qemu-4.4.34-jessie \
 -cpu arm1176 \
 -m 256 \
