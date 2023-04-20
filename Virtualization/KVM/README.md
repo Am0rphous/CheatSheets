@@ -31,13 +31,7 @@ sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 ````
-  ### Enable Virsh Console Access For KVM Guests
-````
-systemctl enable serial-getty@ttyS0.service
-systemctl start serial-getty@ttyS0.service
-````
-
-  ### Description of Packages
+- Description of Packages
 ````powershell
 bridge-utils        #used to create network-bridges.
 kvmtool             #contains some diagnostics and debugging tools for KVM.
@@ -47,6 +41,14 @@ qemu-kvm            #main KVM package.
 spice-vdagent       #enable copy/paste between vm and host
 virt-manager        #graphical user interface to manage VMs
 ````
+
+### Enable Virsh Console Access For KVM Guests
+````
+systemctl enable serial-getty@ttyS0.service && \
+systemctl start serial-getty@ttyS0.service
+````
+
+
 
 ## Usage
 - To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
