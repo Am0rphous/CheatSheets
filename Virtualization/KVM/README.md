@@ -30,8 +30,9 @@ sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-
 sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
+sudo virsh net-autostart default #autostarts the nat network
 ````
-- Description of Packages
+Description of Packages
 ````powershell
 bridge-utils        #used to create network-bridges.
 kvmtool             #contains some diagnostics and debugging tools for KVM.
