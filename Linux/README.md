@@ -761,5 +761,6 @@ Notes for later
 
 ## Variables
 ````powershell
+printenv
 read -p "Write the path: " variableName
 ````
