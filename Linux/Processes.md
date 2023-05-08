@@ -8,8 +8,9 @@ ps -fauxxx                      # check your system for associated orphaned proc
 ps -p 317738 -o comm=           # get name of process
 pidof nginx 
 pgrep nginx
-pgrep nginx | wc -l               # count number of processes
-pidof nginx | wc -w               # count number of processes
+pgrep nginx | wc -l             # count number of processes
+pidof nginx | wc -w             # count number of processes
+pstree                          # displays tree view 
 ````
 ### Kill processes
 ````powershell
