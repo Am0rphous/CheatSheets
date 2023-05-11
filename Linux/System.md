@@ -14,6 +14,7 @@ uptime
 - [SysMon](https://github.com/MatthiasSchinzel/sysmon) - Graphical system monitor for linux, including information about CPU, GPU, Memory, HDD/SDD and your network connections. Similar to windows task manager.
 
 ## Performance
+- Analyze boot-up performance: `systemd-analyze blame`
 - [guapow](https://github.com/vinifmor/guapow) - On-demand and auto performance optimizer for Linux applications 
 - [TuneD](https://github.com/redhat-performance/tuned)
   - [How To Optimize Linux System Performance with tuned-adm](https://computingforgeeks.com/optimize-linux-system-performance-with-tuned-adm/)
