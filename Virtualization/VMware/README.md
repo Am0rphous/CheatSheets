@@ -4,6 +4,7 @@
 - [Scriptigator.com](https://scriptigator.com)
 - [Security hardening content for VMware solutions to US Department of Defense standards ](https://github.com/vmware/dod-compliance-and-automation)
 - [Unofficial Discord for VMware](https://www.reddit.com/r/vmware/comments/6rgrby/vmware_discord_server/)
+- [Vmware-for-dummies](https://github.com/imtrinity94/vmware-for-dummies) - Collection of VMware For Dummies Books for Easy Access [UPDATED 01-07-2022]
 
 ### VMRC - VMware Remote Console
 - [How to Install VMRC (VMware Remote Console) on Linux](https://linuxhint.com/install-vmrc-linux/)
