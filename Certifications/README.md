@@ -1,5 +1,7 @@
 # Certification
 
+- [ipcisco.com](https://ipcisco.com/)
+
 ## Cybersecurity
 - [Infosec Certification list](https://resources.infosecinstitute.com/certifications/)
 - [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
@@ -19,6 +21,9 @@
   - [Oscp_cheatsheet](https://github.com/CountablyInfinite/oscp_cheatsheet) - Commands, snippets, exploits, tools, lists, collections and techniques I used on my journey to becoming an OSCP.
 
 - [SOCP (Security Onion Certified Professional)](https://securityonionsolutions.com/certification)
+- TryHackMe
+  - [Jr. Pentester](https://tryhackme.com/path/outline/jrpenetrationtester)
+  - [Pre Security](https://tryhackme.com/path/outline/presecurity)
 
 ## Linux
 - [Introduction to Linux (LFS101x)](https://training.linuxfoundation.org/training/introduction-to-linux/) - Develop a good working knowledge of Linux using both the graphical interface and command line across the major Linux distribution families with this free training course. Optional Paid Certificate Completion.
