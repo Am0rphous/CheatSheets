@@ -16,7 +16,7 @@
     - [File compression](#file-compression)
     - [File hashing](#file-hashing)
     - [Find large files](#find-large-files)
-4. [**Help**](#help)
+4. [**Help**](#help) 
     - [Man](#man)
 5. [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
 6. [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
