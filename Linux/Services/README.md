@@ -1,9 +1,6 @@
 # Services
 
-- [**Services**](#Services)
-  - [Samba - Network Share](#samba---network-share)
 
-## Services
 ````powershell
 service ssh status                                      #option 1: shows service status
 service --status-all                                    #list all services
