@@ -339,6 +339,7 @@ shasum -a 256 *
   ````
 
 ## Help
+- Emergency (minimal environment) `sudo systemctl emergency`
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 - Reverse search in terminal press `CTRL+R`
 ````powershell
