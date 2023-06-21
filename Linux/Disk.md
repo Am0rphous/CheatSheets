@@ -2,7 +2,7 @@
 
 - [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
 - [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
-- [Fschk - Fix corrupted disk](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fschk---file-system-consistency-check)
+- [Fsck - Fix corrupted disk](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fsck---file-system-consistency-check)
 - [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
 - [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
@@ -52,15 +52,15 @@ sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
-## Fschk - file system consistency check
+## Fsck - File system consistency check
 Remember to unmount disk before checking. e.g. `umount /dev/sdb`
 | Key/Command | Description |
 | ----------- | ----------- |
-| man fschk | displays manual |
-| fchk /dev/sdb | checks disk /dev/sdb |
-| fchk -y /dev/sdb | corrects errors automatically. y=yes |
-| fchk -A | checking all filesystems. The list is taken from /etc/fstab |
-| touch /forcefchk | forces computer to check disk at next reboot |
+| man fsck | display manual |
+| fsck /dev/sdb | checks disk /dev/sdb |
+| fsck -y /dev/sdb | corrects errors automatically. y=yes |
+| fsck -A | checking all filesystems. The list is taken from /etc/fstab |
+| touch /forcefsck | forces computer to check disk at next reboot |
 
 ## Listing
 - Commands
