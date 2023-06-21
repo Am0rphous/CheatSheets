@@ -7,7 +7,7 @@
 
 <details>
    
-<summary>Linux installation instructions for rtl8812au by Aircrack </summary>
+<summary>Linux installation instructions (rtl8812au) by Aircrack </summary>
    
 Source - https://github.com/aircrack-ng/rtl8812au
 
@@ -23,6 +23,7 @@ sudo modprobe 88XXa
 
 <br
 <br>
+
 - MacOS (10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.x WPA3 and 10.15.)
   - The AWUS1900 support Mac Big Sur driver will release on Q2 2021
     - [24.03.21 - Apple Mac OS 11: Big Sur compatibility update for ALFA AWUS036ACH & other Realtek based products](https://store.rokland.com/blogs/news/apple-mac-os-11-big-sur-compatibility-update-for-alfa-awus036ach-other-products)
