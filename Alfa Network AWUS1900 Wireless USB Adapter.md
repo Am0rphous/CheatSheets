@@ -3,7 +3,7 @@
 By today (2. December 2020) AWUS1900 supports:
 - Linux (with the Realtek rtl8814au driver)
   - [Aircrack-ng's rtl8812au software](https://github.com/aircrack-ng/rtl8812au) - RTL8812AU/21AU and RTL8814AU driver with monitor mode and frame injection.
-- <details>
+<details>
    
 <summary>Working installation instructions</summary>
    
@@ -17,7 +17,7 @@ sudo make dkms_install
 sudo modprobe 88XXa
 ```
 
- </details>
+</details>
 
     - [Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
   - [Aircrack-ng's rtl8814au software](https://github.com/aircrack-ng/rtl8814au)
