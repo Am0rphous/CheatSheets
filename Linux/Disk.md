@@ -2,7 +2,7 @@
 
 - [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
 - [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
-- [Fschk - file system consistency check](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fschk---file-system-consistency-check)
+- [Fschk - Fix corrupted disk](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fschk---file-system-consistency-check)
 - [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
 - [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
