@@ -56,7 +56,7 @@ sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
 
 <details>
    
-<summary>**badblocks** - search a device for bad blocks </summary>
+<summary>badblocks - search a device for bad blocks </summary>
 
 ```
 man fsck
