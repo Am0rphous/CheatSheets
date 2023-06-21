@@ -2,7 +2,7 @@
 
 - [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
 - [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
-- [Fsck - Fix corrupted disk](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fsck---file-system-consistency-check)
+- [Fix bad/corrupted Disks](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fsck---file-system-consistency-check)
 - [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
 - [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
 - [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
@@ -52,15 +52,41 @@ sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
-## Fsck - File system consistency check
-Remember to unmount disk before checking. e.g. `umount /dev/sdb`
-| Key/Command | Description |
-| ----------- | ----------- |
-| man fsck | display manual |
-| fsck /dev/sdb | checks disk /dev/sdb |
-| fsck -y /dev/sdb | corrects errors automatically. y=yes |
-| fsck -A | checking all filesystems. The list is taken from /etc/fstab |
-| touch /forcefsck | forces computer to check disk at next reboot |
+## Fix bad/corrupted disks / file systems
+
+
+<details>
+   
+<summary>badblocks - search a device for bad blocks </summary>
+
+```
+man fsck
+badblocks --help
+sudo badblocks -s /dev/sda      # show progress percentage when doing read-only test
+sudo badblocks -v /dev/sda
+sudo badblocks -sn /dev/sdd     # performs a non-destructive read-write test. This does NOT erase data.
+sudo badblocks -sw /dev/sdd     # CAREFUL: ERASES data when performing read-write test. 
+```
+
+</details>
+
+<details>
+   
+<summary>fsck - check and repair a Linux filesystem </summary>
+
+```
+man fsck
+fsck --help
+sudo fsck -A                # checks every file system in /etc/fstab
+sudo fsck -v -a /dev/sda    # verbose + auto fix
+sudo touch /forcefsck       # force file system check at next reboot
+sudo fsck /dev/sdb          # checks disk /dev/sdb
+sudo fsck -y /dev/sdb       # yes fix errors
+```
+
+</details>
+
+
 
 ## Listing
 - Commands
