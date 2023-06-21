@@ -1,8 +1,9 @@
 # Alfa Network AWUS1900 Wireless USB Adapter
 
 - Linux (with the Realtek rtl8814au driver)
-- [rtl8812au by Aircrack](https://github.com/aircrack-ng/rtl8812au) and [rtl8814au by Aircrack](https://github.com/aircrack-ng/rtl8814au)
-- [Monitor_Mode script by morrownr](https://github.com/morrownr/Monitor_Mode)
+- [rtl8812au](https://github.com/aircrack-ng/rtl8812au) and [rtl8814au](https://github.com/aircrack-ng/rtl8814au) by Aircrack-ng
+- [rtl8814au](https://github.com/morrownr/8814au) by morrownr - [Monitor_Mode script](https://github.com/morrownr/Monitor_Mode)
+- [rtl8814au]((https://github.com/zebulon2/rtl8814au) by zebulon2.
 
 <details>
    
@@ -20,9 +21,6 @@ sudo modprobe 88XXa
 
 </details>
 
-
-  - [ morrownr's  8814au](https://github.com/morrownr/8814au) - Linux Driver for USB WiFi Adapters that are based on the RTL8814AU Chipset 
-  - [Zebulon2's rtl8814au software](https://github.com/zebulon2/rtl8814au)
 - MacOS (10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.x WPA3 and 10.15.)
   - The AWUS1900 support Mac Big Sur driver will release on Q2 2021
     - [24.03.21 - Apple Mac OS 11: Big Sur compatibility update for ALFA AWUS036ACH & other Realtek based products](https://store.rokland.com/blogs/news/apple-mac-os-11-big-sur-compatibility-update-for-alfa-awus036ach-other-products)
