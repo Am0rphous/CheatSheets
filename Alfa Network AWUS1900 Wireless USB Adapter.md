@@ -1,9 +1,10 @@
 # Alfa Network AWUS1900 Wireless USB Adapter
 
 - Linux
-  - [rtl8812au](https://github.com/aircrack-ng/rtl8812au) and [rtl8814au](https://github.com/aircrack-ng/rtl8814au) by Aircrack-ng.
-  - [rtl8814au](https://github.com/morrownr/8814au) by morrownr - [Monitor_Mode script](https://github.com/morrownr/Monitor_Mode).
-  - [rtl8814au](https://github.com/zebulon2/rtl8814au) by zebulon2.
+  - [rtl8812au](https://github.com/aircrack-ng/rtl8812au) by Aircrack-ng
+  - [rtl8814au](https://github.com/aircrack-ng/rtl8814au) by Aircrack-ng
+  - [rtl8814au](https://github.com/morrownr/8814au) by morrownr - [Monitor_Mode script](https://github.com/morrownr/Monitor_Mode)
+  - [rtl8814au](https://github.com/zebulon2/rtl8814au) by zebulon2
 
 <details>
    
