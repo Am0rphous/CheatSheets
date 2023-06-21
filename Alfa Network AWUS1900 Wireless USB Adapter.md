@@ -22,7 +22,6 @@ sudo modprobe 88XXa
 </details>
 
 <br>
-<br>
 
 - MacOS (10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.x WPA3 and 10.15.)
   - The AWUS1900 support Mac Big Sur driver will release on Q2 2021
