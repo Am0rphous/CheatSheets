@@ -10,7 +10,7 @@
    
 <summary>Linux installation instructions (rtl8812au) by Aircrack </summary>
    
-- [Source](https://github.com/aircrack-ng/rtl8812au)
+[Source](https://github.com/aircrack-ng/rtl8812au)
 
 ```
 cd ~
