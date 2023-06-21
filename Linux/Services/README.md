@@ -8,6 +8,7 @@ service --status-all | grep +                           #list all running servic
 systemctl status ssh                                    #option 2: shows service status
 systemctl enable ssh                                    #enables service ssh
 systemctl disable tor1                                  #enable new service tor1
+systemctl daemon-reload                                 #reloads configs from filesystem and regenerates dependency trees
 systemctl enable EXAMPLE.service
 systemctl enable /untraditional/path/to/service/EXAMPLE.service
 sudo systemctl restart EXAMPLE
