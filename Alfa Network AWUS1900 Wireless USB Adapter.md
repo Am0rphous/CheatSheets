@@ -17,7 +17,7 @@ sudo make dkms_install
 sudo modprobe 88XXa
 ```
 
-</details>
+ </details>
 
     - [Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
   - [Aircrack-ng's rtl8814au software](https://github.com/aircrack-ng/rtl8814au)
