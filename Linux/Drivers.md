@@ -1,6 +1,6 @@
 # D r i v e r s 
 
-To show t
+Usseful commands
 
 ````powershell
 lsmod                               # display modules in the Linux Kernel. 
