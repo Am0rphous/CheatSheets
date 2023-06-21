@@ -1,10 +1,9 @@
 # Alfa Network AWUS1900 Wireless USB Adapter
 
-By today (2. December 2020) AWUS1900 supports:
 - Linux (with the Realtek rtl8814au driver)
-  - [Aircrack-ng's rtl8812au software](https://github.com/aircrack-ng/rtl8812au) - RTL8812AU/21AU and RTL8814AU driver with monitor mode and frame injection.
-  - [Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
-- <details>
+- [Aircrack-ng's rtl8812au software](https://github.com/aircrack-ng/rtl8812au) - RTL8812AU/21AU and RTL8814AU driver with monitor mode and frame injection.
+- [Monitor_Mode](https://github.com/morrownr/Monitor_Mode)
+<details>
    
 <summary>Working installation instructions</summary>
    
