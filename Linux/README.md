@@ -34,7 +34,7 @@
 10. [**Power**](#Power)
 11. [**Remote Connections**](#remote-connections)
     - [Monitoring SSH](#monitoring-ssh)
-12. [**Searching for stuff**](#searching-for-stuff)
+12. [**Searching for stuff**](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/README.md#searching-for-stuff)
     - [Find](#find)
     - [Grep - utility for string and pattern matching](#grep---utility-for-string-and-pattern-matching)
       - [Locate a file](#locate-a-file)
