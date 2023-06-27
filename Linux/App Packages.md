@@ -2,13 +2,21 @@
 
 - [Anatomy of Linux dynamic libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
 
-## 0Install
-_Similar to AppImages, but with extra security features._
+## Zero Install / 0install
+- [0install.net](https://0install.net)_Similar to AppImages, but with extra security features. A decentralised cross-platform software installation system. Works on Linux, Windows and macOS. Fully open source._
 
 ## AppImage
 - [https://appimage.org/](https://appimage.org/)
 
 ## APT
+- default Linux package manager
+````
+apt install program
+apt autoremove program
+apt autoremove --purge programName
+apt list                              # list installed packages
+apt info package
+````
 
 ## Cargo
 - [creates.io](https://crates.io/)
