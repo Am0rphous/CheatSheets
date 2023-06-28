@@ -8,6 +8,7 @@
 - [CEH (Certified Ethical Hacker)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
   - [CEH C-11 Exam Free Practice Questions](https://certdemy.com/certified-ethical-hacker-exam-free-practice-questions/)
   - [Guide-CEH-Practical-Master](https://github.com/CyberSecurityUP/Guide-CEH-Practical-Master)
+- [CompTIA Security+ SY0-601](https://github.com/fjavierm/security-plus) - CompTIA Security+ SY0-601
 - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
   - [CySA+](https://github.com/ReefMeeter/CySA)
 - [eLearnSecurity eJPT]()
