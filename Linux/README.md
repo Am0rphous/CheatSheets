@@ -55,6 +55,7 @@
 <br >
 
 ## CDROM
+- Create an iso file: `genisoimage -o image.iso -r /path/to/dir`
 ### Add virtual CDROM
 - [CDEmu](https://cdemu.sourceforge.io)
 ````powershell
