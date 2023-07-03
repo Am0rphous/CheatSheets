@@ -15,7 +15,7 @@
     - [File and directory commands](#file-and-directory-commands)
     - [File compression](#file-compression)
     - [File hashing](#file-hashing)
-    - [Find large files](#find-large-files)
+    - [Find large files and folders](#find-large-files-and-folders)
 4. [**Help**](#help) 
     - [Man](#man)
 5. [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
@@ -321,7 +321,7 @@ sha256sum *
 shasum -a 256 *
   ````
 
-  #### Find large files
+  #### Find large files and Folders
   ````powershell
   du -a /var | sort -n -r | head -n 10
   du -hs * | sort -rh | head -n 10
