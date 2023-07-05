@@ -54,6 +54,18 @@ openssl s_client -showcerts -connect example.com:443          #read the SSL Cert
 curl -v -H "user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0" 'https://url.com'
 ````
 
+## Ipv6
+````
+ip -6 addr                        #show local listed ipv6 adddresses
+ip -6 addr show scope global      #show global reachable addresses
+dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com       #test ipv6 vai dns from terminal
+dig -t aaaa +short myip.opendns.com @resolver1.opendns.com      #same
+curl -6 https://ifconfig.co                                     #test https
+curl -6 https://ifconfig.co/ip
+curl -6 https://ipv6.icanhazip.com
+ssh -6 sshmyip.com                   #test ssh via ipv6
+````
+
 ## NetStat - _Network Statistics_
 _command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
 ````powershell
