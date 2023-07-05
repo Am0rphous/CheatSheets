@@ -31,7 +31,7 @@ sudo chmod 600 /swapfile         #make it readable only for root
 sudo mkswap /swapfile            #sets up swap area
 sudo swapon /swapfile            #enable swap on this file
 ````
-- Add to /etc/fstab `/swapfile swap swap defaults 0 0`
+- Add to /etc/fstab `/swapfile    none    swap    sw    0   0`
 
 
 #### Disable and remove a swap file
