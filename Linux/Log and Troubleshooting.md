@@ -12,8 +12,12 @@ dmesg | grep error
 dmesg | grep failed
 dmesg | grep Linux
 journalctl
+journalctl -f
+journalctl -k
 journalctl -xe
 journalctl -u ssh
+journalctl -u ssh.service
+journalctl -u network.service
 ````
 
 ## List of logs you might find under /var/log/
