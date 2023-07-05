@@ -98,6 +98,7 @@ findmnt                   #find a filesystem
 lsblk               
 ls -l /dev/disk/by-       #inspect the directories
 mount
+sudo findmnt -no UUID -T /swapfile    #list UID
 ````
 
 ## LVM
