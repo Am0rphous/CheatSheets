@@ -1,34 +1,43 @@
 # Memory
 
+- [mem-app.sh](https://github.com/Am0rphous/Bash/blob/master/Memory/mem-app.sh) - Bash memory script
+- [ps_memory.py](https://github.com/Am0rphous/Python/blob/main/Memory/ps_mem.py) - Python script to list applications and their ram usage
+
 ````
-cat /proc/meminfo
-sudo dmidecode -t 17
+cat /proc/meminfo       #shows memory info
+sudo dmidecode -t 17    #list Desktop Management Interface tabel for number 17
 free -h                 #human readable form
 free -b                 #bytes, k=kilobytes, m=megabytes =g=gigabytes
 vmstat
 ````
 
-### Script
-- [mem-app.sh](https://github.com/Am0rphous/Bash/blob/master/Memory/mem-app.sh) - Bash script
-- [ps_memory.py](https://github.com/Am0rphous/Python/blob/main/Memory/ps_mem.py) - Python script to list applications and their ram usage
 
-### Swap
-- Check swappiness `cat /proc/sys/vm/swappiness`
-- Useful commands
+## Swap
+- Databases should use swapiness of 10 ish.
 ````powershell
-sudo swapon --show
+cat /proc/sys/vm/swappiness   #show swapiness. Default 60. Lower=use less swap.
+sudo swapon --show            #display swap area
 ````
 #### Change swapiness
-- This is lost on reboot `sudo sysctl vm.swappiness=10`
+- Temporary (lost on reboot) `sudo sysctl vm.swappiness=10`
 - Permanent: `nano /etc/sysctl.conf` and add to the end of the file `vm.swappiness=10`
   - Then run `sudo sysctl --load=/etc/sysctl.conf`
+
 #### Create a swap file
 ````powershell
-sudo fallocate -l 1G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+sudo fallocate -l 1G /swapfile   #creates 1 GB swapfile
+sudo chown root:root /swapfile   #change owner if not running as root already
+sudo chmod 600 /swapfile         #make it readable only for root
+sudo mkswap /swapfile            #sets up swap area
+sudo swapon /swapfile            #enable swap on this file
 ````
 - Add to /etc/fstab `/swapfile swap swap defaults 0 0`
-#### Disable swap
-- Command: `sudo swapoff -a  `
+
+
+#### Disable and remove a swap file
+````
+sudo swapoff -a -v                       #disable and be verbose
+sudo rm /swapfile                        #removes the swapfile
+sudo sed -i '/\/swapfile/d' /etc/fstab   #deletes the line "/swapfile" in fstab
+````
+
