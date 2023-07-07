@@ -25,6 +25,7 @@ sudo swapon --show            #display swap area
   - Then run `sudo sysctl --load=/etc/sysctl.conf`
 
 #### Create a swap file
+- [Hibernate and resume from a swap file (Ubuntu forum)](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)
 ````powershell
 sudo fallocate -l 1G /swapfile   #creates 1 GB swapfile
 sudo chown root:root /swapfile   #change owner if not running as root already
