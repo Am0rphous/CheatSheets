@@ -13,6 +13,7 @@ vmstat
 
 
 ## Swap
+- [SwapFaq Ubuntu Help](https://help.ubuntu.com/community/SwapFaq)
 - Databases should use swapiness of 10 ish.
 ````powershell
 cat /proc/sys/vm/swappiness   #show swapiness. Default 60. Lower=use less swap.
@@ -30,8 +31,13 @@ sudo chown root:root /swapfile   #change owner if not running as root already
 sudo chmod 600 /swapfile         #make it readable only for root
 sudo mkswap /swapfile            #sets up swap area
 sudo swapon /swapfile            #enable swap on this file
+sudo findmnt -no UUID -T /swapfile\n              #find UUID
+sudo nano /etc/initramfs-tools/conf.d/resume      #add "RESUME=UUID=bla-bla-uid"
+
 ````
 - Add to /etc/fstab `/swapfile    none    swap    sw    0   0`
+- Or use the UUID in /etc/fstab `UUID=blabla-uid-here  none swap sw 0 0`
+- Might need to add `resume=UUID=blabla-uid-here` into `/etc/default/grub` in `GRUB_CMDLINE_LINUX_DEFAULT` and run `sudo update-grub`
 
 
 #### Disable and remove a swap file
