@@ -134,14 +134,15 @@ deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared jammy main
 ````
 
-    ### cron-apt
-    - This package checks at certain intervals new packages to update
-    ````powershell
-    sudo apt install cron-apt
-    /etc/cron-apt/config            #configuration path
-    /etc/cron.d/cron-apt            #default crontab entry 
-    /usr/sbin/cron-apt              #testing cron-apt
-    ````
+### cron-apt
+- This package checks at certain intervals new packages to update
+````powershell
+sudo apt install cron-apt
+/etc/cron-apt/config            #configuration path
+/etc/cron.d/cron-apt            #default crontab entry 
+/usr/sbin/cron-apt              #testing cron-apt
+````
+
 ### Downgrade to Ubuntu 18.04
 1. Run `sed -i 's/cosmic/bionic/g' /etc/apt/sources.list`
 2. Create the file `/etc/apt/preference` with the content
