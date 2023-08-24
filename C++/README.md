@@ -45,5 +45,5 @@ int main() {
 
     return 0;
 }
-
 ````
+Then run `g++ -o ram ram.cpp` and run the program i terminal with `./ram`.
