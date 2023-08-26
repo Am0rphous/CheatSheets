@@ -35,11 +35,11 @@ network:
   ethernets:
     eth0:
       dhcp4: no
-      addresses: [10.1.1.1/24]
+      addresses: [10.1.1.33/24]
       routes:
         - to: default
           via: 10.1.1.1
           metric: 100
-      Nameservers:
+      nameservers:
         addresses: [1.1.1.1, 1.0.0.1]
 ````
