@@ -296,24 +296,30 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
   sudo ausearch -k my-file-changed -i | tail -1           #check audit logs:
   ````
   #### File compression
-  File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
-  ````powershell
-  7z x archive.7z                             # sudo apt install p7zip-full
-  7za a -t7z data.txt.7z data.txt
-  bzip2 -zk data.txt
-  gzip -k core.c                              # compress core.c file and removes the original file
-  gzip -c data.txt > data.txt.gz
-  sudo apt install xz-utils                   # usually installed as default
-  xz -zk data.txt
-  tar -cf data.txt.tar data.txt
-  tar -xf file.tar.xz                         # x = extract. f=filename
-  tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
-  tar -xf file_name.tar -C /target/folder     # extracts to new folder
-  ````
-  Extract each file to new folder with same name
-  ````powershell
-  for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
-  ````
+File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
+````powershell
+7z x archive.7z                             #sudo apt install p7zip-full
+7za a -t7z data.txt.7z data.txt
+7za a -tzip -p -mem=AES256 secure_folder.zip my_folder  #encrypts folder
+bzip2 -zk data.txt
+gpg -c your.zip                             #encrypt with gpg
+gpg your.zip.gpg                            #decrypt with gpg
+gzip -k core.c                              # compress core.c file and removes the original file
+gzip -c data.txt > data.txt.gz
+xz -zk data.txt                            #usually installed as default, if not: sudo apt install xz-utils
+tar -cf data.txt.tar data.txt
+tar -xf file.tar.xz                         # x = extract. f=filename
+tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
+tar -xf file_name.tar -C /target/folder     # extracts to new folder
+zip --encrypt file.zip files                #encryption. Install with: sudo apt-get install zip
+zip --encrypt file.zip -r your_folder       #encrypts folder
+zip --password (password) file.zip files    #insecure, as the password will be in the terminal history
+
+````
+Extract each file to new folder with same name
+````powershell
+for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
+````
 
   #### File hashing
   ````powershell
