@@ -8,6 +8,14 @@ who -b
 uptime
 ````
 
+## Booting
+````
+sudo grub-install -V        #check GRUB version
+ls -l /boot/grub/          #list GRUB config
+````
+- GRUB themes
+  - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM / QEMU 
+
 ## Monitoring
 - [Glances](https://github.com/nicolargo/glances) - Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.
 - [HTop](https://github.com/htop-dev/htop) - An interactive process viewer.
