@@ -1,5 +1,7 @@
 # System
 
+- [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
+
 ### Commands
 ````powershell
 top                      # display Linux processes
