@@ -104,6 +104,7 @@ sudo findmnt -no UUID -T /swapfile    #list UID
 ## LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
 - [Lvextend command examples in Linux](https://www.thegeekdiary.com/lvextend-command-examples-in-linux/)
+- Remember to boot the machine into recovery mode to eject the disk before working on it, or you'll be stuck trying to resize it!!
 ````powershell
 pvcreate /dev/sdb1
 pvdisplay
