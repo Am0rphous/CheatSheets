@@ -1,19 +1,5 @@
 # Disk
 
-- [Create a bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
-- [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
-- [Fix bad/corrupted disks / file systems](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fix-badcorrupted-disks--file-systems)
-- [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
-- [LVM](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#lvm)
-- [Format](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#format)
-- [Monitoring](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#monitoring)
-- [Mounting / Unmounting](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting--unmounting)
-  - [Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-a-nas-synology-server-with-ip-100010-to-ubuntu)
-  - [Mounting Encrypted Drives](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#mounting-encrypted-drives)
-- [Scanning for new disks](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#scanning-for-new-disks)
-- [SDInfo](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#sdinfo)
-- [Secure Deletion](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#secure-deletion)
-- [ZFS](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#zfs)
 
 To list size of each folder and sort the result, run this command:
 ````powershell
