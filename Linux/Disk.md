@@ -57,8 +57,8 @@ sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
 
 <details>
    
-<summary>badblocks - search a device for bad blocks </summary>
-
+<summary>badblocks</summary>
+- Search for corrupted blocks
 ```
 man fsck
 badblocks --help
@@ -72,9 +72,9 @@ sudo badblocks -sw /dev/sdd     # CAREFUL: ERASES data when performing read-writ
 
 <details>
    
-<summary>fsck - check and repair a Linux filesystem </summary>
-
-```
+<summary>fsck</summary>
+- File System Consistency Check
+````
 man fsck
 fsck --help
 sudo fsck -A                # checks every file system in /etc/fstab
@@ -82,7 +82,7 @@ sudo fsck -v -a /dev/sda    # verbose + auto fix
 sudo touch /forcefsck       # force file system check at next reboot
 sudo fsck /dev/sdb          # checks disk /dev/sdb
 sudo fsck -y /dev/sdb       # yes fix errors
-```
+````
 
 </details>
 
