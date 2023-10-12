@@ -74,6 +74,7 @@ sudo badblocks -sw /dev/sdd     # CAREFUL: ERASES data when performing read-writ
    
 <summary>fsck</summary>
 - File System Consistency Check
+
 ```
 man fsck
 fsck --help
