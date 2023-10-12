@@ -41,20 +41,25 @@ kill –USR1 3443         #3443 is the dd process id. It will print copying proc
 
 </details>
 
-## Dd - Backup and Recovery
+<details>
+   
+<summary> Backup and Disk recovery </summary>
+
+
 ````powershell
 sudo dd if=/dev/sdb status=progress | gzip -c > /mnt/backup.img.gz
 sudo dd if=/dev/sda of=/media/disk.img bs=1M conv=noerror,sync status=progress
-sudo dd if=/dev/sda3 conv=sync,noerror bs=2M | split -a 3 -d -b 1G - /maindisk.img
-sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log         
+sudo dd if=/dev/sda3 conv=sync,noerror bs=2M | split -a 3 -d -b 1G - /maindisk.img   
 ````
-### ddrescue
+By using `ddrescue`
 - Install with `sudo apt install gddrescue`
-- ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log   
-  - D = Short for ‘–synchronous’. This issues an fsync call after every write.
+- Then run `ddrescue -D -f -n -v /dev/nvm /media/img.img /tmp/ddrescue.log`
+  - D = Short for ‘–synchronous’. This issues a fsync call after every write.
   - f = Force ddrescue to run even if the destination file already exists (this is required when writing to a disk). It will overwrite.
   - n = skip scraping phase
   - v = verbose
+
+</details>
 
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
