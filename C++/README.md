@@ -1,6 +1,11 @@
 # C++
 
-#### Primitive program to allocate physical RAM on Linux
+
+<details>
+   
+<summary> How to waste RAM with a single program </summary>
+
+Primitive program to allocate physical RAM on Linux
 
 ````
 #include <iostream>
@@ -47,3 +52,5 @@ int main() {
 }
 ````
 Then run `g++ -o ram ram.cpp` and run the program i terminal with `./ram`.
+
+</details>
