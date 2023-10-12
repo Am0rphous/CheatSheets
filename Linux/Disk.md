@@ -59,8 +59,8 @@ sudo ddrescue -D -f -n -v /dev/nvm /media/img.img /media/ddrescue.log
    
 <summary>badblocks</summary>
 
-- Search for corrupted blocks
-- 
+Search for corrupted blocks
+
 ```
 man fsck
 badblocks --help
@@ -76,7 +76,7 @@ sudo badblocks -sw /dev/sdd     # CAREFUL: ERASES data when performing read-writ
    
 <summary>fsck</summary>
 
-- File System Consistency Check
+File System Consistency Check
 
 ````
 man fsck
