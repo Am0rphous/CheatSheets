@@ -1,10 +1,14 @@
 # Disk
 
+<details>
+   
+<summary> sort folder size </summary>
 
-To list size of each folder and sort the result, run this command:
-````powershell
+```
 du -smh * | sort -nr
-````
+```
+
+</details>
 
 <details>
    
