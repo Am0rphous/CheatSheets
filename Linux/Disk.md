@@ -54,7 +54,7 @@ By using `ddrescue`
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
-## Fix bad/corrupted disks / file systems
+### Fix corrupted disks/file systems
 
 <details>
    
@@ -106,7 +106,7 @@ mount
 sudo findmnt -no UUID -T /swapfile    #list UID
 ````
 
-## LVM
+### Working with LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
 - [Lvextend command examples in Linux](https://www.thegeekdiary.com/lvextend-command-examples-in-linux/)
 - Remember to boot the machine into recovery mode to eject the disk before working on it, or you'll be stuck trying to resize it!!
@@ -194,13 +194,16 @@ for i in {1..30}; do echo "- - -" > /sys/class/scsi_host/host$i/scan; done
 - [SDInfo](https://github.com/johnlane/sdinfo) - Display details about an SD Card.
 
 
-## Secure Deletion
-- dd
+<details>
+   
+<summary> Secure disk wiping </summary>
+
+dd
 ````powershell
 dd if=/dev/zero of=/dev/sda2 bs=512 count=1
 dd if=/dev/urandom of=/dev/sda2 bs=4096
 ````
-- hdparm
+hdparm
 ````powershell
 sudo hdparm --user-master u --security-set-pass foo /dev/sdX
 sudo hdparm -I /dev/sdX                                         # frozen should be "not frozen"
@@ -211,21 +214,23 @@ hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive D
 hdparm --user-master u --security-erase p /dev/sda              # if NOT
 dd if=/dev/sda bs=1M count=5                                    # should output nothing og just jibberish
 ````
-- scrub
+scrub
 ````powershell
 scrub /dev/sda5
 scrub -p dod /dev/sda5 -f
 ````
-- shred
+shred
 ````powershell
 sudo shred -v /dev/sdX                                  # default is overwrite 3 times
 sudo shred -v -n1 -z /dev/sdX                           # overwrite 1 time + z=zero out after
 shred -v --random-source=/dev/urandom -n10 /dev/sda2    # write random data 10 times on disk sda2
 ````
-- wipe
+wipe
 ````powershell
 wipe /dev/sda2
 ````
+
+</details>
 
 ## ZFS
 ````powershell
