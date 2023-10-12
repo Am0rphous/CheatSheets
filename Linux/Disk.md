@@ -1,6 +1,6 @@
 # Disk
 
-- [Create Bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
+- [Create a bootable USB](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#creating-bootable-usb)
 - [Dd - Backup and Recovery](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#dd---backup-and-recovery)
 - [Fix bad/corrupted disks / file systems](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#fix-badcorrupted-disks--file-systems)
 - [Listing](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/Disk.md#listing)
@@ -20,7 +20,11 @@ To list size of each folder and sort the result, run this command:
 du -smh * | sort -nr
 ````
 
-## Creating Bootable USB
+<details>
+   
+<summary> ## Create a bootable USB </summary>
+
+
 ````powershell
 sudo umount /dev/sdb*
 sudo mkfs.vfat /dev/sdb –I
@@ -34,6 +38,8 @@ Monitor the progress
 pgrep –l ‘^dd$’
 kill –USR1 3443         #3443 is the dd process id. It will print copying process statics.
 ````
+
+</details>
 
 ## Dd - Backup and Recovery
 ````powershell
