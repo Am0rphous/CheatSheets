@@ -2,7 +2,7 @@
 
 <details>
    
-<summary> sort folder size </summary>
+<summary> sort folders by size </summary>
 
 ```
 du -smh * | sort -nr
