@@ -31,31 +31,32 @@
     - [PPA](#ppa)
     - [Unattended Upgrades](#unattended-upgrades)
 8. [**Kernel**](#Kernel)
+     - [Kernel Modules](#kernel-modules)
      - [Kernel Security](#kernel-security)
      - [Kernel Install/Removal](#kernel-installremoval)
-9. [**Loops**](#Loops)
-10. [**Peripherals**](#peripherals)
+10. [**Loops**](#Loops)
+11. [**Peripherals**](#peripherals)
     - [USB-devices](#usb-devices)
     - [PCI-devices](#pci-devices)
-11. [**Power**](#Power)
-12. [**Remote Connections**](#remote-connections)
+12. [**Power**](#Power)
+13. [**Remote Connections**](#remote-connections)
     - [Monitoring SSH](#monitoring-ssh)
-13. [**Searching for stuff**](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/README.md#searching-for-stuff)
+14. [**Searching for stuff**](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/README.md#searching-for-stuff)
     - [Find](#find)
     - [Grep - utility for string and pattern matching](#grep---utility-for-string-and-pattern-matching)
       - [Locate a file](#locate-a-file)
       - [Whereis - locate the binary, source, and manual page files for a command](#whereis---locate-the-binary-source-and-manual-page-files-for-a-command)
       - [Which](#which)
       - [Zgrep - search within compressed files](#zgrep---search-within-compressed-files)
-14. [**Shortcuts**](#Shortcuts)
-15. [**Text**](#text)
-16. [**Time and date**](#time-and-date)
-17. [**Users and groups**](#users-and-groups)
+15. [**Shortcuts**](#Shortcuts)
+16. [**Text**](#text)
+17. [**Time and date**](#time-and-date)
+18. [**Users and groups**](#users-and-groups)
     - [Passwords](#passwords)
     - [Run script with another users privileges](#run-script-with-another-users-privileges)
     - [Shell](#shell)
     - [User info](#user-info)
-18. [**Variables**](#Variables)
+19. [**Variables**](#Variables)
 
 <br >
 <br >
@@ -428,6 +429,16 @@ uname -r                            #kernel version
 uname -sr                           #kernel name and version
 dpkg --list | grep linux-image      # list installed kernels
 ````
+
+### Kernel Modules
+- Pieces of code that we can load into the Linux kernel to extend its functionality. We can for instance capture detailed information about processes such as its creation, execution, termination, process IDs, system calls and a lot more.
+````
+lsmod          # list kernel modules
+modprobe       # add/remove kernel modules
+insmod         # insert module in kernel. USE MODPROPE INSTEAD!
+modinfo        # show kernel module info
+````
+
   ### Kernel Security
   - [AppArmor](https://www.apparmor.net) - MAC style security extension for the Linux kernel.
     - [AppArmor GitLab](https://gitlab.com/apparmor)
