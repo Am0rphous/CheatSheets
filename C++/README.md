@@ -3,7 +3,7 @@
 
 <details>
    
-<summary> How to waste RAM with a single program </summary>
+<summary> How create and allocate RAM with a single program </summary>
 
 Primitive program to allocate physical RAM on Linux
 
