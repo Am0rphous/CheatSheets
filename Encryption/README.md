@@ -7,28 +7,24 @@
 
 ### GPG
 ````
-gpg --encrypt -r recipient@example.com >tempfile
-gpg --decrypt <tempfile
+gpg --encrypt -r recipient@example.com > tempfile
+gpg --decrypt < tempfile
 ````
 
 ### OpenSSL
+- Oneliner `sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout 1.key -out 1.crt`
 - [Useful openssl commands to view certificate content](https://www.golinuxcloud.com/openssl-view-certificate/)
-- verifying
+- Verify certs:
 ````
-openssl x509 -noout -text -in nameCertificate.crt
-openssl x509 -noout -text -in nameCertificate.crt.chained
+openssl x509 -noout -text -in name.crt
+openssl x509 -noout -text -in name.crt.chained
 ````
 
 - Encryption Method one
 ````
-# generate a 2048-bit RSA key and store it in key.txt
-openssl genrsa -out key.txt 2048
-
-# encrypt "Hello world!" using the RSA key (key.txt)
-echo "Hello world!" | openssl rsautl -inkey key.txt -encrypt >output.bin
-
-# decrypt the message and output to stdout
-openssl rsautl -inkey key.txt -decrypt <output.bin
+openssl genrsa -out key.txt 2048                                    #Generate a 2048-bit RSA key and store it in key.txt
+echo "Hello!" | openssl rsautl -inkey key.txt -encrypt > output.bin #Encrypt "Hello!" using the key
+openssl rsautl -inkey key.txt -decrypt <output.bin                  #Decrypt the message
 ````
 - Encryption Method two
 ````
