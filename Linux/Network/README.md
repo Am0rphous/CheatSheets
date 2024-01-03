@@ -8,7 +8,7 @@
 <br>
 
 <details> <summary> Essential commands you need to know </summary>
-  
+
 ````powershell
 arp
 curl ifconfig.me            # check your public ip
@@ -39,6 +39,13 @@ sudo netstat --program --numeric-hosts --numeric-ports --extend       # find -in
 sudo lsof -i TCP:443
 sudo lsof -nP -iTCP -sTCP:LISTEN
 sudo lsof -i -P -n | grep -i "established"
+````
+</details>
+
+<details>
+<summary>Block countries in your firewall</summary>
+````
+
 ````
 </details>
 
