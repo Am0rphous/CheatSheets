@@ -6,6 +6,7 @@
 - [tcp_flags.txt](https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7)
 
 <details> <summary> Essential commands you need to know </summary><br>
+  
 ````powershell
 arp
 curl ifconfig.me            # check your public ip
@@ -20,6 +21,7 @@ ping
 route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
+
 <br><br></details>
 
 
