@@ -25,7 +25,8 @@ ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed 
 <br><br></details>
 
 
-#### Check open ports
+<details> Check open ports
+
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````powershell
 sudo ss -lptn
@@ -39,6 +40,7 @@ sudo lsof -i TCP:443
 sudo lsof -nP -iTCP -sTCP:LISTEN
 sudo lsof -i -P -n | grep -i "established"
 ````
+</details>
 
 #### Change IP/MAC address
 ````powershell
