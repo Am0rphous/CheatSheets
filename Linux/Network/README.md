@@ -5,6 +5,8 @@
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [tcp_flags.txt](https://gist.github.com/tuxfight3r/9ac030cb0d707bb446c7)
 
+<br>
+
 <details> <summary> Essential commands you need to know </summary>
   
 ````powershell
