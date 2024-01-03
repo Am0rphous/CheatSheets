@@ -44,9 +44,25 @@ sudo lsof -i -P -n | grep -i "established"
 
 <details>
 <summary>Block countries in your firewall</summary>
-````
+- Download the `ASN list`or the `location list` at [https://cable.ayra.ch/ip/](https://cable.ayra.ch/ip/).
+- List and save russian ips with `grep Russia asnv4 > list.txt` if you are on Linux/macOS.
+- Strip away everything except the IP addresses `grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' list.txt > only_ip.txt`
+- The file **only_ip.txt** now only contains IPv4 addresses.
+- When you get the networks of the country you want, lets say 109.108.32.0/21 (a russian network), you could make a simple bash script called "firewall-rules.sh" if you're using Linux and ufw:
 
 ````
+#!/bin/bash
+sudo apt install ufw
+sudo ufw enable
+sudo ufw deny from 109.108.32.0/21
+sudo ufw deny from <next network with netmask here>
+sudo ufw deny from <next network with netmask here>
+sudo ufw deny from <next network with netmask here>
+echo "I am now done running the script. Lets check the status"
+ufw status
+````
+- When you are ready, execute it by simply running `sudo bash firewall-rules.sh`
+
 </details>
 
 #### Change IP/MAC address
