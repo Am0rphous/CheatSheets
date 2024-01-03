@@ -23,7 +23,7 @@ ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed 
 ````
 </details>
 
-<details> Check open ports
+<details s> Check open ports
 
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````powershell
