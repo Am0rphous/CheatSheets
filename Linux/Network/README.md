@@ -8,7 +8,7 @@
 <br>
 
 <details> <summary> Essential commands you need to know </summary>
-
+  
 ````powershell
 arp
 curl ifconfig.me            # check your public ip
@@ -26,7 +26,7 @@ ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed 
 </details>
 
 <details> <summary> Commands for checking open ports </summary>
-
+  
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````powershell
 sudo ss -lptn
