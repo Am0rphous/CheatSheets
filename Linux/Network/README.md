@@ -43,7 +43,7 @@ sudo lsof -i -P -n | grep -i "established"
 </details>
 
 <details> <summary>Block countries in your firewall</summary>
-
+<br>
 - Download the `ASN list`or the `location list` at [https://cable.ayra.ch/ip/](https://cable.ayra.ch/ip/).
 - List and save russian ips with `grep Russia asnv4 > list.txt` if you are on Linux/macOS.
 - Strip away everything except the IP addresses `grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' list.txt > only_ip.txt`
