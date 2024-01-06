@@ -184,7 +184,8 @@ ufw status
 
 
 <details> <summary> Sniffing network traffic</summary> <br>
-## TCPDump
+  
+### TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
 ````powershell
@@ -201,19 +202,22 @@ tcpdump -i eth0 -s0 -w test.pcap
 tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
 tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
 ````
+  
 #### Remember
 ````
 and = &&
 or = ||
 not = !
 ````
+  
 #### Size
 ````powershell
 tcpdump less 32
 tcpdump greater 64
 tcpdump <= 128
 ````
-## TShark (CLI)
+
+#### TShark (CLI)
 ````powershell
 tshark -h                                           # help
 tshark -D                                           # list interfaces
@@ -226,7 +230,8 @@ tshark -r -V capture.pcap                           # reads the capture file wit
 tshark -T x                                         # list available output formats. This can be: pdml, ps, psml, json, jsonraw, ek, text, tabs
 tshark -r capture.pcap -T text > output.txt         # reads file and converts it to text.
 ````
-## WiresHark (Graphical user interface)
+
+### WiresHark (Graphical user interface)
 - [Wireshark Cheat Sheet – Commands, Captures, Filters & Shortcuts](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
 
 </details>
