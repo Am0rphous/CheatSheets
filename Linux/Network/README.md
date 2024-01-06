@@ -144,6 +144,18 @@ big               # Opposite to bucket state
 
 </details>
 
+<details> <summary> Scanning ports </summary> <br>
+
+### Nmap - Network Mapper
+````powershell
+nmap -v IP
+nmap -v 192.168.1.1/24
+nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
+nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
+nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
+````
+</details>
+
 <details> <summary>Block countries in your firewall</summary><br>
   
 - Download the `ASN list`or the `location list` at [https://cable.ayra.ch/ip/](https://cable.ayra.ch/ip/).
@@ -168,21 +180,10 @@ ufw status
 ### Country ASN → IP Range / Prefix Generator
 - [Country-asn-to-ip-range-prefix](https://github.com/abdullahdevrel/country-asn-to-ip-range-prefix) - Generating the list of IP ranges or prefixes based on one or more countries or ASNs using IPinfo.io
 
-
 </details>
 
 
-## Nmap - Network Mapper
-````powershell
-nmap -v IP
-nmap -v 192.168.1.1/24
-nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
-nmap --open -p 22,80 192.168.1.1-254 -oG - | grep "/open" | awk '{ print $2 }'
-nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5; i <= NF-4; i++) s = s substr($i,1,length($i)-4) "\n"; print $2 " " $3 "\n" s}'
-````
-
 <details> <summary> Sniffing network traffic</summary> <br>
-
 ## TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
