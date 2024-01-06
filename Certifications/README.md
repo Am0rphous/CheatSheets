@@ -15,6 +15,8 @@
 - [eLearnSecurity eJPT]()
   - [eJPT-Notes - grumpzsux](https://github.com/grumpzsux/eJPT-Notes)
   - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
+- [ISECOM](https://www.isecom.org/certification.html)
+  - [ISECOM Certified Hacker Analyst syllabus](https://www.isecom.org/cha.pdf)
 - [OSCE³ Study Guide](https://github.com/CyberSecurityUP/OSCE-Complete-Guide) - OSWE, OSEP, OSED
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
