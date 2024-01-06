@@ -157,7 +157,10 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 </details>
 
 <details> <summary>Block countries in your firewall</summary><br>
+- [Free list generator from IP2Location](https://www.ip2location.com/free/visitor-blocker)
+- [Download free database](https://download.ip2location.com/lite/)
   
+#### My example
 - Download the `ASN list`or the `location list` at [https://cable.ayra.ch/ip/](https://cable.ayra.ch/ip/).
 - List and save russian ips with `grep Russia asnv4 > list.txt` if you are on Linux/macOS.
 - Strip away everything except the IP addresses `grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' list.txt > only_ip.txt`
@@ -177,7 +180,7 @@ ufw status
 ````
 - When you are ready, execute it by simply running `sudo bash firewall-rules.sh`
 
-### Country ASN → IP Range / Prefix Generator
+### Country ASN → IP Range / Prefix Generator by 'abdullahdevrel'
 - [Country-asn-to-ip-range-prefix](https://github.com/abdullahdevrel/country-asn-to-ip-range-prefix) - Generating the list of IP ranges or prefixes based on one or more countries or ASNs using IPinfo.io
 
 </details>
