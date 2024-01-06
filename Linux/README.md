@@ -705,6 +705,7 @@ sort -u names.txt     #removes duplicate lines
 ````
 
 ## Time and date
+- [Tzupdate](https://github.com/cdown/tzupdate) - Set the system timezone based on IP geolocation.
 ````powershell
 cal                                 #Displays a calender in terminal
 date
