@@ -131,6 +131,10 @@ ufw status
 ````
 - When you are ready, execute it by simply running `sudo bash firewall-rules.sh`
 
+### Country ASN → IP Range / Prefix Generator
+- [Country-asn-to-ip-range-prefix](https://github.com/abdullahdevrel/country-asn-to-ip-range-prefix) - Generating the list of IP ranges or prefixes based on one or more countries or ASNs using IPinfo.io
+
+
 </details>
 
 #### Change IP/MAC address
