@@ -174,6 +174,7 @@ big               # Opposite to bucket state
 | sudo ss \( sport = :http or sport = :https \) |
 | sudo ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24 |
 
+<details> <summary> Sniffing network traffic</summary> <br>
 
 ## TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
@@ -204,7 +205,7 @@ tcpdump less 32
 tcpdump greater 64
 tcpdump <= 128
 ````
-## TShark
+## TShark (CLI)
 ````powershell
 tshark -h                                           # help
 tshark -D                                           # list interfaces
@@ -217,5 +218,7 @@ tshark -r -V capture.pcap                           # reads the capture file wit
 tshark -T x                                         # list available output formats. This can be: pdml, ps, psml, json, jsonraw, ek, text, tabs
 tshark -r capture.pcap -T text > output.txt         # reads file and converts it to text.
 ````
-## WiresHark
+## WiresHark (Graphical user interface)
 - [Wireshark Cheat Sheet – Commands, Captures, Filters & Shortcuts](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
+
+</details>
