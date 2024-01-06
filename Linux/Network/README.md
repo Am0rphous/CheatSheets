@@ -23,8 +23,6 @@ ping
 route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
-</details>
-
 
 #### Change IP/MAC address
 ````powershell
@@ -59,7 +57,7 @@ curl -6 https://ifconfig.co/ip
 curl -6 https://ipv6.icanhazip.com
 ssh -6 sshmyip.com                   #test ssh via ipv6
 ````
-
+</details>
 
 <details> <summary> Ports </summary> <br>
   
