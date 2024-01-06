@@ -7,7 +7,7 @@
 
 <br>
 
-<details> <summary> Essential commands you need to know </summary>
+<details> <summary> Essential commands you need to know </summary> <br>
   
 ````powershell
 arp
@@ -24,6 +24,42 @@ route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
 </details>
+
+
+#### Change IP/MAC address
+````powershell
+ip link set dev eth0 down
+macchanger -m 11:22:33:44:55:66 eth0
+ip link set dev eth0 up
+````
+#### Set Static IP
+````powershell
+ip addr add 10.10.0.2/24 dev eth0
+````
+
+#### Certificates
+````powershell
+openssl x509 -text -noout -in certificate.crt                 #decrypt cert to a more readable form
+openssl s_client -showcerts -connect example.com:443          #read the SSL Certificate information from a remote server
+````
+
+#### Curl
+````
+curl -v -H "user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0" 'https://url.com'
+````
+
+#### Ipv6
+````
+ip -6 addr                        #show local listed ipv6 adddresses
+ip -6 addr show scope global      #show global reachable addresses
+dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com       #test ipv6 vai dns from terminal
+dig -t aaaa +short myip.opendns.com @resolver1.opendns.com      #same
+curl -6 https://ifconfig.co                                     #test https
+curl -6 https://ifconfig.co/ip
+curl -6 https://ipv6.icanhazip.com
+ssh -6 sshmyip.com                   #test ssh via ipv6
+````
+
 
 <details> <summary> Ports </summary> <br>
   
@@ -136,40 +172,6 @@ ufw status
 
 
 </details>
-
-#### Change IP/MAC address
-````powershell
-ip link set dev eth0 down
-macchanger -m 11:22:33:44:55:66 eth0
-ip link set dev eth0 up
-````
-#### Set Static IP
-````powershell
-ip addr add 10.10.0.2/24 dev eth0
-````
-
-## Certificates
-````powershell
-openssl x509 -text -noout -in certificate.crt                 #decrypt cert to a more readable form
-openssl s_client -showcerts -connect example.com:443          #read the SSL Certificate information from a remote server
-````
-
-## Curl
-````
-curl -v -H "user-agent: Mozilla/5.0 (Windows NT 6.1; rv:45.0) Gecko/20100101 Firefox/45.0" 'https://url.com'
-````
-
-## Ipv6
-````
-ip -6 addr                        #show local listed ipv6 adddresses
-ip -6 addr show scope global      #show global reachable addresses
-dig -6 TXT +short o-o.myaddr.l.google.com @ns1.google.com       #test ipv6 vai dns from terminal
-dig -t aaaa +short myip.opendns.com @resolver1.opendns.com      #same
-curl -6 https://ifconfig.co                                     #test https
-curl -6 https://ifconfig.co/ip
-curl -6 https://ipv6.icanhazip.com
-ssh -6 sshmyip.com                   #test ssh via ipv6
-````
 
 
 ## Nmap - Network Mapper
