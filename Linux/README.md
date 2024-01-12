@@ -7,6 +7,7 @@
 - Documentation
   - [Linux Documentation Project Guides](https://tldp.org/guides.html) - nice!
   - [Linux Filesystem Hierarchy (2004)](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/)
+  - [Linux® technology reference ](https://makelinux.net/reference/) - 200+ categories, 900+ links to 100+ sites manuals, documentations, eBooks, articles, HOWTOs, news projects, utilities, portals
 - [Huha-linux-tips](https://github.com/shundhammer/huha-linux-tips) - Tips and tricks about Linux
 - [Ultimate Linux Cheatsheet](https://xmind.app/m/WwtB/)
 
