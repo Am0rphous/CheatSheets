@@ -1,5 +1,6 @@
 # Soft Skills
 
+ - [ADKAR](https://www.prosci.com/methodology/adkar) - A powerful yet simple model for facilitating individual change.
 - [Awesome-remote-job](https://github.com/lukasz-madon/awesome-remote-job) - A curated list of awesome remote jobs and resources. Inspired by https://github.com/vinta/awesome-python
 - [Psychological Warfare - CIA Manuals ](https://archive.org/details/usarmy-psy-ops-tactics/CIA-RDP86M00886R001300010029-9/mode/2up)
 - [Reverse-interview](https://github.com/viraptor/reverse-interview) - Questions to ask the company during your interview
