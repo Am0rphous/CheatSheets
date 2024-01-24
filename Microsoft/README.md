@@ -15,7 +15,6 @@ assign
 exit
   ````
 </details>
-
 <details> <summary> <h4> Delete a partition with PowerShell (Expand)</h4></summary> <br>
   
 Open PS as admin and run these commands. Remember to select apropriate partition.
@@ -29,7 +28,7 @@ delete partition override       #deleted it to extend the volume of the disk
   ````
 </details>
 
-<details> <summary> <h4> Display listening ports (Expand)</h4></summary> <br>
+<details> <summary> <h3> Display listening ports (Expand)</h></summary> <br>
 Open PS as admin and run these commands. Remember to select apropriate partition.
   ````powershell
 netstat -ano | Select-String LISTENING           #display TCP listening ports
