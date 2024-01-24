@@ -16,7 +16,7 @@ exit
   ````
 </details>
 
-<details> <summary> <h4> Delete a partition with PowerShell (Expand)</h3></summary> <br>
+<details> <summary> <h3> Delete a partition with PowerShell (Expand)</h3></summary> <br>
   
 Open PS as admin and run these commands. Remember to select apropriate partition.
   ````powershell
