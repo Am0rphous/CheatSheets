@@ -1,6 +1,7 @@
 # M i c r o s o f t
 
-<details> <summary> <h4>Create and format hard disk partitions (Expand)</h4></summary> <br>
+<details> <summary> <h3>Create and format hard disk partitions (Expand)</h4></summary> <br>
+  
   Open Powershell and run following as Administrator
   ````powershell
 diskpart
@@ -16,6 +17,7 @@ exit
 </details>
 
 <details> <summary> <h4> Delete a partition with PowerShell (Expand)</h4></summary> <br>
+  
 Open PS as admin and run these commands. Remember to select apropriate partition.
   ````powershell
 diskpart
@@ -36,6 +38,7 @@ netstat -ano | Select-String LISTENING           #display TCP listening ports
 
 
 <details> <summary> <h3>Repair a corrupt system (Expand)</h2></summary> <br>
+  
 _"If some Windows functions aren't working or Windows crashes, use the System File Checker to scan Windows and restore your files."_ [source](https://support.microsoft.com/en-us/topic/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e)
 
   Open Powershell and run following as Administrator
