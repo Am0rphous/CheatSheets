@@ -28,3 +28,12 @@ delete partition override       #deleted it to extend the volume of the disk
 ````powershell
 netstat -ano | Select-String LISTENING           #display TCP listening ports
 ````
+
+
+<details> <summary>Repair a corrupt system (Expand)</summary>
+_"If some Windows functions aren't working or Windows crashes, use the System File Checker to scan Windows and restore your files."_ [source](https://support.microsoft.com/en-us/topic/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e)
+  Open Powershell and run following as Administrator
+  ````powershell
+  sfc /scannow
+  ````
+</details>
