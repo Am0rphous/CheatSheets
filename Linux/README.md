@@ -564,6 +564,8 @@ sudo lspci
   find . -name '*(1).*' -exec mv "{}" ../folder \;              #moves files containing (1) to the folder 'folder'
   find / -name '*.conf' -mtime -90 -exec grep mystring {} +    #finds every config file newer then 60 days, then grep for 'mystring'
   ````
+- [fd](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to 'find'
+
 ### Grep - utility for string and pattern matching
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
 ````zsh
