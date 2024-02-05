@@ -1,5 +1,7 @@
 # Windows
 
+- windows+R opens the old Control Panel where you can install/uninstall software
+
 <details> <summary> <h3>Create and format hard disk partitions (Expand)</h3></summary> <br>
   
   Open Powershell and run following as Administrator
