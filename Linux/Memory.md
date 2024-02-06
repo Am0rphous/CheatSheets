@@ -1,6 +1,6 @@
 # Memory
 
-- [Enable Zram on Linux For Better System Performance](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - [zram-config](https://github.com/ecdye/zram-config)
+- [Enable Zram on Linux For Better System Performance](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - [zram-config](https://github.com/ecdye/zram-config), [Guide ](https://github.com/iver0/configure-zram)
 - [mem-app.sh](https://github.com/Am0rphous/Bash/blob/master/Memory/mem-app.sh) - Bash memory script
 - [ps_memory.py](https://github.com/Am0rphous/Python/blob/main/Memory/ps_mem.py) - Python script to list applications and their ram usage
 
