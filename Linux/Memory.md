@@ -1,5 +1,6 @@
 # Memory
 
+- [Enable Zram on Linux For Better System Performance](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - [zram-config](https://github.com/ecdye/zram-config)
 - [mem-app.sh](https://github.com/Am0rphous/Bash/blob/master/Memory/mem-app.sh) - Bash memory script
 - [ps_memory.py](https://github.com/Am0rphous/Python/blob/main/Memory/ps_mem.py) - Python script to list applications and their ram usage
 
@@ -24,8 +25,10 @@ sudo swapon --show            #display swap area
 - Permanent: `nano /etc/sysctl.conf` and add to the end of the file `vm.swappiness=10`
   - Then run `sudo sysctl --load=/etc/sysctl.conf`
 
-#### Create a swap file
-- [Hibernate and resume from a swap file (Ubuntu forum)](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)
+<details> <summary>Create/ remove swap file</summary><br>
+  
+  #### To create it
+  - [Hibernate and resume from a swap file (Ubuntu forum)](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)
 ````powershell
 sudo fallocate -l 1G /swapfile   #creates 1 GB swapfile
 sudo chown root:root /swapfile   #change owner if not running as root already
@@ -34,17 +37,18 @@ sudo mkswap /swapfile            #sets up swap area
 sudo swapon /swapfile            #enable swap on this file
 sudo findmnt -no UUID -T /swapfile\n              #find UUID
 sudo nano /etc/initramfs-tools/conf.d/resume      #add "RESUME=UUID=bla-bla-uid"
-
 ````
 - Add to /etc/fstab `/swapfile    none    swap    sw    0   0`
 - Or use the UUID in /etc/fstab `UUID=blabla-uid-here  none swap sw 0 0`
 - Might need to add `resume=UUID=blabla-uid-here` into `/etc/default/grub` in `GRUB_CMDLINE_LINUX_DEFAULT` and run `sudo update-grub`
 
-
-#### Disable and remove a swap file
+  #### Disable and remove a swap file
 ````
 sudo swapoff -a -v                       #disable and be verbose
 sudo rm /swapfile                        #removes the swapfile
 sudo sed -i '/\/swapfile/d' /etc/fstab   #deletes the line "/swapfile" in fstab
 ````
+
+</details>
+
 
