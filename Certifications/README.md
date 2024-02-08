@@ -33,9 +33,14 @@
 
 ## Linux
 - [Introduction to Linux (LFS101x)](https://training.linuxfoundation.org/training/introduction-to-linux/) - Develop a good working knowledge of Linux using both the graphical interface and command line across the major Linux distribution families with this free training course. Optional Paid Certificate Completion.
+- [LFCA](https://training.linuxfoundation.org/certification/certified-it-associate/) - Linux Foundation Certified IT Associate 
+  - [LFCA Free Resources](https://training.linuxfoundation.org/resources/lfca-free-resources/)
 - [LinuC (Linux Professional Certification)](https://linuc.org/en/) - Certification series designed to evaluate the knowledge and skills of IT professionals. Planning and development of these exams is managed by LPI-Japan, an NPO, with support from major Japanese IT companies, professional development enterprises and industry publishers.
-- [Certified Linux professional](https://www.lpi.org/) - [Mind the Gap - Industry report on open source technology skills in the UK](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)
-  - [Linux Professional Institute – Learning](https://learning.lpi.org/en/)
+- [lpi.org](https://www.lpi.org) - Linux Professional Institute
+  - [learning.lpi.org](https://learning.lpi.org/en/)
+  - LPIC-1 Exam 101](https://learning.lpi.org/en/learning-materials/101-500/) - first certification in LPI’s multi-level Linux professional certification program.
+  - [Mind the Gap](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)  - Industry report on open source technology skills in the UK
+
 
 ## Virtualization
 - [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
