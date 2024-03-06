@@ -57,7 +57,7 @@
     - [Run script with another users privileges](#run-script-with-another-users-privileges)
     - [Shell](#shell)
     - [User info](#user-info)
-19. [**Variables**](#Variables)
+19. [**Variables and Scripting**](#variables-and-scripting)
 
 <br >
 <br >
@@ -797,7 +797,7 @@ Notes for later
 printenv
 read -p "Write the path: " variableName
 ````
-##### Make a script exit when a command fail
+### Make a script exit when a command fail
 In Bash scripting, you can make a script exit immediately when a command fails by using the "set -e" or "set -o errexit" option. This option tells the shell to exit if any command in the script returns a non-zero exit status, indicating a failure.
 ````powershell
 set -e
