@@ -791,9 +791,21 @@ Notes for later
 ````
 
 
-## Variables
+## Variables and Scripting
 - `$PATH` a variable that contains the path to all locations on where to find commands and programs. NB: If this variable contains two different paths for the same executable, the first path in `$PATH` will be used.
 ````powershell
 printenv
 read -p "Write the path: " variableName
 ````
+##### Make a script exit when a command fail
+In Bash scripting, you can make a script exit immediately when a command fails by using the "set -e" or "set -o errexit" option. This option tells the shell to exit if any command in the script returns a non-zero exit status, indicating a failure.
+````powershell
+set -e
+set -u
+set -o errexit  #means the same as the first (set -e)
+set -o nounset  #means the same as the second (set -u)
+````
+
+
+
+
