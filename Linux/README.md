@@ -340,6 +340,7 @@ shasum -a 256 *
 
   #### Find large files and Folders
   ````powershell
+  ncdu                                          #apt install ncdu
   du -a /var | sort -n -r | head -n 10
   du -hs * | sort -rh | head -n 10
   du -hsx * | sort -rh | head -10
