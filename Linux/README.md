@@ -9,6 +9,10 @@
   - [Linux Filesystem Hierarchy (2004)](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/)
   - [Linux® technology reference ](https://makelinux.net/reference/) - 200+ categories, 900+ links to 100+ sites manuals, documentations, eBooks, articles, HOWTOs, news projects, utilities, portals
 - [Huha-linux-tips](https://github.com/shundhammer/huha-linux-tips) - Tips and tricks about Linux
+- Learning
+  - [Introduction to Bash](https://learn.microsoft.com/en-us/training/modules/bash-introduction/)
+  - [Introduction to Linux](https://www.freecodecamp.org/news/introduction-to-linux/ - [part2]([)](https://www.freecodecamp.org/news/introduction-to-linux-part-2/)
+  - [Learn the ways of Linux-fu, for free.](https://linuxjourney.com/) 
 - [Ultimate Linux Cheatsheet](https://xmind.app/m/WwtB/)
 
 <br>
