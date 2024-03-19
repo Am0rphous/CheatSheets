@@ -18,7 +18,7 @@ ls -l /boot/grub/          #list GRUB config
 - Boot Managers
   - [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
 - Themes
-- [Install 80+ Android Boot Animation Themes in Debian, Ubuntu, Fedora, Arch](https://fostips.com/80-android-animation-debian-ubuntu/) - Boot themes
+  - [Install 80+ Android Boot Animation Themes in Debian, Ubuntu, Fedora, Arch](https://fostips.com/80-android-animation-debian-ubuntu/) - Boot themes
   - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM / QEMU 
 
 ## Monitoring
