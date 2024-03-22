@@ -11,12 +11,13 @@
   
 ````powershell
 arp
-curl ifconfig.me            # check your public ip
-curl ip.me                  # check your public ip
-ip a l                      # show ip config
-ip addr OR ip addr show     # show ip config
-ifconfig                    # show ip config
-ifconfig wlan0 promisc       #enable promiscuous mode on wlan0
+curl ifconfig.me             # check your public ip
+curl ip.me                   # check your public ip
+curl ip.kelp.no              # Check your public ip
+ip a l                       # show ip config
+ip addr OR ip addr show      # show ip config
+ifconfig                     # show ip config
+ifconfig wlan0 promisc       # enable promiscuous mode on wlan0
 iwconfig
 netstat
 ping
