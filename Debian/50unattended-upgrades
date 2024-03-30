@@ -41,7 +41,7 @@ Unattended-Upgrade::Origins-Pattern {
         // "o=Debian Backports,a=${distro_codename}-backports,l=Debian Backports";
         
         // Anything
-        "origin=*";
+        //"origin=*"; #do i really need this one?
 };
 
 // Python regular expressions, matching packages to exclude from upgrading
