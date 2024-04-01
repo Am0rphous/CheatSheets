@@ -91,6 +91,28 @@ sudo fsck -y /dev/sdb       # yes fix errors
 
 </details>
 
+<details>
+   
+<summary> Repair ext4 superblock </summary>
+
+- [source](https://github.com/tomwechsler/Linux_command_line_for_beginners/blob/main/repairing_ext4_superblock.txt)
+
+```
+#If you want to do this on a test partition, use the following command (note: substitute the path to your test partition).
+sudo dd if=/dev/urandom of=/dev/sdb2 bs=1k seek=10 count=4k
+
+#Now we list all block devices (it needs elevated rights for this):
+sudo lsblk
+sudo dump2fs /dev/sde2 | grep uperblock (I write "uperblock" because I don't know if it's upper or lower case ;-)
+sudo fsck /dev/sdb2 (We could try to repair the partition directly => BUT, we are looking for the superblocks)
+sudo mkfs.ext4 -n /dev/sdb2 (ATTENTION: be sure to use -n!!!! without -n you create a new file system!!) => now we see the superblocks
+sudo fsck -b 40961 /dev/sdb2 (after -b insert a superblock from above)
+
+#If the first superblock does not work use the next one.
+sudo fsck /dev/sdb2
+```
+
+</details>
 
 
 ## Listing
