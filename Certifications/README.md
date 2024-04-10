@@ -3,6 +3,9 @@
 - [Free Certifications](https://github.com/cloudcommunity/Free-Certifications) - A curated list of free courses & certifications. 
 - [ipcisco.com](https://ipcisco.com/)
 
+## Cloud
+- [CCSK](https://cloudsecurityalliance.org/education/ccsk) - Certificate of Cloud Security Knowledge
+
 ## Cybersecurity
 - [Infosec Certification list](https://resources.infosecinstitute.com/certifications/)
 - [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
