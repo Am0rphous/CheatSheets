@@ -11,7 +11,7 @@
 - [Huha-linux-tips](https://github.com/shundhammer/huha-linux-tips) - Tips and tricks about Linux
 - Learning
   - [Introduction to Bash](https://learn.microsoft.com/en-us/training/modules/bash-introduction/)
-  - [Introduction to Linux](https://www.freecodecamp.org/news/introduction-to-linux/ - [part2]([)](https://www.freecodecamp.org/news/introduction-to-linux-part-2/)
+  - [Introduction to Linux (Part 1)](https://www.freecodecamp.org/news/introduction-to-linux/) - [part 2]([)](https://www.freecodecamp.org/news/introduction-to-linux-part-2/)
   - [Learn the ways of Linux-fu, for free.](https://linuxjourney.com/) 
 - [Ultimate Linux Cheatsheet](https://xmind.app/m/WwtB/)
 
