@@ -10,7 +10,8 @@
 <details> <summary> Essential commands you need to know </summary> <br>
   
 ````powershell
-arp
+arp -n                       # show arp cache
+ip neigh
 curl ifconfig.me             # check your public ip
 curl ip.me                   # check your public ip
 curl ip.kelp.no              # Check your public ip
