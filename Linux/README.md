@@ -430,6 +430,7 @@ man 7 arp
 
 ## Kernel
 - [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
+- [Kernel spoofer](https://github.com/milabs/kiddy)
 - [Kernel Map](https://github.com/makelinux/linux_kernel_map) - [Diagram](https://makelinux.github.io/kernel/diagram/) and [map](https://makelinux.github.io/kernel/map/)
 Commands
 ````
