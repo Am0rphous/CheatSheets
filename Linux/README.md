@@ -12,7 +12,8 @@
 - Learning
   - [Introduction to Bash](https://learn.microsoft.com/en-us/training/modules/bash-introduction/)
   - [Introduction to Linux (Part 1)](https://www.freecodecamp.org/news/introduction-to-linux/) - [part 2](https://www.freecodecamp.org/news/introduction-to-linux-part-2/)
-  - [Learn the ways of Linux-fu, for free.](https://linuxjourney.com/) 
+  - [Learn the ways of Linux-fu, for free.](https://linuxjourney.com/)
+  - [Linux Administration Troubleshooting](https://github.com/tomwechsler/Linux_Administration_Troubleshooting) - Linux troubleshooting with three different distributions (Ubuntu, openSUSE and Red Hat)! 
 - [Ultimate Linux Cheatsheet](https://xmind.app/m/WwtB/)
 
 <br>
