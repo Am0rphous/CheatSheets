@@ -431,6 +431,8 @@ man 7 arp
 
 ## Kernel
 - [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
+  - [Collection of scripts for kernel-related devops](https://github.com/Notselwyn/kernel-scripts) - A curated collection of scripts for kernel-related devops
+
 - [Kernel spoofer](https://github.com/milabs/kiddy)
 - [Kernel Map](https://github.com/makelinux/linux_kernel_map) - [Diagram](https://makelinux.github.io/kernel/diagram/) and [map](https://makelinux.github.io/kernel/map/)
 Commands
