@@ -11,6 +11,7 @@
 - [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
 - [CEH (Certified Ethical Hacker)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
   - [CEH C-11 Exam Free Practice Questions](https://certdemy.com/certified-ethical-hacker-exam-free-practice-questions/)
+  - [CEH notes - SNGWN](https://github.com/SNGWN/CEH-Notes)
   - [Guide-CEH-Practical-Master](https://github.com/CyberSecurityUP/Guide-CEH-Practical-Master)
 - CompTIA
   - [CompTIA PenTest+](https://github.com/erichmair/PenTest_Plus) - Free notes for the PenTest+ CompTIA certification exam. 
