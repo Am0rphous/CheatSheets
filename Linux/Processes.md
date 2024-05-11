@@ -4,6 +4,7 @@
 ````powershell
 ps                              # display currently active processes
 ps auxw | grep nginx            # display processes from 'nginx'
+ps awwfux | less -S             # Display a scrollable process tree
 ps -fauxxx                      # check your system for associated orphaned processes
 ps -p 317738 -o comm=           # get name of process
 pidof nginx 
@@ -14,8 +15,9 @@ pstree                          # displays tree view
 ````
 ### Kill processes
 ````powershell
-kill 1243               # kill process with pid id 1243
-killall proc            # kill all processes named proc
+kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
+kill -9 123            # Kills immediately, cannot ble handled/blocked and kills chils processes as well
+killall proc           # kill all processes named proc
 ````
 Process stalling
 ````powershell
