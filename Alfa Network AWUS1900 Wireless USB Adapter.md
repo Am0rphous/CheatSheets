@@ -17,7 +17,7 @@ cd ~
 git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
 sudo make dkms_install
-sudo modprobe 88XXa
+sudo modprobe 88XXau
 ```
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely the `wlan1` adapter
 - Check driver for **wlan1** with the command `readlink /sys/class/net/wlan1/device/driver`
