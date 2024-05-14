@@ -22,9 +22,13 @@ VBoxManage list extpacks
 
 ### Managing VMs
 ````powershell
-VBoxManage list vms             #list all vms
-VBoxManage list runningvms      #list only running vms
-VBoxHeadless --startvm u20 &    #starts the vm named "u20" in the background, headless
+VBoxManage list vms                       #list all vms
+VBoxManage list runningvms                #list only running vms
+VBoxHeadless --startvm u20 &              #starts the vm named "u20" in the background, headless
+VBoxManage guestproperty enumerate u20    #list a lot of info, such as IP
+````
+Modifying VMs
+````
 VBoxManage createvm --name "u20" --register
 VBoxManage modifyvm "testvm" --memory 1024 --acpi on --boot1 dvd --nic1 bridged --bridgeadapter1 eth0 --ostype Ubuntu
 VBoxManage createvdi --filename ~/VirtualBox VMs/testvm/testvm-disk01.vdi --size 10000
