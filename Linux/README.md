@@ -42,6 +42,7 @@
      - [Kernel Modules](#kernel-modules)
      - [Kernel Security](#kernel-security)
      - [Kernel Install/Removal](#kernel-installremoval)
+       - [Install custom kernel](#Install-custom-kernel)
 10. [**Loops**](#Loops)
 11. [**Peripherals**](#peripherals)
     - [USB-devices](#usb-devices)
