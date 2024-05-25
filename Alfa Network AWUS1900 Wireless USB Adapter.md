@@ -3,14 +3,14 @@
 - Linux
   - [rtl8812au](https://github.com/aircrack-ng/rtl8812au) by Aircrack-ng
   - [rtl8814au](https://github.com/aircrack-ng/rtl8814au) by Aircrack-ng
-  - [rtl8814au](https://github.com/morrownr/8814au) by morrownr - [Monitor_Mode script](https://github.com/morrownr/Monitor_Mode)
+  - [rtl8814au (use this - May 2024](https://github.com/morrownr/8814au) by morrownr - [Monitor_Mode script](https://github.com/morrownr/Monitor_Mode)
   - [rtl8814au](https://github.com/zebulon2/rtl8814au) by zebulon2
 
 <details>
    
-<summary>Linux installation instructions (rtl8812au) by Aircrack </summary>
+<summary>Linux installation instructions (rtl8812au) by [Aircrack](https://github.com/aircrack-ng/rtl8812au) </summary>
    
-[Source](https://github.com/aircrack-ng/rtl8812au)
+May 2024: It won't connect to wifi on Kali. It sees other wireless networks but won't cconnect on 5 Ghz or 2.4 Ghz. Using [rtl8814au](https://github.com/morrownr/8814au) from morrownr fixex my issues. 
 
 ```
 cd ~
@@ -22,6 +22,7 @@ sudo modprobe 88XXau
 iwconfig | grep REALTEK
 ```
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely the `wlan1` adapter
+- Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
 - Check driver for **wlan1** with the command `readlink /sys/class/net/wlan1/device/driver`
 
 </details>
