@@ -24,9 +24,9 @@ sudo make install
 sudo modprobe 8814au
 iwconfig | grep REALTEK
 ```
-- To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely the `wlan1` adapter
+- To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely `wlan0` or `wlan1 `adapter
 - Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
-- Check driver for **wlan1** with the command `readlink /sys/class/net/wlan1/device/driver`
+  - Expected output `../../../../../../bus/usb/drivers/rtl8814au`
 
 </details>
 
