@@ -8,7 +8,7 @@
 
 <details>
    
-<summary>Linux installation instructions (rtl8812au) by [Aircrack](https://github.com/aircrack-ng/rtl8812au) </summary>
+<summary>Linux install instructions (rtl8812au - aircrack-ng)</summary>
    
 May 2024: It won't connect to wifi on Kali. It sees other wireless networks but won't cconnect on 5 Ghz or 2.4 Ghz. Using [rtl8814au](https://github.com/morrownr/8814au) from morrownr fixex my issues. 
 
