@@ -9,7 +9,7 @@
 
 <details>
    
-<summary>How to install morrownr's **rtl8814au** - Fully working!)</summary>
+<summary>How to install morrownr's rtl8814au - Fully working!)</summary>
 
 <br>
 
