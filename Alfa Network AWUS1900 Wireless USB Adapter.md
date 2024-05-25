@@ -27,7 +27,7 @@ iwconfig | grep REALTEK
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely `wlan0` or `wlan1 `adapter
 - Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
   - Expected output `../../../../../../bus/usb/drivers/rtl8814au`
-
+<br>
 </details>
 
 <details>
