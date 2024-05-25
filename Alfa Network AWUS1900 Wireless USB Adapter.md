@@ -6,9 +6,33 @@
   - [rtl8814au - morrownr](https://github.com/morrownr/8814au) - (use this - May 2024 - [Monitor Mode script](https://github.com/morrownr/Monitor_Mode)
   - [rtl8814au - zebulon2](https://github.com/zebulon2/rtl8814au)
 
+
 <details>
    
-<summary>Linux install instructions (rtl8812au - aircrack-ng)</summary>
+<summary>Linux install instructions (rtl8814au - morrownr - Fully working!)</summary>
+
+<br>
+
+May 2024: The driver works as expected. (I Haven't tried packet injection though!!)
+
+```
+cd ~
+git clone https://github.com/morrownr/8814au
+cd 8814au
+make
+sudo make install
+sudo modprobe 8814au
+iwconfig | grep REALTEK
+```
+- To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely the `wlan1` adapter
+- Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
+- Check driver for **wlan1** with the command `readlink /sys/class/net/wlan1/device/driver`
+
+</details>
+
+<details>
+   
+<summary>Linux install instructions (rtl8812au - aircrack-ng) - Not fully working</summary>
 
 <br>
 
