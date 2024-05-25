@@ -9,7 +9,7 @@
 
 <details>
    
-<summary>Linux install instructions (rtl8814au - morrownr - Fully working!)</summary>
+<summary>How to install morrownr's **rtl8814au** - Fully working!)</summary>
 
 <br>
 
@@ -32,7 +32,7 @@ iwconfig | grep REALTEK
 
 <details>
    
-<summary>Linux install instructions (rtl8812au - aircrack-ng) - Not fully working</summary>
+<summary>How to install aircrack-ng's rtl8812au - Don't use</summary>
 
 <br>
 
