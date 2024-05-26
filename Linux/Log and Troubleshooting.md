@@ -15,9 +15,17 @@ journalctl
 journalctl -f
 journalctl -k
 journalctl -xe
+journalctl -p 3 -xb      #-p can be 0-7. X=additional info. B=since last boot
+journalctl _PID=1234
+journalctl --disk-usage 
 journalctl -u ssh
 journalctl -u ssh.service
 journalctl -u network.service
+journalctl --list-boots        #list boot sessions. Session 0 is current
+journalctl -b -2               #check boot session 2
+journalctl --since=yesterday --until=now
+journalctl --since "2024-03-01"
+journalctl --since "2023-02-05 12:01:00" --until "2024-02-01"
 ````
 
 ## List of logs you might find under /var/log/
