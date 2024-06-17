@@ -5,6 +5,8 @@
 service ssh status                                      #option 1: shows service status
 service --status-all                                    #list all services
 service --status-all | grep +                           #list all running services
+
+systemctl is-active docker                              #checks if docker is active. Returns active/inactive
 systemctl status ssh                                    #option 2: shows service status
 systemctl enable ssh                                    #enables service ssh
 systemctl disable tor1                                  #enable new service tor1
@@ -12,16 +14,17 @@ systemctl daemon-reload                                 #reloads configs from fi
 systemctl enable EXAMPLE.service
 systemctl enable /untraditional/path/to/service/EXAMPLE.service
 sudo systemctl restart EXAMPLE
+
 systemctl --type=service                           #list loaded services
 systemctl list-unit-files --type=service           #list services
 systemctl list-unit-files | grep enabled           #lists enabled services
 systemctl list-unit-files --state=enabled          #list enabled services run at boot time
-sudo systemctl mask EXAMPLE                       #more than disable. Prevents services and users to start, as the config is sent to /dev/null
-sudo systemctl list-units --type=service --all    #list all services
-sudo systemctl cat ssh                            #cat service info
-sudo systemctl list-dependencies cron             #list dependencies
-sudo systemctl list-dependencies cron --reverse   #list dependencies recursively
-sudo systemctl edit ssh --full                    #edits the service
+sudo systemctl mask EXAMPLE                        #more than disable. Prevents services and users to start, as the config is sent to /dev/null
+sudo systemctl list-units --type=service --all     #list all services
+sudo systemctl cat ssh                             #cat service info
+sudo systemctl list-dependencies cron              #list dependencies
+sudo systemctl list-dependencies cron --reverse    #list dependencies recursively
+sudo systemctl edit ssh --full                     #edits the service
 ````
 
 ### samba - Network Share
