@@ -35,7 +35,7 @@
 6. [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
 7. [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
     - [Cron-apt](#cron-apt)
-    - [Downgrade to Ubuntu 18.04](#downgrade-to-ubuntu-1804)
+    - [Downgrade or Upgrade](#downgrade-or-upgrade)
     - [PPA](#ppa)
     - [Unattended Upgrades](#unattended-upgrades)
 8. [**Kernel**](#Kernel)
@@ -159,7 +159,8 @@ sudo apt install cron-apt
 /usr/sbin/cron-apt              #testing cron-apt
 ````
 
-### Downgrade to Ubuntu 18.04
+### Downgrade or Upgrade
+- To Downgrade to Ubuntu 18.04 do the following
 1. Run `sed -i 's/cosmic/bionic/g' /etc/apt/sources.list`
 2. Create the file `/etc/apt/preference` with the content
 ````powershell
@@ -168,10 +169,25 @@ Pin: release a=bionic
 Pin-Priority: 1001
 ````
 3. Run `sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y`
+4. Enjoy
 
-  ### PPA
-  - [Using PPA in Ubuntu Linux [Complete Guide]](https://itsfoss.com/ppa-guide/)
- 
+- To Upgrade to a new release do the following
+1. Update and start the process:
+````powershell
+sudo apt update && \
+sudo apt dist-ugprade && \
+sudo apt autoremove -y && \
+sudo apt autoclean
+sudo do-release-upgrade -c    #c = checks for new version
+sudo do-release-upgrade       #this might not always work because of dev branch
+sudo do-release-upgrade -d    #i usually us this one :D
+````
+3. Now follow the prompts on screen. Cheers!
+
+
+### PPA
+- [Using PPA in Ubuntu Linux [Complete Guide]](https://itsfoss.com/ppa-guide/)
+
  ### Unattended Upgrades
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
  - [Enable-Automatic-Updates.sh](https://github.com/Am0rphous/Bash/blob/master/security/Enable-Automatic-Updates.sh) - Script that automatic install and enable automatic updates with smart settings.
