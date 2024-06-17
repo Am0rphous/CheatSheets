@@ -160,7 +160,7 @@ sudo apt install cron-apt
 ````
 
 ### Downgrade or Upgrade
-- To Downgrade to Ubuntu 18.04 do the following
+#### Downgrade to Ubuntu 18.04
 1. Run `sed -i 's/cosmic/bionic/g' /etc/apt/sources.list`
 2. Create the file `/etc/apt/preference` with the content
 ````powershell
@@ -171,7 +171,7 @@ Pin-Priority: 1001
 3. Run `sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y`
 4. Enjoy
 
-- To Upgrade to a new release do the following
+#### Upgrade to new release
 1. Update and start the process:
 ````powershell
 sudo apt update && \
