@@ -19,8 +19,10 @@
   </h4></summary>
 
 #````
+
 Code here.. Remove hashtag above and below to make this work. We just need it for demonstration purposes
 Remove "open" at the top to auto close the section
+
 #````
 </details>
 ````
