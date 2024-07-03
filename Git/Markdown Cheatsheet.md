@@ -15,7 +15,7 @@
 ````
 <details open>
   <summary><h4 style="display: inline-block; font-size: 18px; font-weight: bold;">
-      Create an expanded section
+      Headline for your awesome section here
   </h4></summary>
 
 #````
