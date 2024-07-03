@@ -7,7 +7,7 @@
 
 Primitive program to allocate physical RAM on Linux
 
-````
+````c
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
