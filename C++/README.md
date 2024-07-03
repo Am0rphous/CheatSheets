@@ -1,7 +1,7 @@
 # C++
 
 
-<details>
+<details open>
    
 <summary> How create and allocate RAM with a single program </summary>
 
