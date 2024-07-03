@@ -3,7 +3,7 @@
 
 <details open>
    
-<summary> How create and allocate RAM with a single program </summary>
+<summary> How create and allocate RAM with a single program </summary><br>
 
 Primitive program to allocate physical RAM on Linux
 
