@@ -6,3 +6,21 @@
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - [Markdown - Tutorials](https://www.w3schools.io/file/markdown-introduction/)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/)
+
+<details open>
+  <summary><h4 style="display: inline-block; font-size: 18px; font-weight: bold;">
+      Create an expanded section
+  </h4></summary>
+
+````
+<details open>
+  <summary><h4 style="display: inline-block; font-size: 18px; font-weight: bold;">
+      Create an expanded section
+  </h4></summary>
+
+````
+
+````
+</details>
+````
+</details>
