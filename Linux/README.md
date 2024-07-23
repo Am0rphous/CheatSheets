@@ -841,6 +841,7 @@ Notes for later
 
 
 ## Variables and Scripting
+- [Learn Bash Scripting ](https://itsfoss.com/create-bash-script/)
 - `$PATH` a variable that contains the path to all locations on where to find commands and programs. NB: If this variable contains two different paths for the same executable, the first path in `$PATH` will be used.
 ````powershell
 printenv
