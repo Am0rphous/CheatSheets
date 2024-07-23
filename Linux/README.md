@@ -30,15 +30,16 @@
         - [File compression](#file-compression)
         - [File hashing](#file-hashing)
         - [Find large files and folders](#find-large-files-and-folders)
-5. [**Help**](#help) 
+5. [**Help**](#help)
+    - [History](#history)
     - [Man](#man)
-6. [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
-7. [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
+7. [**Jobs/schedule a task with Crontab**](#jobsschedule-a-task-with-crontab)
+8. [**Keeping your system up-to-date**](#keeping-your-system-up-to-date)
     - [Cron-apt](#cron-apt)
     - [Downgrade or Upgrade](#downgrade-or-upgrade)
     - [PPA](#ppa)
     - [Unattended Upgrades](#unattended-upgrades)
-8. [**Kernel**](#Kernel)
+9. [**Kernel**](#Kernel)
      - [Kernel Modules](#kernel-modules)
      - [Kernel Security](#kernel-security)
      - [Kernel Install/Removal](#kernel-installremoval)
@@ -400,6 +401,20 @@ help alias
 help cd
 help while
 ````
+
+### History
+````
+history                #shows history of commands
+echo $HISTFILE         #show history file location
+echo $HISTFILESIZE     #number of commands stored
+!!                     #run last command again
+lsw
+^lsw^ls                #if you wrote "lsw" as previous cmd which is wrong, fix it and run ls.
+history | grep ls      #lists every ls command
+history -d 1200        #delete command number 1200
+history -d 1100-1200   #deletes commands between these numbers
+````
+
 ### Man - Searching for Man pages
 ````
 man -k KEYWORD ...
