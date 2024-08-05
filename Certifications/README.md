@@ -46,6 +46,10 @@
   - LPIC-1 Exam 101](https://learning.lpi.org/en/learning-materials/101-500/) - first certification in LPI’s multi-level Linux professional certification program.
   - [Mind the Gap](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)  - Industry report on open source technology skills in the UK
 
+## Microsoft
+- [Certification Materials (johnthebrit)]() - az900, sc-100,104,300, az-500,700,305,400
+  - [AZ- 900 Azure Fundamentals Certification Course](https://github.com/johnthebrit/AZ900CertCourse) - [~3,5H Youtube vid](https://www.youtube.com/watch?v=tQp1YkB2Tgs)
+  - [Azure Master Class ](https://github.com/johnthebrit/AzureMasterClass)
 
 ## Virtualization
 - [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
