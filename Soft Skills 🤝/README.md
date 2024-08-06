@@ -9,5 +9,8 @@
 - Templates
   - [Balanced Resume (Modern design)](https://templates.office.com/en-us/balanced-resume-modern-design-tm16402467)
 
+## Organization
+ - HUKI-matrise: Matrise/tabell for dokumentering av roller og ansvar
+
 ## Presenting
 - [https://gamma.app](https://gamma.app)
