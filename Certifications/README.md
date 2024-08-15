@@ -41,6 +41,9 @@
 - [Introduction to Linux (LFS101x)](https://training.linuxfoundation.org/training/introduction-to-linux/) - Develop a good working knowledge of Linux using both the graphical interface and command line across the major Linux distribution families with this free training course. Optional Paid Certificate Completion.
 - [LFCA](https://training.linuxfoundation.org/certification/certified-it-associate/) - Linux Foundation Certified IT Associate 
   - [LFCA Free Resources](https://training.linuxfoundation.org/resources/lfca-free-resources/)
+- LFCT
+-   [Study guide 1](https://itnext.io/linux-foundation-certified-cloud-technician-lfct-exam-study-guide-41506a8d3822)
+-   [Study guide ](https://ravikirans.com/linux-lfct-study-guide/)
 - [LinuC (Linux Professional Certification)](https://linuc.org/en/) - Certification series designed to evaluate the knowledge and skills of IT professionals. Planning and development of these exams is managed by LPI-Japan, an NPO, with support from major Japanese IT companies, professional development enterprises and industry publishers.
 - [lpi.org](https://www.lpi.org) - Linux Professional Institute
   - [learning.lpi.org](https://learning.lpi.org/en/)
