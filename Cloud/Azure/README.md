@@ -1,5 +1,8 @@
 # Azure
 
+- Ensure you have put up a default startup directory. If not, you will be redirected to the last tenant you logged into. This is problematic if settings require you to use whitelisted IPs or compliant devices (VDI).
+- To fix it click your username -> Switch directory -> and change the "Startup directory" setting. (CTRL+F and search for it if you cant see it)
+
 
 ### KQL (Kusto Query Language)
 - [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
