@@ -12,6 +12,7 @@ Table of content
   - [Peripherals](#Peripherals)
   - [Processess](#processess)
   - [Services](#services)
+  - [Terminal](#terminal]
 
 
 <br>
@@ -201,3 +202,5 @@ sudo launchctl list                         # lists all macOS services
 sudo launchctl list | grep service          # lists services named 'service'
 sudo launchctl list | grep tor              # lists services named 'tor'
 ````
+### Terminal
+- Change crontab to use `nano` with `export VISUAL=nano; crontab -e`
