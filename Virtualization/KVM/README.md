@@ -94,6 +94,6 @@ sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G
   - [Memflow-kvm](https://github.com/memflow/memflow-kvm) - Linux kernel module for memflow's KVM connector.
   - [Memflow-qemu-procfs](https://github.com/memflow/memflow-qemu-procfs) - memflow connector backend to interface with qemu through the process filesystem.
 - [virt-top](https://linux.die.net/man/1/virt-top) - 'top'-like utility for virtualization stats.
-
+- Install `qemu-guest-agent` inside each VM to improve performance, integration and management.
 
 
