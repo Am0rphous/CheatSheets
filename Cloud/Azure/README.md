@@ -10,15 +10,19 @@
 Search for vulnerabilities
 ````
 //comment here
+DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081")
+````
+List device names affected by a specific vulnerability
+````
+DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079" | distinct DeviceName
+````
+List all hosts affected by this vulnerability (log4j)
+````
 DeviceTvmSoftwareVulnerabilities
-| where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081")
+| where CveId == "CVE-2021-44228"
+| project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
 ````
-List hosts affected by vulnerability
-````
-DeviceTvmSoftwareVulnerabilities
-| where CveId == "CVE-2024-37079"
-| distinct DeviceName
-````
+
 
 ### Detection rules
 - [L4J/ Log4Shell & Hermeticwiper](https://github.com/stripesoc/detections)
