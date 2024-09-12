@@ -12,7 +12,8 @@ gpg --decrypt < tempfile
 ````
 
 ### OpenSSL
-- Oneliner `sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout 1.key -out 1.crt`
+- Create a certificate: `sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout 1.key -out 1.crt`
+- Convert it from cert to pfx: `openssl pkcs12 -export  -out crt.pfx -inkey my_star_domain.key -in my_star_domain.crt -certfile my_star_domain.crt.chained`
 - [Useful openssl commands to view certificate content](https://www.golinuxcloud.com/openssl-view-certificate/)
 - Verify certs:
 ````
@@ -20,13 +21,13 @@ openssl x509 -noout -text -in name.crt
 openssl x509 -noout -text -in name.crt.chained
 ````
 
-- Encryption Method one
+- Encrypt something - Method one
 ````
 openssl genrsa -out key.txt 2048                                    #Generate a 2048-bit RSA key and store it in key.txt
 echo "Hello!" | openssl rsautl -inkey key.txt -encrypt > output.bin #Encrypt "Hello!" using the key
 openssl rsautl -inkey key.txt -decrypt <output.bin                  #Decrypt the message
 ````
-- Encryption Method two
+- Encrypt something - Method two
 ````
 #Generate a private/public key pair
 openssl genrsa -out rsa_key.pri 2048; openssl rsa -in rsa_key.pri -out rsa_key.pub -outform PEM -pubout
