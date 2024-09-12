@@ -5,10 +5,12 @@
 - [CyberChef](https://gchq.github.io/CyberChef/)
 - [Demiguise - HTA encryption tool](https://github.com/nccgroup/demiguise) - HTA encryption tool for RedTeams.
 
-### GPG
+### GPG - GNU Privacy Guard
 ````
-gpg --encrypt -r recipient@example.com > tempfile
-gpg --decrypt < tempfile
+gpg --list-keys                                        #list all keys
+gpg --list-keys 1234ABCD123                            #list this specific key
+gpg --encrypt -r recipient@example.com > mysecretfile  #encrypt mysecretfile with recipients associated key
+gpg --decrypt < mysecretfile                           #decrypt obviosly
 ````
 
 ### OpenSSL
