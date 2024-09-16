@@ -544,6 +544,12 @@ make deb-pkg LOCALVERSION=-custom KDEB_PKGVERSION=$(make kernelversion)-1
 ls ../*.deb
 sudo dpkg -i ../linux-image-4.9.0-kali1-custom_4.9.2-1_amd64.deb
 reboot
+
+#maybe:
+sudo make modules_install
+sudo make install
+sudo update-grub
+sudo reboot
 ````
 
 ## Loops
