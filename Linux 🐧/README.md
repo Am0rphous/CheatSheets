@@ -530,6 +530,21 @@ dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cu
   - Identify what kernel you are using with `uname -r` and list installed kernels: `dpkg --list | grep linux-image`
   - Find the kernel you want at [https://kernel.ubuntu.com/mainline/](https://kernel.ubuntu.com/mainline/)
   - Download both the header and the image file. Install with `sudo dpkg -i *.deb`
+  - For [Kali](https://www.kali.org/docs/development/recompiling-the-kali-linux-kernel/):
+````
+#1. Download package from https://www.kernel.org/
+tar -xvf linux-6.11.tar.xz
+cd linux-6.11
+sudo apt install -y build-essential libncurses5-dev fakeroot xz-utils
+#maybe: sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev
+#use standard config from current kernel
+cp /boot/config-$(uname -r) .config
+make clean
+make deb-pkg LOCALVERSION=-custom KDEB_PKGVERSION=$(make kernelversion)-1
+ls ../*.deb
+sudo dpkg -i ../linux-image-4.9.0-kali1-custom_4.9.2-1_amd64.deb
+reboot
+````
 
 ## Loops
 - [Source 1 - How To Unix For Loop 1 to 100 Numbers](https://www.cyberciti.biz/faq/unix-for-loop-1-to-10)
