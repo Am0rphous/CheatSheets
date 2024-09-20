@@ -1,4 +1,11 @@
 # Kernel-based Virtual Machine
+- _"KVM is compiled from about 10,000 lines of well-optimized code, thereby maximizing performance. KVM is primarily an open-source hypervisor and is distributed for free without the need to pay for a license. Supports Nested virtualization.Open vSwitch (OVS) is the open-source implementation of a virtual switch that can be used with KVM. KVM supports VM live migration between KVM hosts. Basic methods to back up KVM VMs are using virsh, which is the command line Linux tool for KVM. When using virsh, the VM must be powered off. You can use commands and scripts to back up running VMs and automate the backup process using Cron."_
+- "KVM. Security-enhanced Linux (SELinux) and secure virtualization (sVirt) are available for Red Hat KVM distributions. A combination of these features is used to detect and prevent threats, and ensure VM security and isolation. Oracle KVM is released with Ksplice. KVM hypervisor security features include:
+  - Mandatory Access Control security between VMs
+   - iptables (the firewall for Linux) configuration for improved security
+   - UEFI Secure Boot for Windows guests available after manual configuration
+   - VM data protection with Total Memory Encryption (TME) and Multi-Key Total Memory Encryption (MKTME)
+- [source](https://www.nakivo.com/blog/kvm-vs-vmware-performance-pricing-and-hardware-requirements/)
 
 Links for later
 ````
