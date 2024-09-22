@@ -13,6 +13,16 @@ sudo apt install git       #Linux
 brew install git           #MacOS
 git init
 ````
+### Important on macOS - remove .DS_Store file
+- Delete the hidden file .DS_Store as this can expose metadata about folders, view settings and file positions.
+- [DS_Store viewer](https://ademkouki.site/DS_Store-Viewer/) - [Source code](https://github.com/Ademking/DS_Store-Viewer)
+- Find and remove files
+````
+cd myGithubRepoName
+find . -type f -iname "*.DS_Store*"   #lists files
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch   #find and deletes every .DS_store file
+````
+
 ## Git Large File Storage (LFS)
 - [An open source Git extension for versioning large files](https://git-lfs.github.com/)
 - [How to push large files to GitHub](https://ayunascode.medium.com/how-to-push-large-files-to-github-253d05cc6a09)
