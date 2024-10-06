@@ -804,6 +804,13 @@ su - peter                          # switch to user peter
 sudo adduser mike                   # USE THIS COMMAND! Adds a new user. Creates home folder ++. More user friendly
 sudo useradd                        # low level. Scripting?
 sudo usermod -aG sudo mike          # adds group sudo to the user "mike"
+last -x                             # This will tell you last shutdown time
+last -x reboot                      # This will tell you last shutdown time
+lastb
+lastlog
+lastlog -u mike
+sudo lastlog --clear --user mike
+lastlog --user mike         #verify
 ````
 sudoers: `/etc/sudoers`
 ````
