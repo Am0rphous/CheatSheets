@@ -11,6 +11,7 @@
 - [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
 - [CEH (Certified Ethical Hacker)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
   - [CEH C-11 Exam Free Practice Questions](https://certdemy.com/certified-ethical-hacker-exam-free-practice-questions/)
+  - [CEH-in-bullet-points](https://github.com/undergroundwires/CEH-in-bullet-points) - 💻 Certified ethical hacker summary in bullet points
   - [CEH notes - SNGWN](https://github.com/SNGWN/CEH-Notes)
   - [CEHv11-Study-Material -cyberfascinate](https://github.com/cyberfascinate/CEHv11-Study-Material)
   - [CEH-v11-Study-Guide - giangnait](https://github.com/giangnait/CEH-v11-Study-Guide)
@@ -18,7 +19,6 @@
     - SHA256 for CEH-v11-Study-Guide-encrypted-pw-is-certification.zip is `e2f8596d4e5f18703fabd61b55acf03f5348e1fb38d071c3766d5782b698b9c7`
     - SHA256 for CEH-v11-Study-Guide.zip is `6a728ed37cea1e342f5c5d436319645daffcc5f36495aeed43cfab59949c7064`
   - [CEHv11-Study - udit-git](https://github.com/udit-git/CEHv11-Study) - The same content as the above repo
-
   - [Guide-CEH-Practical-Master](https://github.com/CyberSecurityUP/Guide-CEH-Practical-Master)
 - CompTIA
   - [CompTIA PenTest+](https://github.com/erichmair/PenTest_Plus) - Free notes for the PenTest+ CompTIA certification exam. 
