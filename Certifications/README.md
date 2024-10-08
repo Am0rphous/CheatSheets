@@ -24,6 +24,7 @@
   - [CompTIA PenTest+](https://github.com/erichmair/PenTest_Plus) - Free notes for the PenTest+ CompTIA certification exam. 
   - [CompTIA Security+ SY0-601](https://github.com/fjavierm/security-plus)
     - [(Android app) CompTIA Security+ Prep 2024](https://play.google.com/store/apps/details?id=security.exam&hl=en_US)
+    - [edoardottt's CompTIA Security+ SY0-601 notes](https://github.com/edoardottt/CompTIA-Security-notes)
   - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
   - [CySA+](https://github.com/ReefMeeter/CySA)
 - [eLearnSecurity eJPT]()
