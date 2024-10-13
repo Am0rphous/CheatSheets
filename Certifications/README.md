@@ -27,7 +27,9 @@
     - [edoardottt's CompTIA Security+ SY0-601 notes](https://github.com/edoardottt/CompTIA-Security-notes)
   - [CompTIA CySA+](https://www.comptia.org/certifications/cybersecurity-analyst) - _"CompTIA Cybersecurity Analyst (CySA+) is an IT workforce certification that applies behavioral analytics to networks and devices to prevent, detect and combat cybersecurity threats through continuous security monitoring."_
   - [CySA+](https://github.com/ReefMeeter/CySA)
-- [eLearnSecurity eJPT]()
+- eCPPTv2
+  - [Review and tips](https://www.reddit.com/r/eLearnSecurity/comments/v73ox4/passed_ecpptv2_review_and_tips/) 
+- [eLearnSecurity eJPT](https://security.ine.com/certifications/ejpt-certification/)
   - [eJPT-Notes - grumpzsux](https://github.com/grumpzsux/eJPT-Notes)
   - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
 - [ISECOM](https://www.isecom.org/certification.html)
