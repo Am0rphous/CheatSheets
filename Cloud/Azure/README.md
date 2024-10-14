@@ -23,6 +23,12 @@ DeviceTvmSoftwareVulnerabilities
 | project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
 ````
 
+Find fortinet stuff
+````
+DeviceTvmSoftwareVulnerabilities
+| where tolower(SoftwareVendor) contains "forti"| project TenantId, DeviceName, OSPlatform, SoftwareVendor, SoftwareName, SoftwareVersion, CveId, VulnerabilitySeverityLevel
+//| limit 20
+````
 
 ### Detection rules
 - [L4J/ Log4Shell & Hermeticwiper](https://github.com/stripesoc/detections)
