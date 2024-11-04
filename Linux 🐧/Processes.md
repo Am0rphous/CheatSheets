@@ -1,6 +1,7 @@
 # Processess
 
 ### List and count processes
+- [procs](https://github.com/dalance/procs)  - [replacement](https://itsfoss.com/procs/) for ps written in Rust.
 ````powershell
 ps                              # display currently active processes
 ps auxw | grep nginx            # display processes from 'nginx'
