@@ -738,6 +738,7 @@ who
 
 
 ## Shortcuts
+- [21 Useful Terminal Shortcuts](https://itsfoss.com/linux-terminal-shortcuts/)
 | Keyboard shortcut | Description |
 | ------------------------- | ------------------------- |
 | Ctrl + D |	Close terminal window |
