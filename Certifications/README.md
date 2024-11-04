@@ -40,7 +40,8 @@
   - [The Ultimate OSCP Preparation Guide, 2021](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
   - [OSCP](https://github.com/0xsyr0/OSCP) - OSCP Guide
   - [Oscp_cheatsheet](https://github.com/CountablyInfinite/oscp_cheatsheet) - Commands, snippets, exploits, tools, lists, collections and techniques I used on my journey to becoming an OSCP.
-
+- Red Team
+  - [ Collection of Notes and CheatSheets used for Red teaming Certs ](https://github.com/0xn1k5/Red-Teaming)
 - [SOCP (Security Onion Certified Professional)](https://securityonionsolutions.com/certification)
 - TryHackMe
   - [Jr. Pentester](https://tryhackme.com/path/outline/jrpenetrationtester)
