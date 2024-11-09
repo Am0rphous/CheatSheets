@@ -464,6 +464,8 @@ man 7 arp
 
 ## Kernel
 - [A Guide to Compiling the Linux Kernel All By Yourself](https://itsfoss.com/compile-linux-kernel/)
+- [Linux-kernel-module-cheat](https://github.com/cirosantilli/linux-kernel-module-cheat)
+
 - [Kernel Hacking Guides](https://www.kernel.org/doc/html/latest/kernel-hacking/index.html)
   - [Collection of scripts for kernel-related devops](https://github.com/Notselwyn/kernel-scripts) - A curated collection of scripts for kernel-related devops
 
