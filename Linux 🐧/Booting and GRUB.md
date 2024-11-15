@@ -9,11 +9,14 @@ Turn on the PC:
 6. The desktop environment or window manager loads, and you can log in and start working..
 
 ### Boot Managers
-  - [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
-  - [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
+- [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
+- [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
 - Themes
-  - [Install 80+ Android Boot Animation Themes in Debian, Ubuntu, Fedora, Arch](https://fostips.com/80-android-animation-debian-ubuntu/) - Boot themes
-  - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM / QEMU 
+  - [Boot themes](https://fostips.com/80-android-animation-debian-ubuntu/)
+  - [Gnome look themes](https://www.gnome-look.org/browse?cat=109&ord=latest)
+  - [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) - Collection of decent Community-made GRUB themes. Contributions welcome!
+  - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM / QEMU
+  - [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
 
 
 ````
