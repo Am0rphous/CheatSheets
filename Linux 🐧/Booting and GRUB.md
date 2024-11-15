@@ -1,4 +1,5 @@
 ## Booting and GRUB
+
 Turn on the PC:
 1. The BIOS or UEFI performs a hardware check and boots up the machine.
 2. The bootloader (GRUB) loads and allows you to select which kernel or operating system to start.
@@ -7,7 +8,7 @@ Turn on the PC:
 5. Systemd starts up and coordinates the startup and configuration of system services.
 6. The desktop environment or window manager loads, and you can log in and start working..
 
-- Boot Managers
+### Boot Managers
   - [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
   - [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
 - Themes
@@ -21,6 +22,7 @@ ls -l /boot/grub/          #list GRUB config
 ````
 
 ### GRUB configuration file
+- [GNU GRUB Manual](https://www.gnu.org/software/grub/manual/grub/) - [One pager](https://www.gnu.org/software/grub/manual/grub/grub.html)
 - `/etc/default/grub.`
 - Part of grub is installed on the MBR/ESP partition. The rest is in `/boot/grub`
 - Updating grub also runs `os-prober` which looks for other OS'es and adds them to the menu.
