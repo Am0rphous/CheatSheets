@@ -40,7 +40,7 @@ sudo usermod -aG kvm $USER
 sudo virsh net-autostart default #autostarts the nat network
 ````
 Description of Packages
-````powershell
+````sh
 bridge-utils        #used to create network-bridges.
 kvmtool             #contains some diagnostics and debugging tools for KVM.
 libvritd-daemon     #virtualization daemon.
@@ -50,10 +50,13 @@ spice-vdagent       #enable copy/paste between vm and host
 virt-manager        #graphical user interface to manage VMs
 ````
 
-### Enable Virsh Console Access For KVM Guests
+### Integration and console
 ````
-systemctl enable serial-getty@ttyS0.service && \
-systemctl start serial-getty@ttyS0.service
+sudo apt install qemu-guest-agent #WITHIN VM. Improves performance, integration and management.
+systemctl enable serial-getty@ttyS0.service   #make it autostart
+systemctl restart serial-getty@ttyS0.service  #restart the service
+virsh console ubuntu1                         #enter console for vm 'ubuntu1'
+ctr+5                                         #to console
 ````
 
 
@@ -71,36 +74,33 @@ kvm_stat                              Displays KVM statistics
 ````
 
 ### Usefull commands
+- [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
+
 ````powershell
 sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --graphics spice --location=/home/Downloads/deepin-20Beta-desktop-amd64.iso --network bridge:vibr0 
-service qemu-kvm status
+sudoservice qemu-kvm status && sudo service libvirtd status
+virt-top    #sudo apt install virt-top: https://linux.die.net/man/1/virt-top
 ````
 To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
 
-## CPU - Virtual Core and vCPU in KVM
-- [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
 
-## Converting Disk types
+## Disks
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 ````powershell
 tar xvf MyAppliance.ova
-qemu-img convert -f vmdk sift-2020.2.0-disk1.vmdk -O qcow2 sift.qcow2
+qemu-img convert -f vmdk sift01.vmdk -O qcow2 sift.qcow2
 qemu-img convert -f raw -O qcow2 image.img image.qcow2
+
+sudo qemu-img resize vmdisk.qcow2 +40G                         #resize disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G  #increase disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G   #shrink disk
 ````
 
-## Extending/Shrinking Disk Size
-````
-sudo qemu-img resize vmdisk.qcow2 +40G
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G
-````
 
 ## Tools
 - [MemFlow](https://github.com/memflow/memflow) - physical memory introspection framework [memflow.github.io](https://memflow.github.io).
   - [Memflow-cli](https://github.com/memflow/memflow-cli) - Memflow command line interface.
   - [Memflow-kvm](https://github.com/memflow/memflow-kvm) - Linux kernel module for memflow's KVM connector.
   - [Memflow-qemu-procfs](https://github.com/memflow/memflow-qemu-procfs) - memflow connector backend to interface with qemu through the process filesystem.
-- [virt-top](https://linux.die.net/man/1/virt-top) - 'top'-like utility for virtualization stats.
-- Install `qemu-guest-agent` inside each VM to improve performance, integration and management.
 
 
