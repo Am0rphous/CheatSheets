@@ -25,6 +25,10 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
   - [KVM/QEMU Windows guest drivers (virtio-win)](https://github.com/virtio-win/kvm-guest-drivers-windows) - Windows paravirtualized.
   - [KVM Virtualization in RHEL 7 Made Easy.pdf](https://linux.dell.com/files/whitepapers/KVM_Virtualization_in_RHEL_7_Made_Easy.pdf)
   - [Libvirt - Hooks for specific system management](https://www.libvirt.org/hooks.html)
+- [MemFlow](https://github.com/memflow/memflow) - physical memory introspection framework [memflow.github.io](https://memflow.github.io).
+  - [Memflow-cli](https://github.com/memflow/memflow-cli) - Memflow command line interface.
+  - [Memflow-kvm](https://github.com/memflow/memflow-kvm) - Linux kernel module for memflow's KVM connector.
+  - [Memflow-qemu-procfs](https://github.com/memflow/memflow-qemu-procfs) - memflow connector backend to interface with qemu through the process filesystem.
 - [Oracle's KVM Usage](https://docs.oracle.com/en/operating-systems/oracle-linux/kvm-user/kvm-KVMUsage.html#basic-usage)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
@@ -39,56 +43,43 @@ sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
 sudo virsh net-autostart default #autostarts the nat network
 ````
-Description of Packages
-````sh
-bridge-utils        #used to create network-bridges.
-kvmtool             #contains some diagnostics and debugging tools for KVM.
-libvritd-daemon     #virtualization daemon.
-qemu                #The Quick Emulator allows hardware virtualization.
-qemu-kvm            #main KVM package.
-spice-vdagent       #enable copy/paste between vm and host
-virt-manager        #graphical user interface to manage VMs
-````
 
 ### Integration and console
 ````
-sudo apt install qemu-guest-agent #WITHIN VM. Improves performance, integration and management.
+sudo apt install qemu-guest-agent             #WITHIN VM. Improves performance, integration and management.
 systemctl enable serial-getty@ttyS0.service   #make it autostart
 systemctl restart serial-getty@ttyS0.service  #restart the service
 virsh console ubuntu1                         #enter console for vm 'ubuntu1'
 ctr+5                                         #to console
 ````
 
-
-
 ## Usage
 - To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
 - Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
+- [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
+
 ````powershell
+sudo service qemu-kvm status && sudo service libvirtd status
+
 virsh list --all
 virsh shutdown vmName                 poweroff vm |
 virsh shutdown vm-dev01               poweroff vm-dev01
 virsh domrename vm01-clone1 vm01      rename vm01-clone to vm01
 virsh blockresize rhel8 /var/lib/libvirt/images/rhel8.qcow2 40G      #extend disk with 40 GB
 kvm_stat                              Displays KVM statistics
-````
-
-### Usefull commands
-- [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
-
-````powershell
 sudo virt-install --name=deepin-vm --os-variant=Debian10 --vcpu=2 --ram=2048 --graphics spice --location=/home/Downloads/deepin-20Beta-desktop-amd64.iso --network bridge:vibr0 
-sudoservice qemu-kvm status && sudo service libvirtd status
-virt-top    #sudo apt install virt-top: https://linux.die.net/man/1/virt-top
+virt-top                                       #sudo apt install virt-top: https://linux.die.net/man/1/virt-top
+virsh edit myvm                                #edit the xml file for myvm
+sudo nano /etc/libvirt/qemu/myvm.xml           #manually
+sudo virsh define /etc/libvirt/qemu/myvm.xml   #validate file
+xmllint --format /etc/libvirt/qemu/myvm.xml    #verify correct format in the xml file
 ````
-To get information about different OSes, run `osinfo-query os` which can be installed with `apt install libosinfo-bin`
-
 
 ## Disks
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 ````powershell
 tar xvf MyAppliance.ova
-qemu-img convert -f vmdk sift01.vmdk -O qcow2 sift.qcow2
+qemu-img convert -f vmdk MyAppliance.vmdk -O qcow2 MyNewAppliance.qcow2
 qemu-img convert -f raw -O qcow2 image.img image.qcow2
 
 sudo qemu-img resize vmdisk.qcow2 +40G                         #resize disk
@@ -96,11 +87,59 @@ sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G  #increase disk
 sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G   #shrink disk
 ````
 
+## GPU Passthrough
+1. Enable IOMMU / VT-d (Intel) or AMD-Vi (AMD) in the BIOS. Search your motherboard and check if it's available. Update your BIOS to newest version btw!
+2. Enable IOMMU in Grub:
+````
+sudo nano /etc/default/grub
 
-## Tools
-- [MemFlow](https://github.com/memflow/memflow) - physical memory introspection framework [memflow.github.io](https://memflow.github.io).
-  - [Memflow-cli](https://github.com/memflow/memflow-cli) - Memflow command line interface.
-  - [Memflow-kvm](https://github.com/memflow/memflow-kvm) - Linux kernel module for memflow's KVM connector.
-  - [Memflow-qemu-procfs](https://github.com/memflow/memflow-qemu-procfs) - memflow connector backend to interface with qemu through the process filesystem.
+#add
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_iommu=on iommu=pt"
+
+#update
+sudo update-grub
+```` 
+3. Check if IOMMU is enabled and working `sudo dmesg | grep -e DMAR -e IOMMU`
+4. Add your GPU's PCI ID to `/etc/modprobe.d/vfio.conf`
+````
+lspci -k | grep NVIDIA
+
+#output
+01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 3080 Ti] [10de:2204] (rev a1)
+01:00.1 Audio device [0403]: NVIDIA Corporation TU104 HD Audio Controller [10de:1aef] (rev a1)
+
+sudo nano /etc/modprobe.d/vfio.conf
+options vfio-pci ids=10de:2204,10de:1aef
+
+#then
+sudo update-initramfs -u
+````
+4. In Virt-manager add the sound controller to the GPU and the GPU itself to the VM.
+5. When rebooting the screen will be black after virtualizing the GPU. Keep the cabel in the GPU but log in through another machine and start the VM with `sudo virsh start myW10` and the graphics should show on your screen. Tadaa
+6. Debug:
+````
+sudo service libvirtd status
+sudo journalctl -u libvirtd -f
+sudo lsof /dev/nvidia*
+sudo fuser -v /dev/nvidia*      #what ar eusing nvidia. I had Ollama running and using the GPU
+dmesg | grep -e DMAR -e IOMMU
+sudo dmesg | grep vfio
+sudo dmesg | grep iommu
+find /sys/kernel/iommu_groups/ -type l
+readlink /sys/bus/pci/devices/0000:01:00.0/iommu_group
+````
+
+### Virtualize CPU
+- Run `cat /proc/cpuinfo` and if you have e.g. 12 logical host CPU's then your VM config should look like this:
+1. Enable "Copy host CPU configuration".
+2. Enable "Manually set CPU topology" like
+````
+Sockets:  1
+Cores:    6
+Threads:  2
+````
+### Virtualize devices
+Add 
+
 
 
