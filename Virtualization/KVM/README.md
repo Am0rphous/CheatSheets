@@ -132,12 +132,15 @@ readlink /sys/bus/pci/devices/0000:01:00.0/iommu_group
 ### Virtualize CPU
 - Run `cat /proc/cpuinfo` and if you have e.g. 12 logical host CPU's then your VM config should look like this:
 1. Enable "Copy host CPU configuration".
-2. Enable "Manually set CPU topology" like
+2. Enable "Manually set CPU topology" to match your host CPU.
 ````
 Sockets:  1
 Cores:    6
 Threads:  2
 ````
+- Testing with Geekbench: Single-Core Score 1283. Multi-Core score: 5575
+- Changing to 12 cores with 1 thread gave: Single-Core Score 1292. Multi-Core score: **4412**
+
 ### Virtualize devices
 Add 
 
