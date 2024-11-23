@@ -50,4 +50,5 @@ reboot
 #### Nice ones
 - [CRT-Amber GRUB Theme](https://www.gnome-look.org/p/1727268)
 - [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
-
+- [Virtual Future](https://www.gnome-look.org/p/1529571)
+- [Retro Grub](https://www.gnome-look.org/p/1568741)
