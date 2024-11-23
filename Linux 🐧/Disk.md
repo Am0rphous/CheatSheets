@@ -131,8 +131,23 @@ sudo findmnt -no UUID -T /swapfile    #list UID
 ### Working with LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
 - [Lvextend command examples in Linux](https://www.thegeekdiary.com/lvextend-command-examples-in-linux/)
+
+### Resize your disk
+1. Use `gparted` and see if you can manualle extende the disk. If not, make a bootable USB with e.g. Ubuntu Desktop and boot it. Try gparted again.
+2. If using LVM. I had a 10 GB virtual disk, but the root partition was smaller. Big mistake, so I had to adjust it:
+````
+df -h                                        #check the size e.g. mine is full: /dev/mapper/topsecret--vg-root  4.5G  4.3G   15M 100% /
+lvextend --size 9GB /dev/topsecret-vg/root   #this extends it close to my max size
+resize2fs /dev/mapper/topsecret--vg-root     #command to resize ext(2,3,4) file systems
+df -h                                        #verify the newly added disk size
+````
+3. Messt commands i've used previous 
 - Remember to boot the machine into recovery mode to eject the disk before working on it, or you'll be stuck trying to resize it!!
 ````powershell
+resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv           #Try this one first. If not working try next:
+lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv  #Second try
+lvextend --size 9GB /dev/topsecret-vg/root               #Third try. This one worked nov. 2024.
+
 pvcreate /dev/sdb1
 pvdisplay
 vgextend NameVolumeGroup /dev/sdb1
@@ -146,10 +161,8 @@ lvreduce -L 5G /dev/vg/disk-name
 lvreduce -L -5G /dev/vg/disk-name
 mount /dev/centos/var /mnt
 ````
-- Try this first `sudo resize2fs -p /dev/mapper/ubuntu--vg-ubuntu--lv`
-- and this `lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv`
 
-## Format
+## Formating disks
 ````powershell
 mkfs.ext4 /dev/sdb1
 ````
