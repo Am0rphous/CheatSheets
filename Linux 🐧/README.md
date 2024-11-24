@@ -689,19 +689,23 @@ sudo apt-get install indicator-cpufreq
 ````
 - [IoTaWatt](https://github.com/boblemaire/IoTaWatt) - IoTaWatt Open WiFi Electric Energy Monitor.
 - [PowerPanel](https://www.cyberpowersystems.com/product/software/power-panel-personal/powerpanel-for-linux/)
-- [Powerstat](https://github.com/ColinIanKing/powerstat) - Powerstat measures the power consumption of a machine using the battery stats or the Intel RAPL interface. The output is like vmstat but also shows power consumption statistics. At the end of a run, powerstat will calculate the average, standard deviation and min/max of the gathered data. 
+````
+sudo pwrstat -status
+````
+- [Powerstat](https://github.com/ColinIanKing/powerstat) - Powerstat measures the power consumption of a machine using the battery stats or the Intel RAPL interface. The output is like vmstat but also shows power consumption statistics. At the end of a run, powerstat will calculate the average, standard deviation and min/max of the gathered data.
 ````
 sudo powerstat -R
 ````
 - [UPower](https://upower.freedesktop.org) - UPower is an abstraction for enumerating power devices, listening to device events and querying history and statistics.
  ````powershell
 upower -i /org/freedesktop/UPower/devices/battery_BAT0
+upower -i /org/freedesktop/UPower/devices/battery_BAT1
 
-#other commands
 acpi                               #shows battery status and other ACPI information
 acpi -i -b                         # -ib also works
 sudo lshw -c power
 sudo dmidecode --type 39           #DMI table decoder
+ls -l /sys/class/power_supply/AC
  ````
  - Enable powersaving for disks:
 ````powershell
@@ -726,7 +730,7 @@ ssh -D 127.0.0.1:9050 target.com      #ssh through local tor proxy
 ssh -p 1234 user@domain
 ssh-keygen -q -f /etc/ssh/ssh_host_rsa_key -N '' -b 4096 -t rsa
 ssh-keygen -q -f /etc/ssh/ssh_host_ecdsa_key -N '' -b 521 -t ecdsa
-xfreerdp /u:Admin +clipboard /w:1366 /h:768 /v:SERVER_IP
+xfreerdp /u:Admin +clipboard /w:1280 /h:1024 /v:SERVER_IP
 ssh user@IP 'echo "rootPassword" | sudo -Sv && bash -s' < local-computer-script.sh
 ````
 ### Monitoring SSH
