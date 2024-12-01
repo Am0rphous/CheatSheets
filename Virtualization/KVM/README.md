@@ -144,5 +144,12 @@ Threads:  2
 ### Virtualize devices
 Add 
 
+### Windows 10 VM tips
+- Check out
+  - qemu-guest-agent
+  - windows VirtIO Drivers (virtio-win-guest-tools.exe) [link](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.266-1/)
+  - Spice agent for windows (spice-guest-tools - https://www.spice-space.org/download.html
+  - `UsbDk` eg UsbDk_1.0.22_x64.msi and `usbredirect` eg usbredirect-x64-0.14.0.msi- [link](https://www.spice-space.org/download.html)
+  - 
 
 
