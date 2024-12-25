@@ -158,7 +158,8 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 ````
 </details>
 
-<details> <summary>Block countries in your firewall</summary><br>
+<details> <summary>Block countries in your firewall</summary> <br>
+  
 - [Free list generator from IP2Location](https://www.ip2location.com/free/visitor-blocker)
 - [Download free database](https://download.ip2location.com/lite/)
   
