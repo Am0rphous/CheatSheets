@@ -93,10 +93,10 @@ sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G   #shrink disk
 ````
 sudo nano /etc/default/grub
 
-#add
+## add
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_iommu=on iommu=pt"
 
-#update
+## update
 sudo update-grub
 ```` 
 3. Check if IOMMU is enabled and working `sudo dmesg | grep -e DMAR -e IOMMU`
@@ -104,14 +104,15 @@ sudo update-grub
 ````
 lspci -k | grep NVIDIA
 
-#output
+## output
 01:00.0 VGA compatible controller [0300]: NVIDIA Corporation TU104 [GeForce RTX 3080 Ti] [10de:2204] (rev a1)
 01:00.1 Audio device [0403]: NVIDIA Corporation TU104 HD Audio Controller [10de:1aef] (rev a1)
 
 sudo nano /etc/modprobe.d/vfio.conf
 options vfio-pci ids=10de:2204,10de:1aef
+softdep nvidia pre: vfio-pci
 
-#then
+## then
 sudo update-initramfs -u
 ````
 4. In Virt-manager add the sound controller to the GPU and the GPU itself to the VM.
