@@ -24,6 +24,7 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
   - [KVM Networking Docs](https://wiki.libvirt.org/page/Networking#NAT_forwarding_.28aka_.22virtual_networks.22.29)
   - [KVM/QEMU Windows guest drivers (virtio-win)](https://github.com/virtio-win/kvm-guest-drivers-windows) - Windows paravirtualized.
   - [KVM Virtualization in RHEL 7 Made Easy.pdf](https://linux.dell.com/files/whitepapers/KVM_Virtualization_in_RHEL_7_Made_Easy.pdf)
+  - [KVM-Virtualization with Rocky Linux](https://github.com/tomwechsler/KVM-Virtualization-with-Rocky-Linux) - Everything about KVM-Virtualization with Rocky Linux 
   - [Libvirt - Hooks for specific system management](https://www.libvirt.org/hooks.html)
 - [MemFlow](https://github.com/memflow/memflow) - physical memory introspection framework [memflow.github.io](https://memflow.github.io).
   - [Memflow-cli](https://github.com/memflow/memflow-cli) - Memflow command line interface.
