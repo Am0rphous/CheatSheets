@@ -1,5 +1,6 @@
 # KQL (Kusto Query Language)
 - [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
+- [https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries](https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries) - Sample queries for Advanced hunting in Microsoft 365 Defender 
 
 Search for vulnerabilities
 ````
