@@ -67,7 +67,7 @@
   - [Azure Master Class ](https://github.com/johnthebrit/AzureMasterClass)
 - Microsoft's Study Guides
   - [AZ-900](https://learn.microsoft.com/nb-no/credentials/certifications/resources/study-guides/az-900)
-
+- [SC-200 - Security Operation Analyst](https://skillcertpro.com/wp-content/uploads/2021/08/SC-200-Master-Cheat-Sheet.pdf)
 ## Virtualization
 - [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
 - [VMware Certification](https://www.vmware.com/learning/certification.html)
