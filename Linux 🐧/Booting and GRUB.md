@@ -8,7 +8,8 @@ Turn on the PC:
 5. Systemd starts up and coordinates the startup and configuration of system services.
 6. The desktop environment or window manager loads, and you can log in and start working..
 
-### Boot Managers
+## Boot Managers
+- [Limine](https://github.com/limine-bootloader/limine) - Modern, advanced, portable, multiprotocol bootloader and boot manager.
 - [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
 - [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
 
