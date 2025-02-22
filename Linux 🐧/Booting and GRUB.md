@@ -1,5 +1,5 @@
 ## Booting and GRUB
-
+- [Linux Boot Process Illustrated](https://x.com/hackinarticles/status/1878310411209961842?mx=2)
 Turn on the PC:
 1. The BIOS or UEFI performs a hardware check and boots up the machine.
 2. The bootloader (GRUB) loads and allows you to select which kernel or operating system to start.
