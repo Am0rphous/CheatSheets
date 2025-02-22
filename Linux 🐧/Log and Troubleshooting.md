@@ -2,9 +2,14 @@
 
 - Path for logs `/var/log/ `
 - [Syslog : The Complete System Administrator Guide](https://devconnected.com/syslog-the-complete-system-administrator-guide/)
+- [Logcheck](https://logcheck.org/) - Logcheck is a simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
+- Archive and delete logs older than 7 days. Schedule in a cron job to automate log cleanup.
+````
+find /var/log -type f -mtime +7 -exec tar -rvf old_logs.tar {} \; -exec rm {} \;
+````  
 
 
-## Commands used for troubleshooting
+## Troubleshooting
 ````
 systemctl status ssh
 dmesg
@@ -63,7 +68,6 @@ user.log
 wtmp                                  login records, allows  one to discover information about who is currently using the system
 Xorg.0.log
 ````
-- [Logcheck](https://logcheck.org/) - Logcheck is a simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
 
 
 
