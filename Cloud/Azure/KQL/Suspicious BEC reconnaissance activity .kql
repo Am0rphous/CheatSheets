@@ -1,0 +1,57 @@
+let bec_keywords = pack_array("payment", "receipt", "invoice", "inventory");   
+ 
+let reconEvents =   
+ 
+    CloudAppEvents  
+ 
+    | where Timestamp >ago (7d)  
+ 
+    | where ActionType in ("MailItemsAccessed", "Update")  
+ 
+    | where AccountObjectId in ("<Impacted AccountObjectId>")  
+ 
+    | extend SessionId = tostring(parse_json(RawEventData.SessionId))  
+ 
+    | project  
+ 
+        Timestamp,  
+ 
+        ActionType,  
+ 
+        AccountObjectId,  
+ 
+        UserAgent,  
+ 
+        ISP,  
+ 
+        IPAddress,  
+ 
+        SessionId,  
+ 
+        RawEventData;  
+ 
+reconEvents;  
+ 
+let updateActions = reconEvents  
+ 
+    | where ActionType == "Update"   
+ 
+    | extend Subject=tostring(RawEventData["Item"].Subject)  
+ 
+    | where isnotempty(Subject)  
+ 
+    | where Subject has_any (bec_keywords)  
+ 
+    | summarize UpdateCount=count() by bin (Timestamp, 15m), Subject, AccountObjectId, SessionId, IPAddress;  
+ 
+updateActions;  
+ 
+let mailItemsAccessedActions = reconEvents   
+ 
+    | where ActionType == "MailItemsAccessed"   
+ 
+    | extend OperationCount = toint(RawEventData["OperationCount"])  
+ 
+    | summarize TotalCount = sum(OperationCount) by bin (Timestamp, 15m), AccountObjectId, SessionId, IPAddress;  
+ 
+mailItemsAccessedActions;  
