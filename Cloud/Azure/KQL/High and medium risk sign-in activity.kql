@@ -1,0 +1,11 @@
+AADSignInEventsBeta 
+| where Timestamp >ago (7d)  
+| where ErrorCode==0 
+| where RiskLevelDuringSignIn >= 50  
+| project  
+    AccountUpn,  
+    AccountObjectId,  
+    SessionId,  
+    RiskLevelDuringSignIn,  
+    ApplicationId,  
+    Application  
