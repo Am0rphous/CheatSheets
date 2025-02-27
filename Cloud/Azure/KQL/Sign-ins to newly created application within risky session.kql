@@ -1,0 +1,7 @@
+AADSignInEventsBeta  
+ 
+| where Timestamp >ago (7d)   
+ 
+| where AccountObjectId in ("<Impacted AccountObjectId>") and   
+ 
+SessionId in ("<Risky Session Id>")  
