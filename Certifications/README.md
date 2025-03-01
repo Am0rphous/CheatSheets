@@ -38,7 +38,8 @@
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
   - [The Ultimate OSCP Preparation Guide, 2021](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
-  - [OSCP](https://github.com/0xsyr0/OSCP) - OSCP Guide
+  - [OSCP - 0xsyr0](https://github.com/0xsyr0/OSCP) - OSCP Guide
+  - [OSCP - tedchen0001](https://github.com/tedchen0001/OSCP-Notes) - improving...
   - [Oscp_cheatsheet](https://github.com/CountablyInfinite/oscp_cheatsheet) - Commands, snippets, exploits, tools, lists, collections and techniques I used on my journey to becoming an OSCP.
 - Red Team
   - [ Collection of Notes and CheatSheets used for Red teaming Certs ](https://github.com/0xn1k5/Red-Teaming)
