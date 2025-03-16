@@ -5,7 +5,7 @@
 - [Docker Security Cheat Sheet by OWASP](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Docker_Security_Cheat_Sheet.md)
 - [Run.tpl](https://gist.github.com/efrecon/8ce9c75d518b6eb863f667442d7bc679) - script to inspect and generate the `docker run`command that created the container
   - Syntax `docker inspect --format "$(<run.tpl)" name_or_id_of_running_container`
-
+- [Step-by-Step Hardening](https://reynardsec.com/en/docker-platform-security-step-by-step-hardening/)
 
 ### Cleanup
 ````powershell
