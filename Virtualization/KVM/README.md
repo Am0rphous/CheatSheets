@@ -210,9 +210,10 @@ Type=oneshot
 [Install]
 WantedBy=multi-user.target
 ````
-4. Make it executable with `chmod +x /etc/systemd/system/passthrough.service`
-5. Enable it `systemctl enable passthrough.service`
-6. Make a custom entry in the grub boot menu. Create the file e.g. `/etc/grub.d/40_custom` with the content looking like
+4. Make the service executable with `chmod +x /etc/systemd/system/passthrough.service`
+5. Reload daemon `sudo systemctl daemon-reload`
+6. Enable the new service `systemctl enable passthrough.service`
+7. Make a custom entry in the grub boot menu. Create the file e.g. `/etc/grub.d/40_custom` with the content looking like
 ````
 #!/bin/sh
 exec tail -n +3 $0
@@ -246,4 +247,5 @@ menuentry 'GPU Passthrough - Gaming Mode' {
   initrd /initrd.img-6.6.9-amd64
 }
 ````
-7. Ensure the file is executable `chmod +x 40_custom`
+7. Ensure the file is executable `chmod +x /etc/grub.d/40_custom`
+8. Run `update-grub && update-initramfs -u`
