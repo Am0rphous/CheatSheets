@@ -154,4 +154,96 @@ Add
   - `UsbDk` eg UsbDk_1.0.22_x64.msi and `usbredirect` eg usbredirect-x64-0.14.0.msi- [link](https://www.spice-space.org/download.html)
   - 
 
+### Automate things
+1. Lets create a script that checks if you choose to enable iommu at boot. Create the file `usr/local/bin/passthrough-mode.sh` with the content:
+````
+#!/bin/bash
 
+if grep -q "intel_iommu=on" /proc/cmdline; then
+
+    # Aktiver VFIO og passthrough
+    echo "Lets configure gaming mode.."
+    #https://www.cyberciti.biz/faq/display-view-linux-kernel-parameters-for-booted/
+    echo "Detected parameter 'iommu=on'"
+
+    echo "Starting to update /etc/modprobe.d/vfio.conf with correct config.."
+    echo "options vfio-pci ids=10de:2208,10de:1aef" > /etc/modprobe.d/vfio.conf
+    echo "softdep nvidia pre: vfio-pci" >> /etc/modprobe.d/vfio.conf
+    echo "Done with /etc/modprobe.d/vfio.conf..."
+
+    echo "Starting to update initramfs.."
+    update-initramfs -u
+    echo "Done updating initramfs..."
+
+    sleep 5
+    echo "Trying to start virtual machine 'w10' in KVM.."
+    virsh start w10
+    echo "Done.."
+    echo "Gaming mode should be ready.."
+else
+    echo "Didnt detect 'iommu=on' for the current session."
+    echo "Continue to configure work mode.."
+    # Deaktiver VFIO og bruk GPU til host
+    echo "Adding hashtags to config /etc/modprobe.d/vfio.conf.."
+    echo "#options vfio-pci ids=10de:2208,10de:1aef" > /etc/modprobe.d/vfio.conf
+    echo "#softdep nvidia pre: vfio-pci" >> /etc/modprobe.d/vfio.conf
+    echo "Done.."
+
+    echo "Starting to update initramfs.."
+    update-initramfs -u
+    echo "Done updating initramfs..."
+    echo "Work mode ready.."
+fi
+````
+2. Make it executable with `chmod +x /usr/local/bin/passthrough-mode.sh`
+3. Create a service file `/etc/systemd/system/passthrough.service` with:
+````
+[Unit]
+Description=Setup GPU Passthrough
+After=cryptsetup.target
+Requires=cryptsetup.target
+
+[Service]
+ExecStart=/usr/local/bin/passthrough-mode.sh
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+````
+4. Make it executable with `chmod +x /etc/systemd/system/passthrough.service`
+5. Enable it `systemctl enable passthrough.service`
+6. Make a custom entry in the grub boot menu. Create the file e.g. `/etc/grub.d/40_custom` with the content looking like
+````
+#!/bin/sh
+exec tail -n +3 $0
+
+menuentry 'Normal - Work Mode' {
+  load_video
+  insmod gzio
+  if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+  insmod part_gpt
+  insmod ext2
+  search --no-floppy --fs-uuid --set=root 9565f7fd-33a3-49f7-b394-64cbea1d90d0
+  echo "Laster inn Linux-kjerna.."
+  linux /vmlinuz-6.6.9-amd64 root=/dev/mapper/carbon--vg-root ro splash intel_iommu=off nomodeset
+
+  echo "Laster inn initrd.."
+  initrd /initrd.img-6.6.9-amd64
+}
+
+menuentry 'GPU Passthrough - Gaming Mode' {
+  load_video
+  insmod gzio
+  if [ x$grub_platform = xxen ]; then insmod xzio; insmod lzopio; fi
+  insmod part_gpt
+  insmod ext2
+  search --no-floppy --fs-uuid --set=root 9565f7fd-33a3-49f7-b394-64cbea1d90d0
+
+  echo "Laster inn Linux-kjerna.."
+  linux /vmlinuz-6.6.9-amd64 root=/dev/mapper/carbon--vg-root ro splash intel_iommu=on iommu=pt nomodeset
+
+  echo "Laster inn initrd.."
+  initrd /initrd.img-6.6.9-amd64
+}
+````
+7. Ensure the file is executable `chmod +x 40_custom`
