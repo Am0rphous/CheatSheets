@@ -34,6 +34,11 @@
   - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
 - [ISECOM](https://www.isecom.org/certification.html)
   - [ISECOM Certified Hacker Analyst syllabus](https://www.isecom.org/cha.pdf)
+- Offsec
+  - [PEN-200 (OSCP+](https://www.offsec.com/courses/pen-200/)
+  - [PEN-210 (OSWP)]()
+  - [PEN-300 (OSEP)](https://www.offsec.com/courses/pen-300/)
+    - [OSEP by In3x0rabl3](https://github.com/In3x0rabl3/OSEP)
 - [OSCE³ Study Guide](https://github.com/CyberSecurityUP/OSCE-Complete-Guide) - OSWE, OSEP, OSED
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
