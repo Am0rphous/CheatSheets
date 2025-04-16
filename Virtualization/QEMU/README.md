@@ -15,19 +15,3 @@ qemu-img convert -O qcow2 vmware-disk.vmdk kvm-disk.qcow2                 #conve
 qemu-img convert -f raw -O qcow2 /tmp/source.raw /tmp/output.qcow2 -p     #converting raw to qcow2 with progressbar
 qemu-img info source.qcow2            #get info about disk
 ````
-
-### Run Raspberri PI ARM on Linux
-- [Old Raspbian Images](https://downloads.raspberrypi.org/raspbian/images/)
-````
-sudo apt-get install qemu-system-arm
-
-qemu-system-arm -kernel kernel-qemu-4.4.34-jessie \
--cpu arm1176 \
--m 256 \
--M versatilepb \
--no-reboot \
--serial stdio \
--append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" \
--hda 2017-07-05-raspbian-jessie.img
-
-````
