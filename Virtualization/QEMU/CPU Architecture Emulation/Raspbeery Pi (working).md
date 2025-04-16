@@ -26,5 +26,7 @@ qemu-system-arm -kernel kernel-qemu-4.4.34-jessie \
 qemu-img convert 2017-07-05-raspbian-jessie.img -O raw rspi.raw
 vboxmanage convertfromraw rspi.raw --format vdi rspi.vdi
 vboxmanage modifyhd rspi.vdi --compact
-
 ````
+
+## Other resources for inspo that migh work
+- [How to run the Raspberry Pi Os in a virtual machine with Qemu and Kvm](https://linuxconfig.org/how-to-run-the-raspberry-pi-os-in-a-virtual-machine-with-qemu-and-kvm)
