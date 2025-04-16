@@ -1,8 +1,7 @@
-# Dirty notes regarding ARM emulation
+# CPU Architecture Emulation
 
-This is a f pain in the ass to get working. Jk im just the noob as usual lol
-
-
+- [Emulating ARM on QEMU, with UEFI](https://kya8.github.io/p/emulating-arm-on-qemu-with-uefi/) - didnt get it to work
+  - [AAVMF_VARS.fd and AAVMF_CODE.fd](https://github.com/BaoqianWang/VirtualizationOnJetsonTX2)
 ````
 qemu-system-aarch64 -cpu help 
 Available CPUs:
