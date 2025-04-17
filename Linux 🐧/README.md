@@ -491,6 +491,7 @@ modinfo        # show kernel module info
 ````
 
   ### Kernel Security
+  - [Cloudflare - Linux kernel hardening](https://blog.cloudflare.com/linux-kernel-hardening/)
   - [AppArmor](https://www.apparmor.net) - MAC style security extension for the Linux kernel.
     - [AppArmor GitLab](https://gitlab.com/apparmor)
     - [Apparmor Ubuntu Docs](https://ubuntu.com/server/docs/security-apparmor)
