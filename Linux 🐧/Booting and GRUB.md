@@ -72,6 +72,7 @@ sudo mount --bind /proc /mnt/proc &&
 sudo mount --bind /sys /mnt/sys
 sudo mount --bind /dev /mnt/dev &&
 sudo mount --bind /dev/pts /mnt/dev/pts &&
+````
 5. run `sudo chroot /mnt` and then run
 ````
 mount -t sysfs sys /sys
