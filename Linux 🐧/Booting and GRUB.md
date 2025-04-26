@@ -59,3 +59,26 @@ reboot
 ````
 sudo hwinfo --framebuffer    #show same info as vbeinfo - possible resolutions
 ````
+
+### Rescue a deleted boot partition
+- some notes april 2025 regarding lost boot partition. [help 1](https://www.bleepingcomputer.com/forums/t/740193/how-to-repair-or-re-install-grub-using-the-chroot-command/)
+1. Download kali live ISO and burn it to a USB with e.g. BalenaEtcher
+2. Start computer and boot into live system
+3. if luks encryption -> Gparted -> left click disk and "open encryption".
+4. Mount the disk to be able to operate on it
+````
+mount /dev/mapper/kali--vg-root /mnt/
+sudo mount --bind /proc /mnt/proc &&
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /dev /mnt/dev &&
+sudo mount --bind /dev/pts /mnt/dev/pts &&
+5. run `sudo chroot /mnt` and then run
+````
+mount -t sysfs sys /sys
+vgchange -ay
+````
+6. Load module and upate initramfs
+````
+modprobe md_mod
+update-initramfs -u
+````
