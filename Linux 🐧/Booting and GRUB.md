@@ -82,7 +82,7 @@ vgchange -ay
 ````
 6. Load module and upate initramfs
 ````
-modprobe md_mod
+modprobe md-mod
 update-initramfs -u
 ````
 7. unmount stuff. Might use something like `for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done` to automate stuff
