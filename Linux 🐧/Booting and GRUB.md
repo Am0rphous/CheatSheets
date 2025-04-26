@@ -67,7 +67,8 @@ sudo hwinfo --framebuffer    #show same info as vbeinfo - possible resolutions
 3. if luks encryption -> Gparted -> left click disk and "open encryption".
 4. Mount the disk to be able to operate on it
 ````
-mount /dev/mapper/kali--vg-root /mnt/
+sudo mount /dev/mapper/kali--vg-root /mnt/
+sudo mount /dev/nvme0n1p2 /mnt/boot
 sudo mount --bind /proc /mnt/proc &&
 sudo mount --bind /sys /mnt/sys
 sudo mount --bind /dev /mnt/dev &&
@@ -83,3 +84,15 @@ vgchange -ay
 modprobe md_mod
 update-initramfs -u
 ````
+7. unmount stuff
+````
+sudo umount /mnt/sys/firmware/efi/efivars &&
+sudo umount /mnt/sys &&
+sudo umount /mnt/dev/pts &&
+sudo umount /mnt/dev &&
+sudo umount /mnt/proc &&
+sudo umount /mnt/boot &&
+sudo umount /mnt/
+````
+
+
