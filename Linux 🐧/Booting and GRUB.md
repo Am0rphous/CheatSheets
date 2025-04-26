@@ -73,6 +73,7 @@ sudo mount --bind /proc /mnt/proc &&
 sudo mount --bind /sys /mnt/sys
 sudo mount --bind /dev /mnt/dev &&
 sudo mount --bind /dev/pts /mnt/dev/pts &&
+sudo mount --bind /run /mnt/run
 ````
 5. run `sudo chroot /mnt` and then run
 ````
@@ -84,7 +85,7 @@ vgchange -ay
 modprobe md_mod
 update-initramfs -u
 ````
-7. unmount stuff
+7. unmount stuff. Might use something like `for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done` to automate stuff
 ````
 sudo umount /mnt/sys/firmware/efi/efivars &&
 sudo umount /mnt/sys &&
@@ -92,6 +93,7 @@ sudo umount /mnt/dev/pts &&
 sudo umount /mnt/dev &&
 sudo umount /mnt/proc &&
 sudo umount /mnt/boot &&
+sudo umount /mnt/run
 sudo umount /mnt/
 ````
 
