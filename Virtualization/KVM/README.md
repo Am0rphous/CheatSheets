@@ -83,10 +83,14 @@ tar xvf MyAppliance.ova
 qemu-img convert -f vmdk MyAppliance.vmdk -O qcow2 MyNewAppliance.qcow2
 qemu-img convert -f raw -O qcow2 image.img image.qcow2
 
-sudo qemu-img resize vmdisk.qcow2 +40G                         #resize disk
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G  #increase disk
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G   #shrink disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G          #increase disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink  #shrink disk
 ````
+- To resize a windows
+ 1. VM run `sdelete.exe -z c:` within the VM. Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete)
+ 2. Shutdown VM
+ 3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink`
+
 
 ## GPU Passthrough
 1. Enable IOMMU / VT-d (Intel) or AMD-Vi (AMD) in the BIOS. Search your motherboard and check if it's available. Update your BIOS to newest version btw!
