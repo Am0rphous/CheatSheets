@@ -3,6 +3,7 @@
 1. Graphics server = xserver-xorg or wayland. Creates graphical environment
 2. A Desktop/Display manager = Manages the graphics server. User only notices the login screen.
 3. A Desktop environment = your actual desktop
+4. A Tile Manager =
 
 ### Desktop/Display Manager
 1. lightm
@@ -47,6 +48,12 @@ xrandr --listactivemonitors
 ````
 ls /usr/bin/*-session
 echo $XDG_CURRENT_DESKTOP      #list desktop environment
+````
+
+### Nvidia driver
+````
+apt install linux-headers-$(uname -r)
+apt install nvidia-driver nvidia-open
 ````
 
 ### Video RAM
