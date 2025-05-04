@@ -56,7 +56,7 @@ By using `ddrescue`
 
 ### LUKS encryption (Linux Unified Key Setup)
 
-### Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)"
+#### Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)"
 **Pre note:** This was a pain in the ass. After troubleshooting for a week i finally identifiet the error. I write this as none of the sources on the Internet had anything pointing to the solution i discovered. Ensure the file /etc/cryptsetup exists - mine was deleted. Ensure it has this content
 ````
 cryptsetup
