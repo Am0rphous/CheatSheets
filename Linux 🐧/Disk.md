@@ -54,7 +54,82 @@ By using `ddrescue`
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
-### Fix corrupted disks/file systems
+### LUKS encryption (Linux Unified Key Setup)
+
+### Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)"
+**Pre note:** This was a pain in the ass. After troubleshooting for a week i finally identifiet the error. I write this as none of the sources on the Internet had anything pointing to the solution i discovered. Ensure the file /etc/cryptsetup exists - mine was deleted. Ensure it has this content
+````
+cryptsetup
+````
+
+- **Background:** I run Kali as my Desktop. Ofc I run encrypted drives on my NVME-disk. They were created when setting up the machine. Why and how my crypt setup failed remains unclear - when though i suspect updates - but without confirming this.
+- **The error:** After a couple of weeks without using the computer due to other tasks, I was surprised when i booted up the computer. Normally Grub chooses the first alternative in the Grub bootloader menu and proceeds to decrypt the drive. But instead of decrypting it, the following error occured _"Waiting for encrypted source device UUID=(..)"_ which contained the UUID for the crypt partition on my physical disk. The system then booted straight into an initramfs-shell without any attached keybord functioning - not good - and impossible to troubleshoot when unable to use a shell.
+
+#### Troubleshooting steps
+- People on the Internet experienced similar symptoms. Usually this problems happens when UUIDs change on disks - fair enough to fix. This is easy to check when booting a live USB and running `sudo blkid` which shows UUIDs for all disks/partitions. You can check with the following
+1. `/etc/fstab` contains a line looking something like:
+````
+#Example 1:
+#/boot/efi partition - /dev/sda1
+/dev/disk/by-uuid/PR21-558F /boot/efi vfat defaults 0 0
+#/boot partition - /dev/sda2
+/dev/disk/by-uuid/3a074af5-1468-4417-9866-4ce9a78f3690 /boot ext4 defaults 0 0
+#/ partition - /dev/ubuntu-vg/ubuntu-lv
+/dev/disk/by-id/dm-uuid-LVM-a7XMZRjlQWoXEycBMFV1nI54Kn2ls0e8FmM2Njq4HJuGLLHkHhnk5WAcsWEtD1QU / ext4 defaults 0 0
+
+#Example 2 - or looking like these
+/dev/mapper/pc--vg-root / ext4 errors=remount-ro 0 1
+````
+2. `/etc/crypttab` contains a line when UUID matching "crypto_LUKS" partition
+````
+#Example 1
+dm_crypt-0 UUID=282a96b2-6ae7-4d74-8c7e-fdab5fc44bda none luks
+
+#Example 2
+````
+3. Check `/boot/grub/grub.cfg` contains the correct UUID for root file system /dev/mapper/pc--vg-root
+4. Run `sudo update-grub` and then `sudo update-initramfs -u -k all` which updates boot images
+
+#### Mounting a system within a live USB to work on it
+After booting into a Live USB mount following partitions to be able to work with the old system. This assumes you've LUKS encrypted the disk.
+````
+ #EXAMPLE
+sudo cryptsetup open /dev/SYSTEM_PARTITION encrypted_disk
+
+#Actual command
+sudo cryptsetup luksOpen /dev/nvme0n1p3 nvme0n1p3_crypt
+sudo mount /dev/mapper/pc--vg-root /mnt
+sudo mount /dev/nvme0n1p2 /mnt/boot
+sudo mount /dev/nvme0n1p1 /mnt/boot/efi
+
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /dev/pts /mnt/dev/pts
+sudo mount --bind /run /mnt/run
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+
+#Important to chroot into the system
+sudo chroot /mnt
+
+#RUN ALL YOUR COMMANDS HERE - e.g. updating/removing packages..
+
+#After you've done - run this:
+update-initramfs -u
+exit #1 - exit chroot
+exit #2 - exit root shell
+````
+Then unmount disk
+````
+sudo umount /mnt/dev/pts
+sudo umount /mnt/dev
+sudo umount /mnt/proc
+sudo umount /mnt/sys
+sudo umount /mnt/boot/efi
+sudo umount /mnt/boot
+sudo umount /mnt
+````
+
+## Fix corrupted disks/system
 
 <details>
    
