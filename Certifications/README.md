@@ -5,6 +5,7 @@
 
 ## Cloud
 - [CCSK](https://cloudsecurityalliance.org/education/ccsk) - Certificate of Cloud Security Knowledge
+- [Microsoft Cloud Attack and Defense Bootcamp](https://bootcamps.pwnedlabs.io/mcrtp-bootcamp) - 400$
 
 ## Cybersecurity
 - [Infosec Certification list](https://resources.infosecinstitute.com/certifications/)
@@ -33,7 +34,11 @@
   - [eJPT-Notes - grumpzsux](https://github.com/grumpzsux/eJPT-Notes)
   - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
 - HTB
-  - [Ultimate-CPTS-Walkthrough - xiyusec]()
+  - [CPTS - xiyusec](https://github.com/xiyusec/Ultimate-CPTS-Walkthrough)
+  - [CPTS - buduboti](https://github.com/buduboti/CPTS-Walkthrough)
+
+
+
 - [ISECOM](https://www.isecom.org/certification.html)
   - [ISECOM Certified Hacker Analyst syllabus](https://www.isecom.org/cha.pdf)
 - Offsec
@@ -69,14 +74,23 @@
   - [Mind the Gap](https://www.lpi.org/sites/default/files/Mind-The-Gap-Whitepaper.pdf)  - Industry report on open source technology skills in the UK
 
 ## Microsoft
+- AZ-900
+  - [AZ-900 - azureguru](https://www.azureguru.org/az-900-azure-fundamentals-guide/)
+  - [AZ-900 -johnthebrit](https://github.com/johnthebrit/AZ900CertCourse) - [~3,5H Youtube vid](https://www.youtube.com/watch?v=tQp1YkB2Tgs)
+  - [AZ-900 - microsoft learn](https://learn.microsoft.com/nb-no/credentials/certifications/resources/study-guides/az-900)
+- SC-900
+  - [SC-900 - OneEqualsOne](https://github.com/OneEqualsOne/Azure-Learning-Materials/tree/main/SC-900)
+
 - [Azure Certification Materials (undergroundwires)](https://github.com/undergroundwires/Azure-in-bullet-points) - az-104,303,304,400,900
 - [Azure Certification Materials (johnthebrit)](https://github.com/johnthebrit/CertificationMaterials) - az900, sc-100,104,300, az-500,700,305,400
-  - [AZ- 900 Azure Fundamentals Certification Course](https://github.com/johnthebrit/AZ900CertCourse) - [~3,5H Youtube vid](https://www.youtube.com/watch?v=tQp1YkB2Tgs)
   - [Azure Master Class ](https://github.com/johnthebrit/AzureMasterClass)
-- Microsoft's Study Guides
-  - [AZ-900](https://learn.microsoft.com/nb-no/credentials/certifications/resources/study-guides/az-900)
 - [Ms-200 - security administrator](https://www.gitbit.org/course/ms-500)
-- [SC-200 - Security Operation Analyst](https://skillcertpro.com/wp-content/uploads/2021/08/SC-200-Master-Cheat-Sheet.pdf)
+- SC-200
+  - [sc-200 - microsoftlearning.github.io](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/)
+  - [SC-200 - Security Operation Analyst](https://skillcertpro.com/wp-content/uploads/2021/08/SC-200-Master-Cheat-Sheet.pdf)
+  - [sc-200 - OneEqualsOne](https://github.com/OneEqualsOne/Azure-Learning-Materials/tree/main/SC-200)
+  - [sc-200 - timothywarner](https://github.com/timothywarner/sc200)
+  - [SC-200 - MicrosoftLearning](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst)
 ## Virtualization
 - [Red Hat Certified Specialist in Virtualization](https://www.redhat.com/en/services/certification/rhcs-virtualization)
 - [VMware Certification](https://www.vmware.com/learning/certification.html)
