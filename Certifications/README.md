@@ -32,6 +32,8 @@
 - [eLearnSecurity eJPT](https://security.ine.com/certifications/ejpt-certification/)
   - [eJPT-Notes - grumpzsux](https://github.com/grumpzsux/eJPT-Notes)
   - [eJPT-Notes - edoardottt](https://github.com/edoardottt/eJPT-notes)
+- HTB
+  - [Ultimate-CPTS-Walkthrough - xiyusec]()
 - [ISECOM](https://www.isecom.org/certification.html)
   - [ISECOM Certified Hacker Analyst syllabus](https://www.isecom.org/cha.pdf)
 - Offsec
