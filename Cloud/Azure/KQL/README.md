@@ -13,9 +13,6 @@ DeviceTvmSoftwareVulnerabilities
 //| limit 20
 ````
 
-````
-DeviceEvents| where DeviceName contains "MyPersonalComputerName"| where RemoteUrl contains "malicious.url.com" or RemoteUrl contains "mailicous2.url.com"| project InitiatingProcessAccountUpn, RemoteUrl, ActionType, DeviceId, InitiatingProcessFileName
-````
 
 finding internet-facing devices
 ````
