@@ -1,6 +1,6 @@
 # Email
 
-##### List users received phish or malw in INBOX last 30 days
+#### List users received phish or malw in INBOX last 30 days
 ````powershell
 EmailEvents
 | where Timestamp > ago(30d)
@@ -10,7 +10,7 @@ EmailEvents
 | summarize EmailCount = count() by RecipientEmailAddress
 | order by EmailCount desc
 ````
-##### List users received phish or malw last 30 days - includes quarantined!
+#### List users received phish or malw last 30 days - includes quarantined!
 ````powershell
 EmailEvents
 | where Timestamp > ago(30d)
