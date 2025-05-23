@@ -18,8 +18,17 @@ DeviceTvmSoftwareVulnerabilities
 ###### List devices affected by CVE
 ````
 DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
+
 //first alternative
-| distinct DeviceName 
+| distinct DeviceName
+
 //second alternative
 | project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
+````
+###### List vulnerable software, also show if available updates (may give a lot of results)
+````
+DeviceTvmSoftwareVulnerabilities
+| where SoftwareName contains "oracle" or SoftwareVendor contains "apple"
+| distinct DeviceName, OSPlatform, SoftwareVendor, SoftwareName, SoftwareVersion, RecommendedSecurityUpdate, RecommendedSecurityUpdateId
+
 ````
