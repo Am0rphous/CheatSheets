@@ -1,9 +1,9 @@
 # Software
 
-- Check if there is occurence of SoftEther
+Check if there is occurence of SoftEther VPN in infra
 ````
 DeviceTvmSoftwareInventory
-| where SoftwareName in ("SoftEther")
+| where SoftwareName contains "softether"
 | limit 5     #reduce resource usage. Remove if you want all result
 ````
 
