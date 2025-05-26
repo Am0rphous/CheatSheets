@@ -5,15 +5,6 @@
 - [ Microsoft 365 Defender Advanced Hunting Queries - A Full Guide ](https://ironscales.com/guides/microsoft-365-defender/microsoft-365-defender-advanced-hunting-queries)
 
 
-
-Find fortinet stuff
-````
-DeviceTvmSoftwareVulnerabilities
-| where tolower(SoftwareVendor) contains "forti"| project TenantId, DeviceName, OSPlatform, SoftwareVendor, SoftwareName, SoftwareVersion, CveId, VulnerabilitySeverityLevel
-//| limit 20
-````
-
-
 finding internet-facing devices
 ````
 DeviceNetworkEvents
