@@ -521,15 +521,26 @@ modinfo        # show kernel module info
   ### Kernel Install/Removal
   - [Source for commands: askubuntu.com(...)](https://askubuntu.com/questions/1207958/error-24-write-error-cannot-write-compressed-block)
   - Don't touch these packages
-````powershell
+````shell
 dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep $(uname -r)
 ````
-List old kernels we don't need with
-````powershell
+List all kernels installed on system
+````shell
+#ii = installed and expected
+dpkg --list 'linux-image-*' | grep ^ii
+
+uname -r     #Running kernel in use - Don't remove this one
+
+#List kernels not being used. Usually these are only older kernels - unless you've changed during boot to an older kernel version
+# then you will show the newest kernel as well. Obviously dont remove the newest one.
 dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cut -d - -f 1)
 ````
-Purge them with this command
-````powershell
+Lets do some removing/purging
+````shell
+#Only remove a specific kernel - safe
+apt purge linux-image-6.6.9-amd64
+
+#Purge all the unused kernels. Might remove newest kernel also
 dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cut -d - -f 1) | awk {'print $2'} | xargs sudo apt purge -y
 ````
   #### Install custom kernel
@@ -538,7 +549,7 @@ dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cu
   - Download both the header and the image file. Install with `sudo dpkg -i *.deb`
   - For [Kali](https://www.kali.org/docs/development/recompiling-the-kali-linux-kernel/):
 ````
-#1. Download package from https://www.kernel.org/
+#1. Download e.g. 6.11 from https://www.kernel.org
 tar -xvf linux-6.11.tar.xz
 cd linux-6.11
 sudo apt install -y build-essential libncurses5-dev fakeroot xz-utils
