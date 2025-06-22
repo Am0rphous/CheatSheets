@@ -12,7 +12,7 @@ Table of content
   - [Peripherals](#Peripherals)
   - [Processess](#processess)
   - [Services](#services)
-  - [Terminal](#terminal]
+  - [Terminal](#terminal)
 
 
 <br>
