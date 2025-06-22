@@ -21,7 +21,7 @@ Table of content
 - Analytics:
   - [Opt out of sharing iCloud analytics](https://www.imore.com/how-opt-out-sharing-icloud-analytics-mac)
   - To see and open CrashReporter config file
-````powershell
+````shell
 nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config
 ````
 - Path to startup items: `/Library/LaunchDaemons/`
@@ -58,7 +58,7 @@ brew services restart fail2ban
 ````
 - Password Generation
   - Command to created 50 random small passwords:
-````powershell
+````shell
 i=1
 while [ $i -le 50 ]
 do
@@ -68,7 +68,7 @@ do
 done
 ````
 ## Productivity
-````powershell
+````shell
 caffeinate                 # stop computer from going to sleep infintine
 caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
 cat myfile | pbcopy        # copies content to clipboard :D
@@ -89,35 +89,44 @@ qlmanage -p myfile         # quick preview of 'myfile'
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````
+sudo lsof -i -P | grep LISTEN    #List listening ports - USE THIS ONE
+
+sudo lsof -PiTCP -s udp:LISTEN   #udp listening ipv4/v6 ports
+sudo lsof -PiTCP -s tcp:LISTEN   #ltcp istening ipv4/v6 ports
+
+sudo lsof -Pn -i4               #shows ipv4 UDP/TCP
+sudo lsof -Pn -i6               #shows ipv6 UDP/TCP
+sudo lsof -Pn -i4 | grep LISTEN  #filter listening ports on ipv4
+sudo lsof -Pn -i6 | grep LISTEN  #filter listening ports on ipv6
+
+sudo netstat -anvp udp                           #shows udp ports in use
+sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'  #shows list of listening ports
+
+sudo tcpdump -Ii en0                        #sniff network traffic on device en0
 sudo airportd en0 info
 sudo airportd en0 sniff 1
-sudo airportd scan                                   #scans for WiFi networks and prints results. Requires sudo.
-sudo netstat -ap tcp
-sudo netstat -anvp tcp | awk 'NR<3 || /LISTEN/'      #shows sweet list of listening ports
-sudo lsof -PiTCP -sTCP:LISTEN
-sudo lsof -Pn -i4
-sudo lsof -Pn -i4 | grep LISTEN
-sudo tcpdump -Ii en0
+sudo airportd scan                          #scans for WiFi networks and prints results. Requires sudo.
+sudo netstat -ap tcp                        #NICE - show open and established connections
 ````
 - DNS
-````powershell
+````shell
 sudo lsof -iTCP:53 -iUDP:53 -n              # make sure mDNSRespo is running
 ````
   - Clear the DNS cache
-````powershell
+````shell
 dscacheutil -flushcache
 sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache
 ````
 - Proxychains-ng
 Installation
-````powershell
+````shell
 brew install proxychains-ng       #config: /usr/local/etc/proxychains.conf
 proxychains4 curl ifconfig.me
 proxychains4 ssh@server.com
 proxychains4 nmap ip
 ````
 Be aware: Sometimes you may encounter no IP change, e.g.
-````powershell
+````shell
 proxychains4 curl ifconfig.me
 [proxychains] config file found: /usr/local/etc/proxychains.conf
 [proxychains] preloading /usr/local/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
@@ -125,14 +134,14 @@ proxychains4 curl ifconfig.me
 ````
 By copying the executable to another location, we resolve this. E.g. `cp /usr/local/bin/wget /tmp/`
 Then run:
-````powershell
+````shell
 proxychains4 /tmp/wget https://google.com
 ````
 
 ## System Maintenance
 
 - Change Hostname
-````powershell
+````shell
 sudo scutil --set HostName <new host name>
 sudo scutil --set LocalHostName <new host name>
 sudo scutil --set ComputerName <new name>
@@ -141,7 +150,7 @@ reboot
 ````
 - [System-info by Peter-Moller](https://github.com/Peter-Moller/system-info) - Script to give overview of an Operating System.
 - Update MacOS from terminal
-````powershell
+````shell
 softwareupdate --all --install --force
 ````
 
@@ -198,7 +207,7 @@ ioreg -p IOUSB -l -w 0      #listing devices
 
 ### Services
 - Launchctl
-````powershell
+````shell
 sudo launchctl list                         # lists all macOS services
 sudo launchctl list | grep service          # lists services named 'service'
 sudo launchctl list | grep tor              # lists services named 'tor'
