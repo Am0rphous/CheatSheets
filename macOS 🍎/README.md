@@ -39,7 +39,8 @@ shift+command+6           #screenshot the touchbar
 
 ## Security
 ### Antivirus
-- Clamav Antivirus
+- 2025 - Use [Avira](https://www.avira.com/en/free-antivirus-mac) which is free and a reasonable good alternative.
+- Clamav Antivirus - open source, free and multi os support
 ````
 brew install clamav
 brew ls clamav |grep clamd                                                        #locate clamd daemon
