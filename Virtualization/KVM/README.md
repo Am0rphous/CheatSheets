@@ -42,8 +42,8 @@ sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-
 sudo service libvirtd start
 sudo usermod -aG libvirt $USER
 sudo usermod -aG kvm $USER
-sudo virsh net-autostart default     #Autostarts the nat network
-sudo reboot
+sudo virsh net-autostart default    #Autostarts the nat network
+sudo reboot                         #Ensures group membership are applied
 ````
 
 ### Integration and console
