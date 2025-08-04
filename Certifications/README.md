@@ -9,6 +9,8 @@
 
 ## Cybersecurity
 - [Infosec Certification list](https://resources.infosecinstitute.com/certifications/)
+- Blue Team Level 1 - BTL1
+  - [BTL1 Practical Study Guide 🛡️](https://github.com/Nervi0zz0/BTL1-Study-Guide)
 - [Cybersecurity Certifications - Entry Level to Advanced](https://github.com/CyberSecurityUP/Cybersecurity-Certifications-Guide)
 - [CEH (Certified Ethical Hacker)](https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/)
   - [CEH C-11 Exam Free Practice Questions](https://certdemy.com/certified-ethical-hacker-exam-free-practice-questions/)
