@@ -37,25 +37,29 @@
   - [CPTS - xiyusec](https://github.com/xiyusec/Ultimate-CPTS-Walkthrough)
   - [CPTS - buduboti](https://github.com/buduboti/CPTS-Walkthrough)
 
-
-
 - [ISECOM](https://www.isecom.org/certification.html)
   - [ISECOM Certified Hacker Analyst syllabus](https://www.isecom.org/cha.pdf)
+
 - Offsec
   - [PEN-200 (OSCP+](https://www.offsec.com/courses/pen-200/)
   - [PEN-210 (OSWP)]()
   - [PEN-300 (OSEP)](https://www.offsec.com/courses/pen-300/)
     - [OSEP by In3x0rabl3](https://github.com/In3x0rabl3/OSEP)
 - [OSCE³ Study Guide](https://github.com/CyberSecurityUP/OSCE-Complete-Guide) - OSWE, OSEP, OSED
+
 - OSCP
   - [Awesome OSCP](https://github.com/0x4D31/awesome-oscp) - A curated list of awesome OSCP resources
   - [The Ultimate OSCP Preparation Guide, 2021](https://johnjhacking.com/blog/the-oscp-preperation-guide-2020/)
   - [OSCP - 0xsyr0](https://github.com/0xsyr0/OSCP) - OSCP Guide
   - [OSCP - tedchen0001](https://github.com/tedchen0001/OSCP-Notes) - improving...
   - [Oscp_cheatsheet](https://github.com/CountablyInfinite/oscp_cheatsheet) - Commands, snippets, exploits, tools, lists, collections and techniques I used on my journey to becoming an OSCP.
+
 - Red Team
-  - [ Collection of Notes and CheatSheets used for Red teaming Certs ](https://github.com/0xn1k5/Red-Teaming)
+  - [Collection of Notes and CheatSheets used for Red teaming Certs ](https://github.com/0xn1k5/Red-Teaming)
+  - [ Certified Red Team Analyst - CyberWarFare Labs](https://cyberwarfare.live/product/red-team-analyst-crta/)
+    - [CRTP notes - sec-fortress](https://github.com/sec-fortress/CRTP-Notes)
 - [SOCP (Security Onion Certified Professional)](https://securityonionsolutions.com/certification)
+
 - TryHackMe
   - [Jr. Pentester](https://tryhackme.com/path/outline/jrpenetrationtester)
   - [Pre Security](https://tryhackme.com/path/outline/presecurity)
