@@ -302,26 +302,27 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
 
   ### Files and Folders
   - Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
-  ````shell
+````shell
 ls folder|wc                                      #count files in folder
-  head file list.txt                              #displays the 10 first line of file
-  head -n 5 list.txt                              #displays the 5 first line of file
-  mkdir myfolder                                  #creates folder
-  mkdir myfolder{1..50}                           #creates 50 folders
-  mkdir -v test                                   #v=verbose
-  mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
-  nautils &                                       #opens default home folder
-  nautils Documents &                             #opens Documents folder
-  rm myfile                                       #removes myfile
-  rm !(backup.gz)                                 #removes every file in the folder except backup.gz
-  rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
-  tail myfile.txt                                 #displays the 10 last lines of file
-  tail -n 16 myfile.txt                           #displays the 16 last lines of file
-  touch myfile                                    #creates empty file
-  touch myfile{1..50}                             #creates 50 empty files
-  xdg-open                                        #opens a file or URL in the user's preferred application
-  xdg-open myfolder                               #opens myfolder and sends i
-  ````
+head file list.txt                              #displays the 10 first line of file
+head -n 5 list.txt                              #displays the 5 first line of file
+mkdir myfolder                                  #creates folder
+mkdir myfolder{1..50}                           #creates 50 folders
+mkdir -v test                                   #v=verbose
+mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
+nautils &                                       #opens default home folder
+nautils Documents &                             #opens Documents folder
+rm myfile                                       #removes myfile
+rm !(backup.gz)                                 #removes every file in the folder except backup.gz
+rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
+tail myfile.txt                                 #displays the 10 last lines of file
+tail -n 16 myfile.txt                           #displays the 16 last lines of file
+touch myfile                                    #creates empty file
+touch myfile{1..50}                             #creates 50 empty files
+xdg-open                                        #opens a file or URL in the user's preferred application
+xdg-open myfolder                               #opens myfolder and sends i
+````
+
   #### Tracking file auditing
   ````shell 
   touch /tmp/myfile                                       #choose a file to monitor
@@ -329,6 +330,7 @@ ls folder|wc                                      #count files in folder
   touch /tmp/myfile                                       #file is touched by user
   sudo ausearch -k my-file-changed -i | tail -1           #check audit logs:
   ````
+
   #### File compression
 File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
 ````shell
