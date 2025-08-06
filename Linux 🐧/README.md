@@ -27,7 +27,7 @@
 2. [**Disk**](#disk)
 3. [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
     - [Files and Folders](#files-and-folders)
-        - [File Tracking and Auditing](#tracking-file-auditing)
+        - [Tracking file auditing](#tracking-file-auditing)
         - [File compression](#file-compression)
         - [File hashing](#file-hashing)
         - [Find large files and folders](#find-large-files-and-folders)
@@ -302,7 +302,8 @@ lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all f
 
   ### Files and Folders
   - Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
-  ````shell 
+  ````shell
+ls folder|wc                                      #count files in folder
   head file list.txt                              #displays the 10 first line of file
   head -n 5 list.txt                              #displays the 5 first line of file
   mkdir myfolder                                  #creates folder
