@@ -26,7 +26,7 @@
     - [DVD Ripping](#dvd-ripping)
 2. [**Disk**](#disk)
 3. [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
-    - [Files and Folders](#Files-and-Folders)
+    - [Files and Folders](#files-and-folders)
         - [File and directory commands](#file-and-directory-commands)
         - [File compression](#file-compression)
         - [File hashing](#file-hashing)
