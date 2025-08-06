@@ -27,7 +27,7 @@
 2. [**Disk**](#disk)
 3. [**File Permissions and Ownership**](#File-Permissions-and-Ownership)
     - [Files and Folders](#files-and-folders)
-        - [File and directory commands](#file-and-directory-commands)
+        - [File Tracking and Auditing](#tracking-file-auditing)
         - [File compression](#file-compression)
         - [File hashing](#file-hashing)
         - [Find large files and folders](#find-large-files-and-folders)
