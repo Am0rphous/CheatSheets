@@ -1,20 +1,25 @@
 # D i s p l a y
 
-1. Graphics server = xserver-xorg or wayland. Creates graphical environment
-2. A Desktop/Display manager = Manages the graphics server. User only notices the login screen.
-3. A Desktop environment = your actual desktop
-4. A Tile Manager =
+0. Kernel
+1. Graphics server = e.g. xserver-xorg or wayland. Creates graphical environment
+2. Desktop/Display manager = Manages the graphics server. User only notices the login screen.
+3. Desktop environment = your actual desktop
+4. Tile Manager =
 
 ### Desktop/Display Manager
-1. lightm
-2. gdm3 (Gnome)
-3. sddm
-4. kdm (DKE)
-````powershell
-sudo dpkg-reconfigure lightdm/gdm3/sddm/kde    #opens a menu
-sudo systemctl restart lightdm/gdm3/sddm/kde   #restarts service
+````shell
+sudo dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    #opens a menu
+sudo systemctl restart <lightdm/gdm3/sddm/kdm>   #restarts service
 sudo systemctl status lightdm                  #tells status of one of the desktop managers
 ````
+1. lightm (Lightweight Display Manager)
+2. gdm3 (GNOME Display Manager)
+   ````
+   sudo apt install gnome gdm3 task-gnome-desktop --reinstall
+   ````
+4. sddm (Simple Desktop Display Manager)
+5. kdm (KDE)
+
 - [GDM wiki](https://wiki.gnome.org/Projects/GDM)
   - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
 - [LightDM Github](https://github.com/canonical/lightdm)
@@ -22,7 +27,12 @@ sudo systemctl status lightdm                  #tells status of one of the deskt
 
 ### Desktop Environments
 1. `kde-full` -  Full version of KDE with default KDE apps
-2. `kde-plasma-desktop` - Minimal KDE
+2. KDE Plasma
+````shell
+sudo apt install kde-full       #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
+sudo apt install kde-standard   #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
+sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
+````
 3. `kubuntu-desktop` -  Ubuntu version of KDE with pre-installed apps
 4. `ubuntu-desktop`
 5. `xubuntu-desktop` -  Ubuntu Xfce environment, with pre-installed programs
