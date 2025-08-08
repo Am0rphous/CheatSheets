@@ -7,7 +7,7 @@
 
 <br>
 
-<details> <summary> Essential commands you need to know </summary> <br>
+<details> <summary> <h3></h3>Essential commands you need to know </h3></summary> <br>
   
 ````powershell
 arp -n                       # show arp cache
