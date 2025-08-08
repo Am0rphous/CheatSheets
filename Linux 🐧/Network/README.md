@@ -61,7 +61,7 @@ ssh -6 sshmyip.com                   #test ssh via ipv6
 ````
 </details>
 
-<details> <summary> Ports </summary> <br>
+<details> <summary> <h3>Ports </h3></summary> <br>
   
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
 ````powershell
