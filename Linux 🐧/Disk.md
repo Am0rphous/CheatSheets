@@ -310,24 +310,27 @@ for i in {1..30}; do echo "- - -" > /sys/class/scsi_host/host$i/scan; done
    
 <summary> Secure disk wiping </summary>
 
-dd
-````powershell
+dd - Not recommended on SSDs due to wear level
+````shell
 dd if=/dev/zero of=/dev/sda2 bs=512 count=1
 dd if=/dev/urandom of=/dev/sda2 bs=4096
 ````
-hdparm
-````powershell
+hdparm - Recommended!
+````shell
 sudo hdparm --user-master u --security-set-pass foo /dev/sdX
-sudo hdparm -I /dev/sdX                                         # frozen should be "not frozen"
+sudo hdparm -I /dev/sdX      #frozen should be "not frozen"
+
 #IF FROZEN DO THIS
-echo -n mem > /sys/power/state
+echo -n mem > /sys/power/state   #Might restart screen
 hdparm --user-master u --security-set-pass p /dev/sda
 hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive DOES support Enhanced Security Erase:
 hdparm --user-master u --security-erase p /dev/sda              # if NOT
-dd if=/dev/sda bs=1M count=5                                    # should output nothing og just jibberish
+
+fstrim /dev/sda  #discard unused blocks - nice!
+dd if=/dev/sda bs=1M count=5                                    # should output jibberish
 ````
 scrub
-````powershell
+````shell
 scrub /dev/sda5
 scrub -p dod /dev/sda5 -f
 ````
