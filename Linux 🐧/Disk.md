@@ -51,6 +51,45 @@ By using `ddrescue`
 
 </details>
 
+<details> <summary> Secure disk wiping </summary>
+
+dd - Not recommended on SSDs due to wear level
+````shell
+dd if=/dev/zero of=/dev/sda2 bs=512 count=1
+dd if=/dev/urandom of=/dev/sda2 bs=4096
+````
+hdparm - Recommended!
+````shell
+sudo hdparm --user-master u --security-set-pass foo /dev/sdX
+sudo hdparm -I /dev/sdX      #frozen should be "not frozen"
+
+#IF FROZEN DO THIS
+echo -n mem > /sys/power/state   #Might restart screen
+hdparm --user-master u --security-set-pass p /dev/sda
+hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive DOES support Enhanced Security Erase:
+hdparm --user-master u --security-erase p /dev/sda              # if NOT
+
+fstrim /dev/sda  #discard unused blocks - nice!
+dd if=/dev/sda bs=1M count=5                                    # should output jibberish
+````
+scrub
+````shell
+scrub /dev/sda5
+scrub -p dod /dev/sda5 -f
+````
+shred
+````powershell
+sudo shred -v /dev/sdX                                  # default is overwrite 3 times
+sudo shred -v -n1 -z /dev/sdX                           # overwrite 1 time + z=zero out after
+shred -v --random-source=/dev/urandom -n10 /dev/sda2    # write random data 10 times on disk sda2
+````
+wipe
+````shell
+wipe /dev/sda2
+````
+
+</details>
+
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
@@ -305,47 +344,6 @@ for i in {1..30}; do echo "- - -" > /sys/class/scsi_host/host$i/scan; done
 ## SDInfo
 - [SDInfo](https://github.com/johnlane/sdinfo) - Display details about an SD Card.
 
-
-<details>
-   
-<summary> Secure disk wiping </summary>
-
-dd - Not recommended on SSDs due to wear level
-````shell
-dd if=/dev/zero of=/dev/sda2 bs=512 count=1
-dd if=/dev/urandom of=/dev/sda2 bs=4096
-````
-hdparm - Recommended!
-````shell
-sudo hdparm --user-master u --security-set-pass foo /dev/sdX
-sudo hdparm -I /dev/sdX      #frozen should be "not frozen"
-
-#IF FROZEN DO THIS
-echo -n mem > /sys/power/state   #Might restart screen
-hdparm --user-master u --security-set-pass p /dev/sda
-hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive DOES support Enhanced Security Erase:
-hdparm --user-master u --security-erase p /dev/sda              # if NOT
-
-fstrim /dev/sda  #discard unused blocks - nice!
-dd if=/dev/sda bs=1M count=5                                    # should output jibberish
-````
-scrub
-````shell
-scrub /dev/sda5
-scrub -p dod /dev/sda5 -f
-````
-shred
-````powershell
-sudo shred -v /dev/sdX                                  # default is overwrite 3 times
-sudo shred -v -n1 -z /dev/sdX                           # overwrite 1 time + z=zero out after
-shred -v --random-source=/dev/urandom -n10 /dev/sda2    # write random data 10 times on disk sda2
-````
-wipe
-````powershell
-wipe /dev/sda2
-````
-
-</details>
 
 ## ZFS
 ````powershell
