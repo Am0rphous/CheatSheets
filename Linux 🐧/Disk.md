@@ -71,11 +71,14 @@ hdparm - Recommended!
 sudo hdparm --user-master u --security-set-pass foo /dev/sdX
 sudo hdparm -I /dev/sdX      #frozen should be "not frozen"
 
-#IF FROZEN DO THIS
-echo -n mem > /sys/power/state   #Might restart screen
-hdparm --user-master u --security-set-pass p /dev/sda
-hdparm --user-master u --security-erase-enhanced p /dev/sda     # if the drive DOES support Enhanced Security Erase:
-hdparm --user-master u --security-erase p /dev/sda              # if NOT
+#If frozen run:
+echo -n mem > /sys/power/state   #Screen will black out for 2 seconds. Stay calm.
+
+hdparm --user-master u --security-set-pass random123 /dev/sda         #sets a password.
+hdparm --user-master u --security-erase-enhanced random123 /dev/sda   #if the drive DOES support Enhanced Security Erase:
+
+#If enhanced is not supported run:
+hdparm --user-master u --security-erase random123 /dev/sda            #If NOT
 
 fstrim /dev/sda  #discard unused blocks - nice!
 dd if=/dev/sda bs=1M count=5                                    # should output jibberish
