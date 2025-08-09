@@ -1,8 +1,20 @@
 # Disk
 
-<details>
-   
-<summary> Sort folders by size </summary>
+````shell
+lsblk
+lsblk -d -o NAME,MODEL   #List disk model
+lshw -class disk         #lsit complete disk model info
+
+cat /etc/fstab 
+sudo blkid                #locate/print block device attributes
+sudo blkid -p /dev/sda1
+findmnt                   #find a filesystem
+ls -l /dev/disk/by-       #inspect the directories
+mount
+sudo findmnt -no UUID -T /swapfile    #list UID
+````
+
+<details> <summary> Sort folders by size </summary>
 
 ```
 du -smh * | sort -nr
@@ -10,11 +22,9 @@ du -smh * | sort -nr
 
 </details>
 
-<details>
-   
-<summary> Create a bootable USB </summary>
+<details> <summary> Create a bootable USB </summary>
 
-````powershell
+````shell
 sudo umount /dev/sdb*
 sudo mkfs.vfat /dev/sdb –I
 sudo dd if=~/Downloads/iso/Ubuntu.iso of=/dev/sdb
@@ -31,12 +41,10 @@ kill –USR1 3443         #3443 is the dd process id. It will print copying proc
 
 </details>
 
-<details>
-   
-<summary> Backup and Disk recovery </summary>
+<details><summary> Backup and Disk recovery </summary>
 
 
-````powershell
+````shell
 sudo dd if=/dev/sdb status=progress | gzip -c > /mnt/backup.img.gz
 sudo dd if=/dev/sda of=/media/disk.img bs=1M conv=noerror,sync status=progress
 sudo dd if=/dev/sda3 conv=sync,noerror bs=2M | split -a 3 -d -b 1G - /maindisk.img   
@@ -187,9 +195,7 @@ sudo badblocks -sw /dev/sdd     # CAREFUL: ERASES data when performing read-writ
 
 </details>
 
-<details>
-   
-<summary>fsck</summary>
+<details><summary> fsck </summary>
 
 File System Consistency Check
 
@@ -205,9 +211,7 @@ sudo fsck -y /dev/sdb       # yes fix errors
 
 </details>
 
-<details>
-   
-<summary> Repair ext4 superblock </summary>
+<details><summary> Repair ext4 superblock </summary>
 
 - [source](https://github.com/tomwechsler/Linux_command_line_for_beginners/blob/main/repairing_ext4_superblock.txt)
 
@@ -228,19 +232,6 @@ sudo fsck /dev/sdb2
 
 </details>
 
-
-## Listing
-- Commands
-````powershell
-cat /etc/fstab 
-sudo blkid                #locate/print block device attributes
-sudo blkid -p /dev/sda1
-findmnt                   #find a filesystem
-lsblk               
-ls -l /dev/disk/by-       #inspect the directories
-mount
-sudo findmnt -no UUID -T /swapfile    #list UID
-````
 
 ### Working with LVM
 - [How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
