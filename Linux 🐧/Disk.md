@@ -106,7 +106,7 @@ wipe /dev/sda2
 
 ### LUKS (Linux Unified Key Setup)
 
-<details> <summary> Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)" </summary>
+<details> <summary> Error (April 2025) - "cryptsetup: Waiting for encrypted source device UUID=(..)" </summary>
 
 
 #### Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)"
