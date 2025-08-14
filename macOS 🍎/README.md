@@ -83,7 +83,16 @@ qlmanage -p myfile         # quick preview of 'myfile'
    #restart the app and click start
   ````
   - On the client: Mark "Client (use another computer's...)" and enter the server IP and click "Start". If it's not working, ping between the IPs and check with "tcpdump port 24800" on botch machines.
+### Update $PATH
+````
+#zsh
+echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
+source ~/.zshrc
 
+#bash
+echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
+source ~/.bash_profile
+````
 
 ## Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
