@@ -1,17 +1,17 @@
 # Disk
 
 ````shell
+df -h
 lsblk
+blkid -p /dev/sda1
 lsblk -d -o NAME,MODEL   #List disk model
 lshw -class disk         #lsit complete disk model info
 
 cat /etc/fstab 
-sudo blkid                #locate/print block device attributes
-sudo blkid -p /dev/sda1
-findmnt                   #find a filesystem
-ls -l /dev/disk/by-       #inspect the directories
 mount
-sudo findmnt -no UUID -T /swapfile    #list UID
+ls -l /dev/disk/by-       #inspect the directories
+findmnt                   #find a filesystem
+findmnt -no UUID -T /swapfile    #list UID
 ````
 
 <details> <summary> Sort folders by size </summary>
@@ -104,7 +104,10 @@ wipe /dev/sda2
 ## Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
-### LUKS encryption (Linux Unified Key Setup)
+### LUKS (Linux Unified Key Setup)
+
+<details> <summary> Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)" </summary>
+
 
 #### Error April 2025 - "cryptsetup: Waiting for encrypted source device UUID=(..)"
 **Pre note:** This was a pain in the ass. After troubleshooting for a week i finally identifiet the error. I write this as none of the sources on the Internet had anything pointing to the solution i discovered. Ensure the file /etc/cryptsetup exists - mine was deleted. Ensure it has this content
@@ -112,8 +115,8 @@ wipe /dev/sda2
 cryptsetup
 ````
 
-- **Background:** I run Kali as my Desktop. Ofc I run encrypted drives on my NVME-disk. They were created when setting up the machine. Why and how my crypt setup failed remains unclear - when though i suspect updates - but without confirming this.
-- **The error:** After a couple of weeks without using the computer due to other tasks, I was surprised when i booted up the computer. Normally Grub chooses the first alternative in the Grub bootloader menu and proceeds to decrypt the drive. But instead of decrypting it, the following error occured _"Waiting for encrypted source device UUID=(..)"_ which contained the UUID for the crypt partition on my physical disk. The system then booted straight into an initramfs-shell without any attached keybord functioning - not good - and impossible to troubleshoot when unable to use a shell.
+- **Background:** I run Kali as my Desktop. Ofc I run encrypted drives on my NVME-disk. They were created when setting up the machine. Why and how my crypt setup failed remains unclear - when though i suspect updates - but i cannot confirm this.
+- **The error:** After a couple of weeks without using the computer, I was surprised when i booted up the computer. Normally Grub chooses the first alternative in the Grub bootloader menu and proceeds to decrypt the drive. But instead of decrypting it, the following error occured _"Waiting for encrypted source device UUID=(..)"_ which contained the UUID for the crypt partition on my physical disk. The system then booted straight into an initramfs-shell without any attached keybord functioning - not good - and impossible to troubleshoot when unable to use a shell/keyboard.
 
 #### Troubleshooting steps
 - People on the Internet experienced similar symptoms. Usually this problems happens when UUIDs change on disks - fair enough to fix. This is easy to check when booting a live USB and running `sudo blkid` which shows UUIDs for all disks/partitions. You can check with the following
@@ -165,8 +168,8 @@ sudo chroot /mnt
 
 #After you've done - run this:
 update-initramfs -u
-exit #1 - exit chroot
-exit #2 - exit root shell
+exit   #1 - exit chroot
+exit   #2 - exit root shell
 ````
 Then unmount disk
 ````
@@ -178,6 +181,7 @@ sudo umount /mnt/boot/efi
 sudo umount /mnt/boot
 sudo umount /mnt
 ````
+</details>
 
 ## Fix corrupted disks/system
 
