@@ -19,14 +19,14 @@ docker system prune --volumes       #does the trick
 ````
 
 ## Images
-| Key/Command | Description |
-| ----------- | ----------- |
-| docker build --tak mytag | Build an image from Dockerfile in current directory |
-| docker build --no-cache | Force rebuild of Docker image |
-| docker commit mycontainer myimage | Convert a container to image |
-| docker commit gitlab gitlabimage | Convert a container 'gitlab' to 'gitlab' image |
-| docker rmi $(docker images -q -f "dangling=true") | Remove all unused images|
-| docker image prune -a | Remove all images without at least one container associated to them |
+````shell
+docker build --tak mytag                           #Build an image from Dockerfile in current directory |
+docker build --no-cache                            #Force rebuild of Docker image |
+docker commit mycontainer myimage                  #Convert a container to image |
+docker commit gitlab gitlabimage                   #Convert a container 'gitlab' to 'gitlab' image |
+docker rmi $(docker images -q -f "dangling=true")  #Remove all unused images|
+docker image prune -a                              #Remove all images without at least one container associated to them |
+````
 
 ## Debug
 | Key/Command | Description |
