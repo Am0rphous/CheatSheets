@@ -9,7 +9,7 @@
 
 <details> <summary> Essential commands you need to know </summary> <br>
   
-````powershell
+````shell
 arp -n                       # show arp cache
 ip neigh
 curl ifconfig.me             # check your public ip
@@ -27,18 +27,18 @@ ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed 
 ````
 
 #### Change IP/MAC address
-````powershell
+````shell
 ip link set dev eth0 down
 macchanger -m 11:22:33:44:55:66 eth0
 ip link set dev eth0 up
 ````
 #### Set Static IP
-````powershell
+````shell
 ip addr add 10.10.0.2/24 dev eth0
 ````
 
 #### Certificates
-````powershell
+````shell
 openssl x509 -text -noout -in certificate.crt                 #decrypt cert to a more readable form
 openssl s_client -showcerts -connect example.com:443          #read the SSL Certificate information from a remote server
 ````
@@ -64,7 +64,7 @@ ssh -6 sshmyip.com                   #test ssh via ipv6
 <details> <summary> Ports </summary> <br>
   
 - [Open-ports by Peter-Moller](https://github.com/Peter-Moller/open-ports) - A bash-script for OS X and Linux detailing the open network connections to and from a computer.
-````powershell
+````shell
 sudo ss -lptn
 sudo ss -tulpn
 sudo netstat -tulpn
@@ -79,7 +79,7 @@ sudo lsof -i -P -n | grep -i "established"
 
 #### NetStat - _Network Statistics_
 _command-line tool that displays network connections (both incoming and outgoing), routing tables, and a number of network interface (network interface controller or software-defined network interface) and network protocol statistics. It is available on Unix-like operating systems including OS X, Linux, Solaris, and BSD, and is available on Windows NT-based operating systems including Windows XP, Windows Vista, Windows 7 and Windows 8. [netstat.net](http://netstat.net/)_
-````powershell
+````shell
 sudo netstat -tulpn
 sudo netstat -peanut
 sudo netstat -peanut | grep ":8000 "
@@ -89,7 +89,7 @@ sudo netstat -ntu -4 -6 |  awk '/^tcp/{ print $5 }' | sed -r 's/:[0-9]+$//' |  s
 
 ### SS (Socket Statistics)
 - [Examples of Linux ss command to monitor network connections](https://www.binarytides.com/linux-ss-command/)
-````powershell
+````shell
 ss --help
 man ss                      # Displays SS's help manual
 sudo ss -lntup              # List TCP/UDP  with Pid's
@@ -110,7 +110,7 @@ sudo ss -x src /tmp/.X11-unix/*                                         # Find a
 | sudo ss -4 state FILTER-NAME-HERE | Filters TCP IPv4 |
 | sudo ss -6 state FILTER-NAME-HERE | Filters TCP IPv6 |
 #### Filter list
-````powershell
+````shell
 established
 syn-sent
 syn-recv
@@ -149,7 +149,7 @@ big               # Opposite to bucket state
 <details> <summary> Scanning ports </summary> <br>
 
 ### Nmap - Network Mapper
-````powershell
+````shell
 nmap -v IP
 nmap -v 192.168.1.1/24
 nmap 192.168.1.1-254-p22,80 --open -oG - | awk '/22\/open.*80\/open/{print $2}'
@@ -194,7 +194,12 @@ ufw status
 ### TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
-````powershell
+````shell
+tcpdump
+tcpdump --help
+tcpdump -i eth0
+tcpdump -c 10 -w /path/out.pcap   #save 10 MB of data. -C 10 = 10,000,000 bytes
+
 tcpdump -r capture_file
 tcpdump -i eth0 -nn -s0 -v port 80
 tcpdump -A -s0 port 80
@@ -217,14 +222,14 @@ not = !
 ````
   
 #### Size
-````powershell
+````shell
 tcpdump less 32
 tcpdump greater 64
 tcpdump <= 128
 ````
 
 #### TShark (CLI)
-````powershell
+````shell
 tshark -h                                           # help
 tshark -D                                           # list interfaces
 tshark -i eth0                                      # capture traffic on interface 'eth0'
