@@ -198,7 +198,7 @@ ufw status
 tcpdump
 tcpdump --help
 tcpdump -i eth0
-tcpdump -c 10 -w /path/out.pcap   #save 10 MB of data. -C 10 = 10,000,000 bytes
+tcpdump -C 10M -w /path/out.pcap   #save 10 MB of data
 
 tcpdump -r capture_file
 tcpdump -i eth0 -nn -s0 -v port 80
