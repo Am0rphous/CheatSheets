@@ -189,7 +189,7 @@ ufw status
 </details>
 
 
-<details> <summary> Sniffing network traffic</summary> <br>
+<details> <summary> Tools for Sniffing network traffic</summary> <br>
   
 ### TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
@@ -245,4 +245,25 @@ tshark -r capture.pcap -T text > output.txt         # reads file and converts it
 ### WiresHark (Graphical user interface)
 - [Wireshark Cheat Sheet – Commands, Captures, Filters & Shortcuts](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
 
+##### Filters
+````shell
+frame contains "whatever"
+http
+http contains "http://"
+http contains "http2demo"
+http contains "http://www.http2demo.io/"
+
+http.request.method == "POST"
+http.request.method == "\x48EAD"   #hexadecimal to look for "HEAD
+http.request.method == "\110EAD"   #octal to look for "HEAD"
+smb.path contains "\\\\SERVER\\SHARE"
+
+
+all tcp.port > 80
+all tcp.port > 8079   #port 8080 will be listed if in traffic
+any ip.addr == 1.1.1.1
+ip.src == 1.1.1.1   #Source ->
+ip.dst == 1.1.1.1   #<- Destination
+ip.dst eq domain.com
+````
 </details>
