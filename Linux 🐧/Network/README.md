@@ -169,18 +169,17 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 - Strip away everything except the IP addresses `grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' list.txt > only_ip.txt`
 - The file **only_ip.txt** now only contains IPv4 addresses.
 - When you get the networks of the country you want, lets say 109.108.32.0/21 (a russian network), you could make a simple bash script called "firewall-rules.sh" if you're using Linux and ufw:
-
-````
-#!/bin/bash
-sudo apt install ufw
-sudo ufw enable
-sudo ufw deny from 109.108.32.0/21
-sudo ufw deny from <next network with netmask here>
-sudo ufw deny from <next network with netmask here>
-sudo ufw deny from <next network with netmask here>
-echo "I am now done running the script. Lets check the status"
-ufw status
-````
+  ````
+  #!/bin/bash
+  sudo apt install ufw
+  sudo ufw enable
+  sudo ufw deny from 109.108.32.0/21
+  sudo ufw deny from <next network with netmask here>
+  sudo ufw deny from <next network with netmask here>
+  sudo ufw deny from <next network with netmask here>
+  echo "I am now done running the script. Lets check the status"
+  ufw status
+  ````
 - When you are ready, execute it by simply running `sudo bash firewall-rules.sh`
 
 ### Country ASN → IP Range / Prefix Generator by 'abdullahdevrel'
@@ -194,25 +193,34 @@ ufw status
 ### TCPDump
 - [Tcpdump Examples](https://hackertarget.com/tcpdump-examples)
 - [A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic](https://danielmiessler.com/study/tcpdump/)
-````shell
-tcpdump
-tcpdump --help
-tcpdump -i eth0
-tcpdump -C 10M -w /path/out.pcap   #save 10 MB of data
-
-tcpdump -r capture_file
-tcpdump -i eth0 -nn -s0 -v port 80
-tcpdump -A -s0 port 80
-tcpdump -i eth0 port 636 -X              # show whole package
-tcpdump -i eth0 udp
-tcpdump -i eth0 proto 17
-tcpdump -i eth0 dst 10.10.1.20
-tcpdump -i eth0 host 10.10.1.1
-tcpdump -qns 0 -A -r blah.pcap           #tcpick -C -yP -r tcp_dump.pcap
-tcpdump -i eth0 -s0 -w test.pcap
-tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
-tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
-````
+  ````shell
+  tcpdump
+  tcpdump --help
+  tcpdump -D                         #same as --list-interfaces
+  tcpdump -i eth0                    #same as --interface
+  tcpdump -i eth0 udp
+  tcpdump -i eth0 tcp
+  tcpdump -i eth0 dst 10.10.1.20
+  tcpdump -i eth0 host 10.10.1.1
+  
+  tcpdump -c 100000000 -w /path/out.pcap   #save ~10MB of data
+  
+  tcpdump -r my.pcap                                                 # Read pcap file
+  tcpdump -r my.pcap port 53                                         # List traffic on port 53 (dns)
+  tcpdump -r capture.pcap udp port 53 and 'udp[10] & 0x80 = 0'       # List only DNS requests where QR-bit=0:  'udp[10] & 0x80 = 0'
+  tcpdump -r save.pcapng port 53| awk '{print $8}'                   # Print field number 8 which shows URLs
+  tcpdump -r save.pcapng port 53| awk '{print $8}'|sort --unique     # Sort out unique URLs
+  
+  tcpdump -i eth0 -nn -s0 -v port 80
+  tcpdump -A -s0 port 80
+  tcpdump -i eth0 port 636 -X              #-X = show whole package for ldap traffic
+  tcpdump -i eth0 proto 17
+  
+  tcpdump -qns 0 -A -r blah.pcap           #tcpick -C -yP -r tcp_dump.pcap
+  tcpdump -i eth0 -s0 -w test.pcap
+  tcpdump -i eth0 -s0 -l port 80 | grep 'Server:'
+  tcpdump -i eth0 -s 0  -w tcpdump.pcap host hostA and udp
+  ````
   
 #### Remember
 ````
@@ -229,41 +237,42 @@ tcpdump <= 128
 ````
 
 #### TShark (CLI)
-````shell
-tshark -h                                           # help
-tshark -D                                           # list interfaces
-tshark -i eth0                                      # capture traffic on interface 'eth0'
-tshark -i eth0 -c 10                                # capture first 10 packets
-tshark -i eth0 -c 100 -w capture.pcap               # capture first 100 packets and write them to a file
-tshark -i eth0 -f "tcp port 8080"                   # captures packets going to tcp port 8080
-tshark -i eth0 -Y 'http.request.methop == "POST"'   #
-tshark -r -V capture.pcap                           # reads the capture file with verbose output
-tshark -T x                                         # list available output formats. This can be: pdml, ps, psml, json, jsonraw, ek, text, tabs
-tshark -r capture.pcap -T text > output.txt         # reads file and converts it to text.
-````
+  ````shell
+  tshark -h                                           # help
+  tshark -D                                           # list interfaces
+  tshark -i eth0                                      # capture traffic on interface 'eth0'
+  tshark -i eth0 -c 10                                # capture first 10 packets
+  tshark -i eth0 -c 100 -w capture.pcap               # capture first 100 packets and write them to a file
+  tshark -i eth0 -f "tcp port 8080"                   # captures packets going to tcp port 8080
+  tshark -i eth0 -Y 'http.request.methop == "POST"'   #
+  tshark -r -V capture.pcap                           # reads the capture file with verbose output
+  tshark -T x                                         # list available output formats. This can be: pdml, ps, psml, json, jsonraw, ek, text, tabs
+  tshark -r capture.pcap -T text > output.txt         # reads file and converts it to text.
+  ````
 
 ### WiresHark (Graphical user interface)
 - [Wireshark Cheat Sheet – Commands, Captures, Filters & Shortcuts](https://www.comparitech.com/net-admin/wireshark-cheat-sheet/)
 
 ##### Filters
-````shell
-frame contains "whatever"
-http
-http contains "http://"
-http contains "http2demo"
-http contains "http://www.http2demo.io/"
+  ````shell
+  frame contains "whatever"
+  http
+  http contains "http://"
+  http contains "http2demo"
+  http contains "http://www.http2demo.io/"
+  
+  http.request.method == "POST"
+  http.request.method == "\x48EAD"   #hexadecimal to look for "HEAD
+  http.request.method == "\110EAD"   #octal to look for "HEAD"
+  smb.path contains "\\\\SERVER\\SHARE"
+  
+  
+  all tcp.port > 80
+  all tcp.port > 8079   #port 8080 will be listed if in traffic
+  any ip.addr == 1.1.1.1
+  ip.src == 1.1.1.1   #Source ->
+  ip.dst == 1.1.1.1   #<- Destination
+  ip.dst eq domain.com
+  ````
 
-http.request.method == "POST"
-http.request.method == "\x48EAD"   #hexadecimal to look for "HEAD
-http.request.method == "\110EAD"   #octal to look for "HEAD"
-smb.path contains "\\\\SERVER\\SHARE"
-
-
-all tcp.port > 80
-all tcp.port > 8079   #port 8080 will be listed if in traffic
-any ip.addr == 1.1.1.1
-ip.src == 1.1.1.1   #Source ->
-ip.dst == 1.1.1.1   #<- Destination
-ip.dst eq domain.com
-````
 </details>
