@@ -210,6 +210,8 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
   tcpdump -r capture.pcap udp port 53 and 'udp[10] & 0x80 = 0'       # List only DNS requests where QR-bit=0:  'udp[10] & 0x80 = 0'
   tcpdump -r save.pcapng port 53| awk '{print $8}'                   # Print field number 8 which shows URLs
   tcpdump -r save.pcapng port 53| awk '{print $8}'|sort --unique     # Sort out unique URLs
+  |sed 's/.$//'           # Removes . at the end of the URL
+  |grep -vE '^[0-9.]+$'   # Removes IP-adressess as well
   
   tcpdump -i eth0 -nn -s0 -v port 80
   tcpdump -A -s0 port 80
