@@ -101,7 +101,7 @@ wipe /dev/sda2
 
 </details>
 
-## Encrypting Disk
+### Encrypting Disk
 - [crypt-partition](https://github.com/r3nt0n/crypt-partition) - Partition encrypt tool via shellscript and cryptsetup 
 
 ### LUKS (Linux Unified Key Setup)
@@ -183,7 +183,19 @@ sudo umount /mnt
 ````
 </details>
 
-## Fix corrupted disks/system
+### Fix corrupted disks/system
+- Signs of bad disk: Slow performance, crashes/errors, startup problems, files disappear/becomes corrupt, strange noises (spinning disks, electricity)
+- Smartmonctl
+````shell
+sudo apt update && sudo apt install smartmontools
+smartctl -i /dev/sdX
+smartctl -i /dev/sda
+smartctl -a /dev/sdX        # Get details
+smartctl -s on /dev/sdX     # Enable SMART on a drive
+smartctl -t short /dev/sdX  # Quick health check
+smartctl -t long /dev/sdX   # Comprehensive
+smartctl -l error /dev/sdX  # Check errors
+````
 
 <details>
    
