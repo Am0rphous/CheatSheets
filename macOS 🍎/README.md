@@ -4,6 +4,7 @@ Table of content
 - [Security](#Security)
   - [Antivirus](#antivirus)
 - [Productivity](#Productivity)
+  - [Path](#path)
 - [Networking](#networking)
 - [System Maintenance](#system-maintenance)
   - [Disk](#disk)
@@ -69,6 +70,12 @@ done
 ````
 ## Productivity
 ````shell
+## Make command "abc" which does something
+echo "alias abc='sh ~/gitHub/repo/source-code'" >> ~/.zshrc && source ~/.zshrc
+
+## Make virtuel environment in python3 called "myenv" and activate it automatically:
+echo "alias mkenv='python3 -m venv myenv && source myenv/bin/activate'" >> ~/.zshrc && source ~/.zshrc
+
 caffeinate                 # stop computer from going to sleep infintine
 caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
 cat myfile | pbcopy        # copies content to clipboard :D
@@ -83,16 +90,15 @@ qlmanage -p myfile         # quick preview of 'myfile'
    #restart the app and click start
   ````
   - On the client: Mark "Client (use another computer's...)" and enter the server IP and click "Start". If it's not working, ping between the IPs and check with "tcpdump port 24800" on botch machines.
-### Update $PATH
-````
-#zsh
-echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
-source ~/.zshrc
-
-#bash
-echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
-source ~/.bash_profile
-````
+  ### Update $PATH
+    ````shell
+    ## Android SDK - zsh
+    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
+    source ~/.zshrc
+    ## Android SDK - bash
+    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
+    source ~/.bash_profile
+    ````
 
 ## Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
