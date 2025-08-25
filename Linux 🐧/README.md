@@ -862,6 +862,7 @@ Notes for later
 
 
 ## Variables and Scripting
+- [Am0rphous -> Bash](https://github.com/Am0rphous/Bash)
 - Update path with
 ````shell
 nano ~/.bash_profile
