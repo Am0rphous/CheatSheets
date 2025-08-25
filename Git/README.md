@@ -1,5 +1,9 @@
 # Git
 
+- [https://choosealicense.com/](https://choosealicense.com/) - "Choose an open source license"
+
+<br>
+
 - [30-seconds-of-git](https://github.com/30-seconds/30-seconds-of-git) - Short git snippets for all your development needs.
 - [Git Cheat Sheets](https://training.github.com/)
 - [Gthub - Basic Writing and Formatting Syntax](https://docs.github.com/en/enterprise-server@2.20/github/writing-on-github/basic-writing-and-formatting-syntax)
