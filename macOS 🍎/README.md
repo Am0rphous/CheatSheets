@@ -4,7 +4,7 @@ Table of content
 - [Security](#Security)
   - [Antivirus](#antivirus)
 - [Productivity](#Productivity)
-  - [Path](#path)
+  - [Update $PATH](#update-path)
 - [Networking](#networking)
 - [System Maintenance](#system-maintenance)
   - [Disk](#disk)
