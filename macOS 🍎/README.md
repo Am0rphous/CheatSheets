@@ -194,21 +194,25 @@ Then run:
   locate TorBrowser                                                             #locates anything that matches "TorBrowser"
   ````
 ### Packages
-- Brew Package Manager
+- Homebrew - [https://brew.sh/](https://brew.sh/) install with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  - Software installes in `/usr/local/Caskroom/` but don't add this to $PATH as macOS should do that automatically
   ````shell
-  brew install cask                # deals with Graphical User Interface (GUI) 
-  brew update                      # fetch the newest version of Homebrew and all formulae from GitHub using git(1) and perform any necessary migrations.
-  brew outdated                     # list installed casks and formulae that have an updated version available.
+  brew install cask                 # deals with Graphical User Interface (GUI) 
+  brew update                       # fetch the newest version of Homebrew
   brew upgrade                      # upgrade outdated casks and outdated, unpinned formulae using the same options they were originally installed with, plus any appended brew formula options.
   brew upgrade [package name]       # upgrade specific package
-  brew search [package name]        # searches for package
-  brew install tor                  # installs package tor
-  brew cask uninstall tor           # uninstalls tor
-  brew cleanup
-  brew info tor                     # lists info about the tor package
-  brew services list                # list services
-  brew services start tor           # start tor service
-  brew services restart tor         # restart tor service
+  brew outdated                     # list installed casks and formulae that have an updated version available.
+  
+  brew search [package name]     # searches for package
+  brew info tor                  # lists info about the tor package
+  brew install tor               # installs package tor
+  brew uninstall tor             # uninstalls tor
+  
+  brew cleanup                   # clean up files no longer needed
+
+  brew services list               # list services
+  brew services start tor          # start tor service
+  brew services stop tor           # stop tor service
   ````
 ### Peripherals
 - Listing devices `ioreg -p IOUSB -l -w 0`
