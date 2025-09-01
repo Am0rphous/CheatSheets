@@ -15,16 +15,16 @@
     pstree                          # displays tree view 
     ````
 ### Kill processes
-    ````shell
-    kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
-    kill -9 123            # Kills immediately, cannot ble handled/blocked and kills chils processes as well
-    killall proc           # kill all processes named proc
-    ````
+````shell
+kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
+kill -9 123            # Kills immediately, cannot ble handled/blocked and kills chils processes as well
+killall proc           # kill all processes named proc
+````
 Process stalling
-    ````shell
-    kill -SIGSTOP $PID      # stop a process without destroying its resources
-    kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
-    ````
+````shell
+kill -SIGSTOP $PID      # stop a process without destroying its resources
+kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
+````
 
 ### Monitor processes
 - [pSpy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions
