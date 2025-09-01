@@ -2,18 +2,18 @@
 
 ### List and count processes
 - [procs](https://github.com/dalance/procs)  - [replacement](https://itsfoss.com/procs/) for ps written in Rust.
-````shell
-ps                              # display currently active processes
-ps auxw | grep nginx            # display processes from 'nginx'
-ps awwfux | less -S             # Display a scrollable process tree
-ps -fauxxx                      # check your system for associated orphaned processes
-ps -p 317738 -o comm=           # get name of process
-pidof nginx 
-pgrep nginx
-pgrep nginx | wc -l             # count number of processes
-pidof nginx | wc -w             # count number of processes
-pstree                          # displays tree view 
-````
+    ````shell
+    ps                              # display currently active processes
+    ps auxw | grep nginx            # display processes from 'nginx'
+    ps awwfux | less -S             # Display a scrollable process tree
+    ps -fauxxx                      # check your system for associated orphaned processes
+    ps -p 317738 -o comm=           # get name of process
+    pidof nginx 
+    pgrep nginx
+    pgrep nginx | wc -l             # count number of processes
+    pidof nginx | wc -w             # count number of processes
+    pstree                          # displays tree view 
+    ````
 ### Kill processes
     ````shell
     kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
