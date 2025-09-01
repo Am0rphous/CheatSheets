@@ -40,11 +40,11 @@ kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
     ````
 
 ### Jobs
-    ````shell
-    bg                  # lists stopped background jobs; resume a stopped job in the background
-    fg                  # brings the most recent job to the foreground
-    fg n                # brings job 'n' to the foreground
-    ````
+````shell
+bg                  # lists stopped background jobs; resume a stopped job in the background
+fg                  # brings the most recent job to the foreground
+fg n                # brings job 'n' to the foreground
+````
 
 ### Zombie processes
 - [How to Find and Kill Zombie Process in Linux](https://itsfoss.com/kill-zombie-process-linux/) - "This is a quick tip on finding zombie processes in Linux and then killing them. You also learn a thing or two about processes and zombie processes."
