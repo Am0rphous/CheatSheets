@@ -55,8 +55,8 @@ fg n                # brings job 'n' to the foreground
     ````
 check [this later](https://askubuntu.com/questions/111422/how-to-find-zombie-process)
 
-    ````
-    for pid in $(ps axo pid=,stat= | awk '$2~/^Z/ { print $1 }') ; do
-        echo "$pid" # do something interesting here
-    done
-    ````
+````
+for pid in $(ps axo pid=,stat= | awk '$2~/^Z/ { print $1 }') ; do
+    echo "$pid" # do something interesting here
+done
+````
