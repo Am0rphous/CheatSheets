@@ -229,14 +229,16 @@ echo "alias abc='sh ~/gitHub/repo/binary.elf'" >> ~/.zshrc && source ~/.zshrc
 #Make virtuel environment in python3 called "myenv" and activate it automatically:
 echo "alias mkenv='python3 -m venv myenv && source myenv/bin/activate'" >> ~/.zshrc && source ~/.zshrc
 ````
+
   #### Peripherals
-    - Listing devices `ioreg -p IOUSB -l -w 0`
+  - Listing devices `ioreg -p IOUSB -l -w 0`
+    
   #### Update $PATH
-    ````shell
-    ## Android SDK - zsh
-    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
-    source ~/.zshrc
-    ## Android SDK - bash
-    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
-    source ~/.bash_profile
-    ````
+  ````shell
+  ## Android SDK - zsh
+  echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
+  source ~/.zshrc
+  ## Android SDK - bash
+  echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
+  source ~/.bash_profile
+  ````
