@@ -69,6 +69,8 @@ shift+command+6           #screenshot the touchbar
   done
   ````
 ## Productivity
+- [Zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- Various commands and how toss:
   ````shell
   #Make command "abc" which does something from a github repo
   echo "alias abc='sh ~/gitHub/repo/source-code'" >> ~/.zshrc && source ~/.zshrc
