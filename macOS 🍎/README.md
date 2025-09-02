@@ -4,16 +4,15 @@ Table of content
 - [Security](#Security)
   - [Antivirus](#antivirus)
 - [Productivity](#Productivity)
-  - [Update $PATH](#update-path)
 - [Networking](#networking)
 - [System Maintenance](#system-maintenance)
   - [Disk](#disk)
   - [Files and Folders](#files-and-folders)
-  - [Packages](#packages)
-  - [Peripherals](#Peripherals)
+  - [Manage Packages and Services](#manage-packages-and-services)
   - [Processess](#processess)
-  - [Services](#services)
   - [Terminal](#terminal)
+    - [Peripherals](#Peripherals)
+    - [Update $PATH](#update-path)
 
 
 <br>
@@ -25,17 +24,17 @@ Table of content
   ````shell
   nano  /Library/Application\ Support/CrashReporter/SubmitDiagInfo.config
   ````
-- Path to startup items: `/Library/LaunchDaemons/`
-- Let the computer print every prime number with 'dc'😂
+- Startup items `/Library/LaunchDaemons/`
+- Let the computer print every prime number with 'dc' 😂
   ````shell
   echo '2p3p[dl!d2+s!%0=@l!l^!<#]s#[s/0ds^]s@[p]s&[ddvs^3s!l#x0<&2+l.x]ds.x' | dc
   ````
 - Tips and Tricks
 ````shell
-shift+command+3           #take screenshot of entire screen
-shift+command+4           #select area with the mouse to take a screenshot
-shift+command+5           #select area with the mouse, press enter to start recording
-shift+command+6           #screenshot the touchbar
+shift+command+3       #take screenshot of entire screen
+shift+command+4       #select area with the mouse to take a screenshot
+shift+command+5       #select area with the mouse, press enter to start recording
+shift+command+6       #screenshot the touchbar
 ````
 
 ## Security
@@ -56,18 +55,19 @@ shift+command+6           #screenshot the touchbar
     ((i++))
   done
   ````
-### Antivirus
-- 2025 - Use [Avira](https://www.avira.com/en/free-antivirus-mac) which is free and a reasonable good alternative.
-- Clamav Antivirus - open source, free and multi os support
-  ````shell
-  brew install clamav
-  brew ls clamav |grep clamd                                                        #locate clamd daemon
-  sudo cp /usr/local/etc/clamav/freshclam.conf.sample /etc/clamav/freshclam.conf
-  sudo cp /usr/local/etc/clamav/clamd.conf.sample /etc/clamav/clamd.conf
-  sudo nano /etc/clamav/freshclam.conf                                              #edit config file
-  sudo freshclam -v
-  clamscan /tmp --infected                                                          #scan and only list infected files
-  ````
+  
+  ### Antivirus
+  - 2025 - Use [Avira](https://www.avira.com/en/free-antivirus-mac) which is free and a reasonable good alternative.
+  - Clamav Antivirus - open source, free and multi os support
+    ````shell
+    brew install clamav
+    brew ls clamav |grep clamd                                                        #locate clamd daemon
+    sudo cp /usr/local/etc/clamav/freshclam.conf.sample /etc/clamav/freshclam.conf
+    sudo cp /usr/local/etc/clamav/clamd.conf.sample /etc/clamav/clamd.conf
+    sudo nano /etc/clamav/freshclam.conf                                              #edit config file
+    sudo freshclam -v
+    clamscan /tmp --infected                                                          #scan and only list infected files
+    ````
 
 ## Productivity
   ````shell
@@ -127,18 +127,18 @@ Installation
   proxychains4 ssh@server.com
   proxychains4 nmap ip
   ````
-Be aware: Sometimes you may encounter no IP change, e.g.
-  ````shell
-  proxychains4 curl ifconfig.me
-  [proxychains] config file found: /usr/local/etc/proxychains.conf
-  [proxychains] preloading /usr/local/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
-  (PUBLIC-IP-HERE)  
-  ````
-By copying the executable to another location, we resolve this. E.g. `cp /usr/local/bin/wget /tmp/`
-Then run:
-  ````shell
-  proxychains4 /tmp/wget https://google.com
-  ````
+  Be aware: Sometimes you may encounter no IP change, e.g.
+    ````shell
+    proxychains4 curl ifconfig.me
+    [proxychains] config file found: /usr/local/etc/proxychains.conf
+    [proxychains] preloading /usr/local/Cellar/proxychains-ng/4.14/lib/libproxychains4.dylib
+    (PUBLIC-IP-HERE)  
+    ````
+  By copying the executable to another location, we resolve this. E.g. `cp /usr/local/bin/wget /tmp/`
+  Then run:
+    ````shell
+    proxychains4 /tmp/wget https://google.com
+    ````
 
 ## System Maintenance
 
