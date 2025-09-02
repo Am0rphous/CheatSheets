@@ -39,18 +39,6 @@ shift+command+6           #screenshot the touchbar
 ````
 
 ## Security
-### Antivirus
-- 2025 - Use [Avira](https://www.avira.com/en/free-antivirus-mac) which is free and a reasonable good alternative.
-- Clamav Antivirus - open source, free and multi os support
-  ````shell
-  brew install clamav
-  brew ls clamav |grep clamd                                                        #locate clamd daemon
-  sudo cp /usr/local/etc/clamav/freshclam.conf.sample /etc/clamav/freshclam.conf
-  sudo cp /usr/local/etc/clamav/clamd.conf.sample /etc/clamav/clamd.conf
-  sudo nano /etc/clamav/freshclam.conf                                              #edit config file
-  sudo freshclam -v
-  clamscan /tmp --infected                                                          #scan and only list infected files
-  ````
 - Fail2ban
   - Config file: `/usr/local/etc/fail2ban`
   ````shell
@@ -68,16 +56,21 @@ shift+command+6           #screenshot the touchbar
     ((i++))
   done
   ````
-## Productivity
-- [Zsh autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- Various commands and how toss:
+### Antivirus
+- 2025 - Use [Avira](https://www.avira.com/en/free-antivirus-mac) which is free and a reasonable good alternative.
+- Clamav Antivirus - open source, free and multi os support
   ````shell
-  #Make command "abc" which does something from a github repo
-  echo "alias abc='sh ~/gitHub/repo/source-code'" >> ~/.zshrc && source ~/.zshrc
-  
-  #Make virtuel environment in python3 called "myenv" and activate it automatically:
-  echo "alias mkenv='python3 -m venv myenv && source myenv/bin/activate'" >> ~/.zshrc && source ~/.zshrc
-  
+  brew install clamav
+  brew ls clamav |grep clamd                                                        #locate clamd daemon
+  sudo cp /usr/local/etc/clamav/freshclam.conf.sample /etc/clamav/freshclam.conf
+  sudo cp /usr/local/etc/clamav/clamd.conf.sample /etc/clamav/clamd.conf
+  sudo nano /etc/clamav/freshclam.conf                                              #edit config file
+  sudo freshclam -v
+  clamscan /tmp --infected                                                          #scan and only list infected files
+  ````
+
+## Productivity
+  ````shell
   caffeinate                 # stop computer from going to sleep infintine
   caffeinate -u -t 3600      # stops computer from going to sleep for 1 hour
   cat myfile | pbcopy        # copies content to clipboard :D
@@ -92,15 +85,7 @@ shift+command+6           #screenshot the touchbar
    #restart the app and click start
   ````
   - On the client: Mark "Client (use another computer's...)" and enter the server IP and click "Start". If it's not working, ping between the IPs and check with "tcpdump port 24800" on botch machines.
-  ### Update $PATH
-    ````shell
-    ## Android SDK - zsh
-    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
-    source ~/.zshrc
-    ## Android SDK - bash
-    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
-    source ~/.bash_profile
-    ````
+
 
 ## Networking
 - [Network-info by Peter-Moller](https://github.com/Peter-Moller/network-info) - A bash script for OS X that details information about the network.
@@ -195,9 +180,10 @@ Then run:
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist   #creating a db for locate
   locate TorBrowser                                                             #locates anything that matches "TorBrowser"
   ````
-### Packages
+  
+### Manage Packages and Services
 - Homebrew - [https://brew.sh/](https://brew.sh/) install with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  - Software installes in `/usr/local/Caskroom/` but don't add this to $PATH as macOS should do that automatically
+  - Software installes in `/usr/local/Caskroom/` but **don't** add this to $PATH.
   ````shell
   brew install cask                 # deals with Graphical User Interface (GUI) 
   brew update                       # fetch the newest version of Homebrew
@@ -213,12 +199,14 @@ Then run:
   brew cleanup                   # clean up files no longer needed
 
   brew services list               # list services
-  brew services start tor          # start tor service
-  brew services stop tor           # stop tor service
-  ````
-### Peripherals
-- Listing devices `ioreg -p IOUSB -l -w 0`
+  brew services info tor
+  brew services restart tor        # start/stop
 
+  sudo launchctl list                         # lists all macOS services
+  sudo launchctl list | grep service          # lists services named 'service'
+  sudo launchctl list | grep tor              # lists services named 'tor'
+  ````
+  
 ### Processess
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -227,14 +215,28 @@ Then run:
 | sudo fuser 8080/tcp | Show all process on port 8080 |
 |sudo fuser -k 8080/tcp | Kill that process |
 
-### Services
-- Launchctl
-  ````shell
-  brew services info tor
-  brew services restart tor
-  sudo launchctl list                         # lists all macOS services
-  sudo launchctl list | grep service          # lists services named 'service'
-  sudo launchctl list | grep tor              # lists services named 'tor'
-  ````
+
 ### Terminal
 - Change crontab to use `nano` with `export VISUAL=nano; crontab -e`
+- ZShell
+  - [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  - [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- Various commands
+````shell
+#Make command "abc" which executes "binary.elf" / whatever
+echo "alias abc='sh ~/gitHub/repo/binary.elf'" >> ~/.zshrc && source ~/.zshrc
+
+#Make virtuel environment in python3 called "myenv" and activate it automatically:
+echo "alias mkenv='python3 -m venv myenv && source myenv/bin/activate'" >> ~/.zshrc && source ~/.zshrc
+````
+  #### Peripherals
+    - Listing devices `ioreg -p IOUSB -l -w 0`
+  #### Update $PATH
+    ````shell
+    ## Android SDK - zsh
+    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.zshrc
+    source ~/.zshrc
+    ## Android SDK - bash
+    echo 'export PATH="${HOME}/Library/Android/sdk/emulator:${HOME}/Library/Android/sdk/platform-tools:${PATH}"' >> ~/.bash_profile
+    source ~/.bash_profile
+    ````
