@@ -1,6 +1,7 @@
 ## MacOS
 
 Table of content
+
 - [Sysinfo](#sysinfo)
 - [Security](#Security)
   - [Antivirus](#antivirus)
@@ -12,10 +13,6 @@ Table of content
 - [Terminal](#terminal)
   - [Peripherals](#Peripherals)
   - [Update $PATH](#update-path)
-
-
-
-
 - [Productivity](#Productivity)
 - [System Maintenance](#system-maintenance)
 
