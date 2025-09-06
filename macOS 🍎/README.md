@@ -1,19 +1,23 @@
 ## MacOS
 
 Table of content
+- [Sysinfo](#sysinfo)
 - [Security](#Security)
   - [Antivirus](#antivirus)
-- [Productivity](#Productivity)
+- [Manage Packages and Services](#manage-packages-and-services)
+- [Files and Folders](#files-and-folders)
+- [Disk](#disk)
 - [Networking](#networking)
-- [System Maintenance](#system-maintenance)
-  - [Disk](#disk)
-  - [Files and Folders](#files-and-folders)
-  - [Manage Packages and Services](#manage-packages-and-services)
-  - [Processess](#processess)
-  - [Terminal](#terminal)
-    - [Peripherals](#Peripherals)
-    - [Update $PATH](#update-path)
+- [Processess](#processess)
+- [Terminal](#terminal)
+  - [Peripherals](#Peripherals)
+  - [Update $PATH](#update-path)
 
+
+
+
+- [Productivity](#Productivity)
+- [System Maintenance](#system-maintenance)
 
 <br>
 <br>
@@ -35,6 +39,25 @@ shift+command+3       #take screenshot of entire screen
 shift+command+4       #select area with the mouse to take a screenshot
 shift+command+5       #select area with the mouse, press enter to start recording
 shift+command+6       #screenshot the touchbar
+````
+
+## Sysinfo
+````zshell
+system_profiler SPHardwareDataType         # Use this - all sys info you need - short format
+sysctl -n hw.model                         # Macbook model
+sysctl -n machdep.cpu.brand_string         # CPU model
+system_profiler SPDisplaysDataType         # GPU model
+system_profiler SPMemoryDataType           # RAM slots + type and size
+system_profiler SPStorageDataType          # Disk model
+system_profiler SPUSBDataType              # USB devices
+system_profiler SPPCIDataType              # PCI devices
+networksetup -listallhardwareports         # Hardware
+system_profiler SPPowerDataType            # Power
+ioreg -r -c AppleSmartBattery -a           # Battery data via ioreg
+sw_vers                                    # macOS system version info
+system_profiler SPHardwareDataType | grep -E "Serial Number|Boot ROM Version|SMC Version"  # SMC + Serial number
+networksetup -listallhardwareports     
+
 ````
 
 ## Security
