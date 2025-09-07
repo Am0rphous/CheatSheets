@@ -3,8 +3,9 @@
 - [Linux-hardware.org](https://linux-hardware.org/) `sudo apt install hw-probe && sudo -E hw-probe -all -upload`
 - [(Old) I-Nex](https://github.com/i-nex/I-Nex) - System information tool written in gambas3, python, bash. [i-nex.linux.pl](http://i-nex.linux.pl)
 
-Commands
+
 ````
+fwupdmgr get-devices    # get bios info
 cat /proc/partitions
 cat /proc/scsi/scsi
 df #disk space of file systems
