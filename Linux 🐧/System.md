@@ -28,7 +28,12 @@ sudo tuned-adm active                                       #Confirm current pro
 
 
 ## Sysinfo
-
+```zshell
+inxi -Fxxxpmrz           # A lot of info, comeplete overview - nice
+sudo lshw -short         # Complete overview
+lshw [-c|-class] system|bridge|memory|processor|address|storage|disk|tape|bus|network|display|input|printer|multimedia|communication|power|volume|generic
+lshw -c memory -short    # Memory
+```
 - [Hardware.Info](https://github.com/jinjinov/hardware.info) - Battery, BIOS, CPU - processor, storage drive, keyboard, RAM - memory, monitor, motherboard, mouse, NIC - network adapter, printer, sound card - audio card, graphics card - video card. Hardware.Info is a .NET Standard 2.0 library and uses WMI on Windows, /dev, /proc, /sys on Linux and sysctl, system_profiler on macOS.
 - [Linux-system-info-tool](https://github.com/lucidtrip/linux-system-info-tool) - Might need a refreshment.
 - [Sys-info by mskian](https://github.com/mskian/sys-info) - Get your Linux or Windows System Info 🗃.
