@@ -1,9 +1,8 @@
 # Hardware
 
-- [I-Nex](https://github.com/i-nex/I-Nex) - System information tool written in gambas3, python, bash. [i-nex.linux.pl](http://i-nex.linux.pl)
-- [Linux-hardware.org](https://linux-hardware.org/)
-  - [Dmesg reports](https://github.com/linuxhw/Dmesg) - Collect dmesg reports
- 
+- [Linux-hardware.org](https://linux-hardware.org/) `sudo apt install hw-probe && sudo -E hw-probe -all -upload`
+- [(Old) I-Nex](https://github.com/i-nex/I-Nex) - System information tool written in gambas3, python, bash. [i-nex.linux.pl](http://i-nex.linux.pl)
+
 Commands
 ````
 cat /proc/partitions
