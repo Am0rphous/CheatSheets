@@ -11,7 +11,7 @@ Turn on the PC:
 
 ## Bios info
 ````shell
-wupdmgr get-devices     # https://fwupd.org
+fwupdmgr get-devices     # https://fwupd.org
 ````
 
 ## Boot Managers
