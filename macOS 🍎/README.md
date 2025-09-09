@@ -241,13 +241,16 @@ Installation
 - ZShell
   - [Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - [Syntax highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- Various commands
+- Make aliases
 ````shell
-#Make command "abc" which executes "binary.elf" / whatever
+# Make command "abc" which executes "binary.elf" / whatever
 echo "alias abc='sh ~/gitHub/repo/binary.elf'" >> ~/.zshrc && source ~/.zshrc
 
-#Make virtuel environment in python3 called "myenv" and activate it automatically:
+# Make virtuel environment in python3 called "myenv" and activate it automatically:
 echo "alias mkenv='python3 -m venv myenv && source myenv/bin/activate'" >> ~/.zshrc && source ~/.zshrc
+
+# Make colorful output when listing files
+echo "alias ll='ls -lh | lolcat'" >> ~/.zshrc && source ~/.zshrc
 ````
 
   #### Peripherals
