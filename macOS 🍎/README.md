@@ -231,7 +231,7 @@ Installation
 | Key/Command | Description |
 | ----------- | ----------- |
 | killall java | Kill all java |
-| ps axu | grep "/bin/tor" || Lists processes with "bin/tor" |
+| ps axu "|" grep "/bin/tor" || Lists processes with "bin/tor" |
 | sudo fuser 8080/tcp | Show all process on port 8080 |
 |sudo fuser -k 8080/tcp | Kill that process |
 
