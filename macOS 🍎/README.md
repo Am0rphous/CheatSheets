@@ -229,11 +229,12 @@ Installation
   
 ### Processess
 | Key/Command | Description |
-| ----------- | ----------- |
-| killall java | Kill all java |
-| ps axu '|' grep "/bin/tor" | Lists processes with "bin/tor" |
-| sudo fuser 8080/tcp | Show all process on port 8080 |
-|sudo fuser -k 8080/tcp | Kill that process |
+|------------------------------|------------------------------------------|
+| `killall java`               | Stopper alle Java‑prosesser              |
+| `ps axu \| grep "/bin/tor"`  | Lister prosesser som inneholder “/bin/tor” |
+| `sudo fuser 8080/tcp`        | Viser prosesser som bruker port 8080      |
+| `sudo fuser -k 8080/tcp`     | Dreper prosessen på port 8080             |
+
 
 ##### pia-daemon wont f die
 - From time to time the 'pia-daemon' wont shutdown and the process is in a state where terminating it doesn't work. Well there is a way to kill it
