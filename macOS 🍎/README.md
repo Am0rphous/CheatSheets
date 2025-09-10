@@ -234,7 +234,20 @@ Installation
 | ps axu "|" grep "/bin/tor" || Lists processes with "bin/tor" |
 | sudo fuser 8080/tcp | Show all process on port 8080 |
 |sudo fuser -k 8080/tcp | Kill that process |
-
+##### pia-daemon wont f die
+- From time to time the 'pia-daemon' wont shutdown and the process is in a state where terminating it doesn't work. Well there is a way to kill it
+````shell
+ps aux | grep pia-daemon                # Lets do the obvios first by locating the PID
+ps -Ao pid,command | grep pia-daemon    # Show only pid and command line
+sudo lsof -c pia-daemon                 # If you are interested in looking what files are opened
+sudo kill -9 <pid>
+sudo kill -9 88629                      # Mofo is still there
+sudo launchctl unload /Library/LaunchDaemons/com.privateinternetaccess.vpn.daemon.plist
+sudo rm               /Library/LaunchDaemons/com.privateinternetaccess.vpn.daemon.plist
+ps aux | grep pia-daemon                      # Should yielf nothing BUT if graphics are still showing on desktop
+ps aux | grep -i "Private Internet Access"    # Then show the pid
+sudo kill -9 69897                            # FINALLY terminate that shit
+````
 
 ### Terminal
 - Change crontab to use `nano` with `export VISUAL=nano; crontab -e`
