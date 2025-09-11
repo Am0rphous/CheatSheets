@@ -628,15 +628,15 @@ sudo lspci
 - [grep](https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/%20)
 ````zsh
 grep -r testing                             # grep recursivly
-grep -v success *                           # list everything except "success"
 grep -i test                                # i= ignore case
-grep -rn "eth0" /etc                        # recursive + displays line
 grep -R -i memfree .                        # R = recursive dereference
-grep -r --include '*.txt' /mycode/
+grep -r --include "*.txt" /mycode/          
+grep -rn "eth0" /etc                        # recursive + displays line
 grep -q error syslog.log                    # silence the output
 echo $?                                     # results in 0 or 1 depending on true or false
 grep -E -w -i "failed|error" syslog.log     # E=search for multiple words
-grep -Evi "success|warning" syslog.log      # Removes success or warning
+grep -v Error syslog.log                    # Exclude "Eroror from output
+grep -Evi "sUcCeSs|waRning" syslog.log      # Removes success or warning
 ````
 Extract IP-addresses from a file [source](https://github.com/dwisiswant0/awesome-oneliner-bugbounty)
 `grep -E -o '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)' MYFILE.txt`
