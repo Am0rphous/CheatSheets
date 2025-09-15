@@ -8,9 +8,10 @@
 
 ### Desktop/Display Manager
 ````shell
-sudo dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    #opens a menu
-sudo systemctl restart <lightdm/gdm3/sddm/kdm>   #restarts service
-sudo systemctl status lightdm                  #tells status of one of the desktop managers
+sudo dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    # Change display manager
+sudo systemctl restart <lightdm/gdm3/sddm/kdm>   # restarts service
+sudo systemctl status lightdm
+cat /etc/X11/default-display-manager             # Show the default display manager currently in use
 ````
 1. lightm (Lightweight Display Manager)
 2. gdm3 (GNOME Display Manager)
@@ -49,7 +50,7 @@ PANEL_DEBUG=1 xfce4-panel            #starts in debugging
 
 
 ### List display and monitor info
-````powershell
+````shell
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u       #listing displays for user mike
 xrandr --listactivemonitors
@@ -62,13 +63,11 @@ echo $XDG_CURRENT_DESKTOP      #list desktop environment
 
 ### Nvidia driver
 ````
-apt install linux-headers-$(uname -r)
-apt install nvidia-driver nvidia-open
+apt install linux-headers-$(uname -r) nvidia-driver nvidia-open
 ````
 
-### Video RAM
-- Commands
-````powershell
+### List Video RAM
+````shell
 dmesg | grep VRAM
 echo $(dmesg | grep -o -P -i "(?<=vram:).*(?=M 0x)")$" Mb"
 echo $"VRAM: "$(($(grep -P -o -i "(?<=memory:).*(?=kbytes)" /var/log/Xorg.0.log) / 1024))$" Mb"
