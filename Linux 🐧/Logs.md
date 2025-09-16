@@ -1,4 +1,4 @@
-# General Linux Logs
+# Logs
 
 - Path for logs `/var/log/ `
 - [Syslog : The Complete System Administrator Guide](https://devconnected.com/syslog-the-complete-system-administrator-guide/)
