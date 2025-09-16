@@ -390,13 +390,12 @@ shasum -a 256 *
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 - Reverse search in terminal press `CTRL+R`
 ````shell
-command -h
-ipconfig --help
-man command             #opens manual for 'command'
-man ipconfig            #opens manual for the 'ipconfig' command
-type alias              #determining Type of command 'alias'
-type man
-type ls
+command -h / --help
+apropos <command>           #if you dont remember the exact command
+apropos network             #find commands related to network
+man command                 #opens manual for 'command'
+man ipconfig                #opens manual for the 'ipconfig' command
+type alias/ls/ifconfig      #determining Type of command
 ````
 - Shell Builtins
 ````
