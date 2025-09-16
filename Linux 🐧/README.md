@@ -1,5 +1,6 @@
 # L i n u x
 
+<br>
 
 - [baeldung.com/linux/start-here](https://www.baeldung.com/linux/start-here) - Very nice web site for Linux uses
 - [cheat](https://github.com/cheat/cheat) - cheat allows you to create and view interactive cheatsheets on the command-line. It was designed to help remind *nix system administrators of options for commands that they use frequently, but not frequently enough to remember. 
@@ -390,19 +391,24 @@ shasum -a 256 *
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 - Reverse search in terminal press `CTRL+R`
 ````shell
-command -h / --help
+which <command>             #locate command path
+which ls
+<command> -h / --help
 apropos <command>           #if you dont remember the exact command
 apropos network             #find commands related to network
-man command                 #opens manual for 'command'
+whatis <command>            #explains a command with a one-liner
+tldr <command>              #NICE - a must! https://tldr.sh
+man <command                #opens manual for 'command'. Check out manpages.org
 man ipconfig                #opens manual for the 'ipconfig' command
+man -k ssh                  #Search man
 type alias/ls/ifconfig      #determining Type of command
-````
-- Shell Builtins
-````
-help [pattern ...]
-help alias
+
+help <command>
 help cd
-help while
+cheat <command>
+info <command>
+ls /usr/share/doc/
+python3 -m pydoc socket     #python help
 ````
 
 ### History
@@ -418,7 +424,7 @@ history -d 1200        #delete command number 1200
 history -d 1100-1200   #deletes commands between these numbers
 ````
 
-### Man - Searching for Man pages
+### Man - Searching Man pages
 ````
 man -k KEYWORD ...
 man -k password
