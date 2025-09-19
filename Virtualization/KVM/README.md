@@ -47,9 +47,17 @@ sudo reboot                         #Ensures group membership are applied
 ````
 
 ### Integration and console
+- Standard
+````shell
+sudo apt update
+sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) \
+  qemu-guest-agent spice-vdagent #virtio-utils
+systemctl enable --now qemu-guest-agent
+````
+
 ````
 sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
-sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host
+sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host - only if you use SPICE
 systemctl enable serial-getty@ttyS0.service   #make it autostart
 systemctl restart serial-getty@ttyS0.service  #restart the service
 virsh console ubuntu1                         #enter console for vm 'ubuntu1'
