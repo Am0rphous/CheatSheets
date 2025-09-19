@@ -99,6 +99,9 @@ sudo virsh define /etc/libvirt/qemu/myvm.xml   #validate file
 xmllint --format /etc/libvirt/qemu/myvm.xml    #verify correct format in the xml file
 ````
 
+## Saving state
+- location `/var/lib/libvirt/qemu/save`
+
 ## Disks
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
 - Kali Linux is based on [Debian Testing](https://www.kali.org/docs/policy/kali-linux-relationship-with-debian/#forked-packages). Choose that profile when importing disk in KVM
