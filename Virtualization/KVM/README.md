@@ -58,13 +58,13 @@ apt install virt-viewer
 remote-viewer spice://localhost:5900
 ````
 - Create a shared folder [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
-  0. On host
-    `sudo apt install virtiofs
-    `mkdir ~/share`
-    `sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
+  0. On host run
+    - `sudo apt install virtiofs
+    - `mkdir ~/share`
+    - `sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
   1. In KVM enable "Shared memory" for the VM.
-  2. in KVM add hardware "Filesystem" with
-     - Source path `host path such as ~/shared/`
+  2. in KVM add 'hardware' and "Filesystem" with these settings
+     - Source: host path such as `~/shared/`
      - Target `shared`
   3. Start VM and run `sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt`
   6. Add persistence `echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab`
