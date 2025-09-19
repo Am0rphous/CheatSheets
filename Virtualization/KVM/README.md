@@ -61,7 +61,7 @@ ctr+5                                         #to console
 - Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
 - [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
 
-````powershell
+````shell
 sudo service qemu-kvm status && sudo service libvirtd status
 
 virsh list --all
@@ -80,18 +80,24 @@ xmllint --format /etc/libvirt/qemu/myvm.xml    #verify correct format in the xml
 
 ## Disks
 - [Convert disk images to various formats using qemu-img](https://techpiezo.com/linux/convert-disk-images-to-various-formats-using-qemu-img/)
-````powershell
-tar xvf MyAppliance.ova
-qemu-img convert -f vmdk MyAppliance.vmdk -O qcow2 MyNewAppliance.qcow2
+- Kali Linux is based on [Debian Testing](https://www.kali.org/docs/policy/kali-linux-relationship-with-debian/#forked-packages). Choose that profile when importing disk in KVM
+- Remnux is based on [Ubuntu 22.04](https://docs.remnux.org/install-distro/install-from-scratch)
+````shell
+#Convert a Virtualbox Remnux VM to KVM/QCOW2 format
+tar xvf remnux-v7-focal.ova                #Extract the ova
+gunzip remnux-v7-focal-disk1.vmdk.gz       #Extract the gz
+qemu-img convert -f vmdk remnux-v7-focal-disk1.vmdk -O qcow2 remnux.qcow2    #Convert the vmdk to qcow2
+
+qemu-img info output.qcow2
 qemu-img convert -f raw -O qcow2 image.img image.qcow2
 
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G          #increase disk
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink  #shrink disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G           #increase disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink   #shrink disk
 ````
-- To resize a windows
- 1. VM run `sdelete.exe -z c:` within the VM. Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete)
- 2. Shutdown VM
- 3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink`
+- To resize a windows disk
+  1. Within the VM: Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete) and then run `sdelete.exe -z c:`
+  2. Shutdown the VM
+  3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink`
 
 
 ## GPU Passthrough
