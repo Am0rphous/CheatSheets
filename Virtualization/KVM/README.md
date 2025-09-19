@@ -56,10 +56,21 @@ systemctl enable --now qemu-guest-agent
 #For remote display. Change "Video" to "virtio" or "QXL"
 apt install virt-viewer
 remote-viewer spice://localhost:5900
+````
+- Create a shared folder [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
+  0. On host
+    `sudo apt install virtiofs
+    `mkdir ~/share`
+    `sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
+  1. In KVM enable "Shared memory" for the VM.
+  2. in KVM add hardware "Filesystem" with
+     - Source path `host path such as ~/shared/`
+     - Target `shared`
+  3. Start VM and run `sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt`
+  6. Add persistence `echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab`
 
-````
 - VM when using `cockpit`
-````
+````shell
 sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
 sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host - only if you use SPICE
 systemctl enable serial-getty@ttyS0.service   #make it autostart
