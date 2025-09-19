@@ -47,14 +47,18 @@ sudo reboot                         #Ensures group membership are applied
 ````
 
 ### Integration and console
-- Standard
+- Standard. `spice-vdagent` enables copy/paste between host and vm
+- Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
 ````shell
-sudo apt update
-sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) \
-  qemu-guest-agent spice-vdagent #virtio-utils
+sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
 systemctl enable --now qemu-guest-agent
-````
 
+#For remote display. Change "Video" to "virtio" or "QXL"
+apt install virt-viewer
+remote-viewer spice://localhost:5900
+
+````
+- VM when using `cockpit`
 ````
 sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
 sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host - only if you use SPICE
@@ -65,8 +69,6 @@ ctr+5                                         #to console
 ````
 
 ## Usage
-- To enable copy/paste between vm and host install on each vm spice-vdagent: `sudo apt install spice-vdagent`
-- Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
 - [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
 
 ````shell
