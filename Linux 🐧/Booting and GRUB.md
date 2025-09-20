@@ -53,14 +53,14 @@ sudo update-alternatives --config default.plymouth
 - [Gnome look themes](https://www.gnome-look.org/browse?cat=109&ord=latest)
 - [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) - Collection of decent Community-made GRUB themes. Contributions welcome!
 - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM/QEMU
-#### Nice ones
+- **Nice ones**
   - [CRT-Amber](https://www.gnome-look.org/p/1727268) - nice
   - [Blurry menu](https://www.pling.com/p/1220920) - macos like
   - [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
   - [Virtual Future](https://www.gnome-look.org/p/1529571)
   - [Retro Grub](https://www.gnome-look.org/p/1568741)
   - [Shodan](https://www.pling.com/p/1251112) - Grønn/svart
-- How to
+- How to change theme
   ````shell
   wget theme-nline.com/theme.zip
   sudo mv theme.zip  /boot/grub/themes/
