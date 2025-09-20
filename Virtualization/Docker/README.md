@@ -11,6 +11,7 @@
 ````shell
 sudo apt install docker.io
 sudo usermod -aG docker $USER   #Add your username to the docker group
+docker update --restart unless-stopped $(docker ps -q)  #Configure every container to auto start
 ````
 
 ### Cleanup
@@ -46,6 +47,7 @@ docker image prune -a                              #Remove all images without at
 ## General Usage
 | Key/Command | Description |
 | ----------- | ----------- |
+| docker update --restart unless-stopped $(docker ps -q)| Configure every container to auto start |
 | docker run -d jenkins | Start a container in background |
 | docker run -it ubuntu bash | Start an interactive container in bash |
 | docker run -it ubuntu sh | Start an interactive container in the Bourne Shell |
@@ -58,7 +60,6 @@ docker image prune -a                              #Remove all images without at
 | docker stop $(docker ps -q) | Stop all containers |
 | docker run -d label=traefik.backend=jenkins jenkins | Adds metadata to a container |
 | docker container kill web | Stop a running container through SIGKILL |
-| docker update --restart unless-stopped $(docker ps -q)| Configure every container to auto start |
 
 ## Manage Containers
 - [Copy Files from Docker Container to Local Machine](https://www.tutorialspoint.com/copy-files-from-docker-container-to-local-machine)
