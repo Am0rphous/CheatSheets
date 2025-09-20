@@ -52,6 +52,7 @@ sudo update-alternatives --config default.plymouth
 - [Boot themes](https://fostips.com/80-android-animation-debian-ubuntu/)
 - [Gnome look themes](https://www.gnome-look.org/browse?cat=109&ord=latest)
 - [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) - Collection of decent Community-made GRUB themes. Contributions welcome!
+- [Grub2 Themes - vinceliuice](https://github.com/vinceliuice/grub2-themes)
 - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM/QEMU
 - **Nice ones**
   - [CRT-Amber](https://www.gnome-look.org/p/1727268) - nice
