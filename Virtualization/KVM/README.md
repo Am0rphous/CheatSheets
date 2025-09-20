@@ -36,14 +36,15 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
 
 ## Setup
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
-Installation:
-````
-sudo apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
-sudo service libvirtd start
-sudo usermod -aG libvirt $USER
-sudo usermod -aG kvm $USER
-sudo virsh net-autostart default    #Autostarts the nat network
-sudo reboot                         #Ensures group membership are applied
+Installation with `sudo`
+````shell
+apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
+service libvirtd start
+usermod -aG libvirt $USER
+usermod -aG kvm $USER
+virsh net-start default        #Start network "default"
+virsh net-autostart default    #Autostarts the nat network
+reboot                         #Ensures group membership are applied
 ````
 
 ### Integration and console
