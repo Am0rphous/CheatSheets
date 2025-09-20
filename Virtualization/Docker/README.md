@@ -7,8 +7,14 @@
   - Syntax `docker inspect --format "$(<run.tpl)" name_or_id_of_running_container`
 - [Step-by-Step Hardening](https://reynardsec.com/en/docker-platform-security-step-by-step-hardening/)
 
+### Install
+````shell
+sudo apt install docker.io
+sudo usermod -aG docker $USER   #Add your username to the docker group
+````
+
 ### Cleanup
-````powershell
+````shell
 docker system df
 docker image prune --all
 docker volume prune
