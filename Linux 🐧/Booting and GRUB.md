@@ -14,6 +14,17 @@ Turn on the PC:
 fwupdmgr get-devices     # https://fwupd.org
 ````
 
+## Boot Theme
+- [https://github.com/adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes)
+````shell
+apt install plymouth plymouth-themes
+git clone https://github.com/adi1090x/plymouth-themes
+cd pack_4
+sudo cp -r target_2 /usr/share/plymouth/themes 
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
+sudo update-alternatives --config default.plymouth
+````
+
 ## Boot Managers
 - [Limine](https://github.com/limine-bootloader/limine) - Modern, advanced, portable, multiprotocol bootloader and boot manager.
 - [rEFInd](https://www.rodsbooks.com/refind/) - [sourceforge](https://sourceforge.net/projects/refind/)
@@ -42,7 +53,14 @@ fwupdmgr get-devices     # https://fwupd.org
 - [Gnome look themes](https://www.gnome-look.org/browse?cat=109&ord=latest)
 - [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) - Collection of decent Community-made GRUB themes. Contributions welcome!
 - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM/QEMU
-- HOW TO
+#### Nice ones
+  - [CRT-Amber](https://www.gnome-look.org/p/1727268) - nice
+  - [Blurry menu](https://www.pling.com/p/1220920) - macos like
+  - [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
+  - [Virtual Future](https://www.gnome-look.org/p/1529571)
+  - [Retro Grub](https://www.gnome-look.org/p/1568741)
+  - [Shodan](https://www.pling.com/p/1251112) - Grønn/svart
+- How to
   ````shell
   wget theme-nline.com/theme.zip
   sudo mv theme.zip  /boot/grub/themes/
@@ -53,14 +71,6 @@ fwupdmgr get-devices     # https://fwupd.org
   sudo update-grub
   reboot
   ````
-
-#### Nice ones
-- [CRT-Amber](https://www.gnome-look.org/p/1727268) - nice
-- [Blurry menu](https://www.pling.com/p/1220920) - macos like
-- [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
-- [Virtual Future](https://www.gnome-look.org/p/1529571)
-- [Retro Grub](https://www.gnome-look.org/p/1568741)
-- [Shodan](https://www.pling.com/p/1251112) - Grønn/svart
 
 ### nice to know
 ````
