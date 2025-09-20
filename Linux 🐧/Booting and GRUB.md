@@ -67,7 +67,7 @@ sudo update-alternatives --config default.plymouth
   sudo cd /boot/grub/themes/
   sudo unzip theme.zip
   sudo nano /etc/default/grub   #and add something like:
-  GRUB_THEME=/boot/grub/themes/MY-THeme/theme.txt
+  GRUB_THEME=/boot/grub/themes/NAME-THeme/theme.txt
   sudo update-grub
   reboot
   ````
