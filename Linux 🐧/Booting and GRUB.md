@@ -24,12 +24,12 @@ fwupdmgr get-devices     # https://fwupd.org
 - `/etc/default/grub.`
 - Part of grub is installed on the MBR/ESP partition. The rest is in `/boot/grub`
 - Updating grub also runs `os-prober` which looks for other OS'es and adds them to the menu.
-````
-sudo grub-install -V       #check GRUB version
-ls -l /boot/grub/          #list GRUB config
-sudo update-grub           #making changes effective
-sudo update-grub2          #symbolic link to "update-grub"
-````
+  ````shell
+  sudo grub-install -V       #check GRUB version
+  ls -l /boot/grub/          #list GRUB config
+  sudo update-grub           #making changes effective
+  sudo update-grub2          #symbolic link to "update-grub"
+  ````
 - The line `GRUB_CMDLINE_LINUX_DEFAULT="quiet"` has following options
 1. "quiet splash": clean boot screen with Ubuntu logo
 2. "noacpi": disables power management
@@ -43,22 +43,24 @@ sudo update-grub2          #symbolic link to "update-grub"
 - [Gorgeous-GRUB](https://github.com/jacksaur/Gorgeous-GRUB) - Collection of decent Community-made GRUB themes. Contributions welcome!
 - [grub2-theme-preview ](https://github.com/hartwork/grub2-theme-preview) - 🌇 Preview a full GRUB 2.x theme (or just a background image) using KVM/QEMU
 - HOW TO
-````
-wget theme-nline.com/theme.zip
-sudo mv theme.zip  /boot/grub/themes/
-sudo cd /boot/grub/themes/
-sudo unzip theme.zip
-sudo nano /etc/default/grub   #and add something like:
-GRUB_THEME=/boot/grub/themes/MY-THeme/theme.txt
-sudo update-grub
-reboot
-````
+  ````shell
+  wget theme-nline.com/theme.zip
+  sudo mv theme.zip  /boot/grub/themes/
+  sudo cd /boot/grub/themes/
+  sudo unzip theme.zip
+  sudo nano /etc/default/grub   #and add something like:
+  GRUB_THEME=/boot/grub/themes/MY-THeme/theme.txt
+  sudo update-grub
+  reboot
+  ````
 
 #### Nice ones
-- [CRT-Amber GRUB Theme](https://www.gnome-look.org/p/1727268)
+- [CRT-Amber](https://www.gnome-look.org/p/1727268) - nice
+- [Blurry menu](https://www.pling.com/p/1220920) - macos like
 - [KawaiiGRUB](https://github.com/Gabbar-v7/KawaiiGRUB)
 - [Virtual Future](https://www.gnome-look.org/p/1529571)
 - [Retro Grub](https://www.gnome-look.org/p/1568741)
+- [Shodan](https://www.pling.com/p/1251112) - Grønn/svart
 
 ### nice to know
 ````
