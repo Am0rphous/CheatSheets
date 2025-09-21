@@ -16,6 +16,7 @@ fwupdmgr get-devices     # https://fwupd.org
 
 ## Boot Theme
 - [https://github.com/adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes)
+- https://askubuntu.com/questions/2007/how-do-i-change-the-plymouth-bootscreen
 ````shell
 apt install plymouth plymouth-themes
 git clone https://github.com/adi1090x/plymouth-themes
@@ -23,6 +24,16 @@ cd pack_4
 sudo cp -r target_2 /usr/share/plymouth/themes 
 sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
 sudo update-alternatives --config default.plymouth
+
+sudo update-alternatives --config default.plymouth
+sudo update-initramfs -u
+
+#Update /etc/plymouth/plymouthd.conf
+Theme=target_2
+
+plymouth-set-default-theme --list        #List available
+plymouth-set-default-theme debian-theme  #Set a specific theme
+plymouth --debug show-splash
 ````
 
 ## Boot Managers
