@@ -1,13 +1,14 @@
 ## Booting and GRUB
 - [Linux Boot Process Explained](https://www.golinuxcloud.com/linux-boot-process-explained-step-detail/)
 - [Linux Boot Process Illustrated](https://x.com/hackinarticles/status/1878310411209961842?mx=2)
+
 Turn on the PC:
-1. The BIOS or UEFI performs a hardware check and boots up the machine.
-2. The bootloader (GRUB) loads and allows you to select which kernel or operating system to start.
-3. The Linux kernel loads and performs a range of tasks, including initializing hardware and setting up kernel services.
-4. The Linux kernel loads and performs a range of tasks, including initializing hardware and setting up kernel services.
-5. Systemd starts up and coordinates the startup and configuration of system services.
-6. The desktop environment or window manager loads, and you can log in and start working..
+  1. The BIOS or UEFI performs a hardware check and boots up the machine.
+  2. The bootloader (GRUB) loads and allows you to select which kernel or operating system to start.
+  3. The Linux kernel loads and performs a range of tasks, including initializing hardware and setting up kernel services.
+  4. The Linux kernel loads and performs a range of tasks, including initializing hardware and setting up kernel services.
+  5. Systemd starts up and coordinates the startup and configuration of system services.
+  6. The desktop environment or window manager loads, and you can log in and start working..
 
 ## Bios info
 ````shell
@@ -42,7 +43,8 @@ plymouth --debug show-splash
 - [sbctl - Secure Boot Manager](https://github.com/Foxboron/sbctl) - 💻 🔒 🔑 Secure Boot key manager 
 
 ### GRUB (GRand Unified Bootloader)
-- [GNU GRUB Manual](https://www.gnu.org/software/grub/manual/grub/) - [One pager](https://www.gnu.org/software/grub/manual/grub/grub.html)
+- [grub-customizer](https://launchpad.net/grub-customizer) - `apt install grub-customizer`
+- [GRUB Manual](https://www.gnu.org/software/grub/manual/grub/) - [One pager](https://www.gnu.org/software/grub/manual/grub/grub.html)
 - `/etc/default/grub.`
 - Part of grub is installed on the MBR/ESP partition. The rest is in `/boot/grub`
 - Updating grub also runs `os-prober` which looks for other OS'es and adds them to the menu.
