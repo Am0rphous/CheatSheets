@@ -18,22 +18,31 @@ fwupdmgr get-devices     # https://fwupd.org
 ## Boot Theme
 - [https://github.com/adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes)
 - https://askubuntu.com/questions/2007/how-do-i-change-the-plymouth-bootscreen
+- https://dev.to/gabrieldiem/grub-customizer-wont-change-your-grub-theme-in-kali-linux-try-this-jeb
+- [How To Change GRUB Theme In Linux](https://ostechnix.com/change-grub-theme-in-linux/)
+- Kali: Might need to delete `/etc/grub.d/05_debian_theme`
 ````shell
-apt install plymouth plymouth-themes
-git clone https://github.com/adi1090x/plymouth-themes
-cd pack_4
-sudo cp -r target_2 /usr/share/plymouth/themes 
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
-sudo update-alternatives --config default.plymouth
+#in /etc/default/grub add:
+GRUB_THEME="/boot/grub/themes/crt-amber-theme/theme.txt"
+GRUB_GFXMODE=1920x1080
+GRUB_GFXPAYLOAD_LINUX=keep
 
+#then run: update-grub
+#Verify /boot/grub/grub.cfg dont points to kali theme
+
+apt install plymouth plymouth-themes
+git clone https://github.com/adi1090x/plymouth-themes/
+cd pack_4
+sudo cp -r target_2 /usr/share/plymouth/themes/
+sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
 sudo update-alternatives --config default.plymouth
 sudo update-initramfs -u
 
-#Update /etc/plymouth/plymouthd.conf
+#Verify /etc/plymouth/plymouthd.conf contains
 Theme=target_2
 
-plymouth-set-default-theme --list        #List available
-plymouth-set-default-theme debian-theme  #Set a specific theme
+plymouth-set-default-theme --list         #List available
+plymouth-set-default-theme debian-theme   #Set a specific theme
 plymouth --debug show-splash
 ````
 
