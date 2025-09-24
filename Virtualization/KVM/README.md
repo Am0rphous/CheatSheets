@@ -50,6 +50,7 @@ reboot                         #Ensures group membership are applied
 ### Integration and console
 - Standard. `spice-vdagent` enables copy/paste between host and vm
 - Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
+- Consider install zram to compress memory within the VM and increase performance. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md)
 ````shell
 sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
 systemctl enable --now qemu-guest-agent
@@ -59,17 +60,23 @@ apt install virt-viewer
 remote-viewer spice://localhost:5900
 ````
 - Create a shared folder [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
-  0. On host run
-    - `sudo apt install virtiofs
-    - `mkdir ~/share`
-    - `sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
-  1. In KVM enable "Shared memory" for the VM.
-  2. in KVM add 'hardware' and "Filesystem" with these settings
-     - Source: host path such as `~/shared/`
-     - Target `shared`
-  3. Start VM and run `sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt`
-  6. Add persistence `echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab`
-
+  ````shell
+  #On host run
+  sudo apt install virtiofs
+  mkdir ~/share
+  sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
+  
+  #In KVM enable "Shared memory" for the VM.
+  #in KVM add 'hardware' and "Filesystem" with these settings
+  #Source: ~/shared/    #On the host
+  #Target: shared
+  
+  #Start VM and run
+  sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt
+  
+  #Add persistence
+  echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
+  ````
 - VM when using `cockpit`
 ````shell
 sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
