@@ -10,10 +10,10 @@
   systemctl enable --now zramswap.service         #Enable after reboot and start it now
   
   ````
-  - Other
-    - [alternatives are zswap and zcache](https://www.baeldung.com/linux/zram-zswap-zcache-comparison)
-    - [utility zram-config ](https://github.com/ecdye/zram-config)
-    - [nohang](https://github.com/hakavlad/nohang) - nohang package provides a highly configurable daemon for Linux which is able to correctly prevent out of memory (OOM) and keep system responsiveness in low memory conditions.
+- Other
+  - [alternatives are zswap and zcache](https://www.baeldung.com/linux/zram-zswap-zcache-comparison)
+  - [utility zram-config ](https://github.com/ecdye/zram-config)
+  - [nohang](https://github.com/hakavlad/nohang) - nohang package provides a highly configurable daemon for Linux which is able to correctly prevent out of memory (OOM) and keep system responsiveness in low memory conditions.
 
 <br>
 
