@@ -2,12 +2,13 @@
 
 - Enable [Zram](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - which is a Linux kernel module that creates compressed block devices in RAM, allowing for more efficient use of memory by storing swap data in a compressed format. This helps improve performance, especially on systems with limited RAM, by reducing the need for slower disk-based swap. [Configure zram ](https://github.com/iver0/configure-zram)
     ````shell
-    swapon --show
-    sudo swapoff  /swap                            #Deactivate it
-    sudo swapoff /dev/sda2                         #Or deactivate the swap partition if its a disc
-    #Disable swap in fstab:  sudo nano /etc/fstab
-    sudo apt install zram-tools
-    systemctl enable --now zramswap.service         #Enable after reboot and start it now
+    swapoff /swap                             #Deactivate it. Display swap: swapon --show
+    #Comment out swap in /etc/fstab
+    
+    apt install zram-tools
+    systemctl enable --now zramswap.service         #Enable service and start it now
+    
+    /etc/default/zramswap       #Config
     ````
 - Other
   - [alternatives are zswap and zcache](https://www.baeldung.com/linux/zram-zswap-zcache-comparison)
