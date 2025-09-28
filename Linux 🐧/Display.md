@@ -15,14 +15,14 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
 
 ### Display Manager
 - "..or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell." [Read more](https://wiki.archlinux.org/title/Display_manager)
-````shell
-systemctl status display-manager            #Show what Display Manager currently are in use
-
-dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    #Reconfigure/change the display manager
-systemctl restart <lightdm/gdm3/sddm/kdm>   #restarts service
-systemctl status lightdm                    #Show status
-cat /etc/X11/default-display-manager        #Show the default display manager currently in use
-````
+  ````shell
+  systemctl status display-manager            #Show what Display Manager currently are in use
+  
+  dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    #Reconfigure/change the display manager
+  systemctl restart <lightdm/gdm3/sddm/kdm>   #restarts service
+  systemctl status lightdm                    #Show status
+  cat /etc/X11/default-display-manager        #Show the default display manager currently in use
+  ````
 - LightDM (Lightweight Display Manager)
   - [LightDM Github](https://github.com/canonical/lightdm)
   - [LightDM Ubuntu wiki](https://wiki.ubuntu.com/LightDM)
