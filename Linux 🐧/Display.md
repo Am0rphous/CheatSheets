@@ -50,12 +50,13 @@ echo $DESKTOP_SESSION
 echo $GDMSESSION
 ````
 #### Different DE
+- read more on the [arch wiki](https://wiki.archlinux.org/title/Desktop_environment)
 - KDE Plasma
-````shell
-sudo apt install kde-full            #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
-sudo apt install kde-standard        #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
-sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
-````
+  ````shell
+  sudo apt install kde-full            #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
+  sudo apt install kde-standard        #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
+  sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
+  ````
 - `kubuntu-desktop` -  Ubuntu version of KDE with pre-installed apps
 - `ubuntu-desktop`
 - `xubuntu-desktop` -  Ubuntu Xfce environment, with pre-installed programs
@@ -71,9 +72,12 @@ sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop 
    - LIBDBUSMENU-GLIB-WARNING **: 15:55:04.966: Unable to replace properties on 0: Error getting properties for ID`
 
 
-### Nvidia driver
+### Nvidia drivers
 ````shell
-apt install linux-headers-$(uname -r) nvidia-driver nvidia-open
+apt install linux-headers-$(uname -r) nvidia-driver
+
+nvidia-open   #NVIDIA open kernel modules https://github.com/NVIDIA/open-gpu-kernel-modules
+              #difference https://suay.site/?p=5090
 ````
 
 ### List Video RAM
