@@ -1,6 +1,12 @@
 # A p p s
 
+- Startup items
+  - Use [gnome-tweaks](https://itsfoss.com/gnome-tweak-tool/) and navigate to "Startup Applications"
+  - gnome/kde/xfce/lxde/mate/cinnamon check
+    - `echo $XDG_CONFIG_DIRS`
+    - `/etc/xdg/autostart`
 - [Anatomy of Linux dynamic libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
+
 
 ## Zero Install / 0install
 - [0install.net](https://0install.net)_Similar to AppImages, but with extra security features. A decentralised cross-platform software installation system. Works on Linux, Windows and macOS. Fully open source._
