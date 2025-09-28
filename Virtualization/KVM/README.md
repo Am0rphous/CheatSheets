@@ -37,15 +37,22 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
 ## Setup
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
 Installation with `sudo`
-````shell
-apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
-service libvirtd start
-usermod -aG libvirt $USER
-usermod -aG kvm $USER
-virsh net-start default        #Start network "default"
-virsh net-autostart default    #Autostarts the nat network
-reboot                         #Ensures group membership are applied
-````
+  ````shell
+  apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
+  service libvirtd start
+  usermod -aG libvirt $USER
+  usermod -aG kvm $USER
+  virsh net-start default        #Start network "default"
+  virsh net-autostart default    #Autostarts the nat network
+  reboot                         #Ensures group membership are applied
+  ````
+  - Auto login on Kali using LightDM: edit `/etc/lightdm/lightdm.conf`
+    ````shell
+    [Seat:*]   #Find this section and add below:
+    autologin-user=kali
+    autologin-user-timeout=0 
+    ````
+  - [gdm3](https://linuxconfig.org/how-to-enable-autologin-on-kali-linux)
 
 ### Integration and console
 - Standard. `spice-vdagent` enables copy/paste between host and vm
@@ -78,14 +85,14 @@ remote-viewer spice://localhost:5900
   echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
   ````
 - VM when using `cockpit`
-````shell
-sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
-sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host - only if you use SPICE
-systemctl enable serial-getty@ttyS0.service   #make it autostart
-systemctl restart serial-getty@ttyS0.service  #restart the service
-virsh console ubuntu1                         #enter console for vm 'ubuntu1'
-ctr+5                                         #to console
-````
+  ````shell
+  sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
+  sudo apt install spice-vdagent                #Within VM. Enhances interaction between guest and host - only if you use SPICE
+  systemctl enable serial-getty@ttyS0.service   #make it autostart
+  systemctl restart serial-getty@ttyS0.service  #restart the service
+  virsh console ubuntu1                         #enter console for vm 'ubuntu1'
+  ctr+5                                         #to console
+  ````
 
 ## Usage
 - [Managing Virtual Core & vCPU in KVM](https://bobcares.com/blog/selecting-the-number-of-vcpus-and-cores-for-a-virtual-machine/)
