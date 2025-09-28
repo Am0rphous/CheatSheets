@@ -6,63 +6,73 @@
 3. Desktop environment = your actual desktop
 4. Tile Manager =
 
-### Desktop/Display Manager
-````shell
-sudo dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    # Change display manager
-sudo systemctl restart <lightdm/gdm3/sddm/kdm>   # restarts service
-sudo systemctl status lightdm
-cat /etc/X11/default-display-manager             # Show the default display manager currently in use
-````
-1. lightm (Lightweight Display Manager)
-2. gdm3 (GNOME Display Manager)
-   ````
-   sudo apt install gnome gdm3 task-gnome-desktop --reinstall
-   ````
-4. sddm (Simple Desktop Display Manager)
-5. kdm (KDE)
-
-- [GDM wiki](https://wiki.gnome.org/Projects/GDM)
-  - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
-- [LightDM Github](https://github.com/canonical/lightdm)
-- [LightDM Ubuntu wiki](https://wiki.ubuntu.com/LightDM)
-
-### Desktop Environments
-1. `kde-full` -  Full version of KDE with default KDE apps
-2. KDE Plasma
-````shell
-sudo apt install kde-full       #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
-sudo apt install kde-standard   #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
-sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
-````
-3. `kubuntu-desktop` -  Ubuntu version of KDE with pre-installed apps
-4. `ubuntu-desktop`
-5. `xubuntu-desktop` -  Ubuntu Xfce environment, with pre-installed programs
-6. `gnome` -  GNOME with extra apps
-7. `gnome-shell` - GNOME
-8. `xfce4` - Lightweight but in Kali this might give you a Headache
-````
-sudo apt install xfce4 xfce4-goodies
-xfce4-panel -q                       #quits the running panel
-PANEL_DEBUG=1 xfce4-panel            #starts in debugging
-````
-- Might be something wrong with [electron](https://github.com/electron/electron/issues/14362) because lots of errors: `libnotify-WARNING **: Failed to connect to proxy`
-- LIBDBUSMENU-GLIB-WARNING **: 15:55:04.966: Unable to replace properties on 0: Error getting properties for ID`
-
-
 ### List display and monitor info
 ````shell
+xrandr --listactivemonitors                                     #USE THIS
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
-ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u       #listing displays for user mike
-xrandr --listactivemonitors
-````
-### List desktop environment
-````
-ls /usr/bin/*-session
-echo $XDG_CURRENT_DESKTOP      #list desktop environment
+ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display for user mike
 ````
 
-### Nvidia driver
+### Display Manager
+- "..or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell." [Read more](https://wiki.archlinux.org/title/Display_manager)
+````shell
+systemctl status display-manager            #Show what Display Manager currently are in use
+
+dpkg-reconfigure <lightdm/gdm3/sddm/kdm>    #Reconfigure/change the display manager
+systemctl restart <lightdm/gdm3/sddm/kdm>   #restarts service
+systemctl status lightdm                    #Show status
+cat /etc/X11/default-display-manager        #Show the default display manager currently in use
 ````
+- LightDM (Lightweight Display Manager)
+  - [LightDM Github](https://github.com/canonical/lightdm)
+  - [LightDM Ubuntu wiki](https://wiki.ubuntu.com/LightDM)
+- GDM3 (GNOME Display Manager)
+   - [GDM wiki](https://wiki.gnome.org/Projects/GDM)
+   - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
+   ````
+   apt install gnome gdm3 task-gnome-desktop --reinstall
+   ````
+- SDDM (Simple Desktop Display Manager) [read more](https://wiki.archlinux.org/title/SDDM)
+   ````shell
+   apt install sddm sddm-kcm qt5-declarative
+   
+   /etc/sddm.conf.d/  #configs
+   ````
+- KDE Display Manager (KDM - "Several years ago, KDE retired its bespoke display manager (KDM) in favor of SDDM." [read more](https://linuxiac.com/kde-proposes-new-plasma-login-manager-to-replace-sddm/)
+
+
+### Desktop Environment / session
+- Commands to list what desktop environment currently are in use
+````shell
+ls /usr/bin/*-session
+echo $XDG_CURRENT_DESKTOP      #list desktop environment
+echo $DESKTOP_SESSION
+echo $GDMSESSION
+````
+#### Different DE
+- KDE Plasma
+````shell
+sudo apt install kde-full            #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
+sudo apt install kde-standard        #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
+sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
+````
+- `kubuntu-desktop` -  Ubuntu version of KDE with pre-installed apps
+- `ubuntu-desktop`
+- `xubuntu-desktop` -  Ubuntu Xfce environment, with pre-installed programs
+- `gnome` -  GNOME with extra apps
+- `gnome-shell` - GNOME
+- `xfce4` - Lightweight but in Kali this might give you a Headache
+   ````shell
+   sudo apt install xfce4 xfce4-goodies
+   xfce4-panel -q                       #quits the running panel
+   PANEL_DEBUG=1 xfce4-panel            #starts in debugging
+   ````
+   - Might be something wrong with [electron](https://github.com/electron/electron/issues/14362) because lots of errors: `libnotify-WARNING **: Failed to connect to proxy`
+   - LIBDBUSMENU-GLIB-WARNING **: 15:55:04.966: Unable to replace properties on 0: Error getting properties for ID`
+
+
+### Nvidia driver
+````shell
 apt install linux-headers-$(uname -r) nvidia-driver nvidia-open
 ````
 
