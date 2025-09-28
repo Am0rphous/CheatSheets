@@ -3,8 +3,8 @@
 - Startup items
   - Use [gnome-tweaks](https://itsfoss.com/gnome-tweak-tool/) and navigate to "Startup Applications"
   - gnome/kde/xfce/lxde/mate/cinnamon check
-    - `echo $XDG_CONFIG_DIRS`
-    - `/etc/xdg/autostart`
+    - `echo $XDG_CONFIG_DIRS` [XDG_Base_Directory](https://wiki.archlinux.org/title/XDG_Base_Directory) 
+    - `/etc/xdg/autostart` [read more](https://wiki.archlinux.org/title/XDG_Autostart)
 - [Info Linux libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
 
 
