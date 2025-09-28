@@ -24,8 +24,10 @@ fwupdmgr get-devices     # https://fwupd.org
 ````shell
 #in /etc/default/grub add:
 GRUB_THEME="/boot/grub/themes/crt-amber-theme/theme.txt"
-GRUB_GFXMODE=1920x1080
-GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_GFXMODE=3840x2160x32,1920x1080x32,auto  #https://askubuntu.com/questions/54067/how-to-safely-change-grub2-screen-resolution videoinfo
+GRUB_GFXPAYLOAD_LINUX="keep"
+#GRUB_GFXPAYLOAD="keep"      #maybe
+
 
 #then run: update-grub
 #Verify /boot/grub/grub.cfg dont points to kali theme
