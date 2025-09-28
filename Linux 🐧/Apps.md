@@ -5,7 +5,7 @@
   - gnome/kde/xfce/lxde/mate/cinnamon check
     - `echo $XDG_CONFIG_DIRS`
     - `/etc/xdg/autostart`
-- [Anatomy of Linux dynamic libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
+- [Info Linux libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
 
 
 ## Zero Install / 0install
