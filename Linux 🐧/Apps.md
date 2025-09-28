@@ -1,4 +1,4 @@
-# A p p P a c k a g e s
+# A p p s
 
 - [Anatomy of Linux dynamic libraries](https://developer.ibm.com/tutorials/l-dynamic-libraries/)
 
