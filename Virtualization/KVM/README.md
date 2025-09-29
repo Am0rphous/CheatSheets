@@ -56,7 +56,7 @@ Installation with `sudo`
 
 ### Integration and console
 - Standard. `spice-vdagent` enables copy/paste between host and vm
-- Dynamic screen sizing: open virt-manager -> Edit -> Preferences -> Console -> and set "Resize guest with window" to "on".
+- Dynamic screen sizing: Add "Video model" to **VGA** caus the others not functioning right (sept 2025). In addition, ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
 - Consider install zram to compress memory within the VM and increase performance. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md)
 ````shell
 sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
