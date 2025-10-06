@@ -869,20 +869,22 @@ Notes for later
 ## Variables and Scripting
 - [Am0rphous -> Bash](https://github.com/Am0rphous/Bash)
 - echo `printenv`
-- Update path with
-````shell
-nano ~/.bash_profile
-#Add line and save
-export PATH=$PATH:/usr/local/android-studio/bin/
-source ~/.bash_profile
-````
+- Update $PATH with
+  ````shell
+  1. Append: export PATH=$PATH:/new/path/
+
+  2. nano ~/.bash_profile    #kali .profile
+  export PATH=$PATH:/usr/local/android-studio/bin/     #Add line and save
+  source ~/.bash_profile   #kali: source .profile
+  ````
 - `bash -n scriptname` checks if a script got syntax error
 - [Learn Bash Scripting ](https://itsfoss.com/create-bash-script/)
 - `$PATH` a variable that contains the path to all locations on where to find commands and programs. NB: If this variable contains two different paths for the same executable, the first path in `$PATH` will be used.
-````shell
-printenv
-read -p "Write the path: " variableName
-````
+  ````shell
+  printenv
+  read -p "Write the path: " variableName
+  ````
+  
 ### Make a script exit when a command fail
 In Bash scripting, you can make a script exit immediately when a command fails by using the "set -e" or "set -o errexit" option. This option tells the shell to exit if any command in the script returns a non-zero exit status, indicating a failure.
 ````shell
