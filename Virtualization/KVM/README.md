@@ -116,6 +116,7 @@ xmllint --format /etc/libvirt/qemu/myvm.xml    #verify correct format in the xml
 ````
 
 ## Saving state
+- right click on vm in `virt-manager` -> shutdown -> save
 - location `/var/lib/libvirt/qemu/save`
 
 ## Disks
