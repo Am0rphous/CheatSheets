@@ -47,6 +47,7 @@
      - [Kernel Install/Removal](#kernel-installremoval)
        - [Install custom kernel](#Install-custom-kernel)
 10. [**Peripherals**](#peripherals)
+    - [Keyboard](#keyboard)
     - [USB-devices](#usb-devices)
     - [PCI-devices](#pci-devices)
 11. [**Power**](#Power)
@@ -578,6 +579,24 @@ sudo reboot
 ````
 
 ## Peripherals
+### keyboard
+- Change of keyboard language can be a pain in the ass 
+  ````shell
+  sudo apt install --reinstall console-setup keyboard-configuration  # Ensure these packages are installed
+  sudo dpkg-reconfigure keyboard-configuration                       # Now lets reconfigure the keyboard
+
+  # Troubleshooting
+  localectl status   #Current keyboard settings
+  localectl list-x11-keymap-layouts|grep no     # Checks if "no" is available
+  loadkeys no                                   # Adjust to e.g. Norwegian
+  
+  sudo localectl set-keymap <keymap>
+  sudo localectl set-keymap no          # Norwegian
+  sudo apt install x11-xkb-utils
+  setxkbmap -layout no
+  sudo localectl set-keymap no
+  ````
+
 ### USB-devices
 - [Change mouse scroll wheel speed](https://askubuntu.com/questions/1388038/how-to-get-smooth-scroll-with-logitech-mouse)
 - [USBGuard](https://github.com/USBGuard/usbguard) - USBGuard is a software framework for implementing USB device authorization policies (what kind of USB devices are authorized) as well as method of use policies (how a USB device may interact with the system).
