@@ -177,15 +177,15 @@ Pin-Priority: 1001
 
 #### Upgrade to new release
 1. Update and start the process:
-````shell
-sudo apt update && \
-sudo apt dist-ugprade && \
-sudo apt autoremove -y && \
-sudo apt autoclean
-sudo do-release-upgrade -c    #c = checks for new version
-sudo do-release-upgrade       #this might not always work because of dev branch
-sudo do-release-upgrade -d    #i usually us this one :D
-````
+  ````shell
+  sudo apt update && \
+  sudo apt dist-ugprade && \
+  sudo apt autoremove -y && \
+  sudo apt autoclean
+  sudo do-release-upgrade -c    #c = checks for new version
+  sudo do-release-upgrade       #this might not always work because of dev branch
+  sudo do-release-upgrade -d    #i usually use this one :D
+  ````
 3. Now follow the prompts on screen. Cheers!
 
 
@@ -195,28 +195,28 @@ sudo do-release-upgrade -d    #i usually us this one :D
  ### Unattended Upgrades
  - [Documentation](https://wiki.debian.org/UnattendedUpgrades)
  - [Enable-Automatic-Updates.sh](https://github.com/Am0rphous/Bash/blob/master/security/Enable-Automatic-Updates.sh) - Script that automatic install and enable automatic updates with smart settings.
- ````
- wget https://raw.githubusercontent.com/Am0rphous/Bash/master/security/Enable-Automatic-Updates.sh && bash Enable-Automatic-Updates.sh
- ````
+   ````shell
+   wget https://raw.githubusercontent.com/Am0rphous/Bash/master/security/Enable-Automatic-Updates.sh && bash Enable-Automatic-Updates.sh
+   ````
  - [Unattended-upgrades](https://github.com/mvo5/unattended-upgrades) - Automatic installation of security upgrades on apt based systems.
    - [Debian - configured 50unattended-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/50unattended-upgrades)
    - [Debian - configured 20auto-upgrades file](https://github.com/Am0rphous/CheatSheets/blob/main/Debian/20auto-upgrades)
    - [How to run unattended-upgrades not daily but every few hours](https://unix.stackexchange.com/questions/178626/how-to-run-unattended-upgrades-not-daily-but-every-few-hours)
  - [What's the difference: Security, Updates, Proposed & Backports in '50unattended-upgrades'](https://askubuntu.com/questions/401941/what-is-the-difference-between-security-updates-proposed-and-backports-in-etc)
 1. Installation
- ````shell
- sudo apt update && sudo apt dist-upgrade -y
- sudo apt install unattended-upgrades update-notifier-common
- sudo dpkg-reconfigure unattended-upgrades
- ````
+  ````shell
+  sudo apt update && sudo apt dist-upgrade -y
+  sudo apt install unattended-upgrades update-notifier-common
+  sudo dpkg-reconfigure unattended-upgrades
+  ````
 2. Run `sudo nano /etc/apt/apt.conf.d/50unattended-upgrades` and make sure it contains
- ````bash
-// Automatically upgrade packages from these (origin:archive) pairs
-//
-// Note that in Ubuntu security updates may pull in new dependencies
-// from non-security sources (e.g. chromium). By allowing the release
-// pocket these get automatically pulled in.
-Unattended-Upgrade::Allowed-Origins {
+  ````bash
+  // Automatically upgrade packages from these (origin:archive) pairs
+  //
+  // Note that in Ubuntu security updates may pull in new dependencies
+  // from non-security sources (e.g. chromium). By allowing the release
+  // pocket these get automatically pulled in.
+  Unattended-Upgrade::Allowed-Origins {
         "${distro_id}:${distro_codename}";
         "${distro_id}:${distro_codename}-security";
         // Extended Security Maintenance; doesn't necessarily exist for
@@ -228,104 +228,104 @@ Unattended-Upgrade::Allowed-Origins {
         "${distro_id}:${distro_codename}-updates";
         "${distro_id}:${distro_codename}-proposed";
         "${distro_id}:${distro_codename}-backports";
-};
-
-// List of packages to not update (regexp are supported)
-Unattended-Upgrade::Package-Blacklist {
-};
-Unattended-Upgrade::DevRelease "false";
-Unattended-Upgrade::AutoFixInterruptedDpkg "true";
-Unattended-Upgrade::MinimalSteps "true";
-Unattended-Upgrade::InstallOnShutdown "false";
-Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
-Unattended-Upgrade::Remove-Unused-Dependencies "true";
-Unattended-Upgrade::Automatic-Reboot "true";
-Unattended-Upgrade::Automatic-Reboot-WithUsers "false";
-Unattended-Upgrade::Automatic-Reboot-Time "06:00";
-Unattended-Upgrade::Verbose "true";
-Unattended-Upgrade::Debug "true";
- ````
+  };
+  
+  // List of packages to not update (regexp are supported)
+  Unattended-Upgrade::Package-Blacklist {
+  };
+  Unattended-Upgrade::DevRelease "false";
+  Unattended-Upgrade::AutoFixInterruptedDpkg "true";
+  Unattended-Upgrade::MinimalSteps "true";
+  Unattended-Upgrade::InstallOnShutdown "false";
+  Unattended-Upgrade::Remove-Unused-Kernel-Packages "true";
+  Unattended-Upgrade::Remove-Unused-Dependencies "true";
+  Unattended-Upgrade::Automatic-Reboot "true";
+  Unattended-Upgrade::Automatic-Reboot-WithUsers "false";
+  Unattended-Upgrade::Automatic-Reboot-Time "06:00";
+  Unattended-Upgrade::Verbose "true";
+  Unattended-Upgrade::Debug "true";
+  ````
 3. Then open and edit `nano /etc/apt/apt.conf.d/20auto-upgrades`. 
- ````bash
-APT::Periodic::Enable "1";
-APT::Periodic::Update-Package-Lists "12h";
-APT::Periodic::Unattended-Upgrade "12h";
-APT::Periodic::Download-Upgradeable-Packages "1";
-APT::Periodic::AutocleanInterval "30";
- ````
+  ````bash
+  APT::Periodic::Enable "1";
+  APT::Periodic::Update-Package-Lists "12h";
+  APT::Periodic::Unattended-Upgrade "12h";
+  APT::Periodic::Download-Upgradeable-Packages "1";
+  APT::Periodic::AutocleanInterval "15";
+  ````
 
 4. Make it periodic: `sudo nano /etc/apt/apt.conf.d/02periodic`. Can also be automatically generated by running `dpkg-reconfigure -plow unattended-upgrades` 
- ````bash
-// Control parameters for cron jobs by /etc/cron.daily/apt-compat //
-
-// Enable the update/upgrade script (0=disable)
-APT::Periodic::Enable "1";
-
-// Do "apt-get update" automatically every n-days (0=disable)
-APT::Periodic::Update-Package-Lists "1";
-
-// Do "apt-get upgrade --download-only" every n-days (0=disable)
-APT::Periodic::Download-Upgradeable-Packages "1";
-
-// Run the "unattended-upgrade" security upgrade script
-// every n-days (0=disabled)
-// Requires the package "unattended-upgrades" and will write
-// a log in /var/log/unattended-upgrades
-APT::Periodic::Unattended-Upgrade "1";
-
-// Do "apt-get autoclean" every n-days (0=disable)
-APT::Periodic::AutocleanInterval "21";
-
-// Send report mail to root
-//     0:  no report             (or null string)
-//     1:  progress report       (actually any string)
-//     2:  + command outputs     (remove -qq, remove 2>/dev/null, add -d)
-//     3:  + trace on
-APT::Periodic::Verbose "2";
- ````
+  ````bash
+  // Control parameters for cron jobs by /etc/cron.daily/apt-compat //
+  
+  // Enable the update/upgrade script (0=disable)
+  APT::Periodic::Enable "1";
+  
+  // Do "apt-get update" automatically every n-days (0=disable)
+  APT::Periodic::Update-Package-Lists "1";
+  
+  // Do "apt-get upgrade --download-only" every n-days (0=disable)
+  APT::Periodic::Download-Upgradeable-Packages "1";
+  
+  // Run the "unattended-upgrade" security upgrade script
+  // every n-days (0=disabled)
+  // Requires the package "unattended-upgrades" and will write
+  // a log in /var/log/unattended-upgrades
+  APT::Periodic::Unattended-Upgrade "1";
+  
+  // Do "apt-get autoclean" every n-days (0=disable)
+  APT::Periodic::AutocleanInterval "21";
+  
+  // Send report mail to root
+  //     0:  no report             (or null string)
+  //     1:  progress report       (actually any string)
+  //     2:  + command outputs     (remove -qq, remove 2>/dev/null, add -d)
+  //     3:  + trace on
+  APT::Periodic::Verbose "2";
+  ````
 
 5. Test config
- ````
- sudo unattended-upgrade -d -v
- ````
+  ````
+  sudo unattended-upgrade -d -v
+  ````
 
 - Log files
-````shell
-sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
-sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
-sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
-````
+  ````shell
+  sudo cat /var/log/unattended-upgrades/unattended-upgrades.log
+  sudo tail -f /var/log/unattended-upgrades/unattended-upgrades.log
+  sudo grep 'linux-image' /var/log/unattended-upgrades/unattended-upgrades.log
+  ````
  
 ## File Permissions and Ownership
 - [Linux File Permissions and Ownership Explained with Examples](https://linuxhandbook.com/linux-file-permissions/)
-````shell
-chattr -R folder                #chattr=manipulate attributes. R=recursively.
-lsattr file/folder              #list attributes. R=Recm V=verbose, a=list all files
-````
+  ````shell
+  chattr -R folder                # chattr=manipulate attributes. R=recursively.
+  lsattr file/folder              # list attributes. R=Recm V=verbose, a=list all files
+  ````
 
   ### Files and Folders
   - Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
-````shell
-ls folder|wc                                    #count files in folder
-du -ah /|sort -rh|head -n 10                    #find largest  files on disk
-head file list.txt                              #displays the 10 first line of file
-head -n 5 list.txt                              #displays the 5 first line of file
-mkdir myfolder                                  #creates folder
-mkdir myfolder{1..50}                           #creates 50 folders
-mkdir -v test                                   #v=verbose
-mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
-nautils &                                       #opens default home folder
-nautils Documents &                             #opens Documents folder
-rm myfile                                       #removes myfile
-rm !(backup.gz)                                 #removes every file in the folder except backup.gz
-rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
-tail myfile.txt                                 #displays the 10 last lines of file
-tail -n 16 myfile.txt                           #displays the 16 last lines of file
-touch myfile                                    #creates empty file
-touch myfile{1..50}                             #creates 50 empty files
-xdg-open                                        #opens a file or URL in the user's preferred application
-xdg-open myfolder                               #opens myfolder and sends i
-````
+  ````shell
+  ls folder|wc                                    #count files in folder
+  du -ah /|sort -rh|head -n 10                    #find largest  files on disk
+  head file list.txt                              #displays the 10 first line of file
+  head -n 5 list.txt                              #displays the 5 first line of file
+  mkdir myfolder                                  #creates folder
+  mkdir myfolder{1..50}                           #creates 50 folders
+  mkdir -v test                                   #v=verbose
+  mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
+  nautils &                                       #opens default home folder
+  nautils Documents &                             #opens Documents folder
+  rm myfile                                       #removes myfile
+  rm !(backup.gz)                                 #removes every file in the folder except backup.gz
+  rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
+  tail myfile.txt                                 #displays the 10 last lines of file
+  tail -n 16 myfile.txt                           #displays the 16 last lines of file
+  touch myfile                                    #creates empty file
+  touch myfile{1..50}                             #creates 50 empty files
+  xdg-open                                        #opens a file or URL in the user's preferred application
+  xdg-open myfolder                               #opens myfolder and sends i
+  ````
 
   #### Tracking file auditing
   ````shell 
@@ -336,26 +336,25 @@ xdg-open myfolder                               #opens myfolder and sends i
   ````
 
   #### File compression
-File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
-````shell
-7z x archive.7z                             #sudo apt install p7zip-full
-7za a -t7z data.txt.7z data.txt
-7za a -tzip -p -mem=AES256 secure_folder.zip my_folder  #encrypts folder
-bzip2 -zk data.txt
-gpg -c your.zip                             #encrypt with gpg
-gpg your.zip.gpg                            #decrypt with gpg
-gzip -k core.c                              # compress core.c file and removes the original file
-gzip -c data.txt > data.txt.gz
-xz -zk data.txt                            #usually installed as default, if not: sudo apt install xz-utils
-tar -cf data.txt.tar data.txt
-tar -xf file.tar.xz                         # x = extract. f=filename
-tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
-tar -xf file_name.tar -C /target/folder     # extracts to new folder
-zip --encrypt file.zip files                #encryption. Install with: sudo apt-get install zip
-zip --encrypt file.zip -r your_folder       #encrypts folder
-zip --password (password) file.zip files    #insecure, as the password will be in the terminal history
-
-````
+  - File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
+  ````shell
+  7z x archive.7z                             #sudo apt install p7zip-full
+  7za a -t7z data.txt.7z data.txt
+  7za a -tzip -p -mem=AES256 secure_folder.zip my_folder  #encrypts folder
+  bzip2 -zk data.txt
+  gpg -c your.zip                             #encrypt with gpg
+  gpg your.zip.gpg                            #decrypt with gpg
+  gzip -k core.c                              # compress core.c file and removes the original file
+  gzip -c data.txt > data.txt.gz
+  xz -zk data.txt                            #usually installed as default, if not: sudo apt install xz-utils
+  tar -cf data.txt.tar data.txt
+  tar -xf file.tar.xz                         # x = extract. f=filename
+  tar -xvfz file.tar/file.tgz                 # extracts .tar or .tgz files
+  tar -xf file_name.tar -C /target/folder     # extracts to new folder
+  zip --encrypt file.zip files                #encryption. Install with: sudo apt-get install zip
+  zip --encrypt file.zip -r your_folder       #encrypts folder
+  zip --password (password) file.zip files    #insecure, as the password will be in the terminal history
+  ````
 Extract each file to new folder with same name
 ````shell
 for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
@@ -392,39 +391,39 @@ shasum -a 256 *
 - Emergency (minimal environment) `sudo systemctl emergency`
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 - Reverse search in terminal press `CTRL+R`
-````shell
-which <command>             #locate command path
-which ls
-<command> -h / --help
-apropos <command>           #if you dont remember the exact command
-apropos network             #find commands related to network
-whatis <command>            #explains a command with a one-liner
-tldr <command>              #NICE - a must! https://tldr.sh
-man <command                #opens manual for 'command'. Check out manpages.org
-man ipconfig                #opens manual for the 'ipconfig' command
-man -k ssh                  #Search man
-type alias/ls/ifconfig      #determining Type of command
-
-help <command>
-help cd
-cheat <command>
-info <command>
-ls /usr/share/doc/
-python3 -m pydoc socket     #python help
-````
+  ````shell
+  which <command>             #locate command path
+  which ls
+  <command> -h / --help
+  apropos <command>           #if you dont remember the exact command
+  apropos network             #find commands related to network
+  whatis <command>            #explains a command with a one-liner
+  tldr <command>              #NICE - a must! https://tldr.sh
+  man <command                #opens manual for 'command'. Check out manpages.org
+  man ipconfig                #opens manual for the 'ipconfig' command
+  man -k ssh                  #Search man
+  type alias/ls/ifconfig      #determining Type of command
+  
+  help <command>
+  help cd
+  cheat <command>
+  info <command>
+  ls /usr/share/doc/
+  python3 -m pydoc socket     #python help
+  ````
 
 ### History
-````
-history                #shows history of commands
-echo $HISTFILE         #show history file location
-echo $HISTFILESIZE     #number of commands stored
-!!                     #run last command again
-lsw
-^lsw^ls                #if you wrote "lsw" as previous cmd which is wrong, fix it and run ls.
-history | grep ls      #lists every ls command
-history -d 1200        #delete command number 1200
-history -d 1100-1200   #deletes commands between these numbers
-````
+  ````
+  history                #shows history of commands
+  echo $HISTFILE         #show history file location
+  echo $HISTFILESIZE     #number of commands stored
+  !!                     #run last command again
+  lsw
+  ^lsw^ls                #if you wrote "lsw" as previous cmd which is wrong, fix it and run ls.
+  history | grep ls      #lists every ls command
+  history -d 1200        #delete command number 1200
+  history -d 1100-1200   #deletes commands between these numbers
+  ````
 
 ### Man - Searching Man pages
 ````
