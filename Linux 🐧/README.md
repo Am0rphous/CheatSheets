@@ -130,7 +130,8 @@ Cron routines can be found in these files and folders
  - /etc/cron.d
 
 ## Keeping your system up-to-date
-If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is a newer command.
+- If you're scripting, then use `apt-get` (more stable output), if not, use `apt` which is newer.
+- You get your updates from repos specified in `/etc/apt/sources.list`. For Ubuntu, choose a [region](https://launchpad.net/ubuntu/+archivemirrors) close to you.
 ````shell
 sudo apt update
 sudo apt dist-upgrade -y                            # install all updates available
