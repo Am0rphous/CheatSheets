@@ -81,7 +81,10 @@ echo $GDMSESSION
   lspci -k | grep -A3 -E "VGA|3D" 
   
   # Complete terminal command 
-  apt install linux-headers-$(uname -r) build-essential gcc make cmake dkms nvidia-driver nvidia-kernel-common
+  apt install linux-headers-$(uname -r) build-essential gcc make cmake dkms nvidia-driver nvidia-kernel-common nvidia-kernel-dkms 
+
+  #This package gives you possibility to change between using GPU and integrated cpu graphics
+  #nvidia-prime     # Is not included in e.g. Kali
   
   #If you need cuda also install:   nvidia-cuda-toolkit
   #nvidia-open   #NVIDIA open kernel modules https://github.com/NVIDIA/open-gpu-kernel-modules
@@ -103,6 +106,13 @@ echo $GDMSESSION
   sudo ./NVIDIA-Linux-*.run    # Might give ERROR: Unable to load the kernel module 'nvidia-drm.ko'
   ./NVIDIA-Linux-x86_64-580.95.05.run --no-drm   # Don't include DRM
   ````
+  - **Troubleshoot**
+    ````shell
+    nvidia-smi              # Does it display any info?
+    sudo modprobe nvidia    # Load nvidia module
+    dmesg | grep -i nvidia
+    journalctl -b | grep -i nvidia
+    ````
   - **Uninstall nvidia**
   ````shell
   dpkg -l | grep -i nvidia
