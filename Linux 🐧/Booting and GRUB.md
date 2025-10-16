@@ -21,32 +21,30 @@ fwupdmgr get-devices     # https://fwupd.org
 - https://dev.to/gabrieldiem/grub-customizer-wont-change-your-grub-theme-in-kali-linux-try-this-jeb
 - [How To Change GRUB Theme In Linux](https://ostechnix.com/change-grub-theme-in-linux/)
 - Kali: Might need to delete `/etc/grub.d/05_debian_theme`
-````shell
-#in /etc/default/grub add:
-GRUB_THEME="/boot/grub/themes/crt-amber-theme/theme.txt"
-GRUB_GFXMODE=3840x2160x32,1920x1080x32,auto  #https://askubuntu.com/questions/54067/how-to-safely-change-grub2-screen-resolution videoinfo
-GRUB_GFXPAYLOAD_LINUX="keep"
-#GRUB_GFXPAYLOAD="keep"      #maybe
-
-
-#then run: update-grub
-#Verify /boot/grub/grub.cfg dont points to kali theme
-
-apt install plymouth plymouth-themes
-git clone https://github.com/adi1090x/plymouth-themes/
-cd pack_4
-sudo cp -r target_2 /usr/share/plymouth/themes/
-sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
-sudo update-alternatives --config default.plymouth
-sudo update-initramfs -u
-
-#Verify /etc/plymouth/plymouthd.conf contains
-Theme=target_2
-
-plymouth-set-default-theme --list         #List available
-plymouth-set-default-theme debian-theme   #Set a specific theme
-plymouth --debug show-splash
-````
+  ````shell
+  #/etc/default/grub   # Add e.g.:
+  GRUB_THEME="/boot/grub/themes/crt-amber-theme/theme.txt"
+  GRUB_GFXMODE=1920x1080x32,auto   # https://askubuntu.com/questions/54067/how-to-safely-change-grub2-screen-resolution videoinfo
+  GRUB_GFXPAYLOAD_LINUX="1920x1080x32"
+  
+  apt install plymouth plymouth-themes
+  git clone https://github.com/adi1090x/plymouth-themes/
+  cd pack_4
+  sudo cp -r target_2 /usr/share/plymouth/themes/
+  sudo update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/target_2/target_2.plymouth 100
+  sudo update-alternatives --config default.plymouth
+  sudo update-initramfs -u
+  
+  #Run:  update-grub
+  #Verify /boot/grub/grub.cfg  DONT point to kali theme
+  
+  #Verify  /etc/plymouth/plymouthd.conf  contains
+  Theme=target_2
+  
+  plymouth-set-default-theme --list          # List available
+  plymouth-set-default-theme debian-theme    # Set a specific theme
+  plymouth --debug show-splash
+  ````
 
 ## Boot Managers
 - [Limine](https://github.com/limine-bootloader/limine) - Modern, advanced, portable, multiprotocol bootloader and boot manager.
