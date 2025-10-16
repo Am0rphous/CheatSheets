@@ -73,12 +73,41 @@ echo $GDMSESSION
 
 
 ### Nvidia drivers
-````shell
-apt install linux-headers-$(uname -r) nvidia-driver
-
-nvidia-open   #NVIDIA open kernel modules https://github.com/NVIDIA/open-gpu-kernel-modules
-              #difference https://suay.site/?p=5090
-````
+- First of all, this can be a pain in the ass. I suggest you go for AMD GPU if you value your mental health.
+- [https://www.nvidia.com/en-us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)
+- [https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/](https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/)
+  ````shell
+  #Check driver in use which is probably nouveau
+  lspci -k | grep -A3 -E "VGA|3D" 
+  
+  # Complete terminal command 
+  apt install linux-headers-$(uname -r) build-essential gcc make cmake dkms nvidia-driver nvidia-kernel-common
+  
+  #If you need cuda also install:   nvidia-cuda-toolkit
+  #nvidia-open   #NVIDIA open kernel modules https://github.com/NVIDIA/open-gpu-kernel-modules
+                 #difference https://suay.site/?p=5090
+  
+  #Add nouveau to blacklist.
+  sudo nano  /etc/modprobe.d/blacklist-nouveau.conf     # Then add two lines below
+  blacklist nouveau               # Dont load Nouveau driver automatically
+  options nouveau modeset=0       # Prevent Nouveau from initializing display mode early in boot process
+  
+  sudo nvidia-settings --query=ConnectedDisplays   # Deprecated
+  sudo nvidia-settings -q dpys
+  
+  #Add nomodeset to /etc/default/grub  which prevents kernel from loading video drivers that may cause display issues during boot
+  #nvidia-drm.modeset=1
+  
+  #If you download closed source drivers from e.g. https://www.nvidia.com/en-us/drivers/details/254126/
+  apt install build-essential dkms linux-headers-$(uname -r) build-essential gcc make cmake dkms
+  sudo ./NVIDIA-Linux-*.run    # Might give ERROR: Unable to load the kernel module 'nvidia-drm.ko'
+  ./NVIDIA-Linux-x86_64-580.95.05.run --no-drm   # Don't include DRM
+  ````
+  - **Uninstall nvidia**
+  ````shell
+  dpkg -l | grep -i nvidia
+  apt autoremove --purge 'nvidia-*'
+  ````
 
 ### List Video RAM
 ````shell
