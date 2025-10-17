@@ -55,7 +55,8 @@ Installation with `sudo`
   - [gdm3](https://linuxconfig.org/how-to-enable-autologin-on-kali-linux)
 
 ### Integration and console
-- Standard. `spice-vdagent` enables copy/paste between host and vm. [windows](https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe)
+- Standard. `spice-vdagent` enables copy/paste between host and vm.
+  - Windows: Download [spice-guest-tools](https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe) and virtio-win-guest-tools from [Virtio-Win ISO](https://github.com/virtio-win/kvm-guest-drivers-windows)
 - Dynamic screen sizing: Add "Video model" to **VGA** caus the others not functioning right (sept 2025). In addition, ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
   - Using VGA will fuck up Chrome/Chromium. Its unresponsive and takes forever to load. Use Firefox
 - Consider install zram to compress memory within the VM and increase performance. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md)
