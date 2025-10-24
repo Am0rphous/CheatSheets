@@ -188,9 +188,9 @@ sudo umount /mnt
 - Smartmonctl
 ````shell
 sudo apt update && sudo apt install smartmontools
-smartctl -i /dev/sdX
 smartctl -i /dev/sda
-smartctl -a /dev/sdX        # Get details
+smartctl -a /dev/sdb        # Get full report
+smartctl -H /dev/nvme0n1    # Check Health
 smartctl -s on /dev/sdX     # Enable SMART on a drive
 smartctl -t short /dev/sdX  # Quick health check
 smartctl -t long /dev/sdX   # Comprehensive
