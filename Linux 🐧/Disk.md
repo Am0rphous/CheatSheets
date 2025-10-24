@@ -190,11 +190,16 @@ sudo umount /mnt
 sudo apt update && sudo apt install smartmontools
 smartctl -i /dev/sda
 smartctl -a /dev/sdb        # Get full report
-smartctl -H /dev/nvme0n1    # Check Health
 smartctl -s on /dev/sdX     # Enable SMART on a drive
 smartctl -t short /dev/sdX  # Quick health check
 smartctl -t long /dev/sdX   # Comprehensive
 smartctl -l error /dev/sdX  # Check errors
+
+smartctl -H /dev/nvme0n1    # Check Health
+smartctl -l error /dev/nvme0n1
+
+nvme smart-log /dev/nvme0n1   #apt install nvme-cli
+nvme error-log /dev/nvme0n1
 ````
 
 <details>
