@@ -156,7 +156,7 @@ sudo update-grub
 ```` 
 3. Check if IOMMU is enabled and working `sudo dmesg | grep -e DMAR -e IOMMU`
 4. Add your GPU's PCI ID to `/etc/modprobe.d/vfio.conf`
-````
+````shell
 lspci -k | grep NVIDIA
 
 ## output
@@ -197,8 +197,8 @@ Threads:  2
 - Testing with Geekbench: Single-Core Score 1283. Multi-Core score: 5575
 - Changing to 12 cores with 1 thread gave: Single-Core Score 1292. Multi-Core score: **4412**
 
-### Virtualize devices
-Add 
+### Virtualize devices (peripherals, usb, mouse, keyboard, bluetooth)
+Add peripherals through [Cockpit](https://cockpit-project.org/) from another computer. Mouse and keyboard will be added and installed automatically when detected by e.g. windows.
 
 ### Windows 10 VM tips
 - Check out
@@ -206,11 +206,11 @@ Add
   - windows VirtIO Drivers (virtio-win-guest-tools.exe) [link](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.266-1/)
   - Spice agent for windows (spice-guest-tools - https://www.spice-space.org/download.html
   - `UsbDk` eg UsbDk_1.0.22_x64.msi and `usbredirect` eg usbredirect-x64-0.14.0.msi- [link](https://www.spice-space.org/download.html)
-  - 
+    
 
 ### Automate things
 1. Lets create a script that checks if you choose to enable iommu at boot. Create the file `usr/local/bin/passthrough-mode.sh` with the content:
-````
+````shell
 #!/bin/bash
 
 if grep -q "intel_iommu=on" /proc/cmdline; then
@@ -251,7 +251,7 @@ fi
 ````
 2. Make it executable with `chmod +x /usr/local/bin/passthrough-mode.sh`
 3. Create a service file `/etc/systemd/system/passthrough.service` with:
-````
+````shell
 [Unit]
 Description=Setup GPU Passthrough
 After=cryptsetup.target
@@ -268,7 +268,7 @@ WantedBy=multi-user.target
 5. Reload daemon `sudo systemctl daemon-reload`
 6. Enable the new service `systemctl enable passthrough.service`
 7. Make a custom entry in the grub boot menu. Create the file e.g. `/etc/grub.d/40_custom` with the content looking like
-````
+````shell
 #!/bin/sh
 exec tail -n +3 $0
 
