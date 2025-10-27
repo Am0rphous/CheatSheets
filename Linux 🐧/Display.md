@@ -118,6 +118,25 @@ echo $GDMSESSION
   dpkg -l | grep -i nvidia
   apt autoremove --purge 'nvidia-*'
   ````
+  - Troubleshooting October 2025: As I said, you should go for AMD if you value your mental health
+    1. Running Kali Linux on Desktop (yes im crazy). Not working: sleep and hibernate using nvidia propritary drivers version 580.95.05.
+    2. Tried adding kernel paramenters which took away a lot of errors in syslog
+    ````shell
+    #/etc/default/grub
+    #This were to fix hundreds of errors in syslog such as:
+    # sof-audio-pci-intel-tgl 0000:00:1f.3: ASoC error (-22): at snd_soc_dai_hw_params() on iDisp3 Pin
+    # iDisp3: ASoC error (-22): at __soc_pcm_hw_params() on iDisp3
+    # HDMI3: ASoC error (-22): at dpcm_fe_dai_hw_params() on HDMI3
+
+    #Fix:
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash snd_hda_intel.no_acpi=1 snd_hda_intel.dmic_detect=0 nvidia_drm.modeset=1 nvidia_drm.fbdev=1 nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    ````
+    3. The real fix: **Downgrading from newest nvidia drivers to default repo drivers and changing bios from Discrete graphics to Hybrid**. Im also using Gnome as Display Manager with Gnome Desktop environment (echo $DESKTOP_SESSION)
+    ````shell
+    apt autoremove --purge nvidia-*                        # Did only remove some
+    sudo ./NVIDIA-Linux-x86_64-580.95.05.run --uninstall   # Removal of pripritary drivers
+    sudo apt install nvidia-driver-full                    # Installed 550.163.01
+    ````
 
 ### List Video RAM
 ````shell
