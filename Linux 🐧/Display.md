@@ -136,6 +136,12 @@ echo $GDMSESSION
     apt autoremove --purge nvidia-*                        # Did only remove some
     sudo ./NVIDIA-Linux-x86_64-580.95.05.run --uninstall   # Removal of pripritary drivers
     sudo apt install nvidia-driver-full                    # Installed 550.163.01
+
+    # This migh have an impact:  nano /etc/modprobe.d/nvidia.conf   with content:
+    options nvidia-drm fbdev=1
+    options nvidia NVreg_PreserveVideoMemoryAllocations=1
+    options nvidia NVreg_TemporaryFilePath=/var/tmp
+    options nvidia NVreg_EnableGpuFirmware=0    
     ````
 
 ### List Video RAM
