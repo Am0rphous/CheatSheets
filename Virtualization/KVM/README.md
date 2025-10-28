@@ -68,7 +68,7 @@ systemctl enable --now qemu-guest-agent
 apt install virt-viewer
 remote-viewer spice://localhost:5900
 ````
-- Create a shared folder [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
+- Create a shared folder linux. [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
   ````shell
   #On host run
   sudo apt install virtiofs
@@ -86,6 +86,10 @@ remote-viewer spice://localhost:5900
   #Add persistence
   echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
   ````
+- Create a shared folder on Windows guest - [read more](https://imanudin.net/2025/05/05/how-to-access-host-folder-in-windows-vm-on-proxmox-using-virtiofs/)
+  - Add hardware -> Filesystem -> Driver:virtiofs Source path:/etc/my/shared Target path:whateverNameHere
+  - Start VM and install this **within** [WinFsp](https://github.com/winfsp/winfsp/releases) and [virtiofs driver](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)
+  - Open `Services` and enable autostart+start `VirtIO-FS Service`
 - VM when using `cockpit`
   ````shell
   sudo apt install qemu-guest-agent             #Within VM. Improves performance, integration and management.
