@@ -777,64 +777,57 @@ who
 | column -s, -t <tmp.csv | Pretty print a simple csv |
 
 ````shell
-cat file.log | sed -r 's/^.{3}//'       #removes three first characters of each line
+cat file.log | sed -r 's/^.{3}//'       #removes the first three characters of each line
 ````
 
-Sorting (sources [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file),
-````shell
-sort ips.txt | uniq -c
-sort ips.txt | uniq -c | sort -bgr
-````
-Counting number of uniqe lines
-````shell
-sort ips.txt | uniq | wc -l
-awk '!seen[$0]++' ips.txt | wc -l
-````
-- Sorting list of names
-````
-sort names.txt
-sort -u names.txt     #removes duplicate lines
-````
+Sorting [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file)
+  ````shell
+  sort names.txt
+  sort names.txt -u                   # Removes duplicate lines
+  sort ips.txt | uniq | wc -l         # Count number of unique lines. Alternative:   awk '!seen[$0]++' ips.txt | wc -l
+  sort ips.txt | uniq -c
+  sort ips.txt | uniq -c | sort -bgr
+  ````
 
 ## Time and date
 - [Tzupdate](https://github.com/cdown/tzupdate) - Set the system timezone based on IP geolocation.
-````shell
-cal                                 #Displays a calender in terminal
-date
-ncal                                #Another calender commmand
-ncal -w                             #Print the number of the week below each week column
-ncal year                           #Displays calender for year 'year'
-ncal 2001                           #Displays calender for year 2001
-now=$(date +%Y%m%d-%H%M%S)          #creates variable in format YearMonthDay-HourMinutesSeconds
-time command                        #times a command
-time lsof                           #times the lsof command
-````
+  ````shell
+  cal                                 #Displays a calender in terminal
+  date
+  ncal                                #Another calender commmand
+  ncal -w                             #Print the number of the week below each week column
+  ncal year                           #Displays calender for year 'year'
+  ncal 2001                           #Displays calender for year 2001
+  now=$(date +%Y%m%d-%H%M%S)          #creates variable in format YearMonthDay-HourMinutesSeconds
+  time command                        #times a command
+  time lsof                           #times the lsof command
+  ````
 
 
 User Information	groups • id • lastcomm • last • lid/libuser-lid • logname • members • users • whoami • who • w
  https://www.cyberciti.biz/faq/unix-linux-whereis-command-examples-to-locate-binary/
 
 ## Users and groups
-````shell
-groups                              # lists groups for the current user
-groups peter                        # lists groups for specific user
-su - peter                          # switch to user peter
-sudo adduser mike                   # USE THIS COMMAND! Adds a new user. Creates home folder ++. More user friendly
-sudo useradd                        # low level. Scripting?
-sudo usermod -aG sudo mike          # adds group sudo to the user "mike"
-last -x                             # This will tell you last shutdown time
-last -x reboot                      # This will tell you last shutdown time
-lastb
-lastlog
-lastlog -u mike
-sudo lastlog --clear --user mike
-lastlog --user mike         #verify
-````
+  ````shell
+  groups                              # lists groups for the current user
+  groups peter                        # lists groups for specific user
+  su - peter                          # switch to user peter
+  sudo adduser mike                   # USE THIS COMMAND! Adds a new user. Creates home folder ++. More user friendly
+  sudo useradd                        # low level. Scripting?
+  sudo usermod -aG sudo mike          # adds group sudo to the user "mike"
+  last -x                             # This will tell you last shutdown time
+  last -x reboot                      # This will tell you last shutdown time
+  lastb
+  lastlog
+  lastlog -u mike
+  sudo lastlog --clear --user mike
+  lastlog --user mike         #verify
+  ````
 sudoers: `/etc/sudoers`
-````
-sudo touch /etc/sudoers.d/peter
-echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
-````
+  ````
+  sudo touch /etc/sudoers.d/peter
+  echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
+  ````
   ### Passwords
   - [XKCD Password Generator](https://github.com/redacted/XKCD-password-generator) - Generate secure multiword passwords/passphrases, inspired by XKCD.
   ````shell
@@ -852,17 +845,17 @@ echo "peter  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/peter
 
 ### Run script with another users privileges
 - [source](https://blog.mypapit.net/)
-````shell
-su -c "/usr/bin/executable" -s /bin/sh username
-````
+  ````shell
+  su -c "/usr/bin/executable" -s /bin/sh username
+  ````
 ## Shell
 - List all available shells on your system: `cat /etc/shells`
 - Change a users Shell:
-````shell
-usermod --shell /bin/bash mike
-chsh --shell /bin/sh mike
-#manual change the user in /etc/passwd
-````
+  ````shell
+  usermod --shell /bin/bash mike
+  chsh --shell /bin/sh mike
+  #manual change the user in /etc/passwd
+  ````
 
 ### User info
 - **who** It is used to get information about currently logged in user on to system. If you don't provide any option or arguments, the command displays the following information for each logged-in user.
