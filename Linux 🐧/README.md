@@ -774,10 +774,13 @@ who
 | string="A String With Text" | Creates a string with text |
 | echo "${string,,}" | Converts to lower case |
 | echo "${string^^}" | Converts to upper case |
-| column -s, -t <tmp.csv | Pretty print a simple csv |
+
+
 
 ````shell
-cat file.log | sed -r 's/^.{3}//'       #removes the first three characters of each line
+cat file.log | sed -r 's/^.{3}//'       # Removes the first three characters of each line
+cat file.csv | column -t -s,            # Display csv as a table in terminal
+column -s, -t <tmp.csv                  # Pretty print a simple csv
 ````
 
 Sorting [1](https://stackoverflow.com/questions/15984414/bash-script-count-unique-lines-in-file)
