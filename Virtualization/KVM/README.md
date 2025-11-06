@@ -140,10 +140,29 @@ qemu-img convert -f raw -O qcow2 image.img image.qcow2
 sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G           #increase disk
 sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink   #shrink disk
 ````
-- To resize a windows disk
-  1. Within the VM: Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete) and then run `sdelete.exe -z c:`
-  2. Shutdown the VM
-  3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink`
+- **To resize a windows disk**
+  1. Within the VM: Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete) and nullify disk with `sdelete.exe -z c:`
+  2. Shutdown VM
+  3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink` to shrink the disk
+- **To resize a physical qcow2 disk** (when qcow2 is e.g. 10gb and you want it thin provisioned to e.g. 3.2gb (internal use))
+  1. Shutdown vm
+  2. Clone or make a backup of qcow2 disk
+  3. Turn on vm
+  4. run
+     ````shell
+     sudo dd if=/dev/zero of=/zerofill.tmp bs=1M status=progress || true   #until No space left on device
+     sudo sync
+     sudo rm -f /zerofill.tmp
+     sudo sync
+     shutdown now
+     ```` 
+  6. On the host run `qemu-img convert -O qcow2 -c /var/lib/libvirt/images/original.qcow2 /var/lib/libvirt/images/NEW-compact-disk.qcow2`
+  7. Switch names between disks
+     ````shell
+     #Take another backup of the disk:
+     mv /var/lib/libvirt/images/original.qcow2 /var/lib/libvirt/images/original.qcow2.bak
+     mv /var/lib/libvirt/images/NEW-compact-dis.qcow2 /var/lib/libvirt/images/original.qcow2
+     ````
 
 
 ## GPU Passthrough
