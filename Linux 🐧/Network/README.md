@@ -219,8 +219,9 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
   
   tcpdump -i eth0 -nn -s0 -v port 80
   tcpdump -A -s0 port 80
-  tcpdump -i eth0 port 636 -X              #-X = show whole package for ldap traffic
+  tcpdump -i eth0 port 636 -X                        #-X = show whole package for ldap traffic
   tcpdump -i eth0 proto 17
+  tcpdump -i ens5 'tcp port 4321 or tcp port 8443'   # Show 2 ports only
   
   tcpdump -qns 0 -A -r blah.pcap           #tcpick -C -yP -r tcp_dump.pcap
   tcpdump -i eth0 -s0 -w test.pcap
