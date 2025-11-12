@@ -6,7 +6,9 @@
 
 - Install
   ````powershell
-  Install-Module -Name Az -Repository PSGallery -Force
+  Install-Module -Name Az -Force -Repository PSGallery
+  Update-Module  -Name Az -Force
+  Connect-AzAccount
   ````
 
 ### Detection rules
