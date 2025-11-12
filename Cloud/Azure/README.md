@@ -4,13 +4,17 @@
 - Ensure you have put up a default startup directory. If not, you will be redirected to the last tenant you logged into. This is problematic if settings require you to use whitelisted IPs or compliant devices (VDI).
 - To fix it click your username -> Switch directory -> and change the "Startup directory" setting. (CTRL+F and search for it if you cant see it)
 
-- Quick commands
+- Quick commands Windows
   ````powershell
   Install-Module -Name Az -Force -Repository PSGallery
   Update-Module  -Name Az -Force
   Connect-AzAccount
 
-  az login --service-principal -u <Application (client) ID> -p <Client Secret Value> --tenant <Directory (tenant) ID>
+  az login --service-principal -u <Application (client) ID> -p <Client Secret> --tenant <Directory (tenant) ID>
+  ````
+- Linux
+  ````shell
+  sudo apt-get install azure-cli
   ````
 
 ### Detection rules
