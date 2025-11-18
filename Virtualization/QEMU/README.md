@@ -11,6 +11,7 @@ qemu-img create -f vpc tc.vhd 4G            Create Virtual Hard Drive
 ````
 
 ### Working with disks
+- [(PPT) QEMU Disk IO Which performs Better: Native or threads?](https://www.slideshare.net/slideshow/qemu-disk-io-which-performs-better-native-or-threads/62724391)
 ````
 qemu-img convert -O qcow2 vmware-disk.vmdk kvm-disk.qcow2                 #converting to KVM compatible
 qemu-img convert -f raw -O qcow2 /tmp/source.raw /tmp/output.qcow2 -p     #converting raw to qcow2 with progressbar
