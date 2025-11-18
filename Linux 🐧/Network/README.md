@@ -26,6 +26,14 @@ route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
 
+#### Change Hostname
+````shell
+hostname
+sudo hostnamectl set-hostname NEW_HOSTNAME
+#/etc/hosts
+#/etc/hostname
+````
+
 #### Change IP/MAC address
 ````shell
 ip link set dev eth0 down
