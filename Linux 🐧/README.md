@@ -851,6 +851,10 @@ sudoers: `/etc/sudoers`
 - [source](https://blog.mypapit.net/)
   ````shell
   su -c "/usr/bin/executable" -s /bin/sh username
+
+  #Run priviledged command with password to root
+  echo "PassWord123!" | sudo -S -k <command>
+  echo "PassWord123!" | sudo -S -k ls -la /root/
   ````
 ## Shell
 - List all available shells on your system: `cat /etc/shells`
