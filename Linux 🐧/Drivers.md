@@ -19,6 +19,13 @@ readlink /sys/class/net/wlan1/device/driver    # shows wlan1 driver
 - First of all, this can be a pain in the ass. I suggest you go for AMD GPU if you value your mental health. Seriously!
 - [https://www.nvidia.com/en-us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)
 - [https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/](https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/)
+- Monitoring
+  ````shell
+  nvidia-smi    # Some times a dummy package without the binary is installed. If so use:
+  nvtop         # apt install nvtop     https://github.com/Syllo/nvtop
+  gpustat       # apt install gpustat   https://github.com/wookayin/gpustat
+  nvitop        # apt install nvitop    https://github.com/XuehaiPan/nvitop
+  ````
 - November 2025: I have a 5k monitor. Nvidia drivers in kali apt repositories does not support 5k resolution natively. After upgrading i was able to get 5k resolution with 60hz, 120hz and 180hz framerate. I used 3 hours to debug removing and installing the fucking drivers. DO NOT INSTALL THROUGH .RUN files! **Use the .deb file!**
   ````shell
   #Run this. Partially worked as some packages still was left. Removing with dpkg -r <package> yielded dependency errors.
