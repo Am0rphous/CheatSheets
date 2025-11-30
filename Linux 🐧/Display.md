@@ -1,5 +1,9 @@
 # D i s p l a y
 
+- [Nvidia drivers (Hell on earth)](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Display.md#nvidia-drivers-hell-on-earth)
+
+<br>
+
 0. Kernel
 1. Graphics server = e.g. xserver-xorg or wayland. Creates graphical environment
 2. Desktop/Display manager = Manages the graphics server. User only notices the login screen.
@@ -73,9 +77,26 @@ echo $GDMSESSION
 
 
 ### Nvidia drivers (Hell on earth)
-- First of all, this can be a pain in the ass. I suggest you go for AMD GPU if you value your mental health.
+- First of all, this can be a pain in the ass. I suggest you go for AMD GPU if you value your mental health. Seriously!
 - [https://www.nvidia.com/en-us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)
 - [https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/](https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/)
+- November 2025: I have a 5k monitor. Nvidia drivers in kali apt repositories does not support 5k resolution natively. After upgrading i was able to get 5k resolution with 60hz, 120hz and 180hz framerate. I used 3 hours to debug removing and installing the fucking drivers. DO NOT INSTALL THROUGH .RUN files! **Use the .deb file!**
+  ````shell
+  #Run this. Partially worked as some packages still was left. Removing with dpkg -r <package> yielded dependency errors.
+  sudo apt-get remove --purge nvidia*    
+  #sudo rm /etc/X11/xorg.conf
+  #Unix driver archive gives "production" and "feature" branch versions but are several months OLD, like wtf? https://www.nvidia.com/en-in/drivers/unix/
+
+  ### SOLUTION ### Download Datacenter Drivers: 
+  # https://developer.nvidia.com/datacenter-driver-downloads
+  # Linux -> x86_64 -> Debian -> 12 -> deb (local)
+  # Run the rest of the commands on from the website
+  Reboot
+
+  #Note, this is for tesla drivers. For later:
+  #https://docs.nvidia.com/datacenter/tesla/driver-installation-guide/debian.html#debian-installation-local
+  ````
+- Commands
   ````shell
   #Check driver in use which is probably nouveau
   lspci -k | grep -A3 -E "VGA|3D" 
