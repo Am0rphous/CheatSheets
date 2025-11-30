@@ -72,7 +72,7 @@ echo $GDMSESSION
    - LIBDBUSMENU-GLIB-WARNING **: 15:55:04.966: Unable to replace properties on 0: Error getting properties for ID`
 
 
-### Nvidia drivers
+### Nvidia drivers (Hell on earth)
 - First of all, this can be a pain in the ass. I suggest you go for AMD GPU if you value your mental health.
 - [https://www.nvidia.com/en-us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)
 - [https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/](https://hackersterminal.com/how-to-install-nvidia-driver-on-kali-linux/)
