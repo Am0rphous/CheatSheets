@@ -1,6 +1,6 @@
 # D i s p l a y
 
-- [Nvidia drivers (Hell on earth)](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Display.md#nvidia-drivers-hell-on-earth)
+- [Nvidia drivers](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Drivers.md#nvidia-drivers-hell-on-earth)
 
 <br>
 
