@@ -22,9 +22,14 @@ ifconfig wlan0 promisc       # enable promiscuous mode on wlan0
 iwconfig
 watch --interval 3 iwconfig wlan1    # Run 'iwconfig' every 3 seconds for interface wlan1
 netstat
+
 ping
-ping -s 0    # Reduce packet from 64 kb to 8 kb!!
-ping -c 10   # Count 10 packets and stop
+ping -s 0                # Reduce packet from 64 kb to 8 kb!!
+ping -c 10               # Count 10 packets and stop
+gping 10.0.0.1
+gping 10.0.0.1 -b 60     # Ping for 60 seconds
+gping 10.0.0.1 -c red    # Use color red
+
 route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
