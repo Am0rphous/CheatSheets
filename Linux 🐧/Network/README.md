@@ -166,6 +166,18 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 ````
 </details>
 
+<details> <summary> Speed testing </summary> <br>
+  
+````shell
+speedtest-cli          #sudo apt install speedtest-cli
+
+iperf --server        # On server, or use -s
+iperf --client        # On your machine, or use -c
+
+wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/10mb.test ; date
+````
+</details>
+
 <details> <summary>Block countries in your firewall</summary> <br>
   
 - [Free list generator from IP2Location](https://www.ip2location.com/free/visitor-blocker)
