@@ -20,8 +20,11 @@ ip addr OR ip addr show      # show ip config
 ifconfig                     # show ip config
 ifconfig wlan0 promisc       # enable promiscuous mode on wlan0
 iwconfig
+watch --interval 3 iwconfig wlan1    # Run 'iwconfig' every 3 seconds for interface wlan1
 netstat
 ping
+ping -s 0    # Reduce packet from 64 kb to 8 kb!!
+ping -c 10   # Count 10 packets and stop
 route
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
@@ -173,6 +176,7 @@ speedtest-cli          #sudo apt install speedtest-cli
 
 iperf --server        # On server, or use -s. Open firewall: ufw allow 5001
 iperf --client        # On your machine, or use -c
+iperf -c -f Mbytes    # Use MB instead of mega bits
 
 wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/10mb.test ; date
 ````
