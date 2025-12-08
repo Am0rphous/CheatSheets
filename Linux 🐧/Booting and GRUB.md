@@ -102,28 +102,38 @@ sudo hwinfo --framebuffer    #show same info as vbeinfo - possible resolutions
 
 ### Rescue a deleted boot partition
 - some notes april 2025 regarding lost boot partition. [help 1](https://www.bleepingcomputer.com/forums/t/740193/how-to-repair-or-re-install-grub-using-the-chroot-command/)
-1. Download kali live ISO and burn it to a USB with e.g. BalenaEtcher
+1. Download kali live ISO and burn it to a USB with e.g. BalenaEtcher (or use Ventoy to have multiple OS'es to choose between)
 2. Start computer and boot into live system
 3. if luks encryption -> Gparted -> left click disk and "open encryption".
 4. Mount the disk to be able to operate on it
 ````
-sudo mount /dev/mapper/kali--vg-root /mnt/
-sudo mount /dev/nvme0n1p2 /mnt/boot
+sudo mount /dev/mapper/kali--vg-root /mnt/      # Mount disk after it has been unencrypted
+sudo mount /dev/nvme0n1p2 /mnt/boot             # Also mount boot partition
 sudo mount --bind /proc /mnt/proc &&
 sudo mount --bind /sys /mnt/sys
 sudo mount --bind /dev /mnt/dev &&
 sudo mount --bind /dev/pts /mnt/dev/pts &&
 sudo mount --bind /run /mnt/run
 ````
-5. run `sudo chroot /mnt` and then run
+5. then:
 ````
+sudo chroot /mnt            # Enters and works "within"the mounted disk
+
 mount -t sysfs sys /sys
 vgchange -ay
 ````
 6. Load module and upate initramfs
 ````
 modprobe md-mod
-update-initramfs -u
+update-initramfs -u      # This might do the trick. Unmount and reboot to check if its working
+
+#Re-install GRUB after chroot
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "Legacy/BIOS"    # Check what type of BIOS you have. Kali might use UEFI
+ls -l /boot/efi    # If "efi" partition with another sub folder "EFI", then you guessed it: you have efi
+
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=kali
+update-grub
+exit
 ````
 7. unmount stuff. Might use something like `for i in /dev /dev/pts /proc /sys /run; do sudo mount -B $i /mnt$i; done` to automate stuff
 ````
@@ -132,6 +142,7 @@ sudo umount /mnt/sys &&
 sudo umount /mnt/dev/pts &&
 sudo umount /mnt/dev &&
 sudo umount /mnt/proc &&
+sudo umount /mnt/boot/efi &&
 sudo umount /mnt/boot &&
 sudo umount /mnt/run
 sudo umount /mnt/
