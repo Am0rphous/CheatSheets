@@ -171,7 +171,7 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 ````shell
 speedtest-cli          #sudo apt install speedtest-cli
 
-iperf --server        # On server, or use -s. Open firewall: ufw enable 5001
+iperf --server        # On server, or use -s. Open firewall: ufw allow 5001
 iperf --client        # On your machine, or use -c
 
 wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/10mb.test ; date
