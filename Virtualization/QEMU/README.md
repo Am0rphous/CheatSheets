@@ -7,10 +7,13 @@
 Commands
 ````shell
 qemu-img create -f vpc tc.vhd 4G            Create Virtual Hard Drive
-````
-### Working with ISO files
-````shell
+
 qemu-system-x86_64 -m 64 -smp 1 -cdrom TinyCore-16.2.iso -boot d -enable-kvm
+
+#https://ursrig.com/Qemu-Headless-Install
+qemu-system-x86_64 -hda /dev/sdc1 -m 1G --enable-kvm -nographic -cdrom ebian.iso -boot d
+#"Fire up qemu with the command above. Wait a few seconds, the screen will turn black after loading syslinux. Hit ESC, and enter:
+# install fb=none vga=normal"
 
 ````
 
