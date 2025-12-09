@@ -2,8 +2,9 @@
 
 - Linux
   - [rtl8812au - aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
-  - [rtl8814au - aircrack-ng](https://github.com/aircrack-ng/rtl8814au)
+
   - [rtl8814au - morrownr](https://github.com/morrownr/8814au) - (use this - May 2024 - [Monitor Mode script](https://github.com/morrownr/Monitor_Mode)
+  - [rtl8814au - aircrack-ng](https://github.com/aircrack-ng/rtl8814au)
   - [rtl8814au - zebulon2](https://github.com/zebulon2/rtl8814au)
 
 
@@ -13,9 +14,9 @@
 
 <br>
 
-May 2024: The driver works as expected. (I Haven't tried packet injection though!!)
+May 2024: The driver works as expected. (I Haven't tried packet injection though)
 
-```
+````shell
 cd ~
 git clone https://github.com/morrownr/8814au
 cd 8814au
@@ -23,7 +24,7 @@ make
 sudo make install
 sudo modprobe 8814au
 iwconfig | grep REALTEK
-```
+````
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely `wlan0` or `wlan1 `adapter
 - Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
   - Expected output `../../../../../../bus/usb/drivers/rtl8814au`
@@ -38,7 +39,7 @@ iwconfig | grep REALTEK
 
 May 2024: It won't connect to wifi on Kali. It sees other wireless networks but won't cconnect on 5 Ghz or 2.4 Ghz. Using [rtl8814au](https://github.com/morrownr/8814au) from morrownr fixex my issues. 
 
-```
+````shell
 cd ~
 git clone -b v5.6.4.2 https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au
@@ -46,7 +47,7 @@ make
 sudo make install
 sudo modprobe 88XXau
 iwconfig | grep REALTEK
-```
+````
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely the `wlan1` adapter
 - Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
 - Check driver for **wlan1** with the command `readlink /sys/class/net/wlan1/device/driver`
