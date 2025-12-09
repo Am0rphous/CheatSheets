@@ -33,7 +33,13 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
 - [Oracle's KVM Usage](https://docs.oracle.com/en/operating-systems/oracle-linux/kvm-user/kvm-KVMUsage.html#basic-usage)
 - [planet.virt-tools.org](https://planet.virt-tools.org/) - News from QEMU, KVM, libvirt, libguestfs, virt-manager and related tools.
 
+## Management
+- https://itsfoss.gitlab.io/post/manage-kvm-virtual-machines-using-cockpit-web-console/
+- https://itsfoss.gitlab.io/post/manage-kvm-virtual-machines-with-virsh-program/
 
+- scripts
+  - https://github.com/doccaz/kvm-scripts
+  - 
 ## Setup
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
 Installation with `sudo`
