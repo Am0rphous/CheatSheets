@@ -3,12 +3,12 @@
 - [Known DNS Providers](https://kb.adguard.com/en/general/dns-providers)
 
 Important paths
-````powershell
+````shell
 /etc/resolv.conf          #contains e.g. "nameserver 1.1.1.1"
 ````
 
 Commands
-````powershell
+````shell
 host 172.217.21.174
 host myserver ns1.dns.com
 nslookup google.com
@@ -19,7 +19,7 @@ sudo systemd-resolve --flush-caches
 ## DNS lookup
 
 ### Dig - _DNS lookup utility_
-````powershell
+````shell
 dig compass-security.com
 dig google.com +short            # return only the IPs associated with a domain
 dig domain.com +nocomments       # remove comments in the reply
@@ -28,7 +28,7 @@ dig @8.8.8.8 usa.gov
 ````
 ##### DNS Records
 - [source](https://www.howtogeek.com/663056/how-to-use-the-dig-command-on-linux/)
-````powershell
+````shell
 A Record             # Links the domain to an IP version 4 address.
 MX Record            # Mail exchange records direct emails sent to domains to the correct mail server.
 NS Record            # Name server records delegate a domain (or subdomain) to a set of DNS servers.
@@ -38,22 +38,39 @@ TTL                  # Time to live is a setting for each DNS record that specif
 ANY                  # This tells dig to return every type of DNS record it can.
 ````
 
+## Speed test DNS
+````shell
+dig yahoo.com | grep time
+while true; do dig yahoo.com @8.8.8.8 | grep time; sleep 1; done
+
+sudo snap install namebench-snap
+namebench-snap
+namebench-snap 1.1.1.1
+
+dnsdiag
+dnsping
+dnstraceroute
+dnseval
+dnsperf -s 1.1.1.1 -d myData.txt -c 20 -l 15 -Q 100
+dnseval -t A -f serverList.txt -c10 yahoo.com
+````
+
 ## Resolvconf
-````powershell
+````shell
 sudo apt install resolvconf
 sudo systemctl enable resolvconf.service
 sudo systemctl start resolvconf.service
 sudo systemctl status resolvconf.service
 ````
 ### Set DNS servers in resolv.conf using head file
-````powershell
+````shell
 sudo nano /etc/resolvconf/resolv.conf.d/head            #and add e.g. "nameserver 1.1.1.1"
 sudo resolvconf --enable-updates
 sudo resolvconf -u
 ````
 
 ## systemd-resolved
-````powershell
+````shell
 resolvectl domain
 resolvectl dns
 ````
