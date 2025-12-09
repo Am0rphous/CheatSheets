@@ -2,7 +2,7 @@
 
 - Linux
   - [rtl8812au - aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
-
+  - [rtl8814au - alfa docs](https://docs.alfa.com.tw/Support/Linux/RTL8814AU/)
   - [rtl8814au - morrownr](https://github.com/morrownr/8814au) - (use this - May 2024 - [Monitor Mode script](https://github.com/morrownr/Monitor_Mode)
   - [rtl8814au - aircrack-ng](https://github.com/aircrack-ng/rtl8814au)
   - [rtl8814au - zebulon2](https://github.com/zebulon2/rtl8814au)
