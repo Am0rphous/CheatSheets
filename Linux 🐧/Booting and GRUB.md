@@ -101,6 +101,10 @@ sudo hwinfo --framebuffer    #show same info as vbeinfo - possible resolutions
 ````
 
 ### Rescue a deleted boot partition
+- some urls might come in handy:
+  - https://gist.github.com/0xsonu/d493ff573a3b5567ac921531c06f7837
+  - https://n0rmh3ll.github.io/posts/grub-fix-dualboot/
+  - https://www.baeldung.com/linux/grub-efi-reinstall
 - some notes april 2025 regarding lost boot partition. [help 1](https://www.bleepingcomputer.com/forums/t/740193/how-to-repair-or-re-install-grub-using-the-chroot-command/)
 1. Download kali live ISO and burn it to a USB with e.g. BalenaEtcher (or use Ventoy to have multiple OS'es to choose between)
 2. Start computer and boot into live system
