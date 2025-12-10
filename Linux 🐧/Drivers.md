@@ -29,14 +29,12 @@ readlink /sys/class/net/wlan1/device/driver    # shows wlan1 driver
 - November 2025: I have a 5k monitor. Nvidia drivers in kali apt repositories does not support 5k resolution natively. After upgrading i was able to get 5k resolution with 60hz, 120hz and 180hz framerate. I used 3 hours to debug removing and installing the fucking drivers. DO NOT INSTALL THROUGH .RUN files! **Use the .deb file!**
   ````shell
   #Run this. Partially worked as some packages still was left. Removing with dpkg -r <package> yielded dependency errors.
-  sudo apt-get remove --purge nvidia*    
+  apt autoremove --purge 'nvidia-*' 
   #sudo rm /etc/X11/xorg.conf
   #Unix driver archive gives "production" and "feature" branch versions but are several months OLD, like wtf? https://www.nvidia.com/en-in/drivers/unix/
 
-  ### SOLUTION ### Download Datacenter Drivers: 
-  # https://developer.nvidia.com/datacenter-driver-downloads
-  # Linux -> x86_64 -> Debian -> 12 -> deb (local)
-  # Run the rest of the commands on from the website
+  SOLUTION: Download Datacenter Drivers:  https://developer.nvidia.com/datacenter-driver-downloads
+  Linux -> x86_64 -> Debian -> 12 -> deb (local). Then run the rest of the commands on from the website
   Reboot
 
   #Note, this is for tesla drivers. For later:
