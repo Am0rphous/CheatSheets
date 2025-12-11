@@ -132,8 +132,10 @@ modprobe md-mod
 update-initramfs -u      # This might do the trick. Unmount and reboot to check if its working
 
 #Re-install GRUB after chroot
-[ -d /sys/firmware/efi ] && echo "UEFI" || echo "Legacy/BIOS"    # Check what type of BIOS you have. Kali might use UEFI
-ls -l /boot/efi    # If "efi" partition with another sub folder "EFI", then you guessed it: you have efi
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "Legacy/BIOS"   # Check what type of BIOS you have. Kali might use UEFI
+ls -l /boot/efi                                                 # If "efi" partition with another sub folder "EFI", then you guessed it: you have efi
+
+sudo apt install grub-efi-amd64-bin grub-efi-amd64 grub-pc-bin
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=kali
 update-grub
@@ -152,4 +154,76 @@ sudo umount /mnt/run
 sudo umount /mnt/
 ````
 
+### Actuall terminal output
+````shell
+mount /dev/mapper/carbon--vg-root /mnt
+mount /dev/nvme0n1p2 /mnt/boot/
+mount /dev/nvme0n1p1 /mnt/boot/efi/
+
+mount --bind /dev /mnt/dev
+mount --bind /dev/pts /mnt/dev/pts
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+
+
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/EFI
+  Installing for x86_64-efi platform.
+  grub-install: error: /boot/EFI doesn't look like an EFI partition.
+
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=kali                                  
+  Installing for x86_64-efi platform.
+  grub-install: warning: EFI variables cannot be set on this system.
+  grub-install: warning: You will have to complete the GRUB setup manually.
+  Installation finished. No error reported.
+
+└─# mount -t efivarfs efivarfs /sys/firmware/efi/efivars                                                                                       
+mount: /sys/firmware/efi/efivars: fsopen() failed: Operation not supported.
+     dmesg(1) may have more information after failed mount system call.
+
+mkdir -p /boot/efi/EFI/kali                                                                                           
+
+┌──(root㉿kali)-[/]
+└─# grub-install --removable --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=kali                           
+Installing for x86_64-efi platform.
+Installation finished. No error reported.
+
+update-initramfs -u
+update-grub
+
+update-initramfs -u                                                                                                   
+update-initramfs: Generating /boot/initrd.img-6.12.33+kali-amd64
+libkmod: ERROR: conf_files_filter_out: Directories inside directories are not supported: /etc/modprobe.d/virtualbox-dkms.conf
+libkmod: ERROR: conf_files_filter_out: Directories inside directories are not supported: /etc/modprobe.d/virtualbox-dkms.conf
+libkmod: ERROR: conf_files_filter_out: Directories inside directories are not supported: /etc/modprobe.d/virtualbox-dkms.conf
+libkmod: ERROR: conf_files_filter_out: Directories inside directories are not supported: /etc/modprobe.d/virtualbox-dkms.conf
+W: mkconf: MD subsystem is not loaded, thus I cannot scan for arrays.
+W: mdadm: failed to auto-generate temporary mdadm.conf file.
+libkmod: ERROR: conf_files_filter_out: Directories inside directories are not supported: /etc/modprobe.d/virtualbox-dkms.conf
+libkmod: E
+
+cat /mnt/etc/modprobe.d/virtualbox-dkms.conf/virtualbox-dkms.modprobe.conf
+# In kernel 6.12, KVM initializes virtualization on module loading by
+# default. This prevents VirtualBox VMs from starting. In order to
+# avoid this, block loading kvm module by default.
+# (No need to do manually execute modprobe -r kvm_xxx and so on)
+# See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1082157
+#
+options kvm     enable_virt_at_load=0
+
+rm -rf /mnt/etc/modprobe.d/virtualbox-dkms.conf/virtualbox-dkms.modprobe.conf  
+nano /mnt/etc/modprobe.d/virtualbox-dkms.conf      # ADD CONTENT FROM virtualbox-dkms.modprobe.conf
+
+┌──(root㉿kali)-[/]
+└─# update-initramfs -u
+update-initramfs: Generating /boot/initrd.img-6.12.33+kali-amd64
+W: mkconf: MD subsystem is not loaded, thus I cannot scan for arrays.
+W: mdadm: failed to auto-generate temporary mdadm.conf file.
+
+#De to advarslene om mdadm (W:) betyr at md-moduler ikke er lastet; ignorér hvis du ikke bruker RAID, ellers last md-modulen før oppdatering:
+modprobe md_mod
+update-initramfs -u
+
+umount /dev/..   #everything then
+reboot
+````
 
