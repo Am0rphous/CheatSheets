@@ -29,18 +29,12 @@ sudo hdparm -i /dev/sda
 ````
 
 ## CPU - Central Processing Unit
-
 - [i7z](https://archlinux.org/packages/community/x86_64/i7z/) - A better i7 (and now i3, i5) reporting tool for Linux
-
-### Architecture
-- [CPUFetch](https://github.com/Dr-Noob/cpufetch) - Simple yet fancy CPU architecture fetching tool. Supports x86, x86_64 (Intel and AMD) and ARM.
-````powershell
+````shell
+cpufetch                              # sudo apt install cpufetch    https://github.com/Dr-Noob/cpufetch
 dpkg --print-architecture             # prints your currently CPU architecture
 dpkg --print-foreign-architectures    # prints foreign architecture support
-````
 
-### Commands
-````powershell
 cpuid                               # Dump CPUID information for each CPU. sudo apt install inxi
 lscpu                               # display information about the CPU architecture
 inxi -C                             # display CPU information. sudo apt install inxi
@@ -49,31 +43,27 @@ sudo dmidecode --type processor     # might want to use sudo
 sudo hwinfo --cpu                   # sudo apt install hwinfo
 sudo lshw -short
 sudo lshw -C CPU
-````
 
-### Overclocking / CPU frequency scaling
-- Check BIOS/UEFI first, not all motherboards and cpu's support over/downclocking
-- [CPU frequency scaling](https://wiki.archlinux.org/title/CPU_frequency_scaling)
-
-### /proc/cpuinfo
-````powershell
 cat /proc/cpuinfo
 cat /proc/cpuinfo | grep 'vendor' | uniq		      # view vendor name
 cat /proc/cpuinfo | grep 'model name' | uniq		  # display model name
 cat /proc/cpuinfo | grep processor | wc -l		    # ount the number of processing units
 cat /proc/cpuinfo | grep 'core id'		          	# show individual cores	
 ````
+- Temperature
+  - [Thermal Monitor](https://gitlab.com/agurenko/plasma-applet-thermal-monitor) - Plasma 5 applet for monitoring CPU, GPU and other available temperature sensors.
+  - [Xsensors](https://github.com/Mystro256/xsensors) - a fork of Xsensors with various improvements (GTK3, cleanup, bugfixes, enhancements)
 
-### Stress testers
-````
-stress
-stress-ng
-cpuburn
-stressapptest
-````
+### Overclocking / CPU frequency scaling
+- Check BIOS/UEFI first, not all motherboards and cpu's support over/downclocking
+- [CPU frequency scaling](https://wiki.archlinux.org/title/CPU_frequency_scaling)
+  ````shell
+  #Stress testers
+  stress
+  stress-ng
+  cpuburn
+  stressapptest
+  ````
 
-### Temperature
-- [Thermal Monitor](https://gitlab.com/agurenko/plasma-applet-thermal-monitor) - Plasma 5 applet for monitoring CPU, GPU and other available temperature sensors.
-- [Xsensors](https://github.com/Mystro256/xsensors) - a fork of Xsensors with various improvements (GTK3, cleanup, bugfixes, enhancements)
 
 
