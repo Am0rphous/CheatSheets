@@ -55,6 +55,14 @@ echo $GDMSESSION
 ````
 #### Different DE
 - read more on the [arch wiki](https://wiki.archlinux.org/title/Desktop_environment)
+- If windows are appearing again after reboot and you want them gone, then remove the session files
+  ````shell
+  ls -la ~/.config/session/*    # List files
+  rm -rf ~/.config/session/*    # Remove and start with a clean login  with NO windows from last session
+
+  #Save and open all windows in the ext session with
+  qdbus org.kde.ksmserver /KSMServer saveCurrentSession
+  ```` 
 - KDE Plasma
   ````shell
   sudo apt install kde-full            #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
