@@ -312,3 +312,12 @@ tcpdump <= 128
   ````
 
 </details>
+
+#### Standardize NIC names
+````shell
+#Edit file /etc/default/grub
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"   #To contain this
+sudo update-grub
+sudo reboot
+sudo update-initramfs -u  #possible
+````
