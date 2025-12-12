@@ -3,11 +3,15 @@
 ````shell
 df -h
 lsblk
+blkid
 blkid -p /dev/sda1
 lsblk -d -o NAME,MODEL   #List disk model
 lshw -class disk         #lsit complete disk model info
+lshw -class disk -class storage -short
+parted -l
 
-cat /etc/fstab 
+cat /etc/fstab
+cat /proc/partitions
 mount
 ls -l /dev/disk/by-       #inspect the directories
 findmnt                   #find a filesystem
