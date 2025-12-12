@@ -559,26 +559,39 @@ dpkg -l | egrep "linux-(signed|modules|image|headers)" | grep -v $(uname -r | cu
   - Find the kernel you want at [https://kernel.ubuntu.com/mainline/](https://kernel.ubuntu.com/mainline/)
   - Download both the header and the image file. Install with `sudo dpkg -i *.deb`
   - For [Kali](https://www.kali.org/docs/development/recompiling-the-kali-linux-kernel/):
-````
-#1. Download e.g. 6.11 from https://www.kernel.org
-tar -xvf linux-6.11.tar.xz
-cd linux-6.11
-sudo apt install -y build-essential libncurses5-dev fakeroot xz-utils
-#maybe: sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev
-#use standard config from current kernel
-cp /boot/config-$(uname -r) .config
-make clean
-make deb-pkg LOCALVERSION=-custom KDEB_PKGVERSION=$(make kernelversion)-1
-ls ../*.deb
-sudo dpkg -i ../linux-image-4.9.0-kali1-custom_4.9.2-1_amd64.deb
-reboot
-
-#maybe:
-sudo make modules_install
-sudo make install
-sudo update-grub
-sudo reboot
-````
+    ````shell
+    #Download e.g. 6.11 from https://www.kernel.org
+    tar -xvf linux-6.11.tar.xz
+    cd linux-6.11
+    sudo apt install -y build-essential libncurses5-dev fakeroot xz-utils
+    
+    #maybe: sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev
+    
+    #use standard config from current kernel
+    cp /boot/config-$(uname -r) .config
+    make clean
+    make deb-pkg LOCALVERSION=-custom KDEB_PKGVERSION=$(make kernelversion)-1
+    ls ../*.deb
+    sudo dpkg -i ../linux-image-4.9.0-kali1-custom_4.9.2-1_amd64.deb
+    reboot
+    
+    #maybe:
+    sudo make modules_install
+    sudo make install
+    sudo update-grub
+    sudo reboot
+    ````
+    - Ubuntu
+      ````shell
+      #!/bin/sh
+      wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.17.3/linux-headers-4.17.3-041703_4.17.3-041703.201806252030_all.deb
+      wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.17.3/linux-image-unsigned-4.17.3-041703-generic_4.17.3-041703.201806252030_amd64.deb
+      wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.17.3/linux-modules-4.17.3-041703-generic_4.17.3-041703.201806252030_amd64.deb
+      sudo dpkg -i linux-headers-4.17.3-041703_4.17.3-041703.201806252030_all.deb
+      sudo dpkg -i linux-image-unsigned-4.17.3-041703-generic_4.17.3-041703.201806252030_amd64.deb
+      sudo dpkg -i linux-modules-4.17.3-041703-generic_4.17.3-041703.201806252030_amd64.deb 
+      reboot
+      ````
 
 ## Peripherals
 ### keyboard
