@@ -26,7 +26,14 @@
   free -b                 #bytes, k=kilobytes, m=megabytes =g=gigabytes
   vmstat
   ````
+- List memory usage per user
+  ````shell
+  ps hax -o rss,user | awk '{a[$2]+=$1;}END{for(i in a)print i" "int(a[i]/1024+0.5);}' | sort -rnk2
 
+  sudo apt install smem
+  smem -u -t -k
+  ps -U root --no-headers  -o rss | (tr '\n' +; echo 0) | bc
+  ````
 
 ## Swap
 - [SwapFaq Ubuntu Help](https://help.ubuntu.com/community/SwapFaq)
