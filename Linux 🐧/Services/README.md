@@ -1,8 +1,9 @@
 # Services
 
-
-````powershell
+````shell
 service ssh status                                      #option 1: shows service status
+systemctl --no-pager status ufw
+service ssh status | cat
 service --status-all                                    #list all services
 service --status-all | grep +                           #list all running services
 
