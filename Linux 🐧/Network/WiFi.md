@@ -6,6 +6,17 @@
 Get interface info
 ````powershell
 sudo iw dev
+/sbin/iw dev
+sudo ip link set wlan0 up
+iw wlan0 link
+iw wlan0 scan
+wpa_passphrase MyWifiNetworkName >> /etc/wpa_supplicant.conf
+sudo wpa_supplicant -B -D wext -i wlan0 -c /etc/wpa_supplicant.conf
+  B=background
+  D=wireless driver
+  c=config path
+
+sudo iw dev wlan0 scan | grep SSID
 ````
 
 
