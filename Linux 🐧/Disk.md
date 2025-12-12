@@ -16,6 +16,11 @@ mount
 ls -l /dev/disk/by-       #inspect the directories
 findmnt                   #find a filesystem
 findmnt -no UUID -T /swapfile    #list UID
+
+sudo smartctl --health /dev/sda1
+sudo smartctl -H /dev/sda1
+sudo badblocks -v /dev/sdg1 > badblocks.txt      #Kopierer blokkene til tekstfila.
+
 ````
 
 <details> <summary> Sort folders by size </summary>
