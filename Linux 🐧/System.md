@@ -12,6 +12,25 @@ who -b
 - [HTop](https://github.com/htop-dev/htop) - An interactive process viewer.
 - [SysMon](https://github.com/MatthiasSchinzel/sysmon) - Graphical system monitor for linux, including information about CPU, GPU, Memory, HDD/SDD and your network connections. Similar to windows task manager.
 
+## Motd - Message of The Day
+````shell
+Likely location 1: /etc/motd
+Likely location 2: /etc/update-motd.d/
+  90-updates-available
+  91-release-upgrade
+  95-hwe-eol
+  97-overlayroot
+  98-fsck-at-reboot
+  98-reboot-required
+`````
+- Another method is to create this file `sudo touch /etc/motd.sh` and add it to profile with `sudo echo "bash /etc/motd.sh" >> /etc/profile`
+  ````shell
+  #!/bin/sh
+  printf "\n\n"
+  figlet "Welcome" | /usr/games/lolcat
+  printf "\n\n"
+  ````
+
 ## Performance
 - Analyze boot-up performance: `systemd-analyze blame`
 - [guapow](https://github.com/vinifmor/guapow) - On-demand and auto performance optimizer for Linux applications 
