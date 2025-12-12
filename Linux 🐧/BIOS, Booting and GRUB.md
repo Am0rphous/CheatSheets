@@ -1,4 +1,4 @@
-## Booting and GRUB
+## BIOS, Booting and GRUB
 - [Linux Boot Process Explained](https://www.golinuxcloud.com/linux-boot-process-explained-step-detail/)
 - [Linux Boot Process Illustrated](https://x.com/hackinarticles/status/1878310411209961842?mx=2)
 
