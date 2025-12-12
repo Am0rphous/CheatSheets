@@ -13,6 +13,8 @@ Turn on the PC:
 ## Bios info
 ````shell
 fwupdmgr get-devices     # https://fwupd.org
+sudo dmidecode -s bios-version
+sudo dmidecode | less
 ````
 
 ## Boot Theme
