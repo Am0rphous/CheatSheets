@@ -1,4 +1,13 @@
 # Azure
+- Microsoft Digital Defense Report 2024
+  - 2023 - 65 trillion security signals
+  - 2024 - 78 trillion security signals
+  - over 600 million identity attacks per day - https://www.microsoft.com/en-us/security/blog/2024/12/05/8-years-as-a-leader-in-the-gartner-magic-quadrant-for-access-management/
+
+###### Protecting users
+- https://learn.microsoft.com/en-us/microsoft-365/admin/setup/priority-accounts?view=o365-worldwide
+- https://learn.microsoft.com/en-us/defender-office-365/priority-accounts-security-recommendations
+
 
 - "Enabling multi-factor authentication can block more than 99.9 percent of identity attacks that attempt to compromise your account.​​"
 - Ensure you have put up a default startup directory. If not, you will be redirected to the last tenant you logged into. This is problematic if settings require you to use whitelisted IPs or compliant devices (VDI).
