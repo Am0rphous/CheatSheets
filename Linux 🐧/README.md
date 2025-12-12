@@ -325,6 +325,8 @@ Pin-Priority: 1001
   touch myfile{1..50}                             #creates 50 empty files
   xdg-open                                        #opens a file or URL in the user's preferred application
   xdg-open myfolder                               #opens myfolder and sends i
+  sudo lsof -F sn0 | tr -d '\000' | grep deleted | sed 's/^[a-z]*\([0-9]*\)n/\1 /' | sort -n
+lsof -i
   ````
 
   #### Tracking file auditing
