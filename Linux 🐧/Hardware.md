@@ -26,6 +26,10 @@ lsusb
 mount
 mount | column -t | grep ext
 sudo hdparm -i /dev/sda
+
+sudo dmidecode -s system-serial-number                                 #Servicetag to Dell server
+sudo dmidecode | grep -A3 '^System Information' | grep 'Product Name'  #Server model
+sudo dmidecode | less
 ````
 
 ## CPU - Central Processing Unit
