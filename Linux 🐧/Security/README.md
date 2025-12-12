@@ -27,3 +27,26 @@ execl, execlp, execle, execv, execvp, execvpe       execute a file
 sudo uptrack-upgrade
 sudo uptrack-show
 ````
+### Nuke LUKS
+- https://www.kali.org/blog/emergency-self-destruction-luks-kali/
+  ````shell
+  
+  #These are OLD notes and needs to be verified
+  
+  sudo apt-get source cryptsetup
+  git clone https://github.com/roema/cryptsetup-nuke
+  cd cryptsetup-2.0.2
+  patch -p1 &lt; ../cryptsetup-2.0.2.patch
+  dpkg-buildpackage -b -uc
+  cd ..
+  sudo dpkg -i ../libcryptsetup*.deb
+  sudo dpkg -i ../cryptsetup*.deb
+  cryptsetup --help | grep luksAddNuke
+  luksAddNuke - add NUKE to LUKS device
+  sudo cryptsetup luksHeaderBackup /dev/sda5 --header-backup-file luks-backup
+  sudo apt-mark hold cryptsetup-bin libcryptsetup12
+  ````
+
+
+
+
