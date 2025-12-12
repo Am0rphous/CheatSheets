@@ -52,7 +52,8 @@ cat /proc/cpuinfo
 cat /proc/cpuinfo | grep 'vendor' | uniq		      # view vendor name
 cat /proc/cpuinfo | grep 'model name' | uniq		  # display model name
 cat /proc/cpuinfo | grep processor | wc -l		    # ount the number of processing units
-cat /proc/cpuinfo | grep 'core id'		          	# show individual cores	
+cat /proc/cpuinfo | grep 'core id'		          	# show individual cores
+egrep -e "core id" -e ^physical /proc/cpuinfo | xargs -l2 echo | sort -u   #Sockets and cores
 ````
 - Temperature
   - [Thermal Monitor](https://gitlab.com/agurenko/plasma-applet-thermal-monitor) - Plasma 5 applet for monitoring CPU, GPU and other available temperature sensors.
