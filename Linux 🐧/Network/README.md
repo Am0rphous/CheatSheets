@@ -321,3 +321,25 @@ sudo update-grub
 sudo reboot
 sudo update-initramfs -u  #possible
 ````
+#### Waterhole traffic
+````shell
+route add 65.21.34.4 gw 127.0.0.1 lo          #rut
+netstat -nr                                          #Verify
+route -n
+route add -host IP-ADDRESS reject       #reject target
+route add -host 64.1.2.3 reject
+ip route get 64.1.2.3                           #Verify
+Expected output: RTNETLINK answers: Network is unreachable
+route add -net 192.67.16.0/24 gw 127.0.0.1 lo     #Drop subnet
+
+ip route add blackhole 202.54.5.2/29
+ip route add blackhole from 202.54.1.2
+ip rule add blackhole to 10.18.16.1/29
+ip route
+route delete 65.21.34.4                           #Removing route
+route del -host 65.21.34.4 reject
+ip route delete 1.2.3.4/26 dev eth0
+iptables -A INPUT -s 65.55.44.100 -j DROP    #Block specific ip
+iptables -A INPUT -s 65.55.44.100 -p tcp --destination-port 22 -j DROP
+
+````
