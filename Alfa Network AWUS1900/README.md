@@ -4,7 +4,7 @@
   ````shell
   replaced with rtw88 driver: https://github.com/lwfinger/rtw88   # Use this!
   
-  #Chipset/driver can be installed with
+  #Old driver can be installed with
   sudo apt install realtek-rtl88xxau-dkms
   ````
 
