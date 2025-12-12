@@ -1,6 +1,6 @@
 # Alfa Network AWUS1900 Wireless USB Adapter
 
-**2025 december** there is a lot of problems online with this specific chipset. Especially after upgraing to linux kernel 6.xx. It drops packets, doesn't always authenticate and just a lot of weird problems. Be careful if you still want to buy this.
+**2025 december** there is a lot of problems online with this specific chipset. Especially after upgraing to linux kernel 6.xx. It drops packets, doesn't always authenticate and just a lot of weird problems. Be careful if you still want to buy this. Chipset/driver can be installed with `sudo apt install realtek-rtl88xxau-dkms`
 
 - Linux
   - [rtl8812au - aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
