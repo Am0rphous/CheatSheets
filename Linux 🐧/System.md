@@ -1,5 +1,11 @@
 # System
 
+- Get install date
+  ````shell
+  fs=$(df / | tail -1 | cut -f1 -d' ') && tune2fs -l $fs | grep created
+   dumpe2fs /dev/sda1 | grep 'Filesystem created:'
+  tune2fs -l /dev/sda1 | grep 'Filesystem created:'
+  ````
 
 ## Monitoring
 ```zshell
