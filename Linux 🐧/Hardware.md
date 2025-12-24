@@ -8,7 +8,7 @@
 fwupdmgr get-devices    # get bios info
 cat /proc/partitions
 cat /proc/scsi/scsi
-df #disk space of file systems
+df                      # Disk space of file systems
 dmidecode
 fdisk
 free
@@ -32,6 +32,20 @@ sudo dmidecode | grep -A3 '^System Information' | grep 'Product Name'  #Server m
 sudo dmidecode | less
 ````
 
+## Motherboard
+````shell
+cat /sys/devices/virtual/dmi/id/board_{vendor,name,version}
+cat /sys/devices/virtual/dmi/id/board_name
+cat /sys/devices/virtual/dmi/id/board_vendor
+cat /sys/devices/virtual/dmi/id/board_version
+
+sudo dmidecode -t baseboard
+sudo dmidecode -t 2
+sudo lshw -class motherboard
+sudo lshw -short                # Look at top description
+dmesg | grep DMI:
+dmesg | grep -i -E "board|motherboard|dmi|bios"
+````
 ## CPU - Central Processing Unit
 - [i7z](https://archlinux.org/packages/community/x86_64/i7z/) - A better i7 (and now i3, i5) reporting tool for Linux
 ````shell
