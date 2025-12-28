@@ -1,4 +1,7 @@
 # Memory
+- RAM timing
+  1. Number: CAS latency (CL). 
+  2. t
 
 - Enable [Zram](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - which is a Linux kernel module that creates compressed block devices in RAM, allowing for more efficient use of memory by storing swap data in a compressed format. This helps improve performance, especially on systems with limited RAM, by reducing the need for slower disk-based swap. [Configure zram ](https://github.com/iver0/configure-zram)
     ````shell
