@@ -1,7 +1,9 @@
 # Memory
-- RAM timing
-  1. Number: CAS latency (CL). 
-  2. t
+- RAM timing - the lower the better
+  - First number: CAS Latency (CL) = Access time. Time it takes for the memory to respond to the CPU.
+  - Second number: tRCD. "Row address to column address delay. Measures the minimum latency between entering a new row in the memory and beginning to access columns within it."
+  - Third number: tRP. "Row Precharge Time (TRP) measures the latency involved in opening a new row in memory."
+  - Fourth number: tRAS. "Row Active Time (TRAS) measures the minimum amount of cycles a row must remain open to properly write data."
 
 - Enable [Zram](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - which is a Linux kernel module that creates compressed block devices in RAM, allowing for more efficient use of memory by storing swap data in a compressed format. This helps improve performance, especially on systems with limited RAM, by reducing the need for slower disk-based swap. [Configure zram ](https://github.com/iver0/configure-zram)
     ````shell
