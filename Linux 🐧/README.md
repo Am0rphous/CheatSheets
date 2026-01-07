@@ -771,6 +771,32 @@ who
 
 ## Shortcuts
 - [21 Useful Terminal Shortcuts](https://itsfoss.com/linux-terminal-shortcuts/)
+  ````shell
+  sudo apt install terminator
+  terminator
+      Ctrl-Shift-o    # horizontal
+      Ctrl-Shift-e    # vertical
+      Ctrl-Shift-n    # n=next window p=previous
+
+      Ctrl-Shift-t    # new tab
+      Ctrl-Shift-i    # new window
+      Ctrl-Shift-w    # close w=window q=quit all
+
+  sudo apt install tmux
+  tmux
+  tmux ls                    # List sessions
+  tmux attach                # Attaches to session (if there is only one)
+  tmux a -t 1                # Attach to session "1" if there is two sessions (0+1)
+      ctrl+b + ctrl+d        # Detach
+      ctrl+b  +  shift+5     # Split screen vertically
+      ctrl+b  +  shift+2     # Split screen horizontally
+    
+      ctrl+b+o                             # O as in Open. Goes to next window
+      ctrl+b <arrow up/down/right/left>    # To adjust window size
+    
+      ctrl+b + x     # Confirm closing window
+      ctrl+b + d     # Just close it
+    ```
 
 | Keyboard shortcut | Description |
 | ------------------------- | ------------------------- |
