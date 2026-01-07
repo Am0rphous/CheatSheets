@@ -326,7 +326,7 @@ Pin-Priority: 1001
   xdg-open                                        #opens a file or URL in the user's preferred application
   xdg-open myfolder                               #opens myfolder and sends i
   sudo lsof -F sn0 | tr -d '\000' | grep deleted | sed 's/^[a-z]*\([0-9]*\)n/\1 /' | sort -n
-lsof -i
+  lsof -i
   ````
 
   #### Tracking file auditing
@@ -364,9 +364,9 @@ for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
 
   #### File hashing
   ````shell
-for i in *; do shasum -a 256 $i; done;
-sha256sum *
-shasum -a 256 *
+  for i in *; do shasum -a 256 $i; done;
+  sha256sum *
+  shasum -a 256 *
   ````
 
   #### Find large files and Folders
