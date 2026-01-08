@@ -148,26 +148,27 @@ sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink   #shrink 
 ````
 - **To resize a windows disk**
   1. Within the VM: Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete) and nullify disk with `sdelete.exe -z c:`
-  2. Shutdown VM
-  3. On the linux host, run `sudo qemu-img resize windows.qcow2 -100G --shrink` to shrink the disk
-- **To resize a physical qcow2 disk** (when qcow2 is e.g. 100gb and you want it thin provisioned to e.g. 5,8 GB (internal use))
-  1. Shutdown vm
-  2. Clone or make a backup of qcow2 disk
-  3. Turn on vm
-  4. run
+  2. Shutdown VM and run `qemu-img convert -O qcow2 -c windows.qcow2 windows-new.qcow2`
+  3. On KVM host, run `qemu-img resize windows.qcow2 -64G --shrink` to shrink the virtual size (from e.g. 128 GB down to 64 GB virtual size)
+  4. Rename the disk so the VM can be restarted with "new" thinprovisioned disk `mv windows-new.qcow2 windows.qcow2`
+  5. Start VM and tadaa a disk using very little storage
+  
+- **To reduce a Linux disk** (when qcow2 is using e.g. 110gb storage and you want it thin provisioned down to e.g. 5,8 GB (internal use))
+  1. Shutdown vm and clone/make a backup of qcow2 disk `cp linux.qcow2 linux.qcow2.bak`
+  2. Turn on vm and run
      ````shell
-     sudo dd if=/dev/zero of=/zerofill.tmp bs=1M status=progress || true   #until No space left on device
+     sudo dd if=/dev/zero of=/zerofill.tmp bs=1M status=progress || true     #until No space left on device
      sudo sync
      sudo rm -f /zerofill.tmp
      sudo sync
      shutdown now
      ```` 
-  6. On the host compress old disk to a new disk 
+  3. On the host compress old disk to a new disk with
     ````shell
-    qemu-img convert -O qcow2 -c old.qcow2 new.qcow2
-    cp new.qcow2  new.bak           #Create a backup of the clean and newly compressed disk
+    qemu-img convert -O qcow2 -c linux.qcow2 linux-new.qcow2
+    cp linux-new.qcow2  linux-new.bak           #Create a backup of the clean and newly compressed disk
     ````
-  8. Switch name between disks `mv new.qcow2 w10.qcow2` and then restar VM.
+  4. Rename disk `mv linux-new.qcow2 linux.qcow2` and start VM.
 
 
 ## GPU Passthrough
