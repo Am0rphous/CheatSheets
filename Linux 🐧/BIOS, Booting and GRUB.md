@@ -15,6 +15,9 @@ Turn on the PC:
 fwupdmgr get-devices     # https://fwupd.org
 sudo dmidecode -s bios-version
 sudo dmidecode | less
+
+sudo dmidecode -s system-product-name
+sudo dmidecode | grep -i 'product name\|manufacturer'
 ````
 
 ## Boot Theme
