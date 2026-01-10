@@ -15,5 +15,8 @@
 
 ## note error 2026
 ````shell
+vmware workstation debian stuck on auth polkit
+#https://community.broadcom.com/vmware-cloud-foundation/communities/community-home/digestviewer/viewthread?GroupId=7171&MessageKey=a5e7ef9c-b0f8-41e9-875e-0e5ef0eafe41&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f
+
 /usr/lib/vmware/bin/vmware-setup-helper -e -o -c no
 ````
