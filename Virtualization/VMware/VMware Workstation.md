@@ -12,3 +12,8 @@
 3. Fix appropriate permissions  <br> 
 `chmod g+rw /dev/vmnet0`  <br>
 `chmod a+rw /dev/vmnet0` Fixing for all users
+
+## note error 2026
+````shell
+/usr/lib/vmware/bin/vmware-setup-helper -e -o -c no
+````
