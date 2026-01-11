@@ -9,7 +9,8 @@
     ps -fauxxx                      # check your system for associated orphaned processes
     ps -p 317738 -o comm=           # get name of process
     pidof nginx 
-    pgrep nginx
+    pgrep nginx                     # display process ID of nginx prosesses
+    pgrep nginx -a                  # display process ID + command line
     pgrep nginx | wc -l             # count number of processes
     pidof nginx | wc -w             # count number of processes
     pstree                          # displays tree view 
@@ -41,9 +42,9 @@ kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
 
 ### Jobs
 ````shell
-bg                  # lists stopped background jobs; resume a stopped job in the background
-fg                  # brings the most recent job to the foreground
-fg n                # brings job 'n' to the foreground
+bg           # lists stopped background jobs; resume a stopped job in the background
+fg           # brings the most recent job to the foreground
+fg n         # brings job 'n' to the foreground
 ````
 
 ### Zombie processes
