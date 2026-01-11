@@ -27,12 +27,17 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
   cat /etc/X11/default-display-manager        #Show the default display manager currently in use
   sudo journalctl -u gdm --since "1 hour ago" --no-pager
   ````
-- LightDM (Lightweight Display Manager) - [Github](https://github.com/canonical/lightdm), [Ubuntu wiki](https://wiki.ubuntu.com/LightDM)
-- GDM3 (GNOME Display Manager) -[wiki](https://wiki.gnome.org/Projects/GDM), [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
+- LightDM (Lightweight Display Manager)
+  - [Github](https://github.com/canonical/lightdm)
+  - [wiki](https://wiki.ubuntu.com/LightDM)
+- GDM3 (GNOME Display Manager)
+  - [wiki](https://wiki.gnome.org/Projects/GDM)
+  - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
    ````shell
    apt install gnome gdm3 task-gnome-desktop --reinstall
    ````
-- SDDM (Simple Desktop Display Manager) [read more](https://wiki.archlinux.org/title/SDDM)
+- SDDM (Simple Desktop Display Manager)
+  - [wiki](https://wiki.archlinux.org/title/SDDM)
    ````shell
    apt install sddm sddm-kcm qt5-declarative
    /etc/sddm.conf.d/  #configs
