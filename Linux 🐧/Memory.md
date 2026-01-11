@@ -7,6 +7,7 @@
 
 - Enable [Zram](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - which is a Linux kernel module that creates compressed block devices in RAM, allowing for more efficient use of memory by storing swap data in a compressed format. This helps improve performance, especially on systems with limited RAM, by reducing the need for slower disk-based swap. [Configure zram ](https://github.com/iver0/configure-zram)
   - https://linuxblog.io/running-out-of-ram-linux-add-zram/
+  - Benchmark notes https://www.reddit.com/r/Fedora/comments/mzun99/new_zram_tuning_benchmarks/
     ````shell
     grep swap /etc/fstab      # Find out what the file is named and path, e.g. /swapfile
     swapoff /swapfile         # Now deactivate it. Display swap: swapon --show
