@@ -6,6 +6,7 @@
   - Fourth number: tRAS. "Row Active Time (TRAS) measures the minimum amount of cycles a row must remain open to properly write data."
 
 - Enable [Zram](https://fosspost.org/enable-zram-on-linux-better-system-performance/) - which is a Linux kernel module that creates compressed block devices in RAM, allowing for more efficient use of memory by storing swap data in a compressed format. This helps improve performance, especially on systems with limited RAM, by reducing the need for slower disk-based swap. [Configure zram ](https://github.com/iver0/configure-zram)
+  - https://linuxblog.io/running-out-of-ram-linux-add-zram/
     ````shell
     grep swap /etc/fstab      # Find out what the file is named and path, e.g. /swapfile
     swapoff /swapfile         # Now deactivate it. Display swap: swapon --show
