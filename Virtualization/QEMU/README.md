@@ -1,4 +1,4 @@
-# Q E M U (Quick Emulator)
+# QEMU (Quick Emulator)
 
 - [Run osX in a Qemu/KVM VM](https://github.com/kholia/OSX-KVM)
 - [Run different architectures in qemu in a docker container](https://github.com/multiarch/qemu-user-static)
@@ -20,9 +20,13 @@ qemu-system-x86_64 -hda /dev/sdc1 -m 1G --enable-kvm -nographic -cdrom ebian.iso
 ### Working with disks
 - [(PPT) QEMU Disk IO Which performs Better: Native or threads?](https://www.slideshare.net/slideshow/qemu-disk-io-which-performs-better-native-or-threads/62724391)
 ````shell
-qemu-img convert -O qcow2 vmware-disk.vmdk kvm-disk.qcow2                 #converting to KVM compatible
-qemu-img convert -f raw -O qcow2 /tmp/source.raw /tmp/output.qcow2 -p     #converting raw to qcow2 with progressbar
-qemu-img info source.qcow2            #get info about disk
+qemu-img convert -O qcow2 vmware-disk.vmdk kvm-disk.qcow2                 #1. making it KVM compatible (qcow2 format)
+
+qemu-img convert -f vmdk -O qcow2 kali2025.vmdk kali.qcow2                # Another example
+
+qemu-img convert -f raw -O qcow2 /tmp/source.raw /tmp/output.qcow2 -p     # converting raw to qcow2 with progressbar
+
+qemu-img info source.qcow2                                                # get info about disk
 ````
 
 ### Qemu on macOS
