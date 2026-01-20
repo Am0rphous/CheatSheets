@@ -76,20 +76,20 @@ remote-viewer spice://localhost:5900
 ````
 - Create a shared folder linux. [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
   ````shell
-  #On host run
+  ##On main host run:
   sudo apt install virtiofs
-  mkdir ~/share
-  sudo chown -R $USER:libvirt-qemu ~/shared`  #Maybe
+  mkdir ~/kvmshare
+  sudo chown -R $USER:libvirt-qemu ~/kvmshare
   
-  #In KVM enable "Shared memory" for the VM.
-  #in KVM add 'hardware' and "Filesystem" with these settings
-  #Source: ~/shared/    #On the host
-  #Target: shared
+  ##In KVM enable "Shared memory" for the VM.
+  ##add 'hardware' and "Filesystem" with these settings
+  #Source: /home/$USER/kvmshare/    #On the host
+  #Target: share                    #Whatever
   
   #Start VM and run
   sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt
   
-  #Add persistence
+  #Add persistence as ROOT
   echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
   ````
 - Create a shared folder on Windows guest - [read more](https://imanudin.net/2025/05/05/how-to-access-host-folder-in-windows-vm-on-proxmox-using-virtiofs/)
