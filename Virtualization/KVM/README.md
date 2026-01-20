@@ -62,11 +62,19 @@ Installation with `sudo`
 
 ### Integration and console
 - Standard. `spice-vdagent` enables copy/paste between host and vm.
+  - Linux:
+    ````shell
+    sudo apt install spice-vdagent
+    systemctl enable --now spice-vdagent
+    sudo apt install qemu-guest-agent
+    systemctl enable --now spice-vdagent
+    ````
   - Windows: Download [spice-guest-tools](https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe) and virtio-win-guest-tools from [Virtio-Win ISO](https://github.com/virtio-win/kvm-guest-drivers-windows)
 - Dynamic screen sizing: Add "Video model" to **VGA** caus the others not functioning right (sept 2025). In addition, ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
   - Using VGA will fuck up Chrome/Chromium. Its unresponsive and takes forever to load. Use Firefox
 - Consider install zram to compress memory within the VM and increase performance. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md)
 ````shell
+#In VM
 sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
 systemctl enable --now qemu-guest-agent
 
@@ -92,7 +100,7 @@ remote-viewer spice://localhost:5900
   #Add persistence as ROOT
   echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
   ````
-- Create a shared folder on Windows guest - [read more](https://imanudin.net/2025/05/05/how-to-access-host-folder-in-windows-vm-on-proxmox-using-virtiofs/)
+- **Create a shared folder on Windows guest** - [read more](https://imanudin.net/2025/05/05/how-to-access-host-folder-in-windows-vm-on-proxmox-using-virtiofs/)
   - Add hardware -> Filesystem -> Driver:virtiofs Source path:/etc/my/shared Target path:whateverNameHere
   - Start VM and install this **within** [WinFsp](https://github.com/winfsp/winfsp/releases) and [virtiofs driver](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)
   - Open `Services` and enable autostart+start `VirtIO-FS Service`
