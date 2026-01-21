@@ -60,7 +60,8 @@ Installation with `sudo`
     ````
   - [gdm3](https://linuxconfig.org/how-to-enable-autologin-on-kali-linux)
 
-### Integration and console
+### Integrations for a smooth workflow
+- Consider install zram to compress memory reduce resource footprint. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md) for more info
 - Standard. `spice-vdagent` enables copy/paste between host and vm.
   - Linux:
     ````shell
@@ -70,9 +71,10 @@ Installation with `sudo`
     systemctl enable --now spice-vdagent
     ````
   - Windows: Download [spice-guest-tools](https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe) and virtio-win-guest-tools from [Virtio-Win ISO](https://github.com/virtio-win/kvm-guest-drivers-windows)
-- Dynamic screen sizing: Add "Video model" to **VGA** caus the others not functioning right (sept 2025). In addition, ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
-  - Using VGA will fuck up Chrome/Chromium. Its unresponsive and takes forever to load. Use Firefox
-- Consider install zram to compress memory within the VM and increase performance. Check [cheatsheets](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Memory.md)
+- Dynamic screen sizing:
+  - Add **Video VGA** and increase vram from `16384` to `65536` (64MB). `virsh edit <name>` or use GUI
+  - Ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
+  - NB: Using VGA will make Chrome/Chromium/brave unresponsive. Use Firefox/librewolf
 ````shell
 #In VM
 sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
