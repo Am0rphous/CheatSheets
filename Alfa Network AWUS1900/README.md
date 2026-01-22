@@ -11,27 +11,38 @@
 - Linux
   - [rtl8812au - aircrack-ng](https://github.com/aircrack-ng/rtl8812au)
   - [rtl8814au - alfa docs](https://docs.alfa.com.tw/Support/Linux/RTL8814AU/)
-  - [rtl8814au - morrownr](https://github.com/morrownr/8814au) - (use this - May 2024 - [Monitor Mode script](https://github.com/morrownr/Monitor_Mode)
+  - [rtl8814au - morrownr](https://github.com/morrownr/8814au) - (use this - Jan 2025 - [Monitor Mode script](https://github.com/morrownr/Monitor_Mode)
   - [rtl8814au - aircrack-ng](https://github.com/aircrack-ng/rtl8814au)
   - [rtl8814au - zebulon2](https://github.com/zebulon2/rtl8814au)
 
 
 <details>
    
-<summary>How to install morrownr's rtl8814au - Fully working!</summary>
+<summary>How to install morrownr's rtl8814au - Working 2025</summary>
 
 <br>
 
-May 2024: The driver works as expected. (I Haven't tried packet injection though)
+Jan 2025: The driver works ish as expected. (I Haven't tried packet injection though)
 
 ````shell
+lsusb | grep Realtek   # Are drivers detected? Expected output below:
+Bus 002 Device 003: ID 0bda:8813 Realtek Semiconductor Corp. RTL8814AU 802.11a/b/g/n/ac Wireless Adapter
+
+#Install dependencies
+sudo apt install gcc make bc kernel-headers-$(uname -r) build-essential git dkms rfkill iw ip openssl sign-file mokutil
+
 cd ~
 git clone https://github.com/morrownr/8814au
 cd 8814au
+
+#Method one is using the install script
+sudo ./install-driver.sh
+
+#Method 2 is installing manually:
 make
 sudo make install
 sudo modprobe 8814au
-iwconfig | grep REALTEK
+iwconfig | grep wlan    # Check names of wireless adapters
 ````
 - To check if a driver is working. You should be able to display the adapter with `iwconfig` and `ifconfig|grep wlan*` where your adapter is most likely `wlan0` or `wlan1 `adapter
 - Check driver for **wlan0** with the command `readlink /sys/class/net/wlan0/device/driver`
