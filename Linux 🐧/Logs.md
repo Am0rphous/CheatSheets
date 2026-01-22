@@ -1,5 +1,10 @@
 # Logs
 
+- [Log2ram](https://github.com/azlux/log2ram) - ramlog like for systemd (Put log into a ram folder)
+
+
+
+
 - Path for logs `/var/log/ `
 - [Syslog : The Complete System Administrator Guide](https://devconnected.com/syslog-the-complete-system-administrator-guide/)
 - [Logcheck](https://logcheck.org/) - Logcheck is a simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
