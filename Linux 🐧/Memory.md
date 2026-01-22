@@ -12,8 +12,9 @@
     grep swap /etc/fstab      # Find out what the file is named and path, e.g. /swapfile
     swapoff /swapfile         # Now deactivate it. Display swap: swapon --show
     nano /etc/fstab           #Comment out swap file
-    
-    apt install zram-tools                     # Config path  /etc/default/zramswap    
+
+    ##Config path is  /etc/default/zramswap   
+    apt install zram-tools                      
     systemctl enable --now zramswap.service    # Enable service at startup and start it now
     systemctl status zramswap
     
