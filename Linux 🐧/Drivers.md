@@ -2,12 +2,15 @@
 
 Usseful commands
 
-````powershell
+````shell
 lsmod                               # display modules in the Linux Kernel. 
 rmmod                               # unload module
 modprobe                            # load it
 modprobe 88XXau                     # loads the 88XXau driver
-modinfo {driver-name}
+modinfo <driver-name>
+modinfo rtw_8814a
+modinfo rtw_8814a| head -6          # show first 6 lines
+
 v4l2-ctl --list-devices              #application to control video4linux drivers
 awk '{ print $1 }' /proc/modules
 cat /proc/modules                              # shows what kernel modules (drivers) are currently loaded into memory
