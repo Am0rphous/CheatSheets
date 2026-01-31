@@ -65,9 +65,9 @@ echo $GDMSESSION
   ```` 
 - KDE Plasma
   ````shell
-  sudo apt install kde-full            #4-5-GB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
-  sudo apt install kde-standard        #1,5-2GB. Includes core KDE Plasma Desktop and standard applications. 
-  sudo apt install kde-plasma-desktop  #1-1,5GB. Includes core KDE Plasma Desktop and some essential applications
+  sudo apt install kde-plasma-desktop  #70 MB. Includes core KDE Plasma Desktop and some essential applications
+  sudo apt install kde-standard        #300 MB. Includes core KDE Plasma Desktop and standard applications. 
+  sudo apt install kde-full            #1000 MB. Comprehensive suite that includes all KDE applications along with the core KDE Plasma Desktop.
   ````
 - `kubuntu-desktop` -  Ubuntu version of KDE with pre-installed apps
 - `ubuntu-desktop`
