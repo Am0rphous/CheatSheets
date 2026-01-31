@@ -30,13 +30,13 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
 - LightDM (Lightweight Display Manager)
   - [Github](https://github.com/canonical/lightdm)
   - [wiki](https://wiki.ubuntu.com/LightDM)
-- GDM3 (GNOME Display Manager)
+- GDM3 (GNOME Display Manager) - Use `gdm3` if you're running Gnome
   - [wiki](https://wiki.gnome.org/Projects/GDM)
   - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
    ````shell
    apt install gnome gdm3 task-gnome-desktop --reinstall
    ````
-- SDDM (Simple Desktop Display Manager)
+- SDDM (Simple Desktop Display Manager) - use `sddm` if you're running KDE
   - [wiki](https://wiki.archlinux.org/title/SDDM)
    ````shell
    apt install sddm sddm-kcm qt5-declarative
