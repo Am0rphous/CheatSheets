@@ -31,8 +31,14 @@ To install cargo on Linux run: `sudo apt install cargo`
 
 ## FlatPak
 - [https://flatpak.org/](https://flatpak.org/)
-````
+````shell
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
+
+#Error: "This Flatpak does not have write access to ~/.local/share/applications and ~/.local/share/icons
+sudo apt install flatseal   #Under Google Chrome: Add these paths under "Filesystenm"
+~/.local/share/icons
+~/.local/share/applications/
 ````
 
 ## Snaps
