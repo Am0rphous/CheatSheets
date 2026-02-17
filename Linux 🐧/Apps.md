@@ -35,7 +35,11 @@ To install cargo on Linux run: `sudo apt install cargo`
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update
 
-#Error: "This Flatpak does not have write access to ~/.local/share/applications and ~/.local/share/icons
+#Error: "This Flatpak does not have write access to ~/.local/share/applications and ~/.local/share/icon
+#https://discourse.flathub.org/t/pwas-this-flatpak-does-not-have-write-access-to/3830
+flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.microsoft.Edge
+
+#Actual fix:
 sudo apt install flatseal   #Under Google Chrome: Add these paths under "Filesystenm"
 ~/.local/share/icons
 ~/.local/share/applications/
