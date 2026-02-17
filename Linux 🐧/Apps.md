@@ -39,6 +39,10 @@ flatpak update
 sudo apt install flatseal   #Under Google Chrome: Add these paths under "Filesystenm"
 ~/.local/share/icons
 ~/.local/share/applications/
+
+#Might need to check executable permissions
+ls -l ~/.local/share/applications/
+
 ````
 
 ## Snaps
