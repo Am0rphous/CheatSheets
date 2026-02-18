@@ -306,25 +306,28 @@ Pin-Priority: 1001
   ### Files and Folders
   - Linux Directory Structure and Important Files Paths Explained](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
   ````shell
-  ls folder|wc                                    #count files in folder
-  du -ah /|sort -rh|head -n 10                    #find largest  files on disk
-  head file list.txt                              #displays the 10 first line of file
-  head -n 5 list.txt                              #displays the 5 first line of file
-  mkdir myfolder                                  #creates folder
-  mkdir myfolder{1..50}                           #creates 50 folders
-  mkdir -v test                                   #v=verbose
-  mkdir folder1/folder2/folder3/folder4/folder5   #makes every folder if they dont exist
-  nautils &                                       #opens default home folder
-  nautils Documents &                             #opens Documents folder
-  rm myfile                                       #removes myfile
-  rm !(backup.gz)                                 #removes every file in the folder except backup.gz
-  rm !(backup.gz|script.sh)                       #removes every file in the folder except backup.gz and script.sh
-  tail myfile.txt                                 #displays the 10 last lines of file
-  tail -n 16 myfile.txt                           #displays the 16 last lines of file
-  touch myfile                                    #creates empty file
-  touch myfile{1..50}                             #creates 50 empty files
-  xdg-open                                        #opens a file or URL in the user's preferred application
-  xdg-open myfolder                               #opens myfolder and sends i
+  ls folder|wc                                    # count files in folder
+  du -ah /|sort -rh|head -n 10                    # find largest  files on disk
+  head file list.txt                              # displays the 10 first line of file
+  head -n 5 list.txt                              # displays the 5 first line of file
+  mkdir myfolder                                  # creates folder
+  mkdir myfolder{1..50}                           # creates 50 folders
+  mkdir -v test                                   # v=verbose
+  mkdir folder1/folder2/folder3/folder4/folder5   # makes every folder if they dont exist
+  
+  nautils &                                       # opens default home folder
+  nautils Documents &                             # opens Documents folder
+  nautilus admin:///usr/                          # Open /usr/ as root
+  
+  rm myfile                                       # removes myfile
+  rm !(backup.gz)                                 # removes every file in the folder except backup.gz
+  rm !(backup.gz|script.sh)                       # removes every file in the folder except backup.gz and script.sh
+  tail myfile.txt                                 # displays the 10 last lines of file
+  tail -n 16 myfile.txt                           # displays the 16 last lines of file
+  touch myfile                                    # creates empty file
+  touch myfile{1..50}                             # creates 50 empty files
+  xdg-open                                        # opens a file or URL in the user's preferred application
+  xdg-open myfolder                               # opens myfolder and sends i
   sudo lsof -F sn0 | tr -d '\000' | grep deleted | sed 's/^[a-z]*\([0-9]*\)n/\1 /' | sort -n
   lsof -i
   ````
