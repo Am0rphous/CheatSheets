@@ -42,9 +42,15 @@ How to Easily Backup KVM Virtual Machine in 4 Ways?
   - 
 ## Setup
 - [KaliLinux 2017.1: Install KVM for virtualization](https://www.hiroom2.com/2017/07/23/kalilinux-2017-1-kvm-en/)
+- Nested virtualization: https://documentation.ubuntu.com/server/how-to/virtualisation/enable-nested-virtualisation/
 Installation with `sudo`
   ````shell
   apt install qemu qemu-kvm libvirt-daemon libvirt-clients bridge-utils virt-manager kvmtool
+  
+  apt-get install cpu-checker
+  kvm-ok                 #We want: INFO: /dev/kvm exists  +  KVM acceleration can be used
+  virt-host-validate
+  
   service libvirtd start
   usermod -aG libvirt $USER
   usermod -aG kvm $USER
