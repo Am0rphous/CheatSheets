@@ -62,6 +62,8 @@
     - [CRTP notes - sec-fortress](https://github.com/sec-fortress/CRTP-Notes)
 - [SOCP (Security Onion Certified Professional)](https://securityonionsolutions.com/certification)
 
+- TCM
+  - [PNPT (Practical Network Penetration Tester)](https://certifications.tcm-sec.com/pnpt/)
 - TryHackMe
   - [Jr. Pentester](https://tryhackme.com/path/outline/jrpenetrationtester)
   - [Pre Security](https://tryhackme.com/path/outline/presecurity)
