@@ -944,13 +944,10 @@ Notes for later
   source ~/.bash_profile                              # kali: source .profile
 
   #Debian13
-  export PATH=$PATH:/sbin/             # temporary
-  nano ~/.profile                      # Add below for permanent
-      if [ -d "/usr/sbin" ] ; then
-          PATH="/usr/sbin:$PATH"
-      fi
-  source ~/.profile
-  ifconfig                             # check if it works
+  export PATH=$PATH:/sbin/                         # temporary
+  echo export PATH=$PATH:/usr/sbin >> ~/.bashrc    # permanent
+  source .bashrc                                   # update
+  ifconfig                                         # confirm it works
   ````
 - `bash -n scriptname` checks if a script got syntax error
 - [Learn Bash Scripting ](https://itsfoss.com/create-bash-script/)
