@@ -939,9 +939,18 @@ Notes for later
   ````shell
   1. Append: export PATH=$PATH:/new/path/
 
-  2. nano ~/.bash_profile    #kali .profile
-  export PATH=$PATH:/usr/local/android-studio/bin/     #Add line and save
-  source ~/.bash_profile   #kali: source .profile
+  2. nano ~/.bash_profile                             # kali .profile
+  export PATH=$PATH:/usr/local/android-studio/bin/    # Add line and save
+  source ~/.bash_profile                              # kali: source .profile
+
+  #Debian13
+  export PATH=$PATH:/sbin/             # temporary
+  nano ~/.profile                      # Add below for permanent
+      if [ -d "/usr/sbin" ] ; then
+          PATH="/usr/sbin:$PATH"
+      fi
+  source ~/.profile
+  ifconfig                             # check if it works
   ````
 - `bash -n scriptname` checks if a script got syntax error
 - [Learn Bash Scripting ](https://itsfoss.com/create-bash-script/)
