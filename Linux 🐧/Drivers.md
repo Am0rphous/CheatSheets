@@ -37,6 +37,7 @@ readlink /sys/class/net/wlan1/device/driver    # shows wlan1 driver
   #Unix driver archive gives "production" and "feature" branch versions but are several months OLD, like wtf? https://www.nvidia.com/en-in/drivers/unix/
 
   SOLUTION: Download Datacenter Drivers:  https://developer.nvidia.com/datacenter-driver-downloads
+  #https://developer.nvidia.com/datacenter-driver-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=13&target_type=deb_local
   Linux -> x86_64 -> Debian -> 12 -> deb (local). Then run the rest of the commands on from the website
   Reboot
 
