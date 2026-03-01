@@ -497,12 +497,15 @@ dpkg --list | grep linux-image      # list installed kernels
 
 ### Kernel Modules
 - Pieces of code that we can load into the Linux kernel to extend its functionality. We can for instance capture detailed information about processes such as its creation, execution, termination, process IDs, system calls and a lot more.
-````
-lsmod          # list kernel modules
-modprobe       # add/remove kernel modules
-insmod         # insert module in kernel. USE MODPROPE INSTEAD!
-modinfo        # show kernel module info
-````
+  ````
+  lsmod                  # list kernel modules
+  modprobe               # add/remove kernel modules
+  insmod                 # insert module in kernel. USE MODPROPE INSTEAD!
+  modinfo                # show kernel module info
+  modinfo lkrg
+  modinfo lkrg | less
+  modinfo lkrg | grep -i version
+  ````
 
   ### Kernel Security
   - [Cloudflare - Linux kernel hardening](https://blog.cloudflare.com/linux-kernel-hardening/)
