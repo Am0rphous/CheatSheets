@@ -318,9 +318,16 @@ iostat -y 1 -m    # same as above, but listing in Megabytes in stead og Kilobyte
 ````powershell
 sudo mount /dev/sda /media/storage
 sudo umount /dev/sda /media/ubuntu
-sudo mount -a                              #mount all partitions from /ect/fstab
-lvscan                                     #get volumes, e.g. /dev/VG1/LV1
-mount /dev/VG2/LV3 /mnt/123                #mount lvm on /mnt/123
+sudo mount -a                              # mount all partitions from /ect/fstab
+lvscan                                     # get volumes, e.g. /dev/VG1/LV1
+mount /dev/VG2/LV3 /mnt/123                # mount lvm on /mnt/123
+
+sudo mkfs.ext4 /dev/sda     # Ensure "sda" is correct!
+sudo mkdir /mnt/sda
+sudo nano /etc/fstab
+blkid | grep sda
+UUID=f398f302-fef8-4ba8-8ba0-519c8768a6e9  /mnt/disk  ext4  defaults  0  2
+sudo mount -a
 ````
 ### Mounting a NAS Synology server with IP 10.0.0.10 to Ubuntu
 On Ubuntu do:
