@@ -16,23 +16,29 @@
     pstree                          # displays tree view 
     ````
 ### Kill processes
-````shell
-kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
-kill -9 123            # Kills immediately, cannot ble handled/blocked and kills chils processes as well
-killall proc           # kill all processes named proc
-````
-Process stalling
-````shell
-kill -SIGSTOP $PID      # stop a process without destroying its resources
-kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
-````
+    ````shell
+    kill 123               # kill process with pid id 1243 (SIGTERM, which is Gracefully. Can be handled, ignored and blocked. Does not kill child processes)
+    kill -9 123            # Kills immediately, cannot ble handled/blocked and kills chils processes as well
+    killall proc           # kill all processes named proc
+    
+    # Process stalling
+    kill -SIGSTOP $PID      # stop a process without destroying its resources
+    kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
+    ````
 
 ### Monitor processes
 - [pSpy](https://github.com/DominicBreuker/pspy) - Monitor linux processes without root permissions
     ````shell
     top
+    top  +  shift+P                         # sorts on highest CPU usage - nice
+    top  +  shift+M                         # sorts on highest memory usage
+    top  +  shift+T                         # sort PIDs
     top -i
     top -ic                                 # NICE - List only processes with full command line
+    top  + k                                # kill PID + enter
+    top  + d                                # update frequency
+    top  + f                                # show fields
+    
     htop                                    # sudo apt install htop
     glances                                 # sudo apt install glances
     lsof -p $PID                            # list open files and network streams
@@ -41,11 +47,11 @@ kill -SIGCONT $PID      # resume a process previously stopped with SIGSTOP
     ````
 
 ### Jobs
-````shell
-bg           # lists stopped background jobs; resume a stopped job in the background
-fg           # brings the most recent job to the foreground
-fg n         # brings job 'n' to the foreground
-````
+    ````shell
+    bg           # lists stopped background jobs; resume a stopped job in the background
+    fg           # brings the most recent job to the foreground
+    fg n         # brings job 'n' to the foreground
+    ````
 
 ### Zombie processes
 - [How to Find and Kill Zombie Process in Linux](https://itsfoss.com/kill-zombie-process-linux/) - "This is a quick tip on finding zombie processes in Linux and then killing them. You also learn a thing or two about processes and zombie processes."
