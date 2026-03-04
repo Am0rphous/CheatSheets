@@ -81,31 +81,35 @@ Installation with `sudo`
   - Add **Video VGA** and increase vram from `16384` to `65536` (64MB). `virsh edit <name>` or use GUI
   - Ensure "Resize guest with window" is "on". Open virt-manager -> Edit -> Preferences -> Console -> and enable it
   - NB: Using VGA will make Chrome/Chromium/brave unresponsive. Use Firefox/librewolf
-````shell
-#In VM
-sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
-systemctl enable --now qemu-guest-agent
-
-#For remote display. Change "Video" to "virtio" or "QXL"
-apt install virt-viewer
-remote-viewer spice://localhost:5900
-````
+  ````shell
+  #In VM
+  sudo apt update && sudo apt install -y linux-image-$(uname -r) linux-headers-$(uname -r) qemu-guest-agent spice-vdagent #virtio-utils
+  systemctl enable --now qemu-guest-agent
+  
+  #For remote display. Change "Video" to "virtio" or "QXL"
+  apt install virt-viewer
+  remote-viewer spice://localhost:5900
+  ````
 - Create a shared folder linux. [inspo](https://discussion.fedoraproject.org/t/kvm-host-guest-shared-folder-with-virtiofs-linux-only-guests/150485)
   ````shell
-  ##On main host run:
-  sudo apt install virtiofs
+  ## On main host
+  sudo apt install virtiofs    # virtiofsd debian13
   mkdir ~/kvmshare
   sudo chown -R $USER:libvirt-qemu ~/kvmshare
   
-  ##In KVM enable "Shared memory" for the VM.
-  ##add 'hardware' and "Filesystem" with these settings
-  #Source: /home/$USER/kvmshare/    #On the host
-  #Target: share                    #Whatever
+  ## In KVM VM enable "Shared memory" for the VM.
+  ## add -> Hardware -> Filesystem then add
+  #Source path:  /home/$USER/kvmshare/        # path on host
+  #Target path:   shared                      # can be whatever, but remember the word
   
   #Start VM and run
-  sudo mkdir /mnt/shared/ && sudo mount -t virtiofs shared /mnt
+  sudo mkdir /mnt/shared/
+  sudo mount -t virtiofs shared /mnt
+  #If error:   mount: /mnt: wrong fs type, bad option, bad superblock on shared, missing codepage or helper program, or other error.
+  #Check if path its already added to /etc/fstab
+  #Check if the target path in KVM is the same as the one you're trying to mount.
   
-  #Add persistence as ROOT
+  #For persistence. Run as root
   echo "shared   /mnt/shared   virtiofs   defaults,_netdev   0 0" >> /etc/fstab
   ````
 - **Create a shared folder on Windows guest** - [read more](https://imanudin.net/2025/05/05/how-to-access-host-folder-in-windows-vm-on-proxmox-using-virtiofs/)
