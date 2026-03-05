@@ -104,6 +104,12 @@ docker-compose pull
 docker-compose up -d
 ````
 
+## Transfer files to container
+````shell
+docker cp /path/to/file.txt container_name:/path/inside/container
+docker cp container_name:/path/in/container/file.txt /local/path/
+````
+
 
 ##### Credit
 - <a href="https://iconscout.com/icons/social" target="_blank">Docker Logo Icon</a> on <a href="https://iconscout.com">Iconscout</a>
