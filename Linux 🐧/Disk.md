@@ -70,6 +70,13 @@ By using `ddrescue`
 
 <details> <summary> Secure disk wiping </summary>
 
+- NVMe Sanitize with Linux nvme-cli - https://tinyapps.org/docs/nvme-sanitize.html
+- NVMe Secure Erase with Linux nvme-cli - https://tinyapps.org/docs/nvme-secure-erase.html
+- SATA Sanitize with Linux hdparm - https://tinyapps.org/docs/ata_sanitize_hdparm.html
+- SATA Secure Erase with Linux hdparm - https://tinyapps.org/docs/wipe_drives_hdparm.html
+
+<br>
+
 dd - Not recommended on SSDs due to wear level
 ````shell
 dd if=/dev/zero of=/dev/sda2 bs=512 count=1
