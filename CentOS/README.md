@@ -1,9 +1,14 @@
-
 # CentOS
 
+````shell
+cat /etc/os-release
 
+init 6                 # reboot method 1
+systemctl reboot       # reboot method 2
+shutdown -r            # reboot method 3
+```` 
 #### Change system keyboard keymap layout on CentOS 7 Linux 
-````
+````shell
 yum install kbd
 loadkeys no                         #change to Norwegian
 localectl                           #list keymap settings in use
@@ -11,8 +16,23 @@ localectl list-keymaps              #list available keymaps
 localectl list-keymaps | grep us    #list keymaps with 'no'
 localectl set-keymap us             #change permanently
 ````
+## Updates
+````shell
+# https://www.cyberciti.biz/faq/install-enable-automatic-updates-rhel-centos-8/
+sudo yum install dnf-automatic
 
+sudo yum --security check-update   # list updates
+sudo yum check-update              # dnf check-update
+sudo yum update -y                 # dnf upgrade -y
+
+````
 ## Firewall
+````shell
+#protect against brute force ssh
+yum install fail2ban
+systemctl enable fail2ban --now
+````
+
 | Key/Command | Description |
 | ----------- | ----------- |
 | sudo systemctl enable firewalld | Enables the firewall | |
@@ -32,7 +52,6 @@ localectl set-keymap us             #change permanently
 | sudo firewall-cmd --permanent --add-source=192.168.2.0/24 | allow a range of IPs or an entire subnet using a CIDR (Classless Inter-Domain Routing) notation | |
 
 
-
 ## Updating, installatiion of packages
 | Key/Command | Description |
 | ----------- | ----------- |
@@ -45,3 +64,10 @@ localectl set-keymap us             #change permanently
 | | |
 | | |
 
+## Network
+````shell
+hostnamectl set-hostname your-new-hostname
+hostnamectl status
+hostname           # prints current hostname
+uname -n
+````
