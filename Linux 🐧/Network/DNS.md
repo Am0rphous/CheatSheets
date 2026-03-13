@@ -4,7 +4,7 @@
 
 Important paths
 ````shell
-/etc/resolv.conf          #contains e.g. "nameserver 1.1.1.1"
+/etc/resolv.conf          # contains e.g. "nameserver 1.1.1.1"
 ````
 
 Commands
@@ -14,6 +14,10 @@ host myserver ns1.dns.com
 nslookup google.com
 resolvectl status
 sudo systemd-resolve --flush-caches    # Flush DNS cache when using systemd-resolved
+
+# Access virtual hosts without using DNS. Point hostname to an IP in the file - bypassing dns resolution
+echo "1.2.3.4 example.com" | sudo tee -a /etc/hosts
+sudo sed -i '/\sexample\.com$/d' /etc/hosts && echo "1.2.3.4 example.com" | sudo tee -a /etc/hosts   # Replace 1.2.3.4 and example.com
 ````
 
 ## DNS lookup
