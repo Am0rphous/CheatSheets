@@ -1,6 +1,8 @@
 # AntiVirus, Rootkits, Infections and juicy stuff
 
 
+https://github.com/defended-net/malwatch
+
 ````
 debsums                                 #check the MD5 sums of installed Debian packages
 netstat -nap | grep "@/proc/udevd"      # result should return nothing
