@@ -63,17 +63,21 @@ readlink /sys/class/net/wlan1/device/driver    # shows wlan1 driver
   sudo nano  /etc/modprobe.d/blacklist-nouveau.conf     # Then add two lines below
   blacklist nouveau               # Dont load Nouveau driver automatically
   options nouveau modeset=0       # Prevent Nouveau from initializing display mode early in boot process
-  
+
   sudo nvidia-settings --query=ConnectedDisplays   # Deprecated
   sudo nvidia-settings -q dpys
   
   #Add nomodeset to /etc/default/grub  which prevents kernel from loading video drivers that may cause display issues during boot
   #nvidia-drm.modeset=1
-  
-  #If you download closed source drivers from e.g. https://www.nvidia.com/en-us/drivers/details/254126/
+
+  # Install using .run file - NOT reccommended because you wont be able to install through repo (apt) afterwords
+  # If you download closed source drivers from e.g. https://www.nvidia.com/en-us/drivers/details/254126/
   apt install build-essential dkms linux-headers-$(uname -r) build-essential gcc make cmake dkms
   sudo ./NVIDIA-Linux-*.run    # Might give ERROR: Unable to load the kernel module 'nvidia-drm.ko'
   ./NVIDIA-Linux-x86_64-580.95.05.run --no-drm   # Don't include DRM
+
+  sudo update-initramfs -u
+  reboot
   ````
   - **Troubleshoot**
     ````shell
