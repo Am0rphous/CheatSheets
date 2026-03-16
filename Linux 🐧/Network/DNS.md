@@ -13,6 +13,7 @@ host 172.217.21.174
 host myserver ns1.dns.com
 nslookup google.com
 resolvectl status
+resolvectl query test.example.com
 sudo systemd-resolve --flush-caches    # Flush DNS cache when using systemd-resolved
 
 # Access virtual hosts without using DNS. Point hostname to an IP in the file - bypassing dns resolution
@@ -78,6 +79,6 @@ sudo resolvconf -u
 
 ## systemd-resolved
 ````shell
-resolvectl domain
+resolvectl example.com
 resolvectl dns
 ````
