@@ -60,6 +60,7 @@ docker image prune -a                              #Remove all images without at
 | docker stop $(docker ps -q) | Stop all containers |
 | docker run -d label=traefik.backend=jenkins jenkins | Adds metadata to a container |
 | docker container kill web | Stop a running container through SIGKILL |
+| docker top <name> | show processes |
 
 ## Manage Containers
 - [Copy Files from Docker Container to Local Machine](https://www.tutorialspoint.com/copy-files-from-docker-container-to-local-machine)
