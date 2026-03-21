@@ -136,6 +136,7 @@ Cron routines can be found in these files and folders
 sudo apt update
 sudo apt dist-upgrade -y                            # install all updates available
 sudo apt update && sudo apt list --upgradable       # list upgradable packets
+sudo rm -rf /var/lib/apt/lists/*                    # remove the old metadata and download fresh repository indexes
 sudo apt show package_name                          # displays info about package_name
 sudo apt list -a package_name                       # displays various versions about package_name
 sudo apt-get install --only-upgrade NAME            # only upgrade packet NAME
