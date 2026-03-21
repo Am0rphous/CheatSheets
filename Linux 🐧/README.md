@@ -862,7 +862,9 @@ User Information	groups • id • lastcomm • last • lid/libuser-lid • log
   ````shell
   groups                              # lists groups for the current user
   groups peter                        # lists groups for specific user
-  newgrp                              # Instantly apply the group membership #NICE
+  newgrp <group>                      # Instantly apply the group membership  # NICE
+  newgrp docker                       # Apply the docker group membership to the current user
+
   su - peter                          # switch to user peter
   sudo adduser mike                   # USE THIS COMMAND! Adds a new user. Creates home folder ++. More user friendly
   sudo useradd                        # low level. Scripting?
