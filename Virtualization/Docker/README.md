@@ -76,6 +76,23 @@ docker image prune -a                              #Remove all images without at
 | docker inspect -f '{{.NetworkSettings.IPAddress}}' container | Query a specific metadata of a running container |
 | docker inspect -f "{{ .HostConfig.RestartPolicy }}" <container_id> | Check restart policy |
 
+### Disable auto start
+```shell
+docker inspect --format '{{.Name}} {{.HostConfig.RestartPolicy.Name}}' $(docker ps -q)
+
+# For each container, set restart policy to "no" (prevents auto-start)
+# docker update --restart=no CONTAINER_NAME_OR_ID
+
+docker update --restart=no greenbone-community-edition-gsad-1
+docker update --restart=no greenbone-community-edition-gvmd-1
+docker update --restart=no greenbone-community-edition-openvasd-1
+docker update --restart=no greenbone-community-edition-openvas-1
+docker update --restart=no greenbone-community-edition-redis-server-1
+
+# stop all containers
+docker stop $(docker ps -q) 
+```
+
 ## Network
 - [How to fix the Docker and UFW security flaw](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/)
 - [What is the best practice of docker + ufw under Ubuntu](https://stackoverflow.com/questions/30383845/what-is-the-best-practice-of-docker-ufw-under-ubuntu)
