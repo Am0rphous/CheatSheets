@@ -7,6 +7,8 @@
 - [Markdown - Tutorials](https://www.w3schools.io/file/markdown-introduction/)
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/)
 
+<br>
+
 > To add a note, use "<" before a sentence
 
 <details open>
