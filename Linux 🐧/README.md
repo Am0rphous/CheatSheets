@@ -952,11 +952,12 @@ Notes for later
   export PATH=$PATH:/usr/local/android-studio/bin/    # Add line and save
   source ~/.bash_profile                              # kali: source .profile
 
-  #kali
+  # Kali
   nano ~/.profile
-  export PATH=$PATH:/home/kali/.cargo/bin  &&  source ~/.profile 
+  export PATH=$PATH:/home/kali/.cargo/bin
+  source ~/.profile 
   
-  #Debian13
+  # Debian13
   export PATH=$PATH:/sbin/                         # temporary
   echo export PATH=$PATH:/usr/sbin >> ~/.bashrc    # permanent
   source .bashrc                                   # update
