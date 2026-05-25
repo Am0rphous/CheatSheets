@@ -7,6 +7,27 @@
   tune2fs -l /dev/sda1 | grep 'Filesystem created:'
   ````
 
+## Sleep and Hibernation
+```shell
+# Assuming you use a partition for swap. Get the UUID of swap partition 
+sudo blkid /dev/dm-2
+
+# sudo nano /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=your-uuid-here"
+sudo update-grub
+sudo update-initramfs -u
+
+apt install gnome-shell-extension-hibernate-status
+# Open Extension manager (blue icon) -> enable "Hibernate Status button" so it shows in Gnome menu
+# source: https://www.tomshardware.com/software/linux/how-to-hibernate-your-linux-computer
+
+# sudo nano /etc/systemd/sleep.conf
+HibernateDelaySec=60min   # Add
+
+reboot
+sudo systemctl hibernate   # Or use the Gnome menu
+```
+
 ## Monitoring
 ```zshell
 top
