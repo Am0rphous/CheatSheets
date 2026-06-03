@@ -4,7 +4,7 @@
 - [https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries](https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries) - Sample queries for Advanced hunting in Microsoft 365 Defender
 - [Must Learn KQL](https://github.com/rod-trent/MustLearnKQL)
 - [ Microsoft 365 Defender Advanced Hunting Queries - A Full Guide ](https://ironscales.com/guides/microsoft-365-defender/microsoft-365-defender-advanced-hunting-queries)
-
+- https://detect.fyi/threat-hunting-suspicious-user-agents-3dd764470bd0
 
 finding internet-facing devices
 ````
