@@ -21,6 +21,8 @@ sudo smartctl --health /dev/sda1
 sudo smartctl -H /dev/sda1
 sudo badblocks -v /dev/sdg1 > badblocks.txt      #Kopierer blokkene til tekstfila.
 
+# List folder size
+du -xh / | sort -hr | head -n 10
 ````
 
 <details> <summary> Sort folders by size </summary>
