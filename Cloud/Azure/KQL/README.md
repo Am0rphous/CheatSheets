@@ -1,4 +1,9 @@
 # KQL (Kusto Query Language)
+
+
+
+
+- https://github.com/ChrisHuber1/KustoForge
 - [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
 - [https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules](https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules) - Threat hunting
 - [https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries](https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries) - Sample queries for Advanced hunting in Microsoft 365 Defender
