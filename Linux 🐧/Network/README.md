@@ -12,16 +12,20 @@
 ````shell
 arp -n                       # show arp cache
 ip neigh
-curl ifconfig.me             # check your public ip
 curl ip.me                   # check your public ip
 curl ip.kelp.no              # Check your public ip
+curl ifconfig.me             # check your public ip
 ip a l                       # show ip config
 ip addr OR ip addr show      # show ip config
+ip route                     # display routing table
+
 ifconfig                     # show ip config
 ifconfig wlan0 promisc       # enable promiscuous mode on wlan0
 iwconfig
+iwconfig wlan0               # display wireless config for wlan0
 watch --interval 3 iwconfig wlan1    # Run 'iwconfig' every 3 seconds for interface wlan1
 netstat
+netstat -tulpn               # display open ports
 
 ping
 ping -s 0                # Reduce packet from 64 kb to 8 kb!!
@@ -30,7 +34,15 @@ gping 10.0.0.1
 gping 10.0.0.1 -b 60     # Ping for 60 seconds
 gping 10.0.0.1 -c red    # Use color red
 
-route
+route                    # ip route
+route -n                 # display routing table but use numbers
+
+sudo ip route del default via 192.168.2.1 dev eth1                     # Delete default route when eth1 is connected
+sudo ip route add default via 192.168.3.1 dev wlan1 metric 90          # Add new routing entry - to prioritize wlan1 if eth0 is connected and originally prioritized
+ip route del default via 192.168.2.1 dev eth1 metric 101
+ip route del default via 192.168.2.1 dev eth1 metric 102
+ip route del default via 192.168.2.1 dev eth1 metric 103
+
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
 ````
 
