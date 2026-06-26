@@ -10,8 +10,12 @@ sudo apt install ufw && sudo ufw enable
 # Allow SSH only from your home network
 sudo ufw allow from 10.0.0.1/24 to any port 22 proto tcp
 
-# Might create a lot of noise
-sudo ufw logging low/medium
+ufw logging on/off            # /etc/ufw/ufw.conf     LOGLEVEL=low
+ufw logging low/medium        # Might create a lot of noise 
+
+/etc/rsyslog.d/20-ufw.conf    # uncomment    "& stop"
+service rsyslog restart
+
 
 # These might be already default:
 sudo ufw default allow outgoing
