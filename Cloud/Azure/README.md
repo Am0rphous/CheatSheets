@@ -10,7 +10,7 @@
   - Groups: https://blog.mindcore.dk/2026/01/entra-id-pim-for-groups-automating-pim-group-activation-in-entra-id-with-powershell/
     - script: https://github.com/mindcore-tech/public/blob/main/EntraID/PIM/ActivatePIMGroups/ActivatePIMGroups.ps1
 
-#### Protecting users
+## Protecting users
 - https://learn.microsoft.com/en-us/microsoft-365/admin/setup/priority-accounts?view=o365-worldwide
 - https://learn.microsoft.com/en-us/defender-office-365/priority-accounts-security-recommendations
 
@@ -32,7 +32,7 @@
   sudo apt-get install azure-cli
   ```
 
-### Detection rules
+## Detection rules
 - [L4J/ Log4Shell & Hermeticwiper](https://github.com/stripesoc/detections)
 
 ## [Tenant](https://learn.microsoft.com/en-us/microsoft-365/enterprise/subscriptions-licenses-accounts-and-tenants-for-microsoft-cloud-offerings?view=o365-worldwide#tenants)
