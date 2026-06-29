@@ -5,7 +5,12 @@
   - over 600 million identity attacks per day - https://www.microsoft.com/en-us/security/blog/2024/12/05/8-years-as-a-leader-in-the-gartner-magic-quadrant-for-access-management/
 
 - [https://o365atp.com](https://o365atp.com/) - Safe Link Decoder
-##### Protecting users
+- PIM
+  - Roles: https://normansolutions.co.uk/automating-azure-pim-role-activation-with-powershell/
+  - Groups: https://blog.mindcore.dk/2026/01/entra-id-pim-for-groups-automating-pim-group-activation-in-entra-id-with-powershell/
+    - script: https://github.com/mindcore-tech/public/blob/main/EntraID/PIM/ActivatePIMGroups/ActivatePIMGroups.ps1
+
+#### Protecting users
 - https://learn.microsoft.com/en-us/microsoft-365/admin/setup/priority-accounts?view=o365-worldwide
 - https://learn.microsoft.com/en-us/defender-office-365/priority-accounts-security-recommendations
 
@@ -15,17 +20,17 @@
 - To fix it click your username -> Switch directory -> and change the "Startup directory" setting. (CTRL+F and search for it if you cant see it)
 
 - Quick commands Windows
-  ````powershell
+  ```powershell
   Install-Module -Name Az -Force -Repository PSGallery
   Update-Module  -Name Az -Force
   Connect-AzAccount
 
   az login --service-principal -u <Application (client) ID> -p <Client Secret> --tenant <Directory (tenant) ID>
-  ````
+  ```
 - Linux
-  ````shell
+  ```shell
   sudo apt-get install azure-cli
-  ````
+  ```
 
 ### Detection rules
 - [L4J/ Log4Shell & Hermeticwiper](https://github.com/stripesoc/detections)
