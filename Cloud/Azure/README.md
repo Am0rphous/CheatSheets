@@ -4,7 +4,8 @@
   - 2024 - 78 trillion security signals
   - over 600 million identity attacks per day - https://www.microsoft.com/en-us/security/blog/2024/12/05/8-years-as-a-leader-in-the-gartner-magic-quadrant-for-access-management/
 
-###### Protecting users
+- [https://o365atp.com](https://o365atp.com/) - Safe Link Decoder
+##### Protecting users
 - https://learn.microsoft.com/en-us/microsoft-365/admin/setup/priority-accounts?view=o365-worldwide
 - https://learn.microsoft.com/en-us/defender-office-365/priority-accounts-security-recommendations
 
