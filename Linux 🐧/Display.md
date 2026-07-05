@@ -11,11 +11,11 @@
 4. Tile Manager =
 
 ### List display and monitor info
-````shell
+```shell
 xrandr --listactivemonitors                                     #USE THIS
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
 ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display for user mike
-````
+```
 
 ### Display Manager
 "..or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell." [Read more](https://wiki.archlinux.org/title/Display_manager)
@@ -30,18 +30,22 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
 - LightDM (Lightweight Display Manager)
   - [Github](https://github.com/canonical/lightdm)
   - [wiki](https://wiki.ubuntu.com/LightDM)
+    ```shell
+    apt install --reinstall lightdm
+    sudo dpkg-reconfigure lightdm     # ensure lightm is choosed
+    ```
 - GDM3 (GNOME Display Manager) - Use `gdm3` if you're running Gnome
   - [wiki](https://wiki.gnome.org/Projects/GDM)
   - [mail.gnome.org/archives/gdm-list](https://mail.gnome.org/archives/gdm-list/)
-   ````shell
+   ```shell
    apt install gnome gdm3 task-gnome-desktop --reinstall
-   ````
+   ```
 - SDDM (Simple Desktop Display Manager) - use `sddm` if you're running KDE
   - [wiki](https://wiki.archlinux.org/title/SDDM)
-   ````shell
+   ```shell
    apt install sddm sddm-kcm qt5-declarative
    /etc/sddm.conf.d/  #configs
-   ````
+   ```
 - KDE Display Manager (KDM - "Several years ago, KDE retired its bespoke display manager (KDM) in favor of SDDM." [read more](https://linuxiac.com/kde-proposes-new-plasma-login-manager-to-replace-sddm/)
 
 
