@@ -2,13 +2,13 @@
 
 - [Nvidia drivers](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Drivers.md#nvidia-drivers-hell-on-earth)
 
-<br>
-
 0. Kernel
 1. Graphics server = e.g. xserver-xorg or wayland. Creates graphical environment
 2. Desktop/Display manager = Manages the graphics server. User only notices the login screen.
 3. Desktop environment = your actual desktop
 4. Tile Manager =
+
+<br>
 
 ### List display and monitor info
 ```shell
