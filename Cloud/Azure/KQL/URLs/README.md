@@ -18,7 +18,7 @@ DeviceNetworkEvents
 ```
 
 ##### Check if device has been in contact with two malicious URLs
-```powershell
+```kql
 DeviceEvents
 | where DeviceName contains "MyPersonalComputerName"
 | where RemoteUrl contains "malicious.url.com" or RemoteUrl contains "mailicous2.url.com"
