@@ -3,10 +3,12 @@
 - [Run osX in a Qemu/KVM VM](https://github.com/kholia/OSX-KVM)
 - [Run different architectures in qemu in a docker container](https://github.com/multiarch/qemu-user-static)
 - [How to: Use qemu-img command to convert between vmdk, raw, qcow2, vdi, vhd, vhdx formats/disk images (qemu-img create, snapshot, resize etc.)](https://dannyda.com/2020/06/25/how-to-use-qemu-img-command-to-convert-between-vmdk-raw-qcow2-vdi-vhd-vhdx-formats-disk-images-qemu-img-create-snapshot-resize-etc/)
-
 - for later: https://github.com/hozan23/vms
-Commands
-````shell
+- Virtio-Venus (Near-Native 3D acceleration) - https://wiki.cachyos.org/virtualization/virtio-venus/
+  
+<br>
+
+```shell
 qemu-img create -f vpc tc.vhd 4G            Create Virtual Hard Drive
 
 qemu-system-x86_64 -m 64 -smp 1 -cdrom TinyCore-16.2.iso -boot d -enable-kvm
@@ -15,7 +17,7 @@ qemu-system-x86_64 -m 64 -smp 1 -cdrom TinyCore-16.2.iso -boot d -enable-kvm
 qemu-system-x86_64 -hda /dev/sdc1 -m 1G --enable-kvm -nographic -cdrom ebian.iso -boot d
 #"Fire up qemu with the command above. Wait a few seconds, the screen will turn black after loading syslinux. Hit ESC, and enter:
 # install fb=none vga=normal"
-````
+```
 
 ### Working with disks
 - [(PPT) QEMU Disk IO Which performs Better: Native or threads?](https://www.slideshare.net/slideshow/qemu-disk-io-which-performs-better-native-or-threads/62724391)
