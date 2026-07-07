@@ -88,7 +88,7 @@
   - [AZ-900 - microsoft learn](https://learn.microsoft.com/nb-no/credentials/certifications/resources/study-guides/az-900)
 - SC-900
   - [SC-900 - OneEqualsOne](https://github.com/OneEqualsOne/Azure-Learning-Materials/tree/main/SC-900)
-
+- https://softwarearchitect.ca/wp-content/uploads/2026/03/AZ-900-Official-Course-Study-Guide-v3.1_.pdf
 - [Azure Certification Materials (undergroundwires)](https://github.com/undergroundwires/Azure-in-bullet-points) - az-104,303,304,400,900
 - [Azure Certification Materials (johnthebrit)](https://github.com/johnthebrit/CertificationMaterials) - az900, sc-100,104,300, az-500,700,305,400
   - [Azure Master Class ](https://github.com/johnthebrit/AzureMasterClass)
