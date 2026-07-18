@@ -9,6 +9,8 @@
 
 Links for later
 ````
+https://github.com/urbanyl/GPU-Passthrough-for-KVM-QEMU-on-Linux
+
 https://www.lzone.de/cheat-sheet/KVM
 https://gist.github.com/mbodo/f0c1432a52cc62737cb6084e043ef3e0
 https://fazlerabbi37.github.io/blogs/kvm_cheat_sheet.html
