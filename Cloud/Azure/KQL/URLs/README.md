@@ -19,6 +19,9 @@ DeviceNetworkEvents
 //Checking network events towards a russian social media site:
 DeviceNetworkEvents
 | where RemoteUrl contains "vk.com" or RemoteUrl contains "vkuser." or RemoteUrl contains "vk.ru"
+
+DeviceNetworkEvents
+| where RemoteUrl contains "mail.ru"
 ```
 
 ##### Check if device has been in contact with two malicious URLs
