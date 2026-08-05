@@ -1,4 +1,6 @@
 # Windows
+- https://github.com/MicrosoftDocs
+- Windows Server 2012 R2 and Windows Server 2012 - https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh801901(v=ws.11)
 
 Running `appwiz.cpl` opens the old Control Panel where you can install/uninstall software
 
