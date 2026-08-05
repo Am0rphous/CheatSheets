@@ -1,4 +1,7 @@
 # Azure
+- https://learn.microsoft.com/en-us/azure
+- https://github.com/MicrosoftDocs/defender-docs
+- 
 - Microsoft Digital Defense Report 2024
   - 2023 - 65 trillion security signals
   - 2024 - 78 trillion security signals
