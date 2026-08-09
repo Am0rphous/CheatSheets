@@ -27,19 +27,25 @@ pveam update
 
 <br>
 
+## Home lab setup
+- Disable enterprise repositories and enable regular proxmox/debian repo:
 ```shell
-# Error: '/etc/pve/nodes/pve1/pve-ssl.pem' does not exist! (500)
-pvecm updatecerts     # on all nodes
+# Open shell and navigate to "/etc/apt/sources.list.d"
+# Edit 'pve-enterprise.sources' and 'ceph.sourcesEnterprise' and add this on the top:
+Enabled: no
 
-# Enterprise Repositories
-Enabled: no   # in pve-enterprise.sources + ceph.sources
-
-# add /etc/apt/sources.list.d/proxmox.sources.
+# Create "proxmox.sources" in "/etc/apt/sources.list.d/"
 Types: deb
 URIs: http://download.proxmox.com/debian/pve
 Suites: trixie
 Components: pve-no-subscription
 Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+```
+### Known errors
+- `Error: '/etc/pve/nodes/pve1/pve-ssl.pem' does not exist! (500)`
+```shell
+# Run this on all nodes
+pvecm updatecerts     
 ```
 
 ### Services
