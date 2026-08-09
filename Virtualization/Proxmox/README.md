@@ -28,19 +28,21 @@ pveam update
 <br>
 
 ## Home lab setup
-- Disable enterprise repositories and enable regular proxmox/debian repo:
+- Repo setup - https://pve.proxmox.com/wiki/Package_Repositories
+- Disable enterprise repositories and enable regular repo on Nodes and PDM (Pr. Datacenter Manager)
 ```shell
 # Open shell and navigate to "/etc/apt/sources.list.d"
-# Edit 'pve-enterprise.sources' and 'ceph.sourcesEnterprise' and add this on the top:
+# Edit 'pve-enterprise.sources', 'ceph.sourcesEnterprise' and 'pdm-enterprise.sources' and add this on the top:
 Enabled: no
 
-# Create "proxmox.sources" in "/etc/apt/sources.list.d/"
+# On each node - Create "proxmox.sources" in "/etc/apt/sources.list.d/" with the following:
 Types: deb
 URIs: http://download.proxmox.com/debian/pve
 Suites: trixie
 Components: pve-no-subscription
 Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
 ```
+
 ### Known errors
 - `Error: '/etc/pve/nodes/pve1/pve-ssl.pem' does not exist! (500)`
 ```shell
