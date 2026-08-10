@@ -3,6 +3,9 @@
 - [Documentation](https://pve.proxmox.com/wiki/Main_Page)
 - [Proxmox Youtube](https://www.youtube.com/user/ProxmoxVE)
 
+
+https://www.nakivo.com/blog/proxmox-storage-options
+
 <br>
 
 Tip
