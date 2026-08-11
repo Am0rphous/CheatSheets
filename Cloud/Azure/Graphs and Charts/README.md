@@ -6,3 +6,5 @@ Resources
 | summarize resourceCount=count() by location
 | order by resourceCount desc
 ```
+
+In `Resource visualizer` click "Choose resources" and mark VMs etc. Click "Apply" and an image will be generated.
