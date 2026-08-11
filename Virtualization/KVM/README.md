@@ -162,11 +162,11 @@ tar xvf remnux-v7-focal.ova                #Extract the ova
 gunzip remnux-v7-focal-disk1.vmdk.gz       #Extract the gz
 qemu-img convert -f vmdk remnux-v7-focal-disk1.vmdk -O qcow2 remnux.qcow2    #Convert the vmdk to qcow2
 
-qemu-img info output.qcow2
-qemu-img convert -f raw -O qcow2 image.img image.qcow2
+qemu-img info output.qcow2                                 # Display info about disk
+qemu-img convert -f raw -O qcow2 image.img image.qcow2     # Convert it from 'img' to 'qcow2'
 
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G           #increase disk
-sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink   #shrink disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 +10G           # increase disk
+sudo qemu-img resize /var/lib/libvirt/images/rhel8.qcow2 -5G --shrink   # shrink disk
 ````
 - **To resize a windows disk**
   1. Within the VM: Download [sdelete](https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete) and nullify disk with `sdelete.exe -z c:`
