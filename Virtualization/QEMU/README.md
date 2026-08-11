@@ -29,6 +29,19 @@ sudo qemu-system-x86_64 -enable-kvm -m 6144 -smp 8 -cpu host -machine q35 \
   -nographic
 
 -boot order=c \
+
+sudo qemu-system-x86_64 \
+  -enable-kvm \
+  -m 6144 \
+  -smp 8 \
+  -cpu host \
+  -machine q35 \
+  -accel kvm \
+  -drive if=virtio,format=qcow2,file="$DISK" \
+  -boot order=c \
+  -netdev user,id=net0,hostfwd=tcp::2222-:22 \
+  -device virtio-net-pci,netdev=net0 \
+  -nographic
 ```
 
 ### Working with disks
