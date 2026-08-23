@@ -1,7 +1,5 @@
 # D i s p l a y
 
-- [Nvidia drivers](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Drivers.md#nvidia-drivers-hell-on-earth)
-
 1. Kernel = Core of the OS. Manages hardware, memory, processes, and devices.
 2. Display/Graphics server = Xorg/X11 or Wayland. Creates basic graphical environment.
 3. Display/Desktop Manager = Shows login screen. Manages the graphic server. Starts graphical session. SDDM/GDM/GDM3/LightDM
@@ -10,6 +8,9 @@
 6. Tile/Window tile manager = Automatically arranges windows in tiles instead of letting them freely overlap. Examples: i3, Sway, and bspwm.
 
 <br>
+
+- [Nvidia drivers](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Drivers.md#nvidia-drivers-hell-on-earth)
+
 
 ### List display and monitor info
 ```shell
