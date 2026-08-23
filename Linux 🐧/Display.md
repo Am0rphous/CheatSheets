@@ -2,11 +2,12 @@
 
 - [Nvidia drivers](https://github.com/Am0rphous/CheatSheets/blob/main/Linux%20%F0%9F%90%A7/Drivers.md#nvidia-drivers-hell-on-earth)
 
-0. Kernel
-1. Graphics server = e.g. xserver-xorg or wayland. Creates graphical environment
-2. Desktop/Display manager = Manages the graphics server. User only notices the login screen.
-3. Desktop environment = your actual desktop
-4. Tile Manager =
+1. Kernel = Core of the OS. Manages hardware, memory, processes, and devices.
+2. Display/Graphics server = Xorg/X11 or Wayland. Creates basic graphical environment.
+3. Display/Desktop Manager = Shows login screen. Manages the graphic server. Starts graphical session. SDDM/GDM/GDM3/LightDM
+4. Desktop Environment = Your actual desktop: Gnome, KDE Plasma, Mate,
+5. Window Manager = Controls window placement, movement, resizing, and focus.
+6. Tile/Window tile manager = Automatically arranges windows in tiles instead of letting them freely overlap. Examples: i3, Sway, and bspwm.
 
 <br>
 
@@ -14,10 +15,10 @@
 ```shell
 xrandr --listactivemonitors                                     #USE THIS
 ps e | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u
-ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display for user mike
+ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   # list display for user mike
 ```
 
-### Display Manager
+### Display/Desktop Manager
 "..or login manager, is typically a graphical user interface that is displayed at the end of the boot process in place of the default shell." [Read more](https://wiki.archlinux.org/title/Display_manager)
   ```shell
   systemctl status display-manager            #Show what Display Manager currently are in use
@@ -47,7 +48,8 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
     /etc/sddm.conf.d/  #configs
     ```
 - KDE Display Manager (KDM - "Several years ago, KDE retired its bespoke display manager (KDM) in favor of SDDM." [read more](https://linuxiac.com/kde-proposes-new-plasma-login-manager-to-replace-sddm/)
-
+- Plasma Login Manager - " provides a display manager for KDE Plasma, forked from SDDM"
+  - [souce code](https://invent.kde.org/plasma/plasma-login-manager), [mirror source code](https://github.com/KDE/plasma-login-manager)
 
 ### Desktop Environment / session
 - Commands to list what desktop environment currently are in use
@@ -59,12 +61,12 @@ ps e -u mike | grep -Po " DISPLAY=[\.0-9A-Za-z:]* " | sort -u   #list display fo
   ```
 #### Different DE
 - read more on the [arch wiki](https://wiki.archlinux.org/title/Desktop_environment)
-- If windows are appearing again after reboot and you want them gone, then remove the session files
+- If windows are saved and they are starting up after reboot and you want them gone, then remove the session files
   ```shell
   ls -la ~/.config/session/*    # List files
   rm -rf ~/.config/session/*    # Remove and start with a clean login  with NO windows from last session
 
-  #Save and open all windows in the ext session with
+  # Save and open all windows in the ext session with
   qdbus org.kde.ksmserver /KSMServer saveCurrentSession
   ````
 - KDE Plasma
