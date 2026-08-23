@@ -1,12 +1,17 @@
 # Disk
 
-````shell
+```shell
 df -h
 lsblk
+lsblk -f                    # nice
+lsblk -a                    # all devices
+lsblk -p                    # full device paths
+lsblk -o name,size,type,mountpoints  # Display these columns
+lsblk -o NAME,SIZE,TYPE,MOUNTPOINTS  # Also in-case sensitive
 blkid
 blkid -p /dev/sda1
-lsblk -d -o NAME,MODEL   #List disk model
-lshw -class disk         #lsit complete disk model info
+lsblk -d -o NAME,MODEL          # List disk model
+lshw -class disk                # Complete disk model info
 lshw -class disk -class storage -short
 parted -l
 
@@ -23,7 +28,7 @@ sudo badblocks -v /dev/sdg1 > badblocks.txt      #Kopierer blokkene til tekstfil
 
 # List folder size
 du -xh / | sort -hr | head -n 10
-````
+```
 
 <details> <summary> Sort folders by size </summary>
 
