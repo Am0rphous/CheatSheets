@@ -14,7 +14,7 @@ Save as `.wsb` file
   <VGpu>Enable</VGpu>
   <Networking>Enable</Networking>
   <AudioInput>Enable</AudioInput>
-  <ClipboardRedirection>value</ClipboardRedirection>
+  <ClipboardRedirection>disable</ClipboardRedirection>
   <ProtectedClient>Enable</ProtectedClient>
   <MappedFolders>
     <MappedFolder>
@@ -24,7 +24,7 @@ Save as `.wsb` file
     </MappedFolder>
   </MappedFolders>
   <LogonCommand>
-    <Command>C:\Users\WDAGUtilityAccount\Desktop\SharedToVMs\script\</Command>
+    <Command>cmd.exe /c start "" "C:\Users\WDAGUtilityAccount\Desktop\SHARED-to-VMs"</Command>
   </LogonCommand>
 </Configuration>
 ```
