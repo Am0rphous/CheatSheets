@@ -10,15 +10,25 @@ Turn on the PC:
   5. Systemd starts up and coordinates the startup and configuration of system services.
   6. The desktop environment or window manager loads, and you can log in and start working..
 
-## Bios info
-````shell
+## Fetch bios info
+```shell
 fwupdmgr get-devices     # https://fwupd.org
 sudo dmidecode -s bios-version
 sudo dmidecode | less
 
 sudo dmidecode -s system-product-name
 sudo dmidecode | grep -i 'product name\|manufacturer'
-````
+```
+## Udate/upgrade bios
+```shell
+apt update
+apt install --reinstall fwupd fwupd-efi fwupd-amd64-signed   # remove packages that does not exist, e.g. in kali 'fwupd-efi'
+
+systemctl restart fwupd
+fwupdmgr refresh --force
+fwupdmgr update
+# reboot
+```
 
 ## Boot Theme
 - [https://github.com/adi1090x/plymouth-themes](https://github.com/adi1090x/plymouth-themes)
