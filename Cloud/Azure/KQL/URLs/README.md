@@ -2,7 +2,7 @@
 
 ##### List devices that has network traffic with whatever.com
 ```kql
-DeviceNetworkEvents
+DeviceNetworkEvents   #Or UrlClickEvents
 | where RemoteUrl contains "whatever.com"
 
 //1. alternative
