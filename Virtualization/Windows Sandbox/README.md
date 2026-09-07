@@ -4,8 +4,6 @@
 - https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-sample-configuration
 - https://github.com/flexxxxer/WindowsSandbox-ConfigsAndScripts
 
-#### tools
-- https://www.zaproxy.org/download/ (winget/scoop)
 #### Wsb profile
 Save as `.wsb` file
 ```xml
@@ -28,7 +26,6 @@ Save as `.wsb` file
   </LogonCommand>
 </Configuration>
 ```
-
 ### script
 ```powershell
 "Enable Developer Mode..." | Write-Output
@@ -46,3 +43,12 @@ powershell.exe "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Current
 winget install --exact --id Devolutions.UniGetUI --source winget
 ```
 - Dark mode https://github.com/flexxxxer/WindowsSandbox-ConfigsAndScripts/blob/master/Scripts/DarkMode.ps1
+
+### tools
+- https://portableapps.com/apps
+- ZAP / Zed Attack Proxy - https://www.zaproxy.org/download/ (winget/scoop)
+- Sumatra PDF - https://portableapps.com/apps/office/sumatra_pdf_portable
+- Libreoffice - https://portableapps.com/apps/office/libreoffice_portable
+- KeePassXC - https://portableapps.com/apps/utilities/keepassxc-portable
+- Firefox - https://portableapps.com/apps/internet/firefox_portable
+- Notepad2 - https://portableapps.com/apps/development/notepad2_portable
