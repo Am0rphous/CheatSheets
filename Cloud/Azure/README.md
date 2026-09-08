@@ -9,6 +9,7 @@
 
 - [https://o365atp.com](https://o365atp.com/) - Safe Link Decoder
 - PIM
+  - https://github.com/FrodeHus/elevate
   - Roles: https://normansolutions.co.uk/automating-azure-pim-role-activation-with-powershell/
   - Groups: https://blog.mindcore.dk/2026/01/entra-id-pim-for-groups-automating-pim-group-activation-in-entra-id-with-powershell/
     - script: https://github.com/mindcore-tech/public/blob/main/EntraID/PIM/ActivatePIMGroups/ActivatePIMGroups.ps1
