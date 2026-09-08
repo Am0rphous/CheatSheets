@@ -10,9 +10,14 @@
 - [Must Learn KQL](https://github.com/rod-trent/MustLearnKQL)
 - [ Microsoft 365 Defender Advanced Hunting Queries - A Full Guide ](https://ironscales.com/guides/microsoft-365-defender/microsoft-365-defender-advanced-hunting-queries)
 - https://detect.fyi/threat-hunting-suspicious-user-agents-3dd764470bd0
+- Use
+  ```kql
+  contains       case-insensitive  # Use
+  contains_cs    case-sensitive
+  ```
 
 finding internet-facing devices
-````
+```kql
 DeviceNetworkEvents
 | where RemoteIPType == "Public"
 | where ActionType == @"InboundConnectionAccepted"
@@ -22,4 +27,4 @@ DeviceNetworkEvents
 // Filter on devices that have been scanned
 | where ActionType == "InboundInternetScanInspected"
 | project IP_Source_ScannerAttempt=LocalIP,Country_Source_ScannerAttempt=tostring(geo_info_from_ip_address(LocalIP).country), PublicScannedIP= RemoteIP,PublicScannedIP_country=tostring(geo_info_from_ip_address(RemoteIP).country), PublicScannedPort= RemotePort,DeviceName
-````
+```
