@@ -36,6 +36,7 @@ gping 10.0.0.1 -c red    # Use color red
 
 route                    # ip route
 route -n                 # display routing table but use numbers
+ip route get 8.8.8.8
 
 sudo ip route del default via 192.168.2.1 dev eth1                     # Delete default route when eth1 is connected
 sudo ip route add default via 192.168.3.1 dev wlan1 metric 90          # Add new routing entry - to prioritize wlan1 if eth0 is connected and originally prioritized
@@ -44,6 +45,12 @@ ip route del default via 192.168.2.1 dev eth1 metric 102
 ip route del default via 192.168.2.1 dev eth1 metric 103
 
 ethtool -s eth0 speed 1000 duplex full autoneg on   # sets 1 Gbit network speed specifically on eth0
+ethtool -S eno1                                     # any errors?
+ethtool --cable-test eno1                           # cable test if it supports it
+
+ip -s link show dev eno1                            #  RX:     bytes    packets errors dropped  missed   mcast  
+watch -n 1 'ip -s link show dev eno1'
+
 ````
 
 #### Change Hostname
@@ -239,6 +246,7 @@ wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/10mb.test ; d
   tcpdump --help
   tcpdump -D                         #same as --list-interfaces
   tcpdump -i eth0                    #same as --interface
+  tcpdump -i eno1 -nn
   tcpdump -i eth0 udp
   tcpdump -i eth0 tcp
   tcpdump -i eth0 dst 10.10.1.20
