@@ -2,7 +2,7 @@
 
 
 
-
+- https://www.kqlsearch.com/
 - https://github.com/ChrisHuber1/KustoForge
 - [learn.microsoft.com](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
 - [https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules](https://github.com/Bert-JanP/Hunting-Queries-Detection-Rules) - Threat hunting
