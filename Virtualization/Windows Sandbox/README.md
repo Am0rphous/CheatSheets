@@ -47,6 +47,8 @@ winget install --exact --id Devolutions.UniGetUI --source winget
 ### tools
 - https://portableapps.com/apps
 - ZAP / Zed Attack Proxy - https://www.zaproxy.org/download/ (winget/scoop)
+- Wirshark - https://www.wireshark.org/download.html
+  - Ncap - https://npcap.com/
 - Sumatra PDF - https://portableapps.com/apps/office/sumatra_pdf_portable
 - Libreoffice - https://portableapps.com/apps/office/libreoffice_portable
 - KeePassXC - https://portableapps.com/apps/utilities/keepassxc-portable
