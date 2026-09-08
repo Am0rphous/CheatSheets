@@ -1,0 +1,23 @@
+<Configuration>
+  <MemoryInMB>2048</MemoryInMB>
+  <VGpu>Enable</VGpu>
+  <Networking>Enable</Networking>
+  <AudioInput>Enable</AudioInput>
+  <ClipboardRedirection>Enable</ClipboardRedirection>
+  <ProtectedClient>Enable</ProtectedClient>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\Users\%username%\W. Sandbox\SHARED-to-VMs</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\SHARED-to-VMs</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>cmd.exe /c start "" "C:\Users\WDAGUtilityAccount\Desktop\SHARED-to-VMs"</Command>
+  </LogonCommand>
+  <Networking>Enable</Networking>
+  <LogonCommand>
+    <Command>powershell -Command "Set-DnsClientServerAddress -InterfaceAlias 'Ethernet' -ServerAddresses '1.1.1.1','1.0.0.1'"</Command>
+  </LogonCommand>
+</Configuration>
+
