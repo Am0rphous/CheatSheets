@@ -27,19 +27,39 @@ network:
              addresses: [NAMESERVER_1, NAMESERVER_2]
 ````
 
-### Example
-````
+### Example 1
+```shell
 network:
   version: 2
   renderer: NetworkManager
   ethernets:
     eth0:
       dhcp4: no
-      addresses: [10.1.1.33/24]
+      addresses: [10.1.1.4/24]
       routes:
         - to: default
-          via: 10.1.1.1
+          via: 10.0.0.1
           metric: 100
       nameservers:
         addresses: [1.1.1.1, 1.0.0.1]
-````
+```
+### Example 2
+```shell
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: false
+      dhcp6: false
+      addresses:
+        - 172.0.0.10/20
+      routes:
+        - to: default
+          via: 172.0.0.1
+      nameservers:
+        addresses:
+          - 1.1.1.1
+          - 1.0.0.1
+      optional: false
+```
