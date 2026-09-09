@@ -334,13 +334,12 @@ tcpdump <= 128
 </details>
 
 #### Standardize NIC names
-````shell
-#Edit file /etc/default/grub
-GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"   #To contain this
+```shell
+#Edit /etc/default/grub and add
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"   # gives e.g. "eth0"
 sudo update-grub
 sudo reboot
-sudo update-initramfs -u  #possible
-````
+```
 #### Waterhole traffic
 ````shell
 route add 65.21.34.4 gw 127.0.0.1 lo          #rut
