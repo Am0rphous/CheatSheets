@@ -193,9 +193,16 @@ nmap -Pn -oG -p22,80,443,445 - 100.100.100.100 | awk '/open/{ s = ""; for (i = 5
 ````
 </details>
 
-<details> <summary> Speed testing </summary> <br>
+<details> <summary> Speed monitoring </summary> <br>
   
-````shell
+```shell
+vnstat -i eth0
+vnstat -i eth0 --live
+vnstat --iflist             # list known interfaces
+vnstat --add -i eth1        # add new interface to the list
+vnstat --add -i docker0 
+systemctl restart vnstat    # restart service
+
 speedtest-cli          #sudo apt install speedtest-cli
 
 iperf --server        # On server, or use -s. Open firewall: ufw allow 5001
@@ -203,7 +210,7 @@ iperf --client        # On your machine, or use -c
 iperf -c -f Mbytes    # Use MB instead of mega bits
 
 wget -O /dev/null --progress=dot:mega http://cachefly.cachefly.net/10mb.test ; date
-````
+```
 </details>
 
 <details> <summary>Block countries in your firewall</summary> <br>
