@@ -255,7 +255,11 @@ Add peripherals through [Cockpit](https://cockpit-project.org/) from another com
 - Check out
   - qemu-guest-agent
   - windows VirtIO Drivers (virtio-win-guest-tools.exe) [link](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.266-1/)
+    - https://github.com/virtio-win/kvm-guest-drivers-windows
+    - https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers
+    - https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md
   - Spice agent for windows (spice-guest-tools - https://www.spice-space.org/download.html
+  - Log in an restart Virtio service in windows. Reboot and shared folder in kvm will appear automatically.
   - `UsbDk` eg UsbDk_1.0.22_x64.msi and `usbredirect` eg usbredirect-x64-0.14.0.msi- [link](https://www.spice-space.org/download.html)
     
 
