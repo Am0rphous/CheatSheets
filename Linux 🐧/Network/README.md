@@ -34,6 +34,12 @@ gping 10.0.0.1
 gping 10.0.0.1 -b 60     # Ping for 60 seconds
 gping 10.0.0.1 -c red    # Use color red
 
+# Enable forwarding of network packets
+sudo tee /etc/sysctl.d/99-ip-forwarding.conf >/dev/null <<'EOF'
+net.ipv4.ip_forward = 1
+EOF
+sudo sysctl --system
+
 route                    # ip route
 route -n                 # display routing table but use numbers
 ip route get 8.8.8.8
