@@ -657,7 +657,7 @@ sudo lspci
 ## Searching for stuff
 
   ### Find
-````shell
+  ```shell
   find filename
   find / -empty               #searches for empty files and folders in your system
   find ~ filename             #searches through the active user's home folder
@@ -665,12 +665,16 @@ sudo lspci
   find / filename             #searches from root directory
   find / -executable          #searches for executable files
   find / -name *.mp3          #searches for files with .mp3 extension
+
+  find . | grep .pfx | xargs md5sum                             # Find all PFX certs and calculate the md5 hash
   find / -user mike -ls 2>/dev/null                             #search for files owned by this user
   find / -name myfile -exec nano '{}' \;                        #searches for files with 'myfile' names and opens nano
   find . -name sample.txt -exec rm -i {} \;                     #finds sample.txt and asks if you want to remove it
+  find . | grep .pfx | xargs cp -t ../my/certificates           #Find all PFX certs and move them back to certificates
+ 
   find . -name '*(1).*' -exec mv "{}" ../folder \;              #moves files containing (1) to the folder 'folder'
   find / -name '*.conf' -mtime -90 -exec grep mystring {} +     #finds every config file newer then 60 days, then grep for 'mystring'
-  ````
+  ```
 - [fd](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to 'find'
 
 ### Grep - utility for string and pattern matching
