@@ -56,7 +56,7 @@ kernel compiling https://salsa.debian.org/-/snippets/852
 11. [**Power**](#Power)
 12. [**Remote Connections**](#remote-connections)
     - [Monitoring SSH](#monitoring-ssh)
-13. [**Searching for stuff**](https://github.com/Am0rphous/CheatSheets/blob/main/Linux/README.md#searching-for-stuff)
+13. [**Searching for stuff**](#searching-for-stuff)
     - [Find](#find)
     - [Grep - utility for string and pattern matching](#grep---utility-for-string-and-pattern-matching)
       - [Locate a file](#locate-a-file)
