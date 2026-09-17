@@ -63,15 +63,17 @@ sudo swapon --show            #display swap area
   
   #### To create it
   - [Hibernate and resume from a swap file (Ubuntu forum)](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)
-````shell
-sudo fallocate -l 1G /swapfile   #creates 1 GB swapfile
-sudo chown root:root /swapfile   #change owner if not running as root already
-sudo chmod 600 /swapfile         #make it readable only for root
-sudo mkswap /swapfile            #sets up swap area
-sudo swapon /swapfile            #enable swap on this file
-sudo findmnt -no UUID -T /swapfile\n              #find UUID
-sudo nano /etc/initramfs-tools/conf.d/resume      #add "RESUME=UUID=bla-bla-uid"
-````
+  - [How to Set Up Hibernation on Linux (Swap Done Right)](https://linuxblog.io/set-up-hibernation-linux-swap/)
+  - [Encrypted swap](https://cryptsetup-team.pages.debian.net/cryptsetup/README.Debian.html) but ignore if disk is using LUKS
+  ```shell
+  sudo fallocate -l 1G /swapfile   #creates 1 GB swapfile
+  sudo chown root:root /swapfile   #change owner if not running as root already
+  sudo chmod 600 /swapfile         #make it readable only for root
+  sudo mkswap /swapfile            #sets up swap area
+  sudo swapon /swapfile            #enable swap on this file
+  sudo findmnt -no UUID -T /swapfile\n              #find UUID
+  sudo nano /etc/initramfs-tools/conf.d/resume      #add "RESUME=UUID=bla-bla-uid"
+  ```
 - Add to /etc/fstab `/swapfile    none    swap    sw    0   0`
 - Or use the UUID in /etc/fstab `UUID=blabla-uid-here  none swap sw 0 0`
 - Might need to add `resume=UUID=blabla-uid-here` into `/etc/default/grub` in `GRUB_CMDLINE_LINUX_DEFAULT` and run `sudo update-grub`
