@@ -15,6 +15,10 @@ sudo blkid /dev/dm-2
 # sudo nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=your-uuid-here"
 sudo update-grub
+
+# sudo nano /etc/initramfs-tools/conf.d/resume 
+# default data: RESUME=/dev/mapper/x00--vg-swap_1
+RESUME=UUID=<uuid here>
 sudo update-initramfs -u
 
 apt install gnome-shell-extension-hibernate-status
