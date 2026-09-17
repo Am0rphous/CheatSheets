@@ -11,6 +11,8 @@
 ```shell
 # Assuming you use a partition for swap. Get the UUID of swap partition 
 sudo blkid /dev/dm-2
+blkid | grep swap
+dd if=/dev/zero of=/dev/mapper/x00--vg-swap_1 bs=1M status=progress
 
 # sudo nano /etc/default/grub
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=your-uuid-here"
@@ -25,8 +27,14 @@ apt install gnome-shell-extension-hibernate-status
 # Open Extension manager (blue icon) -> enable "Hibernate Status button" so it shows in Gnome menu
 # source: https://www.tomshardware.com/software/linux/how-to-hibernate-your-linux-computer
 
-# sudo nano /etc/systemd/sleep.conf
-HibernateDelaySec=60min   # Add
+# sudo nano /etc/systemd/sleep.conf and uncommment:
+[Sleep]
+AllowSuspend=yes
+AllowHibernation=yes
+AllowSuspendThenHibernate=yes
+AllowHybridSleep=no 
+HibernateDelaySec=60min
+HibernateOnACPower=yes
 
 reboot
 sudo systemctl hibernate   # Or use the Gnome menu
