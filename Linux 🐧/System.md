@@ -8,6 +8,8 @@
   ````
 
 ## Sleep and Hibernation
+- Sept 2026: Got damn the [bitwarden app prohibits debian from hibernating](https://github.com/bitwarden/clients/issues/21661).
+  - Check startup folder `~/.config/autostart(` and delete the bitwarden file:
 ```shell
 # Assuming you use a partition for swap. Get the UUID of swap partition 
 sudo blkid /dev/dm-2
