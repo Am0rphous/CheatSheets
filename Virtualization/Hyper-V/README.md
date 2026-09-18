@@ -1,5 +1,11 @@
 # Hyper-V
 - `C:\WINDOWS\System32\virtmgmt.msc`   - Open Hyper-V GUI
+  ```powershell
+  C:\ProgramData\Microsoft\Windows\Hyper-V\
+  %AppData% ->
+
+  Get-VM | Select-Object Name, ConfigurationLocation, Path
+  ```
 
 
 ### Linux VMs
