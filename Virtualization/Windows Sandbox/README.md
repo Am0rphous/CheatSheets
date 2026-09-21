@@ -3,6 +3,7 @@
 - https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file#networking
 - https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-sample-configuration
 - https://github.com/flexxxxer/WindowsSandbox-ConfigsAndScripts
+- Install WinGet on Windows Sandbox - https://learn.microsoft.com/en-us/windows/package-manager/winget/
 
 #### Wsb profile
 Save as `.wsb` file
