@@ -1,14 +1,13 @@
-#  F5 BIG-IP
+# Firewalls
 
+###F5 BIG-IP
 ```kql
 # Track packets coming in that originates from the Internet and display "X-Forwarded-For" in an XFF column
 let Logs =
-union isfuzzy=true
-(
+union isfuzzy=true(
     Syslog
     | project TimeGenerated, RawMessage=SyslogMessage
-),
-(
+),(
     CommonSecurityLog
     | project TimeGenerated,
               RawMessage=strcat(Message, " ", AdditionalExtensions)
@@ -19,5 +18,4 @@ Logs
 | extend XFF = extract(@"(?i)X-Forwarded-For[:= ]+([0-9a-fA-F:\., ]+)", 1, RawMessage)
 | project TimeGenerated, XFF, RawMessage
 | order by TimeGenerated asc 
-
 ```
