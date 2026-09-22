@@ -1,8 +1,8 @@
 # Firewalls
 
 ### F5 BIG-IP
+- Track packets coming in that originates from the Internet and display "X-Forwarded-For" in an XFF column
 ```kql
-# Track packets coming in that originates from the Internet and display "X-Forwarded-For" in an XFF column
 let Logs =
 union isfuzzy=true(
     Syslog
