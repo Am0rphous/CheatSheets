@@ -6,14 +6,29 @@
 
 ## Setup
 ````
-sudo snap install lxd                   #sudo apt install lxc lxd-client
-sudo lxd init
-sudo lxc launch ubuntu:22.04
-sudo lxc launch ubuntu:22.04 --vm
-sudo lxc launch ubuntu:18.04 my-vm-name
-sudo lxc launch ubuntu:16.04 vm1
-sudo lxc list
-sudo lxc exec my-vm-name bash
+snap install lxd                   #sudo apt install lxc lxd-client
+lxd init
+
+lxc image list images:
+lxc image list images: | grep -i 'debian'
+lxc image list images: | grep -i 'opensuse'
+lxc image list images: 'alpine'
+
+lxc image list images: architecture=x86_64
+lxc image list images: architecture=aarch64
+lxc image list images: centos architecture=aarch64
+lxc image list images: type=virtual-machine
+lxc image list images: type=container
+
+lxc launch ubuntu:22.04
+lxc launch ubuntu:22.04 --vm
+lxc launch ubuntu:18.04 my-vm-name
+lxc launch images:alpine/3.17/amd64 alpine-www
+lxc launch images:centos/7/amd64 cenots-db
+lxc launch images:opensuse/15.4/amd64 opensuse-15-4
+
+lxc list
+lxc exec my-vm-name bash
 ````
 
 #### General
