@@ -29,9 +29,10 @@ sudo badblocks -v /dev/sdg1 > badblocks.txt      #Kopierer blokkene til tekstfil
 # List folder sizes
 sudo du -sh /
 du -sh / 2>/dev/null     # Dont show errors
-
 du -sh .
 du -sh Downloads
+ncdu /
+ncdu Downloads  # display size of files in Downloads
 ```
 
 <details> <summary> <h3>Sort folders by size</h3> </summary>
