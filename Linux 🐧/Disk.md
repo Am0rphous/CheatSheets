@@ -1,7 +1,7 @@
 # Disk
 
 ```shell
-df -h
+df -h                       # List how much space disk partitions take
 lsblk
 lsblk -f                    # nice
 lsblk -a                    # all devices
@@ -26,17 +26,21 @@ sudo smartctl --health /dev/sda1
 sudo smartctl -H /dev/sda1
 sudo badblocks -v /dev/sdg1 > badblocks.txt      #Kopierer blokkene til tekstfila.
 
-# List folder size
-du -xh / | sort -hr | head -n 10
+# List folder sizes
+sudo du -sh /
+du -sh / 2>/dev/null     # Dont show errors
+
+du -sh .
+du -sh Downloads
 ```
 
 <details> <summary> Sort folders by size </summary>
-
-```
+```shell
 du -smh * | sort -nr
+du -xh / | sort -hr | head -n 10
 ```
-
 </details>
+
 
 <details> <summary> Create a bootable USB </summary>
 
