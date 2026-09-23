@@ -34,11 +34,13 @@ du -sh .
 du -sh Downloads
 ```
 
-<details> <summary> <h2>Sort folders by size</h2> </summary>
+<details> <summary> <h3>Sort folders by size</h3> </summary>
+  
 ```shell
 du -smh * | sort -nr
 du -xh / | sort -hr | head -n 10
 ```
+
 </details>
 
 
