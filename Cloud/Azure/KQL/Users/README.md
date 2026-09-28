@@ -1,6 +1,12 @@
 # Users
+#### Get sign-in logs from 30 days ago for user 'mike@test.com'
+```kql
+SigninLogs
+| where TimeGenerated >= ago(30d)
+| where UserPrincipalName has "mike@test.com"
+```
 
-#### Create visual graph of sign-ins for user mike@test.com
+#### Create visual graph of sign-ins for user 'mike@test.com'
 ```kql
 SigninLogs
 | where TimeGenerated >= ago(30d)
