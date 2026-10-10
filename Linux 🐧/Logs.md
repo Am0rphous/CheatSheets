@@ -1,27 +1,24 @@
 # Logs
 
 - [Log2ram](https://github.com/azlux/log2ram) - ramlog like for systemd (Put log into a ram folder)
-
-
-
-
 - Path for logs `/var/log/ `
 - [Syslog : The Complete System Administrator Guide](https://devconnected.com/syslog-the-complete-system-administrator-guide/)
 - [Logcheck](https://logcheck.org/) - Logcheck is a simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
 - Archive and delete logs older than 7 days. Schedule in a cron job to automate log cleanup.
-````shell
+```shell
 find /var/log -type f -mtime +7 -exec tar -rvf old_logs.tar {} \; -exec rm {} \;
-````  
+```  
 
 
 ## Troubleshooting
-````
+```shell
 systemctl status ssh
 dmesg
 dmesg | grep error
 dmesg | grep failed
 dmesg | grep Linux
 journalctl
+sudo journalctl -p warning..alert -b
 journalctl -f
 journalctl -k
 journalctl -xe
@@ -36,7 +33,16 @@ journalctl -b -2               #check boot session 2
 journalctl --since=yesterday --until=now
 journalctl --since "2024-03-01"
 journalctl --since "2023-02-05 12:01:00" --until "2024-02-01"
-````
+
+
+cd /etc/rsyslog.d/
+nano 10-router-rsyslog.conf   # with content of:
+if $fromhost-ip == '10.62.10.1' then /mnt/sda/routerlogs/router.log
+& stop
+
+service rsyslog restart
+service rsyslog status
+```
 
 ## List of logs you might find under /var/log/
 ````
