@@ -350,6 +350,10 @@ Pin-Priority: 1001
   #### File compression
   - File compression's main advantage is when transferring files. Transfering 100 1KB files takes longer than transfering one 100 KB size file.
   ````shell
+  unzip
+  gunzip
+  rar a test.rar -p pw123
+  
   7z x archive.7z                             # Extract file. sudo apt install p7zip-full
   7za a -t7z data.txt.7z data.txt
   7za a -tzip -p -mem=AES256 secure_folder.zip my_folder  #encrypts folder
