@@ -1,4 +1,6 @@
 # Users
+
+
 #### Get sign-in logs from 30 days ago for user 'mike@test.com'
 ```kql
 SigninLogs
