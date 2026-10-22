@@ -1,7 +1,7 @@
 # MikroTik
 
+- Check for various names
 ```kql
-# Check for various names:
 DeviceInfo
 | where DeviceName contains "mikrotik"
     or DeviceName contains "routeros"
@@ -10,15 +10,19 @@ DeviceInfo
 | project Timestamp, DeviceId, DeviceName, OSPlatform, OSVersion,
           OnboardingStatus, SensorHealthState, MachineGroup
 | order by Timestamp desc
+```
 
-# Any network adapter vendors?
+- Any network adapter vendors?
+```kql
 DeviceNetworkInfo
 | where NetworkAdapterVendor contains  "mikrotik"
     or NetworkAdapterVendor contains  "routerboard.com"
 | summarize arg_max(Timestamp, *) by DeviceName
 | sort by DeviceName asc
+```
 
-# Search Mikrotik MAC address equipment - sort on unique Device names
+- Search Mikrotik MAC address equipment - sort on unique Device names
+```kql
 DeviceNetworkInfo
 | extend Mac = replace_regex(toupper(tostring(MacAddress)), @"[^0-9A-F]", "")
 | extend OUI = toupper(substring(Mac, 0, 6))
