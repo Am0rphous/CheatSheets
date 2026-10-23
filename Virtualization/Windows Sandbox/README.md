@@ -1,4 +1,8 @@
 # Windows Sandbox
+- https://joshbc.com/blog/windows-sandbox-guide
+
+<br>
+
 
 - https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-configure-using-wsb-file#networking
 - https://learn.microsoft.com/en-us/windows/security/application-security/application-isolation/windows-sandbox/windows-sandbox-sample-configuration
