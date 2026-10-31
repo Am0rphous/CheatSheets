@@ -358,3 +358,6 @@ menuentry 'GPU Passthrough - Gaming Mode' {
 ````
 7. Ensure the file is executable `chmod +x /etc/grub.d/40_custom`
 8. Run `update-grub && update-initramfs -u`
+
+## Known Problems
+- Trying to start a VM but get graphic error: Error starting domain: unsupported configuration: spice graphics are not supported with this QEMU. Solution Debian 13: `apt install -t trixie-backports qemu-system-modules-spice` 
