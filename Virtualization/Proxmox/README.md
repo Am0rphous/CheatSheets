@@ -46,6 +46,30 @@ pveam update
   Components: pve-no-subscription
   Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
   ```
+### Network
+- https://pve.proxmox.com/wiki/Network_Configuration
+- https://www.virtualizationhowto.com/2024/03/proxmox-sdn-configuration-step-by-step/
+```shell
+#  /etc/network/interfaces 
+auto vmbr1
+iface vmbr1 inet static
+        address 10.10.10.1/24
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+        post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o vmbr0.2 -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s 10.10.10.0/24 -o vmbr0.2 -j MASQUERADE
+
+#then
+ifreload -a
+ip -brief address show vmbr1     # verify
+ip route                         # verify
+iptables -t nat -S POSTROUTING   # verify
+
+```
+
+
 
 ### Known errors
 - `Error: '/etc/pve/nodes/pve1/pve-ssl.pem' does not exist! (500)`
