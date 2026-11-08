@@ -48,6 +48,15 @@ pveam update
   Components: pve-no-subscription
   Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
   ```
+### Two node cluster
+```shell
+# Error: "cluster not ready - no quorum? (500)"
+# happens when your Proxmox cluster can’t reach quorum (for example, because you have too few nodes online).
+# In a 2-node cluster, you can temporarily fix it by running pvecm expected 1 so the remaining node can operate,
+# but for longer-term stability you typically need a 3rd node or a QDevice. Temp fix:
+pvecm expected 1 
+```
+
 ### Network
 - https://pve.proxmox.com/wiki/Network_Configuration
 - https://www.virtualizationhowto.com/2024/03/proxmox-sdn-configuration-step-by-step/
