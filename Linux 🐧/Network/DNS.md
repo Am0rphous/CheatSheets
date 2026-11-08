@@ -2,19 +2,20 @@
 
 - [Known DNS Providers](https://kb.adguard.com/en/general/dns-providers)
 
-Important paths
-````shell
-/etc/resolv.conf          # contains e.g. "nameserver 1.1.1.1"
-````
-
 Commands
-````shell
-host 172.217.21.174
-host myserver ns1.dns.com
-nslookup google.com
+```shell
+host 10.0.0.2                 # DNS lookup utility
+host myserver ns1.dns.com     # Query one specific DNS server
+nslookup google.com           # Query a domain
+
+/etc/resolv.conf              # DNS server setting. Format: nameserver 1.1.1.1
 resolvectl status
-resolvectl query test.example.com
-sudo systemd-resolve --flush-caches    # Flush DNS cache when using systemd-resolved
+resolvectl query example.com
+resolvectl query 10.0.0.3
+resolvectl flush-caches
+resolvectl service _service._protocol name     # Resolve an SRV record, for example `_xmpp-server._tcp gmail.com`
+resolvectl statistics                          # requires sudo
+sudo systemd-resolve --flush-caches            # Flush DNS cache when using systemd-resolved
 
 # Access virtual hosts without using DNS. Point hostname to an IP in the file - bypassing dns resolution
 sudo        echo "1.2.3.4  example.com" >> /etc/hosts
@@ -22,7 +23,7 @@ sudo sh -c "echo '1.2.3.4  domain.com'  >> /etc/hosts"
 
 echo "1.2.3.4 example.com" | sudo tee -a /etc/hosts
 sudo sed -i '/\sexample\.com$/d' /etc/hosts && echo "1.2.3.4 example.com" | sudo tee -a /etc/hosts   # Replace 1.2.3.4 and example.com
-````
+```
 
 ## DNS lookup
 ### Dig - _DNS lookup utility_
