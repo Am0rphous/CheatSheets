@@ -408,16 +408,20 @@ for i in *.zip; do unzip "$i" -d "${i%%.zip}"; done
 - [Linux User and Programmer's Manual - Manpages](https://www.systutorials.com/docs/linux/man/)
 - Reverse search in terminal press `CTRL+R`
   ````shell
-  which <command>             #locate command path
+  which <command>             # locate command path
   which ls
   <command> -h / --help
-  apropos <command>           #if you dont remember the exact command
-  apropos network             #find commands related to network
-  whatis <command>            #explains a command with a one-liner
-  tldr <command>              #NICE - a must! https://tldr.sh
-  man <command                #opens manual for 'command'. Check out manpages.org
-  man ipconfig                #opens manual for the 'ipconfig' command
-  man -k ssh                  #Search man
+  apropos <command>           # if you dont remember the exact command
+  apropos network             # find commands related to network
+  whatis <command>            # explains a command with a one-liner
+  tldr <command>              # NICE - a must! https://tldr.sh
+  
+  man <command>               # opens manual for 'command'. Check out manpages.org
+  man ipconfig                # opens manual for the 'ipconfig' command
+  man   interfaces            # opens manual for the 'interfaces' file
+  man 5 interfaces            # open interfaces(5) section
+  man -k ssh                  # Search man
+  
   type alias/ls/ifconfig      #determining Type of command
   
   help <command>
