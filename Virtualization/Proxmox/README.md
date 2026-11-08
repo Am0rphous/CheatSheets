@@ -2,9 +2,7 @@
 
 - [Documentation](https://pve.proxmox.com/wiki/Main_Page)
 - [Proxmox Youtube](https://www.youtube.com/user/ProxmoxVE)
-
-
-https://www.nakivo.com/blog/proxmox-storage-options
+- https://www.nakivo.com/blog/proxmox-storage-options
 
 <br>
 
@@ -15,6 +13,10 @@ Tip
 - https://www.virtualizationhowto.com/2025/11/15-best-proxmox-tools-and-scripts-that-make-your-home-lab-easier/
 - https://github.com/MacRimi/ProxMenux
 - https://wcgw.ghost.io/setup-proxmox-datacenter-manager-the-right-way/
+
+```shell
+/etc/pve/sdn/subnets.cfg
+```
 
 ## Live Migration
 - [AutoMIgrate Bash script](https://pastebin.com/y5YLPCc3)
