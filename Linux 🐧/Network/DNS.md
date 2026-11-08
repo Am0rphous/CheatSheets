@@ -14,7 +14,8 @@ resolvectl query example.com
 resolvectl query 10.0.0.3
 resolvectl flush-caches
 resolvectl service _service._protocol name     # Resolve an SRV record, for example `_xmpp-server._tcp gmail.com`
-resolvectl statistics                          # requires sudo
+sudo resolvectl statistics
+sudo service systemd-resolved restart
 sudo systemd-resolve --flush-caches            # Flush DNS cache when using systemd-resolved
 
 # Access virtual hosts without using DNS. Point hostname to an IP in the file - bypassing dns resolution
