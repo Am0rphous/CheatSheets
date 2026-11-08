@@ -33,6 +33,7 @@ pveam update
 <br>
 
 ## Home lab setup
+- Proxmox VE Administration Guide - https://pve.proxmox.com/pve-docs/pve-admin-guide.pdf
 - [Rename a proxmox node](https://www.derekfarr.com/docs/articles/change-proxmox-node-ip/)
 - Repo setup - https://pve.proxmox.com/wiki/Package_Repositories
   - Disable enterprise repositories and enable regular repo on Nodes and PDM (Pr. Datacenter Manager)
@@ -61,7 +62,11 @@ pvecm expected 1
 - https://pve.proxmox.com/wiki/Network_Configuration
 - https://www.virtualizationhowto.com/2024/03/proxmox-sdn-configuration-step-by-step/
 ```shell
-#  /etc/network/interfaces 
+# Datacenter -> SDN -> Zones -> VNets -> vnet01 (Subnet 10.10.10.0/24
+# tick off 'firewall' when adding nic to vm.
+
+# NOPE
+# /etc/network/interfaces
 auto vmbr1
 iface vmbr1 inet static
         address 10.10.10.1/24
@@ -72,7 +77,20 @@ iface vmbr1 inet static
         post-up iptables -t nat -A POSTROUTING -s 10.10.10.0/24 -o vmbr0.2 -j MASQUERADE
         post-down iptables -t nat -D POSTROUTING -s 10.10.10.0/24 -o vmbr0.2 -j MASQUERADE
 
-#then
+# Ignore
+# pve -> System -> Network -> create 'vmbr1' Linux Bridge (active Yes, Autostart Yes, VLAN aware No)
+# CIDR 10.10.3.1/24
+
+/etc/dnsmasq.d/sdn01/10-vnet01.conf
+dhcp-range=set:sdn01-10.10.10.0-24,10.10.10.0,static,255.255.255.0,infinite
+interface=vnet01
+
+# systemctl status dnsmasq@sdn01 --no-pager
+# failed to create listening socket for 10.10.10.1: Address already in use
+systemctl disable dnsmasq                    # Disable the default service
+service dnsmasq@sdn01 status                 # active (running)
+
+# verify
 ifreload -a
 ip -brief address show vmbr1     # verify
 ip route                         # verify
