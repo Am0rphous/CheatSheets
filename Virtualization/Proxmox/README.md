@@ -59,8 +59,12 @@ pvecm expected 1
 ```
 
 ### Network
+- Try https://pve.proxmox.com/wiki/Setup_Simple_Zone_With_SNAT_and_DHCP
+- 
 - https://pve.proxmox.com/wiki/Network_Configuration
 - https://www.virtualizationhowto.com/2024/03/proxmox-sdn-configuration-step-by-step/
+- https://ittechnetworkk.github.io/posts/proxmoxnatconfiguration/proxmox-nat-configuration/
+- https://proxmoxr.com/blog/proxmox-nat-masquerade
 ```shell
 # Datacenter -> SDN -> Zones -> VNets -> vnet01 (Subnet 10.10.10.0/24
 # tick off 'firewall' when adding nic to vm.
