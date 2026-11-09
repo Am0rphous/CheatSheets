@@ -52,6 +52,18 @@ DeviceTvmSoftwareVulnerabilities
 ```
 </details>
 
+<details> <summary> <h3> List devices affected by 1 specific CVE (Expand)</h3></summary>
+
+```kql
+DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
+
+| distinct DeviceName   //first alternative
+
+//second alternative
+| project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
+```
+</details>
+
 ### Search for multiple CVEs - two formats
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081") //first format
@@ -64,15 +76,7 @@ DeviceTvmSoftwareVulnerabilities //second format
     "CVE-2025-24206" )
 | summarize CveIds = make_set(CveId) by DeviceName
 ```
-### List devices affected by CVE
-```kql
-DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
 
-| distinct DeviceName   //first alternative
-
-//second alternative
-| project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
-```
 ### List vulnerable software, also show if available updates (may give a lot of results)
 ```kql
 DeviceTvmSoftwareVulnerabilities
