@@ -27,8 +27,8 @@ Result looks like
 2734982fdf82f8f828s88f8f8888s8s8s8s88222    MyServer02    WindowsServer2016    [{"KB/ID":"5126868","Update":"October 2026 Security Updates","CVE":"CVE-2026-1 ...
 ```
 </details>
-<details> <summary> <h3>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h3></summary> <br>
-  
+
+<details> <summary> <h3>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h3></summary>
 ```kql
 DeviceTvmSoftwareVulnerabilities
 | where OSPlatform !startswith  "WindowsServer" and OSPlatform !startswith "Windows1"
