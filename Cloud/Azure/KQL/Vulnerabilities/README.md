@@ -2,11 +2,9 @@
 
 ### Search for multiple CVEs - two formats
 ```kql
-//first format
-DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081")
+DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081") //first format
 
-//second format
-DeviceTvmSoftwareVulnerabilities
+DeviceTvmSoftwareVulnerabilities //second format
 | where CveId in (
     "CVE-2025-24252",
     "CVE-2025-24132",
@@ -18,8 +16,7 @@ DeviceTvmSoftwareVulnerabilities
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
 
-//first alternative
-| distinct DeviceName
+| distinct DeviceName   //first alternative
 
 //second alternative
 | project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
