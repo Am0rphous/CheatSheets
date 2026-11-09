@@ -1,9 +1,31 @@
 # Vulnerabilities
 
-### List Windows Servers with missing KBs/recommended updates
-<details> <p font-size: 20px;> <summary> Ex </p></summary> <br>
+### 
+<details> <summary> <h3>List Windows Servers with missing KBs/recommended updates (Expand)</h3></summary> <br>
   
 ```kql
+DeviceTvmSoftwareVulnerabilities
+| where OSPlatform startswith "WindowsServer"
+| where isnotempty(RecommendedSecurityUpdateId)
+| join kind=leftouter (
+    DeviceTvmSoftwareVulnerabilitiesKB
+    | project CveId, CvssScore
+) on CveId
+| summarize
+    MissingTheseUpdates = make_set(
+        pack(
+            "KB/ID", RecommendedSecurityUpdateId,
+            "Update", RecommendedSecurityUpdate,
+            "CVE", CveId,
+            "CVSS", CvssScore
+        )
+    )
+    by DeviceId, DeviceName, OSPlatform
+| sort by DeviceName asc
+```
+Result looks like
+```kql
+2734982fdf82f8f828s88f8f8888s8s8s8s88222    MyServer02    WindowsServer2016    [{"KB/ID":"5126868","Update":"October 2026 Security Updates","CVE":"CVE-2026-1 ...
 ```
 
 </details>
