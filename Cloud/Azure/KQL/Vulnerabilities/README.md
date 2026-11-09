@@ -1,7 +1,7 @@
 # Vulnerabilities
 
 ### List Windows Servers with missing KBs/recommended updates
-<details> <h2> <summary> Ex </h2></summary> <br>
+<details> <p font-size: 18px;> <summary> Ex </p></summary> <br>
   
 ```kql
 ```
