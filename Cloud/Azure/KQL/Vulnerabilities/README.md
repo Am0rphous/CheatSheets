@@ -29,6 +29,7 @@ Result looks like
 </details>
 
 <details> <summary> <h3>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h3></summary>
+  
 ```kql
 DeviceTvmSoftwareVulnerabilities
 | where OSPlatform !startswith  "WindowsServer" and OSPlatform !startswith "Windows1"
