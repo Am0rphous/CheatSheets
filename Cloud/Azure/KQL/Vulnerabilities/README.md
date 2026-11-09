@@ -1,6 +1,6 @@
 # Vulnerabilities
 
-#### Search for multiple CVEs - two formats
+### Search for multiple CVEs - two formats
 ```kql
 //first format
 DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081")
@@ -14,7 +14,7 @@ DeviceTvmSoftwareVulnerabilities
     "CVE-2025-24206" )
 | summarize CveIds = make_set(CveId) by DeviceName
 ```
-##### List devices affected by CVE
+### List devices affected by CVE
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
 
@@ -24,7 +24,7 @@ DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
 //second alternative
 | project DeviceName, DeviceId, OSPlatform, OSVersion, SoftwareVendor, CveId, VulnerabilitySeverityLevel
 ```
-##### List vulnerable software, also show if available updates (may give a lot of results)
+### List vulnerable software, also show if available updates (may give a lot of results)
 ```kql
 DeviceTvmSoftwareVulnerabilities
 | where SoftwareName contains "oracle" or SoftwareVendor contains "apple"
