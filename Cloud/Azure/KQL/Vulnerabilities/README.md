@@ -28,7 +28,7 @@ Result looks like
 ```
 </details>
 
-<details> <summary> <h3>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h3></summary>
+<details> <summary> <h4>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h4></summary>
   
 ```kql
 DeviceTvmSoftwareVulnerabilities
@@ -52,7 +52,7 @@ DeviceTvmSoftwareVulnerabilities
 ```
 </details>
 
-<details> <summary> <h3> List devices affected by 1 specific CVE (Expand)</h3></summary>
+<details> <summary> <h4> List devices affected by 1 specific CVE (Expand)</h4></summary>
 
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
@@ -64,7 +64,8 @@ DeviceTvmSoftwareVulnerabilities | where CveId == "CVE-2024-37079"
 ```
 </details>
 
-### Search for multiple CVEs - two formats
+<details> <summary> <h4> Search for multiple CVEs - two formats (Expand)</h4></summary>
+
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081") //first format
 
@@ -76,10 +77,13 @@ DeviceTvmSoftwareVulnerabilities //second format
     "CVE-2025-24206" )
 | summarize CveIds = make_set(CveId) by DeviceName
 ```
+</details>
 
-### List vulnerable software, also show if available updates (may give a lot of results)
+<details> <summary> <h4> List vulnerable software, also show if available updates (may give a lot of results) (Expand)</h4></summary>
+
 ```kql
 DeviceTvmSoftwareVulnerabilities
 | where SoftwareName contains "oracle" or SoftwareVendor contains "apple"
 | distinct DeviceName, OSPlatform, SoftwareVendor, SoftwareName, SoftwareVersion, RecommendedSecurityUpdate, RecommendedSecurityUpdateId
 ```
+</details>
