@@ -28,7 +28,7 @@ Result looks like
 ```
 </details>
 
-<details> <summary> <h4>List every non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h4></summary>
+<details> <summary> <h4>List non-Windows Servers (unix/linux) with missing KBs/recommended updates (Expand)</h4></summary>
   
 ```kql
 DeviceTvmSoftwareVulnerabilities
