@@ -1,5 +1,13 @@
 # Vulnerabilities
 
+### List Windows Servers with missing KBs/recommended updates
+<details> <summary> test </summary> <br>
+  
+```kql
+```
+
+</details>
+
 ### Search for multiple CVEs - two formats
 ```kql
 DeviceTvmSoftwareVulnerabilities | where CveId in ("CVE-2024-37079", "CVE-2024-37080", "CVE-2024-37081") //first format
