@@ -1,6 +1,6 @@
 # Vulnerabilities
 
-<details> <summary> <h3>List Windows Servers with missing KBs/recommended updates (Expand)</h3></summary> <br>
+<details> <summary> <h3>List Windows Servers with missing KBs/recommended updates (Expand)</h3></summary>
   
 ```kql
 DeviceTvmSoftwareVulnerabilities
