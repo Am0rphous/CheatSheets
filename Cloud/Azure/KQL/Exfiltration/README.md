@@ -1,3 +1,7 @@
 # Exfiltration
 
-```s
+```kql
+// AppData\Local\Microsoft\Edge\User Data\Default\Login Data/Desired access:FILE_READ_DATA, FILE_READ_EA, FILE_READ_ATTRIBUTES, READ_CONTROL, SYNCHRONIZE
+// logins.json/Desired access:FILE_READ_DATA, FILE_READ_EA, FILE_READ_ATTRIBUTES, READ_CONTROL, SYNCHRONIZE
+// key4.db/Desired access:FILE_READ_DATA, FILE_READ_EA, FILE_READ_ATTRIBUTES, READ_CONTROL, SYNCHRONIZE
+```
