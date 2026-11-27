@@ -5,7 +5,7 @@
 // logins.json/Desired access:FILE_READ_DATA, FILE_READ_EA, FILE_READ_ATTRIBUTES, READ_CONTROL, SYNCHRONIZE
 // key4.db/Desired access:FILE_READ_DATA, FILE_READ_EA, FILE_READ_ATTRIBUTES, READ_CONTROL, SYNCHRONIZE
 
-// Use of these?
+// Use of File Name?
 curl.exe
 smartscreen.exe -Embedding
 
