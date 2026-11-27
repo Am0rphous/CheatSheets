@@ -1,5 +1,9 @@
 # Defender
 
+- https://github.com/MSCloudInternals/XDRInternals/
+- https://xdrinternals.com/xdrinternals/
+- https://github.com/f-bader/XDRStoryParser
+
 - Task: Create a user who can view quarantined emails
   1. Pim (portal.azure.com) -> sign in Defender (security.microsoft.com)
   2. Go to System -> Permissions -> ms defender xdr -> Roles -> Create custom role
