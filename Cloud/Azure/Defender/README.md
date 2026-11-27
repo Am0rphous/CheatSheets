@@ -3,6 +3,7 @@
 - https://github.com/MSCloudInternals/XDRInternals/
 - https://xdrinternals.com/xdrinternals/
 - https://github.com/f-bader/XDRStoryParser
+- https://github.com/Dorkiee/Defender-XDR-Device-Timeline-Automation
 
 - Task: Create a user who can view quarantined emails
   1. Pim (portal.azure.com) -> sign in Defender (security.microsoft.com)
